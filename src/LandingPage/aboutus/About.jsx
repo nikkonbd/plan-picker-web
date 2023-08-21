@@ -9,11 +9,7 @@ import MyCalendar from "../../myCalendar/MyCalendar";
 import SetMeeting from "../../setMeeting/SetMeeting";
 import EventType from "../../myCalendar/eventType/EventType";
 
-
-
-
 const About = () => {
-
   const events = [
     {
       id: 1,
@@ -39,17 +35,16 @@ const About = () => {
   ];
 
   return (
-    <div>
-      
-      <EventType/>
-      
-      <SetMeeting/>
+    <div className="mx-4 md:mx-16">
+      {/* <EventType/> */}
 
-      <MyCalendar/>
+      <SetMeeting />
+
+      <MyCalendar />
 
       <h1 className="mb-5 text-3xl font-semibold mt-7">Calendar events</h1>
 
-      <EventCalendar events={events}/>
+      <EventCalendar events={events} />
 
       <div className="mt-20 bg-gray-200">
         <div className="">

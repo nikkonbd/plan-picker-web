@@ -16,7 +16,7 @@ const Blog = () => {
   // blog page
 
   return (
-    <div className="">
+    <div className="mx-4 md:mx-12">
       {/* banner */}
       <div className="md:flex items-center min-h-[60vh] my-10">
         <div className="md:w-1/2">

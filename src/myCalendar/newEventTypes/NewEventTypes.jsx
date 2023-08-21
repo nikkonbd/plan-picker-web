@@ -10,7 +10,7 @@ const NewEventTypes = () => {
   ];
 
   return (
-    <div className="container mx-auto">
+    <div className="">
       <h2 className="text-xl font-bold mb-4">Create New Event Type</h2>
       {/* overflow-x-auto space-x-4*/}
       <div className="flex flex-col  gap-5 ">

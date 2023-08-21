@@ -34,7 +34,6 @@ const SetMeeting = () => {
         onStartTimeSelect={console.log}
         selectedDateDayTitleFormatString="cccc, LLLL do"
         startTimeListStyle="scroll-list"
-
       />
     </div>
   );
