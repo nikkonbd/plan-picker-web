@@ -1,0 +1,25 @@
+/* src/components/MyCalendar.css */
+.my-calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* 7 columns for days of the week */
+  gap: 1px; /* Gap between cells */
+  background-color: #f0f0f0;
+}
+
+.my-calendar-cell {
+  padding: 1rem;
+  background-color: white;
+  border: 1px solid #ddd;
+  text-align: center;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.my-calendar-cell:hover {
+  background-color: #f7f7f7;
+}
+
+@media (max-width: 768px) {
+  .my-calendar {
+    grid-template-columns: repeat(1, 1fr); /* Single column for mobile */
+  }
+}
