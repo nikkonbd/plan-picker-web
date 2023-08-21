@@ -5,6 +5,7 @@ import Services from "../LandingPage/Services/Services";
 import ContactUS from "../LandingPage/contact/ContactUS";
 import About from "../LandingPage/aboutus/About";
 import Blog from "../LandingPage/Blog/Blog";
+import BlogDetails from "../LandingPage/Blog/blogDetails/BlogDetails";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: "/blog",
         element: <Blog></Blog>,
+      },
+      {
+        path: "/blog-details/:id",
+        element: <BlogDetails></BlogDetails>,
       },
     ],
   },

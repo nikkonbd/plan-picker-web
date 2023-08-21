@@ -1,4 +1,4 @@
-import Banner from "./ Banner";
+import Banner from "./Banner";
 import Hero from "./Hero";
 import SecondHero from "./SecondHero";
 import Special from "./Special";
