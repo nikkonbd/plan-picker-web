@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 const Dashboard = () => {
   const [open, setOpen] = useState(true);
@@ -8,7 +8,7 @@ const Dashboard = () => {
 
   const Users = [
     { title: "Dashboard", src: "Chart_fill" },
-    { title: "Inbox", src: "Chat" },
+    { title: "Availability", src: "Chat" },
     { title: "Accounts", src: "User", gap: true },
     { title: "Schedule", src: "Calendar" },
     { title: "Setting", src: "Setting" },
@@ -25,9 +25,8 @@ const Dashboard = () => {
     <div className="mx-4 md:mx-20">
       <div className="flex">
         <div
-          className={` ${
-            open ? "w-72" : "w-20 "
-          } bg-teal-500 h-screen p-5  pt-8 relative transition-all duration-300`}>
+          className={` ${open ? "w-72" : "w-20 "
+            } bg-teal-500 h-screen p-5  pt-8 relative transition-all duration-300`}>
           <img
             src="./src/assets/control.png"
             className={`absolute cursor-pointer -right-3 top-9 w-7 border-dark-purple
@@ -38,15 +37,13 @@ const Dashboard = () => {
           <div className="flex gap-x-4 items-center">
             <img
               src="./src/assets/logo.png"
-              className={`cursor-pointer transform transition-transform ${
-                open && "rotate-360"
-              }`}
+              className={`cursor-pointer transform transition-transform ${open && "rotate-360"
+                }`}
               alt="Logo"
             />
             <h1
-              className={`text-white font-medium text-xl transform transition-transform ${
-                !open && "scale-0"
-              }`}>
+              className={`text-white font-medium text-xl transform transition-transform ${!open && "scale-0"
+                }`}>
               Plan Picker
             </h1>
           </div>
@@ -66,9 +63,8 @@ const Dashboard = () => {
                           alt={Admin.title}
                         />
                         <span
-                          className={`${
-                            !open && "hidden"
-                          } transform transition-transform`}>
+                          className={`${!open && "hidden"
+                            } transform transition-transform`}>
                           {Admin.title}
                         </span>
                       </div>
@@ -83,18 +79,17 @@ const Dashboard = () => {
                     key={index}
                     className={`flex rounded-md p-2 cursor-pointer  text-gray-300 text-sm items-center space-x-4 
               ${User.gap ? "mt-9" : "mt-2"} ${index === 0 && ""} `}>
-                    <Link to={User.title}>
+                    <Link to={User?.title}>
                       <div className="flex items-center">
                         <img
                           className="me-2"
-                          src={`./src/assets/${User.src}.png`}
-                          alt={User.title}
+                          src={`./src/assets/${User?.src}.png`}
+                          alt={User?.title}
                         />
                         <span
-                          className={`${
-                            !open && "hidden"
-                          } transform transition-transform`}>
-                          {User.title}
+                          className={`${!open && "hidden"
+                            } transform transition-transform`}>
+                          {User?.title}
                         </span>
                       </div>
                     </Link>
@@ -104,15 +99,7 @@ const Dashboard = () => {
             )}
           </ul>
         </div>
-        {isAdmin ? (
-          <div className="h-screen flex-1 p-7">
-            <h1 className="text-2xl ">Admin Dashboard Coming Soooon..</h1>
-          </div>
-        ) : (
-          <div className="h-screen flex-1 p-7">
-            <h1 className="text-2xl ">User Dashboard Coming Soooon..</h1>
-          </div>
-        )}
+        <Outlet />
       </div>
     </div>
   );
