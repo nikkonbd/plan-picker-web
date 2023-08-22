@@ -8,6 +8,7 @@ import Blog from "../LandingPage/Blog/Blog";
 import BlogDetails from "../LandingPage/Blog/blogDetails/BlogDetails";
 import Dashboard from "../LandingPage/Dashboard/Dashboard";
 import Profile from "../LandingPage/Profile/Profile";
+import MyCalendar from "../myCalendar/MyCalendar";
 
 const router = createBrowserRouter([
   {
@@ -38,16 +39,14 @@ const router = createBrowserRouter([
         path: "/blog-details/:id",
         element: <BlogDetails></BlogDetails>,
       },
-      {
-        path: "/dashboard",
-        element: <Dashboard></Dashboard>,
-      },
+
       {
         path: "profile",
         element: <Profile></Profile>,
       },
     ],
   },
+  
 ]);
 
 export default router;
