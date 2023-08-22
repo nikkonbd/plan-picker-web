@@ -3,6 +3,8 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import WeeklyHoursForm from './WeeklyHoursForm';
 import { Link } from 'react-router-dom';
+import { AiOutlineDelete } from 'react-icons/ai';
+
 
 const Availability = () => {
     return (
@@ -13,12 +15,34 @@ const Availability = () => {
             <Tabs>
                 <TabList className="flex border-b-2 pb-2">
                     <Tab className='w-48'><Link>Hours & Preferences</Link></Tab>
+                    <Tab className='w-48'><Link>Connected Calenders</Link></Tab>
                     <Tab className='w-48'><Link>Holidays</Link></Tab>
                 </TabList>
                 <TabPanel className=''>
                     <h2 className='mt-8 text-2xl'>Default Hours</h2>
                     <p className='mt-3 mb-2 font-medium'>Set default hours used for new events or events you're co-hosting with your team</p>
                     <WeeklyHoursForm />
+                </TabPanel>
+                <TabPanel className=''>
+                    <h2 className='mt-10 font-bold text-2xl mb-4'>Connected Calenders</h2>
+                    <div className='border-2 rounded-lg p-5'>
+                        <div className='flex justify-between'>
+                            <p className='text-xl'>My Calender Account <span className='text-blue-gray-400'>1/6</span></p>
+                            <button className='bg-light-blue-600 py-2 px-2 rounded text-white'>Add Calender Account</button>
+                        </div>
+                        <div className='flex justify-between items-center border-2 rounded-lg p-4 mt-6'>
+                            <div className='flex items-center'>
+                                <img className='w-10 h-10 me-4' src="https://cdn-icons-png.flaticon.com/512/1869/1869397.png" alt="" />
+                                <div>
+                                    <p>Google</p>
+                                    <p>mdmasrafi902@gmail.com</p>
+                                </div>
+                            </div>
+                            <div className='p-3 bg-red-400 rounded'>
+                                <AiOutlineDelete className='text-white' />
+                            </div>
+                        </div>
+                    </div>
                 </TabPanel>
                 <TabPanel>
                     <h2 className='mt-10 mb-4 font-semibold text-2xl'>Holidays</h2>
