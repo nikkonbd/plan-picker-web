@@ -96,7 +96,7 @@ const WeeklyHoursForm = () => {
                     </div>
                 ))}
             </div>
-            <button type="submit">Submit</button>
+            <button type="submit">login</button>
         </form>
     );
 };
