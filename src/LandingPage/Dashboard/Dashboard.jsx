@@ -91,7 +91,6 @@ const Dashboard = () => {
                           src={`./src/assets/${User.src}.png`}
                           alt={User.title}
                         />
-
                         <span
                           className={`${
                             !open && "hidden"
