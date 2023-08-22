@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 const Dashboard = () => {
   const [open, setOpen] = useState(true);
@@ -8,7 +8,7 @@ const Dashboard = () => {
 
   const Users = [
     { title: "Dashboard", src: "Chart_fill" },
-    { title: "Inbox", src: "Chat" },
+    { title: "Availability", src: "Chat" },
     { title: "Accounts", src: "User", gap: true },
     { title: "Schedule", src: "Calendar" },
     { title: "Setting", src: "Setting" },
@@ -99,15 +99,7 @@ const Dashboard = () => {
             )}
           </ul>
         </div>
-        {isAdmin ? (
-          <div className="h-screen flex-1 p-7">
-            <h1 className="text-2xl ">Admin Dashboard Coming Soooon..</h1>
-          </div>
-        ) : (
-          <div className="h-screen flex-1 p-7">
-            <h1 className="text-2xl ">User Dashboard Coming Soooon..</h1>
-          </div>
-        )}
+        <Outlet />
       </div>
     </div>
   );
