@@ -17,7 +17,7 @@ const ScheduleEventDetails = () => {
 
                 <div className='space-y-2 lg:w-1/2'>
                     <FaArrowLeft className='text-2xl'></FaArrowLeft>
-                    <p>Prince Tanjim</p>
+                    <p>Nikkon mondol</p>
                     <h3 className='text-3xl font-semibold'>30 Minute Meeting</h3>
                     <p className='flex items-center gap-2 font-semibold'><BsClockHistory></BsClockHistory>30 min</p>
                     <p className='flex items-center gap-2 font-semibold'><MdOutlineEventNote></MdOutlineEventNote> 9:30am - 10:00am, Wednesday, August 23, 2023</p>
