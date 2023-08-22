@@ -8,6 +8,7 @@ import Blog from "../LandingPage/Blog/Blog";
 import BlogDetails from "../LandingPage/Blog/blogDetails/BlogDetails";
 import Dashboard from "../LandingPage/Dashboard/Dashboard";
 import Profile from "../LandingPage/Profile/Profile";
+import ScheduleEventDetails from "../compnents/ScheduleEventDetails";
 
 const router = createBrowserRouter([
   {
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
         path: "profile",
         element: <Profile></Profile>,
       },
+      {
+        path: '/eventDetails',
+        element: <ScheduleEventDetails></ScheduleEventDetails>
+      }
     ],
   },
 ]);
