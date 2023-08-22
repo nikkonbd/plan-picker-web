@@ -7,7 +7,7 @@ const Dashboard = () => {
   const isAdmin = false;
 
   const Users = [
-    { title: "Dashboard", to: "/dashboard" , src: "Chart_fill" },
+    { title: "Dashboard", src: "Chart_fill" },
     { title: "Inbox", src: "Chat" },
     { title: "Accounts", src: "User", gap: true },
     { title: "Schedule", src: "Calendar" },
@@ -84,7 +84,7 @@ const Dashboard = () => {
                     key={index}
                     className={`flex rounded-md p-2 cursor-pointer  text-gray-300 text-sm items-center space-x-4 
               ${User?.gap ? "mt-9" : "mt-2"} ${index === 0 && ""} `}>
-                    <Link to={`${User?.to}`}>
+                    <Link to={`${User.title}`}>
                       <div className="flex items-center">
                         <img
                           className="me-2"
