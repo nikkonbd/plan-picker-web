@@ -5,7 +5,9 @@ import Navbar from "./commonData/Navbar";
 const LandingPage = () => {
   return (
     <div>
-      <Navbar></Navbar>
+      <div className="table-fixed">
+        <Navbar></Navbar>
+      </div>
       <Outlet></Outlet>
       <Footer></Footer>
     </div>
