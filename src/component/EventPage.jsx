@@ -4,7 +4,7 @@ import { Radio } from "@material-tailwind/react";
 import { Select, Option } from "@material-tailwind/react";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-import { BsStar } from "react-icons/bs";
+import { BsStar, BsListStars } from "react-icons/bs";
 import { BiWorld } from "react-icons/bi";
 import { Checkbox } from "@material-tailwind/react";
 import TimezoneSelect from "react-timezone-select";
@@ -14,6 +14,8 @@ import {
     AccordionBody,
 } from "@material-tailwind/react";
 import WeeklyHoursForm from './WeeklyHoursForm';
+import EventCalendar from '../eventCalendar/EventCalendar';
+
 
 function Icon({ id, open }) {
     return (
@@ -34,6 +36,15 @@ const EventPage = () => {
     const [open, setOpen] = React.useState(0);
     const handleOpen = (value) => setOpen(open === value ? 0 : value);
     const [selectedTimezone, setSelectedTimezone] = useState({});
+    const events = [
+        {
+            id: 1,
+            title: "Meeting",
+            start: new Date(2023, 7, 16, 10, 0),
+            end: new Date(2023, 7, 16, 12, 0),
+            description: "Discuss project updates.",
+        },
+    ]
 
     return (
         <div className='border px-2 md:px-10 py-6'>
@@ -200,9 +211,9 @@ const EventPage = () => {
                     </TabPanel>
                     <TabPanel>
                         {/* todo */}
-                        <div className=" py-2">
+                        <div className=" py-2 mt-6 ">
                             <div className='border'>
-                                <div>
+                                <div className='px-3 mb-4'>
                                     <div className='timezone__wrapper w-full md:w-[400px]'>
                                         <p> Timezone</p>
                                         <TimezoneSelect
@@ -210,9 +221,37 @@ const EventPage = () => {
                                             onChange={setSelectedTimezone}
                                         />
                                     </div>
-                                    <div>
-                                        <WeeklyHoursForm></WeeklyHoursForm>
+                                    <div className='mt-6'>
+                                        {/* todo2 */}
+                                        <Tabs>
+                                            <TabList className="flex gap-3">
+                                                <Tab className="px-4 py-2 bg-gray-200 text-gray-700 border border-gray-300 rounded-t-lg flex gap-3 items-center">
+                                                    <BsListStars></BsListStars>    List View
+                                                </Tab>
+                                                <Tab className="px-4 py-2 bg-gray-200 text-gray-700 border border-gray-300 rounded-t-lg flex gap-3 items-center">
+                                                    <BsCalendar4Event></BsCalendar4Event>    Calendar View
+                                                </Tab>
+
+                                            </TabList>
+                                            <TabPanel>
+                                                <div className='flex gap-10 flex-col md:gap-8 md:flex-row mt-10'>
+                                                    <div className='w-full md:w-1/2'>
+                                                        <WeeklyHoursForm></WeeklyHoursForm>
+                                                    </div>
+                                                    <div className='w-full md:w-1/2 '>
+                                                        <h2 className='font-semibold px-5'>Add date overrides</h2>
+                                                        <h2 className='font-semibold px-5 mt-3 text-gray-600'>Add dates when your availability changes from your weekly hours</h2>
+                                                    </div>
+                                                </div>
+                                            </TabPanel>
+                                            <TabPanel>
+                                                <div className='mt-6'>
+                                                    <EventCalendar events={events} />
+                                                </div>
+                                            </TabPanel>
+                                        </Tabs>
                                     </div>
+
                                 </div>
                             </div>
 
