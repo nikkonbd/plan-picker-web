@@ -13,8 +13,9 @@ const Dashboard = () => {
     { title: "Schedule", src: "Calendar" },
     { title: "Setting", src: "Setting" },
   ];
+
   const Admins = [
-    { title: "Dashboard", src: "Chart_fill" },
+    { title: "Dashboard",  src: "Chart_fill" },
     { title: "Search", src: "Search" },
     { title: "Analytics", src: "Chart" },
     { title: "Files", src: "Folder", gap: true },
@@ -25,6 +26,9 @@ const Dashboard = () => {
     <div className="mx-4 md:mx-20">
       <div className="flex">
         <div
+          className={`${
+            open ? "w-72" : "w-20 "
+          } bg-teal-500 h-screen p-5 pt-8 relative transition-all duration-300`}>
           className={` ${open ? "w-72" : "w-20 "
             } bg-teal-500 h-screen p-5  pt-8 relative transition-all duration-300`}>
           <img
@@ -78,6 +82,8 @@ const Dashboard = () => {
                   <li
                     key={index}
                     className={`flex rounded-md p-2 cursor-pointer  text-gray-300 text-sm items-center space-x-4 
+              ${User?.gap ? "mt-9" : "mt-2"} ${index === 0 && ""} `}>
+                    <Link to={`${User.title}`}>
               ${User.gap ? "mt-9" : "mt-2"} ${index === 0 && ""} `}>
                     <Link to={User?.title}>
                       <div className="flex items-center">
@@ -99,6 +105,17 @@ const Dashboard = () => {
             )}
           </ul>
         </div>
+        {isAdmin ? (
+          <div className="h-screen flex-1 p-7">
+            <h1 className="text-2xl ">Admin Dashboard Coming Soooon..</h1>
+          </div>
+        ) : (
+          <div className="h-screen flex-1 p-7">
+            <h1 className="text-2xl ">
+              <Outlet/>
+            </h1>
+          </div>
+        )}
         <Outlet />
       </div>
     </div>
