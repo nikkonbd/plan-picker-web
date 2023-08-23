@@ -8,6 +8,7 @@ import Blog from "../LandingPage/Blog/Blog";
 import BlogDetails from "../LandingPage/Blog/blogDetails/BlogDetails";
 import Dashboard from "../LandingPage/Dashboard/Dashboard";
 import Profile from "../LandingPage/Profile/Profile";
+import ScheduleEventDetails from "../compnents/ScheduleEventDetails";
 import MyCalendar from "../myCalendar/MyCalendar";
 import Availability from "../LandingPage/Availability/Availability";
 
@@ -68,6 +69,10 @@ const router = createBrowserRouter([
         path: "/dashboard/Availability",
         element: <Availability />,
       },
+      {
+        path: '/eventDetails',
+        element: <ScheduleEventDetails></ScheduleEventDetails>
+      }
     ],
   },
 ]);
