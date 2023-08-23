@@ -25,7 +25,7 @@ const Event2 = () => {
       </div>
       <div className="divider"></div>
       <form className="mt-6">
-        <div className="form-control w-full max-w-xs">
+        <div className="form-control w-full max-w-md">
           <label className="label">
             <span className="label-text font-bold flex gap-3 items-center">
               Event Name * <BiInfoCircle></BiInfoCircle>
@@ -34,10 +34,10 @@ const Event2 = () => {
           <input
             type="text"
             placeholder="Event Name"
-            className="input input-bordered font-semibold w-full max-w-xs"
+            className="input input-bordered font-semibold w-full max-w-md"
           />
         </div>
-        <div className="form-control w-full max-w-xs">
+        <div className="form-control w-full max-w-md">
           <label className="label">
             <span className="label-text font-bold flex gap-3 items-center">
               Location <BiInfoCircle></BiInfoCircle>
@@ -54,7 +54,7 @@ const Event2 = () => {
             <option>Noakhali</option>
           </select>
         </div>
-        <div className="form-control w-full max-w-xs h-[300px]">
+        <div className="form-control w-full max-w-md h-[300px]">
           <label className="label">
             <span className="label-text font-bold flex gap-3 items-center">
               Description * <BiInfoCircle></BiInfoCircle>
@@ -68,7 +68,7 @@ const Event2 = () => {
           />
           ;
         </div>
-        <div className="form-control w-full max-w-xs mt-10">
+        <div className="form-control w-full max-w-md mt-10">
           <label className="label">
             <span className="label-text font-bold flex gap-3 items-center">
               Event Link * <BiInfoCircle></BiInfoCircle>
@@ -77,7 +77,7 @@ const Event2 = () => {
           <p className="label ">PlanPicker.com</p>
           <input
             type="text"
-            className="input input-bordered font-semibold w-full max-w-xs"
+            className="input input-bordered font-semibold w-full max-w-md"
           />
         </div>
 
