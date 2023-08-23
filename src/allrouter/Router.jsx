@@ -41,16 +41,6 @@ const router = createBrowserRouter([
         path: "/blog-details/:id",
         element: <BlogDetails></BlogDetails>,
       },
-      // {
-      //   path: "/dashboard",
-      //   element: <Dashboard></Dashboard>,
-      //   children: [
-      //     {
-      //       path: "/dashboard/Availability",
-      //       element: <Availability />
-      //     }
-      //   ]
-      // },
       {
         path: "profile",
         element: <Profile></Profile>,
@@ -62,7 +52,7 @@ const router = createBrowserRouter([
     element: <Dashboard></Dashboard>,
     children: [
       {
-        path: "/dashboard",
+        path: "/dashboard/Dashboard",
         element: <MyCalendar />,
       },
       {
