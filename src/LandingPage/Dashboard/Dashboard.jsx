@@ -32,11 +32,11 @@ const Dashboard = () => {
           <img
             src="./src/assets/control.png"
             className={`absolute cursor-pointer -right-3 top-9 w-7 border-dark-purple
-           border-2 rounded-full  ${!open && "rotate-180"}`}
+           border-2 rounded-full ${!open && "rotate-180"}`}
             onClick={() => setOpen(!open)}
             alt="Control Icon"
           />
-          <div className="flex gap-x-4 items-center">
+          <div className="flex items-center gap-x-4">
             <img
               src="./src/assets/logo.png"
               className={`cursor-pointer transform transition-transform ${
@@ -107,20 +107,22 @@ const Dashboard = () => {
           </ul>
         </div>
         {isAdmin ? (
-          <div className="h-screen flex-1 p-7">
+          <div className="flex-1 h-screen p-7">
             <h1 className="text-2xl ">Admin Dashboard Coming Soooon..</h1>
           </div>
         ) : (
-          <div className="h-screen flex-1 p-7">
+          <div className="flex-1 h-screen p-7">
             <h1 className="text-2xl ">
               <Outlet />
             </h1>
           </div>
         )}
-        {/* <Outlet /> */}
+        
       </div>
     </div>
   );
 };
 
 export default Dashboard;
+
+
