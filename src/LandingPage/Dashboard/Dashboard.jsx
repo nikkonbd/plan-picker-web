@@ -9,7 +9,7 @@ const Dashboard = () => {
   const Users = [
     { title: "Dashboard", src: "Chart_fill" },
     { title: "Availability", src: "Chat" },
-    { title: "Accounts", src: "User", gap: true },
+    { title: "Profile", src: "User", gap: true },
     { title: "Schedule", src: "Calendar" },
     { title: "Setting", src: "Setting" },
   ];
@@ -23,11 +23,11 @@ const Dashboard = () => {
   ];
 
   return (
-    <div className="mx-4 md:mx-20">
+    <div className="max-w-6xl mx-auto">
       <div className="flex">
         <div
           className={`${
-            open ? "w-72" : "w-20 "
+            open ? "w-60" : "w-20 "
           } bg-teal-500 h-screen p-5 pt-8 relative transition-all duration-300`}>
           <img
             src="./src/assets/control.png"
