@@ -41,10 +41,6 @@ const router = createBrowserRouter([
         path: "/blog-details/:id",
         element: <BlogDetails></BlogDetails>,
       },
-      {
-        path: "profile",
-        element: <Profile></Profile>,
-      },
     ],
   },
   {
@@ -60,9 +56,13 @@ const router = createBrowserRouter([
         element: <Availability />,
       },
       {
-        path: '/eventDetails',
-        element: <ScheduleEventDetails></ScheduleEventDetails>
-      }
+        path: "/dashboard/Profile",
+        element: <Profile></Profile>,
+      },
+      {
+        path: "/dashboard/Schedule",
+        element: <ScheduleEventDetails></ScheduleEventDetails>,
+      },
     ],
   },
 ]);
