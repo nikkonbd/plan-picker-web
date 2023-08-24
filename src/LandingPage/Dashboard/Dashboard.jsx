@@ -84,7 +84,6 @@ const Dashboard = () => {
                     key={index}
                     className={`flex rounded-md p-2 cursor-pointer  text-gray-300 text-sm items-center space-x-4 
               ${User?.gap ? "mt-9" : "mt-2"} ${index === 0 && ""} `}>
-                    {/* <Link to={`${User.title}`}> */}
                     <Link to={User?.title}>
                       <div className="flex items-center">
                         <img
@@ -117,12 +116,9 @@ const Dashboard = () => {
             </h1>
           </div>
         )}
-        
       </div>
     </div>
   );
 };
 
 export default Dashboard;
-
-

@@ -5,27 +5,6 @@
 //   const [isOpen, setIsOpen] = useState(false);
 //   const [selectedOption, setSelectedOption] = useState(null);
 
-//   const options = [
-//     {
-//       name: "One-on-One",
-//       icon: "📅",
-//       title: "One host with one invitee",
-//       description: "Create a new event on the calendar.",
-//     },
-//     {
-//       name: "Option 2",
-//       icon: "🎉",
-//       title: "",
-//       description: "Plan a celebration or special occasion.",
-//     },
-//     {
-//       name: "Option 3",
-//       icon: "🕒",
-//       title: "",
-//       description: "Schedule a reminder or appointment.",
-//     },
-//   ];
-
 //   const toggleDropdown = () => {
 //     setIsOpen(!isOpen);
 //   };
@@ -37,9 +16,7 @@
 //   };
 
 //   return (
-//     <div className="relative ">
-//       {" "}
-//       {/* Change from text-left to text-right */}
+//     <div className="relative">
 //       <div className="">
 //         <Link>
 //           <button
@@ -51,28 +28,72 @@
 //         </Link>
 //       </div>
 //       {isOpen && (
-//         <div className="absolute right-0 mt-2 origin-top-right bg-white rounded-md shadow-lg w-60 ring-1 ring-black ring-opacity-5">
+//         <div className="absolute right-0 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 w-80">
 //           <div
 //             className="py-2"
 //             role="menu"
 //             aria-orientation="vertical"
 //             aria-labelledby="options-menu">
-//             {options.map((option, index) => (
-//               <button
-//                 key={index}
-//                 onClick={() => handleOptionSelect(option)}
-//                 className="block w-full px-4 py-3 text-sm text-left text-gray-700 hover:bg-gray-100"
-//                 role="menuitem">
-//                 <span className="mr-2 text-lg">{option.icon}</span>
-//                 <div className="flex flex-col">
-//                   <span className="font-medium">{option.name}</span>
-//                   <span>{option.title}</span>
-//                   <span className="text-xs text-gray-500">
-//                     {option.description}
-//                   </span>
-//                 </div>
-//               </button>
-//             ))}
+//             <button
+//               onClick={() =>
+//                 handleOptionSelect({
+//                   // name: "One-on-One",
+//                   // icon: "📅",
+//                   // title: "One host with one invitee",
+//                   // description: "Create a new event on the calendar.",
+//                 })
+//               }
+//               className="block w-full px-4 py-3 text-sm text-left text-gray-700 hover:bg-gray-100"
+//               role="menuitem">
+//               <span className="mr-2 text-lg">📅</span>
+//               <div className="flex flex-col">
+//                 <span className="text-lg font-bold text-black">One-on-One</span>
+//                 <span className="text-base"><b>One host</b> with <b>one invitee</b></span>
+//                 <span className="text-base-700 gray-500">
+//                   Good for: 1:1 interview, chats, etc.
+//                 </span>
+//               </div>
+//             </button>
+//             <button
+//               onClick={() =>
+//                 handleOptionSelect({
+//                   // name: "One-on-One",
+//                   // icon: "📅",
+//                   // title: "One host with one invitee",
+//                   // description: "Create a new event on the calendar.",
+//                 })
+//               }
+//               className="block w-full px-4 py-3 text-sm text-left text-gray-700 hover:bg-gray-100"
+//               role="menuitem">
+//               <span className="mr-2 text-lg">📅</span>
+//               <div className="flex flex-col">
+//                 <span className="text-lg font-bold text-black">Group</span>
+//                 <span className="text-base"><b>One host</b> with <b>group of invitee</b> </span>
+//                 <span className="text-base-700 gray-500">
+//                   Good for: webinars, online classes, etc.
+//                 </span>
+//               </div>
+//             </button>
+//             <button
+//               onClick={() =>
+//                 handleOptionSelect({
+//                   // name: "One-on-One",
+//                   // icon: "📅",
+//                   // title: "One host with one invitee",
+//                   // description: "Create a new event on the calendar.",
+//                 })
+//               }
+//               className="block w-full px-4 py-3 text-sm text-left text-gray-700 hover:bg-gray-100"
+//               role="menuitem">
+//               <span className="mr-2 text-lg">📅</span>
+//               <div className="flex flex-col">
+//                 <span className="text-lg font-bold text-black">Collective</span>
+//                 <span className="text-base"><b>More than one host</b> with <b>one invitee</b></span>
+//                 <span className="text-base-700 gray-500">
+//                   Good for: panel interview, group sales calls, etc.
+//                 </span>
+//               </div>
+//             </button>
 //           </div>
 //         </div>
 //       )}
@@ -81,8 +102,6 @@
 // };
 
 // export default CreateEventButton;
-
-
 
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
@@ -114,7 +133,7 @@ const CreateEventButton = () => {
         </Link>
       </div>
       {isOpen && (
-        <div className="absolute right-0 mt-2 origin-top-right bg-white rounded-md shadow-lg w-60 ring-1 ring-black ring-opacity-5">
+        <div className="absolute right-0 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 w-80">
           <div
             className="py-2"
             role="menu"
@@ -123,61 +142,77 @@ const CreateEventButton = () => {
             <button
               onClick={() =>
                 handleOptionSelect({
-                  // name: "One-on-One",
-                  // icon: "📅",
-                  // title: "One host with one invitee",
-                  // description: "Create a new event on the calendar.",
+                  // ... your option data ...
                 })
               }
               className="block w-full px-4 py-3 text-sm text-left text-gray-700 hover:bg-gray-100"
               role="menuitem">
-              <span className="mr-2 text-lg">📅</span>
-              <div className="flex flex-col">
-                <span className="font-medium">One-on-One</span>
-                <span><b>One host</b> with one invitee</span>
-                <span className="text-xs text-gray-500">
-                  Create a new event on the calendar.
-                </span>
+              <div className="flex items-start">
+                <span className="text-lg">📅</span>
+                <div className="ml-2">
+                  <span className="text-lg font-bold text-black">
+                    One-on-One
+                  </span>
+                  <div className="flex flex-col">
+                    <span className="text-base">
+                      <b>One host</b> with <b>one invitee</b>
+                    </span>
+                    <span className="text-base-700 gray-500">
+                      Good for: 1:1 interview, chats, etc.
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </button>
+            {/* ... more option buttons ... */}
+            <button
+              onClick={() =>
+                handleOptionSelect({
+                  // ... your option data ...
+                })
+              }
+              className="block w-full px-4 py-3 text-sm text-left text-gray-700 hover:bg-gray-100"
+              role="menuitem">
+              <div className="flex items-start">
+                <span className="text-lg">📅</span>
+                <div className="ml-2">
+                  <span className="text-lg font-bold text-black">
+                    Group
+                  </span>
+                  <div className="flex flex-col">
+                    <span className="text-base">
+                      <b>One host</b> with <b>group of invitee</b>
+                    </span>
+                    <span className="text-base-700 gray-500">
+                      Good for: webinars, online classes, etc.
+                    </span>
+                  </div>
+                </div>
               </div>
             </button>
             <button
               onClick={() =>
                 handleOptionSelect({
-                  name: "One-on-One",
-                  icon: "📅",
-                  title: "One host with one invitee",
-                  description: "Create a new event on the calendar.",
+                  // ... your option data ...
                 })
               }
               className="block w-full px-4 py-3 text-sm text-left text-gray-700 hover:bg-gray-100"
               role="menuitem">
-              <span className="mr-2 text-lg">📅</span>
-              <div className="flex flex-col">
-                <span className="font-medium">One-on-One</span>
-                <span>One host with one invitee</span>
-                <span className="text-xs text-gray-500">
-                  Create a new event on the calendar.
-                </span>
-              </div>
-            </button>
-            <button
-              onClick={() =>
-                handleOptionSelect({
-                  name: "One-on-One",
-                  icon: "📅",
-                  title: "One host with one invitee",
-                  description: "Create a new event on the calendar.",
-                })
-              }
-              className="block w-full px-4 py-3 text-sm text-left text-gray-700 hover:bg-gray-100"
-              role="menuitem">
-              <span className="mr-2 text-lg">📅</span>
-              <div className="flex flex-col">
-                <span className="font-medium">One-on-One</span>
-                <span>One host with one invitee</span>
-                <span className="text-xs text-gray-500">
-                  Create a new event on the calendar.
-                </span>
+              <div className="flex items-start">
+                <span className="text-lg">📅</span>
+                <div className="ml-2">
+                  <span className="text-lg font-bold text-black">
+                    Collective
+                  </span>
+                  <div className="flex flex-col">
+                    <span className="text-base">
+                      <b>More than one host</b> with <b>one invitee</b>
+                    </span>
+                    <span className="text-base-700 gray-500">
+                      Good for: panel interview, group sales calls, etc.
+                    </span>
+                  </div>
+                </div>
               </div>
             </button>
           </div>
