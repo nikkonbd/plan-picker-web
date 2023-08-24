@@ -24,7 +24,7 @@ const Event = () => {
       </div>
       <div className="divider"></div>
       <form className="mt-6">
-        <div className="form-control w-full md:max-w-4xl">
+        <div className="form-control w-full max-w-md">
           <label className="label">
             <span className="label-text font-bold flex gap-3 items-center">
               Event Name * <BiInfoCircle></BiInfoCircle>
@@ -33,10 +33,10 @@ const Event = () => {
           <input
             type="text"
             placeholder="Event Name"
-            className="input input-bordered font-semibold w-full max-w-xs"
+            className="input input-bordered font-semibold w-full max-w-md"
           />
         </div>
-        <div className="form-control w-full md:max-w-4xl">
+        <div className="form-control w-full max-w-md">
           <label className="label">
             <span className="label-text font-bold flex gap-3 items-center">
               Location <BiInfoCircle></BiInfoCircle>
@@ -53,7 +53,7 @@ const Event = () => {
             <option>Noakhali</option>
           </select>
         </div>
-        <div className="form-control w-full md:max-w-4xl h-[300px]">
+        <div className="form-control w-full max-w-md h-[300px]">
           <label className="label">
             <span className="label-text font-bold flex gap-3 items-center">
               Description * <BiInfoCircle></BiInfoCircle>
@@ -76,7 +76,7 @@ const Event = () => {
           <p className="label ">PlanPicker.com</p>
           <input
             type="text"
-            className="input input-bordered font-semibold w-full max-w-xs"
+            className="input input-bordered font-semibold w-full max-w-md"
           />
         </div>
         <div className="form-control w-full max-w-2xl mt-10">

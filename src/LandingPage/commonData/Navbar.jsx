@@ -56,9 +56,6 @@ const Navbar = () => {
       <li className="hidden lg:block">
         <Link to="/dashboard">Dashboard</Link>
       </li>
-      <li className="hidden lg:block">
-        <Link to="/profile">Profile</Link>
-      </li>
       <>
         {user ? (
           <p className="pl-2 flex gap-2 items- justify-center">

@@ -8,6 +8,9 @@ import Blog from "../LandingPage/Blog/Blog";
 import BlogDetails from "../LandingPage/Blog/blogDetails/BlogDetails";
 import Dashboard from "../LandingPage/Dashboard/Dashboard";
 import Profile from "../LandingPage/Profile/Profile";
+import ScheduleEventDetails from "../compnents/ScheduleEventDetails";
+import MyCalendar from "../myCalendar/MyCalendar";
+import Availability from "../LandingPage/Availability/Availability";
 
 const router = createBrowserRouter([
   {
@@ -38,13 +41,27 @@ const router = createBrowserRouter([
         path: "/blog-details/:id",
         element: <BlogDetails></BlogDetails>,
       },
+    ],
+  },
+  {
+    path: "/dashboard",
+    element: <Dashboard></Dashboard>,
+    children: [
       {
-        path: "/dashboard",
-        element: <Dashboard></Dashboard>,
+        path: "/dashboard/Dashboard",
+        element: <MyCalendar />,
       },
       {
-        path: "profile",
+        path: "/dashboard/Availability",
+        element: <Availability />,
+      },
+      {
+        path: "/dashboard/Profile",
         element: <Profile></Profile>,
+      },
+      {
+        path: "/dashboard/Schedule",
+        element: <ScheduleEventDetails></ScheduleEventDetails>,
       },
     ],
   },

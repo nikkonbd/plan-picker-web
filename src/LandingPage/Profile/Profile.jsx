@@ -2,7 +2,7 @@ import React from "react";
 
 const Profile = () => {
   return (
-    <div className="mx-4 md:mx-12">
+    <div className="">
       <p className="ms-10 mt-4 text-2xl mb-2">Welcome Ali H.</p>
       <div className="">
         <div className="flex items-center ms-2">
@@ -25,7 +25,7 @@ const Profile = () => {
 
         <p className="font-bold text-sm ms-10">Name</p>
         <input
-          className="mt-2 ps-3 ms-10 w-96 h-9 border-[1px] border-blue-gray-400 rounded-2xl"
+          className="mt-2 ps-3 ms-10 w-full h-9 border-[1px] border-blue-gray-400 rounded-xl"
           type="text"
           name=""
           id=""
@@ -33,7 +33,7 @@ const Profile = () => {
         />
         <p className="mt-6 ms-10 font-bold text-sm">Language</p>
         <select
-          className="mt-2 ms-10 ps-3 w-96 border-[1px] border-blue-gray-400 rounded-2xl h-9"
+          className="mt-2 ms-10 ps-3 w-full border-[1px] border-blue-gray-400 rounded-2xl h-9"
           name="language"
           id="language">
           <option value="">English</option>

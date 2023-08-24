@@ -18,9 +18,9 @@ const Blog = () => {
   return (
     <div className="mx-4 md:mx-12">
       {/* banner */}
-      <div className="md:flex items-center min-h-[60vh] my-10">
+      <div className="md:flex justify-between items-center min-h-[60vh] my-10">
         <div className="md:w-1/2">
-          <h1 className="text-6xl font-bold">
+          <h1 className="text-5xl font-bold">
             Journey to Success: Unleash Your Potential Through <br /> Our
             Articles
           </h1>

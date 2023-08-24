@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 const Dashboard = () => {
   const [open, setOpen] = useState(true);
@@ -8,11 +8,12 @@ const Dashboard = () => {
 
   const Users = [
     { title: "Dashboard", src: "Chart_fill" },
-    { title: "Inbox", src: "Chat" },
-    { title: "Accounts", src: "User", gap: true },
+    { title: "Availability", src: "Chat" },
+    { title: "Profile", src: "User", gap: true },
     { title: "Schedule", src: "Calendar" },
     { title: "Setting", src: "Setting" },
   ];
+
   const Admins = [
     { title: "Dashboard", src: "Chart_fill" },
     { title: "Search", src: "Search" },
@@ -22,12 +23,12 @@ const Dashboard = () => {
   ];
 
   return (
-    <div className="mx-4 md:mx-20">
+    <div className="max-w-6xl mx-auto">
       <div className="flex">
         <div
-          className={` ${
-            open ? "w-72" : "w-20 "
-          } bg-teal-500 h-screen p-5  pt-8 relative transition-all duration-300`}>
+          className={`${
+            open ? "w-60" : "w-20 "
+          } bg-teal-500 h-screen p-5 pt-8 relative transition-all duration-300`}>
           <img
             src="./src/assets/control.png"
             className={`absolute cursor-pointer -right-3 top-9 w-7 border-dark-purple
@@ -82,19 +83,20 @@ const Dashboard = () => {
                   <li
                     key={index}
                     className={`flex rounded-md p-2 cursor-pointer  text-gray-300 text-sm items-center space-x-4 
-              ${User.gap ? "mt-9" : "mt-2"} ${index === 0 && ""} `}>
-                    <Link to={User.title}>
+              ${User?.gap ? "mt-9" : "mt-2"} ${index === 0 && ""} `}>
+                    {/* <Link to={`${User.title}`}> */}
+                    <Link to={User?.title}>
                       <div className="flex items-center">
                         <img
                           className="me-2"
-                          src={`./src/assets/${User.src}.png`}
-                          alt={User.title}
+                          src={`./src/assets/${User?.src}.png`}
+                          alt={User?.title}
                         />
                         <span
                           className={`${
                             !open && "hidden"
                           } transform transition-transform`}>
-                          {User.title}
+                          {User?.title}
                         </span>
                       </div>
                     </Link>
@@ -110,9 +112,12 @@ const Dashboard = () => {
           </div>
         ) : (
           <div className="h-screen flex-1 p-7">
-            <h1 className="text-2xl ">User Dashboard Coming Soooon..</h1>
+            <h1 className="text-2xl ">
+              <Outlet />
+            </h1>
           </div>
         )}
+        {/* <Outlet /> */}
       </div>
     </div>
   );
