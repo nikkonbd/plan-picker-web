@@ -16,12 +16,12 @@ const Blog = () => {
   // blog page
 
   return (
-    <div className="mx-4 md:mx-12">
+    <div className="md:w-10/12 mx-auto">
       {/* banner */}
       <div className="md:flex justify-between items-center min-h-[60vh] my-10">
         <div className="md:w-1/2">
           <h1 className="text-5xl font-bold">
-            Journey to Success: Unleash Your Potential Through <br /> Our
+            Journey to Success: <br /> Unleash Your Potential Through <br /> Our
             Articles
           </h1>
         </div>
@@ -34,7 +34,7 @@ const Blog = () => {
         <h1 className="text-center font-semi-bold text-6xl my-5">
           Explore our top articles
         </h1>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 md:max-w-6xl lg:max-w-7xl mx-auto">
           {topArticels.map((article) => (
             <BlogCard key={article._id} article={article}></BlogCard>
           ))}

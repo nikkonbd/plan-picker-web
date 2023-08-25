@@ -4,7 +4,7 @@ import Event2 from "./Event2";
 
 const ContactUS = () => {
   return (
-    <>
+    <div className="md:w-10/12 mx-auto">
       <div>
         <h2 className="pt-20 text-6xl text-center">
           Contact <span className="text-secondary">Us</span>
@@ -44,16 +44,7 @@ const ContactUS = () => {
           </form>
         </div>
       </div>
-      <div className="mx-4 md:mx-12">
-        {/* <Event></Event> */}
-      </div>
-      <div className="mx-4 md:mx-12">
-        {/* <Event2></Event2> */}
-      </div>
-      <div className="mx-4 md:mx-12">
-        {/* <EventPage></EventPage> */}
-      </div>
-    </>
+    </div>
   );
 };
 

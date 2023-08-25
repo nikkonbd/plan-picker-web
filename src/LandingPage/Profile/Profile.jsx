@@ -3,7 +3,7 @@ import React from "react";
 const Profile = () => {
   return (
     <div className="mx-4">
-      <p className="mt-4 mb-2 text-2xl ms-10">Welcome Ali H.</p>
+      <p className="mt-4 mb-2 text-2xl md:ms-10">Welcome Ali H.</p>
       <div className="">
         <div className="flex items-center ms-2">
           <img
@@ -23,17 +23,17 @@ const Profile = () => {
           </div>
         </div>
 
-        <p className="text-sm font-bold ms-10">Name</p>
+        <p className="text-sm font-bold md:ms-10">Name</p>
         <input
-          className="mt-2 me-6 ps-3 ms-10 md:w-96 w-80 h-9 border-[1px] border-blue-gray-400 rounded-2xl"
+          className="mt-2 me-6 ps-3 md:ms-10 md:w-96 w-80 h-9 border-[1px] border-blue-gray-400 rounded-2xl"
           type="text"
           name=""
           id=""
           placeholder="Ali Hasan Mashrafi"
         />
-        <p className="mt-6 text-sm font-bold ms-10">Language</p>
+        <p className="mt-6 text-sm font-bold md:ms-10">Language</p>
         <select
-          className="mt-2 ms-10 ps-3 md:w-96 w-80 me-6 border-[1px] border-blue-gray-400 rounded-2xl h-9"
+          className="mt-2 md:ms-10 ps-3 md:w-96 w-80 me-6 border-[1px] border-blue-gray-400 rounded-2xl h-9"
           name="language"
           id="language">
           <option value="">English</option>
@@ -41,11 +41,11 @@ const Profile = () => {
           <option value="Arabic">Arabic</option>
           <option value="Hindi">Hindi</option>
         </select>
-        <div className="flex">
+        <div className="md:flex">
           <div>
-            <p className="mt-6 text-sm font-bold ms-10">Data Format</p>
+            <p className="mt-6 text-sm font-bold md:ms-10">Data Format</p>
             <select
-              className="mt-2 ms-10 ps-3 sm:w-[8.7rem] min-w-[10.4rem]  border-[1px] border-blue-gray-400 rounded-2xl h-9"
+              className="mt-2 md:ms-10 ps-3 w-full md:w-[10.4rem]  border-[1px] border-blue-gray-400 rounded-2xl h-9"
               name="language"
               id="language">
               <option value="">MM/DD/YYYY</option>
@@ -53,9 +53,9 @@ const Profile = () => {
             </select>
           </div>
           <div>
-            <p className="mt-6 text-sm font-bold ms-10">Time Format</p>
+            <p className="mt-6 text-sm font-bold md:ms-10">Time Format</p>
             <select
-              className="mt-2 ms-10 ps-3 sm:w-[8.7rem] w-[10.4rem] border-[1px] border-blue-gray-400 rounded-2xl h-9"
+              className="mt-2 md:ms-10 ps-3 w-full md:w-[10.4rem] border-[1px] border-blue-gray-400 rounded-2xl h-9"
               name="language"
               id="language">
               <option value="">12h (am/pm)</option>
@@ -64,9 +64,9 @@ const Profile = () => {
           </div>
         </div>
         <div>
-          <p className="mt-6 text-sm font-bold ms-10">Country</p>
+          <p className="mt-6 text-sm font-bold md:ms-10">Country</p>
           <select
-            className="mt-2 ms-10 ps-3 md:w-96 w-80 me-6 border-[1px] border-blue-gray-400 rounded-2xl h-9"
+            className="mt-2 md:ms-10 ps-3 md:w-96 w-80 me-6 border-[1px] border-blue-gray-400 rounded-2xl h-9"
             name="language"
             id="language">
             <option value="">Bangladesh</option>
@@ -75,9 +75,9 @@ const Profile = () => {
           </select>
         </div>
         <div>
-          <p className="mt-6 text-sm font-bold ms-10">Time Zone</p>
+          <p className="mt-6 text-sm font-bold md:ms-10">Time Zone</p>
           <select
-            className="mt-2 ms-10 ps-3 md:w-96 w-80 me-6 border-[1px] border-blue-gray-400 rounded-2xl h-9"
+            className="mt-2 md:ms-10 ps-3 md:w-96 w-80 me-6 border-[1px] border-blue-gray-400 rounded-2xl h-9"
             name="language"
             id="language">
             <option value="">Asia/Dhaka</option>
@@ -85,10 +85,10 @@ const Profile = () => {
           </select>
         </div>
       </div>
-      <button className="p-2 my-4 text-white bg-blue-700 ms-10 rounded-3xl">
+      <button className="p-2 my-4 text-white px-2 bg-blue-700 md:ms-10 rounded-xl">
         Save Change
       </button>
-      <button className="p-2 text-white bg-red-500 ms-3 rounded-3xl">
+      <button className="p-2 text-white bg-red-500 ms-3 rounded-xl">
         Cancel
       </button>
     </div>

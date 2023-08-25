@@ -25,7 +25,7 @@ const Navbar = () => {
         <Link to="/services">Services</Link>
       </li>
       <li>
-        <Link to="/contact">Contact</Link>
+        <Link to="/contact">Contact Us</Link>
       </li>
       <li>
         <Link to="/about">About Us</Link>
@@ -45,13 +45,13 @@ const Navbar = () => {
         <Link to="/services">Services</Link>
       </li>
       <li className="hidden lg:block">
-        <Link to="/contact">Contact</Link>
+        <Link to="/contact">Contact Us</Link>
       </li>
       <li className="hidden lg:block">
         <Link to="/about">About Us</Link>
       </li>
       <li className="hidden lg:block">
-        <Link to="/blog">Blog</Link>
+        <Link to="/blog">Blogs</Link>
       </li>
       <li className="hidden lg:block">
         <Link to="/dashboard/schedule">Dashboard</Link>
