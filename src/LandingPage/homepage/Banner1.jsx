@@ -6,7 +6,7 @@ import { Button } from "@material-tailwind/react";
 
 const Banner1 = () => {
   return (
-    <div className="px-4 md:px-0 md:w-11/12 mx-auto">
+    <div className="px-4 md:px-0 md:max-w-6xl lg:max-w-7xl mx-auto">
       <div className="text-center">
         <h2 className="text-3xl md:text-5xl font-semibold pt-24">
           We make scheduling for <br /> you easier than ever
@@ -18,7 +18,7 @@ const Banner1 = () => {
         </p>
       </div>
       <div className="md:flex flex flex-col-reverse lg:flex lg:flex-row md:flex-row gap-4 justify-between items-center mt-12">
-        <div>
+        <div data-aos="fade-up-right">
           <div className="text-center md:text-start">
             <h2 className="text-4xl font-medium">
               Share your Plan <br /> availability with others

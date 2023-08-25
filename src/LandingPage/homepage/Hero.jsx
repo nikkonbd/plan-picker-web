@@ -3,7 +3,7 @@ import book3 from "../../assets/Images/book3.png";
 
 const Hero = () => {
   return (
-    <div className="md:w-11/12 mx-auto">
+    <div className="md:w-10/12 mx-auto">
       <div className="text-center">
         <h2 className="text-3xl md:text-5xl font-semibold pt-24">
           Scheduling automation happens before <br /> and after meetings
