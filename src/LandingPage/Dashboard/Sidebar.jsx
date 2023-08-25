@@ -322,7 +322,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
               <SidebarLinkGroup activecondition={pathname.includes("settings")}>
                 {(handleClick, open) => {
                   return (
-                    <React.Fragment>
+                    <React.Fragment> 
                       <a
                         href="#0"
                         className={`block text-slate-200 truncate transition duration-150 ${
