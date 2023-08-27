@@ -11,7 +11,7 @@ const Home = () => {
       <Banner1></Banner1>
       <Hero></Hero>
       <SecondHero></SecondHero>
-      <Special></Special>
+      {/* <Special></Special> */}
     </div>
   );
 };

@@ -21,14 +21,14 @@ const Banner = () => {
           Learn more plan
         </button>
       </div>
-      <div className="md:flex gap-4 mt-14">
-        <div className="columns-md bg-[#e8e6fe] rounded-md">
+      <div className="md:flex md:max-w-6xl lg:max-w-fit mx-auto gap-4 mt-14">
+        <div className="md:columns-md lg:columns-xl bg-[#e8e6fe] rounded-md">
           <h2 className="text-3xl text-center py-6 font-semibold">
             Book & schedule <br /> with Plan picker
           </h2>
           <img className="w-[380px] mx-auto rounded-md" src={img} alt="" />
         </div>
-        <div className="md:columns-3xl bg-[#ffefe7] rounded-md">
+        <div className="md:columns-3xl lg:columns-4xl bg-[#ffefe7] rounded-md">
           <div className="md:flex gap-10 items-center">
             <img
               className="w-[400px] h-[368px] pt-16 rounded-lg"

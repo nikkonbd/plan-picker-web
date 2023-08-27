@@ -25,7 +25,7 @@ const Navbar = () => {
         <Link to="/services">Services</Link>
       </li>
       <li>
-        <Link to="/contact">Contact</Link>
+        <Link to="/contact">Contact Us</Link>
       </li>
       <li>
         <Link to="/about">About Us</Link>
@@ -45,25 +45,25 @@ const Navbar = () => {
         <Link to="/services">Services</Link>
       </li>
       <li className="hidden lg:block">
-        <Link to="/contact">Contact</Link>
+        <Link to="/contact">Contact Us</Link>
       </li>
       <li className="hidden lg:block">
         <Link to="/about">About Us</Link>
       </li>
       <li className="hidden lg:block">
-        <Link to="/blog">Blog</Link>
+        <Link to="/blog">Blogs</Link>
       </li>
       <li className="hidden lg:block">
-        <Link to="/dashboard">Dashboard</Link>
+        <Link to="/dashboard/schedule">Dashboard</Link>
       </li>
       <>
         {user ? (
-          <p className="pl-2 flex gap-2 items- justify-center">
+          <p className="flex justify-center gap-2 pl-2 items-">
             {user.photoURL ? (
               <ProfileMenu></ProfileMenu>
             ) : (
               // <img
-              // className="w-10 h-10 lg:w-10 lg:h-10 rounded-full mr-2"
+              // className="w-10 h-10 mr-2 rounded-full lg:w-10 lg:h-10"
               // src={user.photoURL}
               // alt={user.displayName}
               // title={user.displayName}
@@ -87,14 +87,14 @@ const Navbar = () => {
           <div className="flex items-center">
             {user.imgUrl ? (
               <img
-                className="w-4 h-4 lg:w-12 lg:h-12 rounded-full mr-2"
+                className="w-4 h-4 mr-2 rounded-full lg:w-12 lg:h-12"
                 src={user.imgUrl}
                 alt={user.displayName}
                 title={user.displayName}
               />
             ) : (
               <FaUserCircle
-                className="w-4 h-4 lg:w-12 lg:h-12 rounded-full mr-2"
+                className="w-4 h-4 mr-2 rounded-full lg:w-12 lg:h-12"
                 title={user.displayName}
               />
             )}
@@ -115,13 +115,13 @@ const Navbar = () => {
 
   return (
     <div className="bg-gray-100">
-      <div className="navbar max-w-screen-xl justify-between mx-auto">
+      <div className="justify-between max-w-screen-xl mx-auto navbar">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
+                className="w-5 h-5"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor">
@@ -139,13 +139,13 @@ const Navbar = () => {
               {navMenu}
             </ul>
           </div>
-          <GiClockwork className="text-5xl pr-2 text-blue-500"></GiClockwork>
-          <a className="normal-case text-base md:text-xl font-bold hover:text-gray-900">
+          <GiClockwork className="pr-2 text-5xl text-blue-500"></GiClockwork>
+          <a className="text-base font-bold normal-case md:text-xl hover:text-gray-900">
             <Link to={"/"}>Plan Picker</Link>
           </a>
         </div>
         <div className="navbar-center lg:flex">
-          <ul className="menu menu-horizontal px-1">{navItem}</ul>
+          <ul className="px-1 menu menu-horizontal">{navItem}</ul>
         </div>
       </div>
     </div>

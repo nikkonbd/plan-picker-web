@@ -15,7 +15,7 @@ import ServiceCardAccordion from './serviceCard/ServiceCardAccordion';
 
 const Services = () => {
   return (
-    <div className="mx-4 md:mx-12 py-16 sm:px-10">
+    <div className="mx-4 md:mx-24 py-16 sm:px-10">
       <Card className="w-full flex-row">
         {/* <CardHeader
           shadow={false}
