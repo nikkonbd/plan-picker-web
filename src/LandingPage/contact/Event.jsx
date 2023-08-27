@@ -5,6 +5,11 @@ import "react-quill/dist/quill.snow.css";
 
 const Event = () => {
   const [value, setValue] = useState("");
+  console.log(value);
+
+
+
+
 
   return (
     <div className="mt-10 md:px-10 py-6">
@@ -33,6 +38,7 @@ const Event = () => {
           <input
             type="text"
             placeholder="Event Name"
+
             className="input input-bordered font-semibold w-full max-w-md"
           />
         </div>
@@ -42,7 +48,7 @@ const Event = () => {
               Location <BiInfoCircle></BiInfoCircle>
             </span>
           </label>
-          <select className="select select-bordered">
+          <select className="select select-bordered" >
             <option disabled selected className="text-gray-200">
               Add Location
             </option>
@@ -55,7 +61,7 @@ const Event = () => {
         </div>
         <div className="form-control w-full max-w-md h-[300px]">
           <label className="label">
-            <span className="label-text font-bold flex gap-3 items-center">
+            <span className="label-text font-bold flex gap-3 items-center" >
               Description * <BiInfoCircle></BiInfoCircle>
             </span>
           </label>
@@ -63,7 +69,9 @@ const Event = () => {
             theme="snow"
             value={value}
             onChange={setValue}
+
             className="h-[300px] "
+
           />
           ;
         </div>
@@ -77,6 +85,7 @@ const Event = () => {
           <input
             type="text"
             className="input input-bordered font-semibold w-full max-w-md"
+
           />
         </div>
         <div className="form-control w-full max-w-2xl mt-10">
@@ -85,7 +94,7 @@ const Event = () => {
               Event Color * <BiInfoCircle></BiInfoCircle>
             </span>
           </label>
-          <div className="flex gap-1">
+          <div className="flex gap-1" >
             <div className="w-7 h-7 bg-red-500 rounded-full"></div>
             <div className="w-7 h-7 bg-green-500 rounded-full"></div>
             <div className="w-7 h-7 bg-brown-500 rounded-full"></div>

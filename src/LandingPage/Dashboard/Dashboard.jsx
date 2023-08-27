@@ -26,9 +26,8 @@ const Dashboard = () => {
     <div className="max-w-6xl mx-auto">
       <div className="flex">
         <div
-          className={`${
-            open ? "w-60" : "w-20 "
-          } bg-teal-500 h-screen p-5 pt-8 relative transition-all duration-300`}>
+          className={`${open ? "w-60" : "w-20 "
+            } bg-teal-500 h-screen p-5 pt-8 relative transition-all duration-300`}>
           <img
             src="./src/assets/control.png"
             className={`absolute cursor-pointer -right-3 top-9 w-7 border-dark-purple
@@ -39,15 +38,13 @@ const Dashboard = () => {
           <div className="flex gap-x-4 items-center">
             <img
               src="./src/assets/logo.png"
-              className={`cursor-pointer transform transition-transform ${
-                open && "rotate-360"
-              }`}
+              className={`cursor-pointer transform transition-transform ${open && "rotate-360"
+                }`}
               alt="Logo"
             />
             <h1
-              className={`text-white font-medium text-xl transform transition-transform ${
-                !open && "scale-0"
-              }`}>
+              className={`text-white font-medium text-xl transform transition-transform ${!open && "scale-0"
+                }`}>
               Plan Picker
             </h1>
           </div>
@@ -67,9 +64,8 @@ const Dashboard = () => {
                           alt={Admin.title}
                         />
                         <span
-                          className={`${
-                            !open && "hidden"
-                          } transform transition-transform`}>
+                          className={`${!open && "hidden"
+                            } transform transition-transform`}>
                           {Admin.title}
                         </span>
                       </div>
@@ -93,9 +89,8 @@ const Dashboard = () => {
                           alt={User?.title}
                         />
                         <span
-                          className={`${
-                            !open && "hidden"
-                          } transform transition-transform`}>
+                          className={`${!open && "hidden"
+                            } transform transition-transform`}>
                           {User?.title}
                         </span>
                       </div>
