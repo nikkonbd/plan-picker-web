@@ -11,7 +11,7 @@ const EventSearch = ({ events }) => {
 
   return (
     <div className="py-8">
-      <h1 className="text-3xl font-semibold mb-6">Upcoming Events</h1>
+      {/* <h1 className="text-3xl font-semibold mb-6">Upcoming Events</h1> */}
       <div className="mb-4 max-w-md">
         <input
           type="text"
@@ -21,7 +21,7 @@ const EventSearch = ({ events }) => {
           onChange={(e) => setSearchTerm(e.target.value)}
         />
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {filteredEvents.map((event, index) => (
           <Event key={index} {...event} />
         ))}
