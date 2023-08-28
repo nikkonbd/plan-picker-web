@@ -4,12 +4,12 @@ import img1 from "../../assets/pp.jpg";
 
 const Banner = () => {
   return (
-    <div className="md:w-11/12 mx-auto">
+    <div className="md:w-8/12 px-4 md:px-0 mx-auto">
       <div className="text-center pt-20">
-        <h2 className="text-4xl md:text-6xl font-bold">
+        <h2 className="text-4xl md:text-6xl font-bold transition duration-300 ease-in-out hover:scale-90">
           Welcome to Easy Scheduling <br /> Ahead For Your Needs.
         </h2>
-        <p className="text-md md:text-xl pt-4 pb-10">
+        <p className="text-md md:text-xl pt-4 pb-10 transition duration-300 ease-in-out hover:scale-110">
           Plan Picker is your scheduling platform for eliminating the
           back-and-forth emails <br /> to find the perfect time — and so much
           more.
@@ -22,13 +22,13 @@ const Banner = () => {
         </button>
       </div>
       <div className="md:flex md:max-w-6xl lg:max-w-fit mx-auto gap-4 mt-14">
-        <div className="md:columns-md lg:columns-xl bg-[#e8e6fe] rounded-md">
+        <div className="md:columns-md lg:columns-xl bg-[#e8e6fe] rounded-md transition duration-300 ease-in-out hover:scale-90">
           <h2 className="text-3xl text-center py-6 font-semibold">
             Book & schedule <br /> with Plan picker
           </h2>
           <img className="w-[380px] mx-auto rounded-md" src={img} alt="" />
         </div>
-        <div className="md:columns-3xl lg:columns-4xl bg-[#ffefe7] rounded-md">
+        <div className="md:columns-3xl lg:columns-4xl bg-[#ffefe7] rounded-md transition duration-300 ease-in-out hover:scale-90">
           <div className="md:flex gap-10 items-center">
             <img
               className="w-[400px] h-[368px] pt-16 rounded-lg"
