@@ -6,9 +6,9 @@ import { Button } from "@material-tailwind/react";
 
 const Banner1 = () => {
   return (
-    <div className="px-4 md:px-0 md:max-w-6xl lg:max-w-7xl mx-auto">
+    <div className="px-4 mx-auto md:px-0 md:max-w-6xl lg:max-w-7xl">
       <div className="text-center">
-        <h2 className="text-3xl md:text-5xl font-semibold pt-24">
+        <h2 className="pt-24 text-3xl font-semibold md:text-5xl">
           We make scheduling for <br /> you easier than ever
         </h2>
         <p className="pt-4 text-base md:text-lg">
@@ -17,7 +17,7 @@ const Banner1 = () => {
           seamless buying experience for your customers.
         </p>
       </div>
-      <div className="md:flex flex flex-col-reverse lg:flex lg:flex-row md:flex-row gap-4 justify-between items-center mt-12">
+      <div className="flex flex-col-reverse items-center justify-between gap-4 mt-12 md:flex lg:flex lg:flex-row md:flex-row">
         <div data-aos="fade-up-right">
           <div className="text-center md:text-start">
             <h2 className="text-4xl font-medium">
@@ -31,7 +31,7 @@ const Banner1 = () => {
               can adjust their <br /> schedules if need be.
             </p>
           </div>
-          <a href="#" className="inline-block pb-10 pt-6 md:pt-0 md:pb-0">
+          <a href="#" className="inline-block pt-6 pb-10 md:pt-0 md:pb-0">
             <Button
               variant="text"
               className="flex items-center gap-2 bg-[#ffefe7]">
@@ -42,7 +42,7 @@ const Banner1 = () => {
                 viewBox="0 0 24 24"
                 stroke="currentColor"
                 strokeWidth={2}
-                className="h-4 w-4">
+                className="w-4 h-4">
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -52,16 +52,16 @@ const Banner1 = () => {
             </Button>
           </a>
         </div>
-        <div>
+        <div  data-aos="fade-up-left">
           <img className="rounded-xl" src={book} alt="" />
         </div>
       </div>
-      <div className="md:flex lg:flex  gap-4 justify-between items-center mt-12">
+      <div className="items-center justify-between gap-4 mt-12 md:flex lg:flex">
         <div>
           <img className="rounded-xl w-full md:w-[620px]" src={book1} alt="" />
         </div>
         <div>
-          <div className="text-center md:text-end pt-8 md:pt-0">
+          <div className="pt-8 text-center md:text-end md:pt-0">
             <h2 className="text-4xl font-medium">Schedule as Team</h2>
             <p className="py-4">
               There are a few different ways to ask for availability. <br />
@@ -72,7 +72,7 @@ const Banner1 = () => {
             </p>
           </div>
           <div className="flex justify-end">
-            <a href="#" className="flex items-end pb-10 pt-6 md:pt-0 md:pb-0">
+            <a href="#" className="flex items-end pt-6 pb-10 md:pt-0 md:pb-0">
               <Button
                 variant="text"
                 className="flex items-center gap-2 bg-[#ffefe7]">
@@ -83,7 +83,7 @@ const Banner1 = () => {
                   viewBox="0 0 24 24"
                   stroke="currentColor"
                   strokeWidth={2}
-                  className="h-4 w-4">
+                  className="w-4 h-4">
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -95,7 +95,7 @@ const Banner1 = () => {
           </div>
         </div>
       </div>
-      <div className="md:flex flex flex-col-reverse lg:flex lg:flex-row md:flex-row gap-4 justify-between items-center mt-12">
+      <div className="flex flex-col-reverse items-center justify-between gap-4 mt-12 md:flex lg:flex lg:flex-row md:flex-row">
         <div>
           <div className="text-center md:text-start">
             <h2 className="text-4xl font-medium">
@@ -109,7 +109,7 @@ const Banner1 = () => {
               can adjust their <br /> schedules if need be.
             </p>
           </div>
-          <a href="#" className="inline-block pb-10 pt-6 md:pt-0 md:pb-0">
+          <a href="#" className="inline-block pt-6 pb-10 md:pt-0 md:pb-0">
             <Button
               variant="text"
               className="flex items-center gap-2 bg-[#ffefe7]">
@@ -120,7 +120,7 @@ const Banner1 = () => {
                 viewBox="0 0 24 24"
                 stroke="currentColor"
                 strokeWidth={2}
-                className="h-4 w-4">
+                className="w-4 h-4">
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
