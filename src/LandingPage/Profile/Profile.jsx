@@ -75,51 +75,30 @@ const Profile = () => {
               </p>
             </div>
           </div>
-
-          <p className="font-bold text-sm ms-10">Name</p>
-          <input
-            className="mt-2 me-6 ps-3 ms-10 md:w-96 w-80 h-9 border-[1px] border-blue-gray-400 rounded-2xl"
-            type="text"
-            name=""
-            id=""
-            placeholder="Ali Hasan Mashrafi"
-          />
-          <p className="mt-6 ms-10 font-bold text-sm">Language</p>
-          <select
-            className="mt-2 ms-10 ps-3 md:w-96 w-80 me-6 border-[1px] border-blue-gray-400 rounded-2xl h-9"
-            name="language"
-            id="language">
-            <option value="">English</option>
-            <option value="">Bangla</option>
-            <option value="Arabic">Arabic</option>
-            <option value="Hindi">Hindi</option>
-          </select>
-          <div className="flex">
-            <div>
-              <p className="mt-6 ms-10 font-bold text-sm">Data Format</p>
-              <select
-                className="mt-2 ms-10 ps-3 sm:w-[8.7rem] w-[10.4rem]  border-[1px] border-blue-gray-400 rounded-2xl h-9"
-                name="language"
-                id="language">
-                <option value="">MM/DD/YYYY</option>
-                <option value="">DD/MM/YYYY</option>
-              </select>
-            </div>
-            <div>
-              <p className="mt-6 ms-10 font-bold text-sm">Time Format</p>
-              <select
-                className="mt-2 ms-10 ps-3 sm:w-[8.7rem] w-[10.4rem] border-[1px] border-blue-gray-400 rounded-2xl h-9"
-                name="language"
-                id="language">
-                <option value="">12h (am/pm)</option>
-                <option value="">24h</option>
-              </select>
-            </div>
-          </div>
+        </div>
+        <p className="text-sm font-bold md:ms-10">Name</p>
+        <input
+          className="mt-2 me-6 ps-3 md:ms-10 md:w-96 w-80 h-9 border-[1px] border-blue-gray-400 rounded-2xl"
+          type="text"
+          name=""
+          id=""
+          placeholder="Ali Hasan Mashrafi"
+        />
+        <p className="mt-6 text-sm font-bold md:ms-10">Language</p>
+        <select
+          className="mt-2 md:ms-10 ps-3 md:w-96 w-80 me-6 border-[1px] border-blue-gray-400 rounded-2xl h-9"
+          name="language"
+          id="language">
+          <option value="">English</option>
+          <option value="">Bangla</option>
+          <option value="Arabic">Arabic</option>
+          <option value="Hindi">Hindi</option>
+        </select>
+        <div className="md:flex">
           <div>
-            <p className="mt-6 ms-10 font-bold text-sm">Country</p>
+            <p className="mt-6 text-sm font-bold md:ms-10">Data Format</p>
             <select
-              className="mt-2 ms-10 ps-3 md:w-96 w-80 me-6 border-[1px] border-blue-gray-400 rounded-2xl h-9"
+              className="mt-2 md:ms-10 ps-3 w-full md:w-[10.4rem]  border-[1px] border-blue-gray-400 rounded-2xl h-9"
               name="language"
               id="language">
               <option value="">Bangladesh</option>
@@ -128,9 +107,9 @@ const Profile = () => {
             </select>
           </div>
           <div>
-            <p className="mt-6 ms-10 font-bold text-sm">Time Zone</p>
+            <p className="mt-6 text-sm font-bold md:ms-10">Time Format</p>
             <select
-              className="mt-2 ms-10 ps-3 md:w-96 w-80 me-6 border-[1px] border-blue-gray-400 rounded-2xl h-9"
+              className="mt-2 md:ms-10 ps-3 w-full md:w-[10.4rem] border-[1px] border-blue-gray-400 rounded-2xl h-9"
               name="language"
               id="language">
               <option value="">Asia/Dhaka</option>
