@@ -19,8 +19,8 @@ const ScheduleCard = ({ scheduleData }) => {
         <RxCross2 size={18}></RxCross2>
       </button>
       <p className="mb-4">
-        Schedule Date:{" "}
-        <span className="font-semibold text-lg text-teal-900">{date}</span>
+        Schedule Date:
+        <span className="ml-1 font-semibold text-lg text-teal-900">{date}</span>
       </p>
       <h3 className="text-xl font-bold text-teal-800">{title}</h3>
       <h4 className="mb-1">{description}</h4>
@@ -33,8 +33,8 @@ const ScheduleCard = ({ scheduleData }) => {
       <div className="flex justify-between">
         <p>Host: {total_host}</p>
         <p>
-          Perticipents:{" "}
-          <span className="text-teal-700 font-bold">
+          Perticipents:
+          <span className="text-teal-800 font-bold">
             {expected_perticipents}
           </span>
         </p>
