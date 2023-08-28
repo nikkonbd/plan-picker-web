@@ -115,7 +115,7 @@ const Navbar = () => {
 
   return (
     <div className="bg-gray-100">
-      <div className="justify-between max-w-screen-xl mx-auto navbar">
+      <div className="justify-between md:px-32 mx-auto navbar">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
