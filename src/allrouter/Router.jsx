@@ -14,6 +14,7 @@ import Availability from "../LandingPage/Availability/Availability";
 import Event from "../LandingPage/contact/Event";
 import Event2 from "../LandingPage/contact/Event2";
 import EventPage from "../component/EventPage";
+import MySchedule from "../LandingPage/Dashboard/mySchedule/MySchedule";
 
 const router = createBrowserRouter([
   {
@@ -65,6 +66,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/Schedule",
         element: <ScheduleEventDetails></ScheduleEventDetails>,
+      },
+      {
+        path: "/dashboard/mySchedule",
+        element: <MySchedule></MySchedule>,
       },
       {
         path: "/dashboard/event_type/one-on-one-form",
