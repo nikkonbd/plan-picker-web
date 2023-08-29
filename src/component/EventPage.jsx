@@ -15,6 +15,7 @@ import {
 } from "@material-tailwind/react";
 import WeeklyHoursForm from "./WeeklyHoursForm";
 import EventCalendar from "../eventCalendar/EventCalendar";
+import TimeSelect from "../LandingPage/contact/TimeSelect";
 
 function Icon({ id, open }) {
   return (
@@ -140,22 +141,30 @@ const EventPage = () => {
       </div>
       <div className="divider"></div>
       {/* Part Calendar */}
-      <div className="">
-      <div className="mt-6 w-full">
-        <div className="flex items-center gap-2">
-          <BsCalendar4Event fontSize={20}></BsCalendar4Event>
-          <p className="label-text text-xl font-semibold">Select Event Date</p>
+      <div className="md:flex gap-10">
+        <div className="mt-6 w-full border-2 p-4">
+          <div className="flex items-center gap-2 pb-4">
+            <BsCalendar4Event fontSize={20}></BsCalendar4Event>
+            <p className="label-text text-xl font-semibold">
+              Select Event Date
+            </p>
+          </div>
+          <EventCalendar events={events} />
         </div>
-        <EventCalendar events={events} />
-      </div>
-      <div className="w-full mt-4">
-        <div className="flex items-center gap-2">
-          <BsListStars fontSize={20}></BsListStars>
-          <p className="label-text text-xl font-semibold">Select Event Date</p>
+        <div className="w-full mt-6 border-2 p-4">
+          <div className="flex items-center gap-2">
+            <BsListStars fontSize={20}></BsListStars>
+            <p className="label-text text-xl font-semibold pb-4">
+              Select Your Availability
+            </p>
+          </div>
+          {/* <WeeklyHoursForm></WeeklyHoursForm> */}
+          <div>
+            <TimeSelect></TimeSelect>
+          </div>
         </div>
-        <WeeklyHoursForm></WeeklyHoursForm>
       </div>
-      </div>
+
       {/* 4th part */}
       {/* <div className="flex gap-10 flex-col-reverse md:gap-6 md:flex-row mt-10 ">
         <div className="w-full md:w-1/2">

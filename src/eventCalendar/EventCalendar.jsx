@@ -85,14 +85,14 @@ const EventCalendar = ({ events }) => {
   return (
     <div>
       <div>
-        <label>
+        {/* <label>
           <input
             type="checkbox"
             checked={resizable}
             onChange={toggleResizing}
           />
           Allow Event Resizing
-        </label>
+        </label> */}
       </div>
       <DnDCalendar
         localizer={localizer}
