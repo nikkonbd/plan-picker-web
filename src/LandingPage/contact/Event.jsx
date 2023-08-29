@@ -72,7 +72,6 @@ const Event = () => {
       </div>
       <div className="divider"></div>
       <form className="mt-6">
-        
         <div className="w-full max-w-md form-control">
           <label className="label">
             <span className="flex items-center gap-3 font-bold label-text">
