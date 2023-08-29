@@ -156,6 +156,8 @@ const EventPage = () => {
         <WeeklyHoursForm></WeeklyHoursForm>
       </div>
       </div>
+      <div>
+      </div>
       {/* 4th part */}
       {/* <div className="flex gap-10 flex-col-reverse md:gap-6 md:flex-row mt-10 ">
         <div className="w-full md:w-1/2">
