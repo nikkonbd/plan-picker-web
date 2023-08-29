@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import book from "../../assets/Images/book1.jpg";
 import book1 from "../../assets/Images/ww.png";
 import book2 from "../../assets/Images/book2.png";
 import { Button } from "@material-tailwind/react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Banner1 = () => {
+  useEffect(() => {
+    AOS.init();
+  },[])
   return (
-    <div className="px-4 mx-auto md:px-0 md:max-w-6xl lg:max-w-7xl">
-      <div className="text-center">
-        <h2 className="pt-24 text-3xl font-semibold md:text-5xl">
+    <div className="px-4 md:px-0 md:w-8/12 mx-auto">
+      <div data-aos="fade-up" className="text-center">
+        <h2 className="text-3xl md:text-5xl font-semibold pt-24">
           We make scheduling for <br /> you easier than ever
         </h2>
         <p className="pt-4 text-base md:text-lg">
@@ -52,16 +57,16 @@ const Banner1 = () => {
             </Button>
           </a>
         </div>
-        <div  data-aos="fade-up-left">
-          <img className="rounded-xl" src={book} alt="" />
+        <div data-aos="fade-up-left">
+          <img className="rounded-xl w-full h-full md:h-[400px] md:w-[600px]" src={book} alt="" />
         </div>
       </div>
-      <div className="items-center justify-between gap-4 mt-12 md:flex lg:flex">
-        <div>
-          <img className="rounded-xl w-full md:w-[620px]" src={book1} alt="" />
+      <div className="md:flex lg:flex  gap-4 justify-between items-center mt-12">
+        <div data-aos="fade-up-right">
+          <img className="rounded-xl w-full h-full md:h-[400px] md:w-[600px]" src={book1} alt="" />
         </div>
-        <div>
-          <div className="pt-8 text-center md:text-end md:pt-0">
+        <div data-aos="fade-up-left">
+          <div className="text-center md:text-end pt-8 md:pt-0">
             <h2 className="text-4xl font-medium">Schedule as Team</h2>
             <p className="py-4">
               There are a few different ways to ask for availability. <br />
@@ -95,8 +100,8 @@ const Banner1 = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col-reverse items-center justify-between gap-4 mt-12 md:flex lg:flex lg:flex-row md:flex-row">
-        <div>
+      <div className="md:flex flex flex-col-reverse lg:flex lg:flex-row md:flex-row gap-4 justify-between items-center mt-12">
+        <div data-aos="fade-up-right">
           <div className="text-center md:text-start">
             <h2 className="text-4xl font-medium">
               Keep prospects engaged in <br /> between meetings
@@ -130,8 +135,8 @@ const Banner1 = () => {
             </Button>
           </a>
         </div>
-        <div>
-          <img className="rounded-xl w-full md:w-[620px]" src={book2} alt="" />
+        <div data-aos="fade-up-left">
+          <img className="rounded-xl w-full h-full md:h-[400px] md:w-[600px]" src={book2} alt="" />
         </div>
       </div>
     </div>

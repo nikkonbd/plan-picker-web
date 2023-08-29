@@ -6,6 +6,11 @@ import {
 } from "@material-tailwind/react";
 import img from "../../assets/Images/FaQ.jpg";
 
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init();
+
 const CUSTOM_ANIMATION = {
   mount: { scale: 1 },
   unmount: { scale: 0.9 },
@@ -17,7 +22,7 @@ const SecondHero = () => {
   return (
     <>
       <div>
-        <div className="text-center">
+        <div data-aos="fade-down" className="text-center">
           <h2 className="text-3xl md:text-5xl font-semibold pt-24">
             Frequently asked questions <br /> (FAQ)
           </h2>
@@ -28,7 +33,7 @@ const SecondHero = () => {
             <br /> new users related to common knowledge gaps.
           </p>
         </div>
-        <div className="flex justify-between flex-col-reverse md:max-w-6xl lg:max-w-7xl my-10 mx-auto md:flex-row gap-2 md:gap-10 px-4 md:px-0 items-center bg-[#ffefe7] rounded-xl">
+        <div data-aos="zoom-in" className="flex justify-between flex-col-reverse md:w-8/12 my-10 mx-auto md:flex-row gap-2 md:gap-10 md:px-0 items-center bg-[#ffefe7] rounded-xl">
           <div className="w-full p-10 ">
             <Accordion open={open === 1} animate={CUSTOM_ANIMATION}>
               <AccordionHeader

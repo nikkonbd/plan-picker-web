@@ -1,10 +1,14 @@
 import React from "react";
 import book3 from "../../assets/Images/book3.png";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 
 const Hero = () => {
+  AOS.init();
   return (
-    <div className="md:w-10/12 mx-auto">
-      <div className="text-center">
+    <div className="md:w-8/12 mx-auto">
+      <div data-aos="fade-down" className="text-center">
         <h2 className="text-3xl md:text-5xl font-semibold pt-24">
           Scheduling automation happens before <br /> and after meetings
         </h2>
@@ -16,7 +20,7 @@ const Hero = () => {
       </div>
       <div className="md:flex gap-6 justify-between items-center mt-10">
         <div>
-          <div className="hover:bg-[#f8f7ff] p-4 rounded-xl">
+          <div data-aos="fade-right" className="hover:bg-[#f8f7ff] p-4 rounded-xl">
             <h2 className="text-3xl font-semibold">
               Let people schedule meetings on your website
             </h2>
@@ -25,7 +29,7 @@ const Hero = () => {
               into a competitive advantage
             </p>
           </div>
-          <div className="hover:bg-[#f8f7ff] p-4 rounded-xl">
+          <div data-aos="fade-down" className="hover:bg-[#f8f7ff] p-4 rounded-xl">
             <h2 className="text-3xl font-semibold">
               Let people schedule meetings on your website
             </h2>
@@ -34,7 +38,7 @@ const Hero = () => {
               into a competitive advantage
             </p>
           </div>
-          <div className="hover:bg-[#f8f7ff] p-4 rounded-xl">
+          <div data-aos="fade-left" className="hover:bg-[#f8f7ff] p-4 rounded-xl">
             <h2 className="text-3xl font-semibold">
               Let people schedule meetings on your website
             </h2>
@@ -44,7 +48,7 @@ const Hero = () => {
             </p>
           </div>
         </div>
-        <div>
+        <div data-aos="fade-left">
           <img className="rounded-xl" src={book3} alt="" />
         </div>
       </div>

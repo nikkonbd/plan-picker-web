@@ -14,7 +14,7 @@ const Event = () => {
   const [eventLink, setEventLink] = useState(""); 
   const [eventColor, setEventColor] = useState("");
   const [sanitizedValue, setSanitizedValue] = useState("");
-  
+
   const dispatch = useDispatch();
   const { isLoading, isSuccess, error } = useSelector(
     (state) => state.formSubmission

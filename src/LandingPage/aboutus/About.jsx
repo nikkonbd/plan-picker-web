@@ -39,9 +39,15 @@ const About = () => {
     <div className="mx-4 md:mx-16">
       {/* <EventType/> */}
 
-      <WeeklyHoursForm/>
+
+      {/* <WeeklyHoursForm/> */}
 
       <SetMeeting />
+
+      {/* <WeeklyHoursForm/> */}
+
+      {/* <SetMeeting /> */}
+
 
       {/* <MyCalendar /> */}
 
