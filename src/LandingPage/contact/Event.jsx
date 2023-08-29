@@ -72,42 +72,44 @@ const Event = () => {
       </div>
       <div className="divider"></div>
       <form className="mt-6">
-        <div className="w-full max-w-md form-control">
-          <label className="label">
-            <span className="flex items-center gap-3 font-bold label-text">
-              Event Name * <BiInfoCircle />
-            </span>
-          </label>
-          <input
-            type="text"
-            placeholder="Event Name"
-            className="w-full max-w-md font-semibold input input-bordered"
-            value={eventName}
-            onChange={(e) => setEventName(e.target.value)}
-          />
+        <div className="md:flex gap-6">
+          <div className="w-full max-w-md form-control">
+            <label className="label">
+              <span className="flex items-center gap-3 font-bold label-text">
+                Event Name * <BiInfoCircle />
+              </span>
+            </label>
+            <input
+              type="text"
+              placeholder="Event Name"
+              className="w-full max-w-md font-semibold input input-bordered"
+              value={eventName}
+              onChange={(e) => setEventName(e.target.value)}
+            />
+          </div>
+          <div className="w-full max-w-sm form-control">
+            <label className="label">
+              <span className="flex items-center gap-3 font-bold label-text">
+                Location <BiInfoCircle />
+              </span>
+            </label>
+            <select
+              className="select select-bordered"
+              value={location}
+              onChange={(e) => setLocation(e.target.value)}
+            >
+              <option disabled selected className="text-gray-200">
+                Add Location
+              </option>
+              <option>Dhaka</option>
+              <option>Jhenaidah</option>
+              <option>Magura</option>
+              <option>Barishal</option>
+              <option>Noakhali</option>
+            </select>
+          </div>
         </div>
-        <div className="w-full max-w-md form-control">
-          <label className="label">
-            <span className="flex items-center gap-3 font-bold label-text">
-              Location <BiInfoCircle />
-            </span>
-          </label>
-          <select
-            className="select select-bordered"
-            value={location}
-            onChange={(e) => setLocation(e.target.value)}
-          >
-            <option disabled selected className="text-gray-200">
-              Add Location
-            </option>
-            <option>Dhaka</option>
-            <option>Jhenaidah</option>
-            <option>Magura</option>
-            <option>Barishal</option>
-            <option>Noakhali</option>
-          </select>
-        </div>
-        <div className="form-control w-full max-w-md h-[300px]">
+        <div className="form-control w-full md:max-w-[855px] h-[300px]">
           <label className="label">
             <span className="flex items-center gap-3 font-bold label-text">
               Description * <BiInfoCircle></BiInfoCircle>
