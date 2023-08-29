@@ -18,12 +18,12 @@ const Availability = () => {
                     <Tab className='w-48'><Link>Connected Calenders</Link></Tab>
                     <Tab className='w-48'><Link>Holidays</Link></Tab>
                 </TabList>
-                <TabPanel className=''>
+                <TabPanel className='w-auto me-12'>
                     <h2 className='mt-8 text-2xl'>Default Hours</h2>
                     <p className='mt-3 mb-2 font-medium'>Set default hours used for new events or events you're co-hosting with your team</p>
                     <WeeklyHoursForm />
                 </TabPanel>
-                <TabPanel className=''>
+                <TabPanel className='me-12'>
                     <h2 className='mt-10 font-bold text-2xl mb-4'>Connected Calenders</h2>
                     <div className='border-2 rounded-lg p-5'>
                         <div className='flex justify-between'>
@@ -45,7 +45,7 @@ const Availability = () => {
                     </div>
                 </TabPanel>
                 <TabPanel>
-                    <h2 className='mt-10 mb-4 font-semibold text-2xl'>Holidays</h2>
+                    <h2 className='mt-10 mb-4 font-semibold text-2xl '>Holidays</h2>
                     <p className='mb-5 w-[32rem]'>Calendly automatically removes certain holidays from your availability <span className='font-bold'>on all your Event Types</span> based on your country. You can choose which holidays you observe here.
                     </p>
 
@@ -54,7 +54,7 @@ const Availability = () => {
 
                     </p>
 
-                    <div className='border-2 rounded-lg mt-7'>
+                    <div className='border-2 rounded-lg mt-7 w-auto me-16'>
                         <div className='border-b py-3 ps-3'>
                             <p className='font-normal text-sm text-blue-gray-400'>COUNTRY USED FOR HOLIDAYS</p>
                             <p><span className='font-normal text-black'>Other</span> <span className='text-blue-500'>Change</span></p>
