@@ -1,9 +1,9 @@
 import { useCallback, useMemo, useState } from "react";
-import { Calendar, momentLocalizer, DateLocalizer, Views } from "react-big-calendar";
+import { Calendar, momentLocalizer,  Views } from "react-big-calendar";
 import moment from "moment";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import withDragAndDrop from "react-big-calendar/lib/addons/dragAndDrop";
-import PropTypes from "prop-types"
+
 
 const localizer = momentLocalizer(moment);
 
@@ -123,6 +123,4 @@ const EventCalendar = ({ events }) => {
 
 export default EventCalendar;
 
-// EventCalendar.PropTypes = {
-//   localizer: PropTypes.instanceOf(DateLocalizer),
-// }
+
