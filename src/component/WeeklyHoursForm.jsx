@@ -64,8 +64,8 @@ const WeeklyHoursForm = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="w-full max-w-md mx-auto mt-4 p-4">
-            <div className="day-list">
+        <form onSubmit={handleSubmit} className="w-full mx-auto p-4">
+            <div className="day-list border-2 p-6">
                 {daysOfWeek.map(day => (
                     <div key={day} className="day mb-4">
                         <label className="block mb-2">
@@ -99,7 +99,7 @@ const WeeklyHoursForm = () => {
                                                 type="time"
                                                 value={time.startTime}
                                                 onChange={e => handleStartTimeChange(day, index, e.target.value)}
-                                                className="block w-full mt-1"
+                                                className="block border-2 p-2 w-full mt-1"
                                             />
                                         </label>
                                         <label className="block mb-2">
@@ -108,7 +108,7 @@ const WeeklyHoursForm = () => {
                                                 type="time"
                                                 value={time.endTime}
                                                 onChange={e => handleEndTimeChange(day, index, e.target.value)}
-                                                className="block w-full mt-1"
+                                                className="block w-full mt-1 border-2 p-2"
                                             />
                                         </label>
                                         <button

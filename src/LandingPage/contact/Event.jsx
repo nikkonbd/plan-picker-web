@@ -97,14 +97,11 @@ const Event = () => {
               value={location}
               onChange={(e) => setLocation(e.target.value)}
             >
-              <option disabled selected className="text-gray-200">
+              <option selected className="text-gray-200">
                 Add Location
               </option>
-              <option>Dhaka</option>
-              <option>Jhenaidah</option>
-              <option>Magura</option>
-              <option>Barishal</option>
-              <option>Noakhali</option>
+              <option>Video Call</option>
+              <option>Audio Call</option>
             </select>
           </div>
         </div>
