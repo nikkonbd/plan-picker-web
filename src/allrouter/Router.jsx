@@ -11,6 +11,7 @@ import Profile from "../LandingPage/Profile/Profile";
 import ScheduleEventDetails from "../compnents/ScheduleEventDetails";
 import MyCalendar from "../myCalendar/MyCalendar";
 import Availability from "../LandingPage/Availability/Availability";
+import MorePlan from "../LandingPage/homepage/morePlan/MorePlan";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+      },
+      {
+        path: '/more-plan',
+        element: <MorePlan></MorePlan>
       },
       {
         path: "/services",
@@ -69,10 +74,10 @@ const router = createBrowserRouter([
         path: "/dashboard/Availability",
         element: <Availability />,
       },
-      {
-        path: '/eventDetails',
-        element: <ScheduleEventDetails></ScheduleEventDetails>
-      }
+      // {
+      //   path: '/eventDetails',
+      //   element: <ScheduleEventDetails></ScheduleEventDetails>
+      // }
     ],
   },
 ]);
