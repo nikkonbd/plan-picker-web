@@ -23,22 +23,22 @@ const SecondHero = () => {
     <>
       <div>
         <div data-aos="fade-down" className="text-center">
-          <h2 className="text-3xl md:text-5xl font-semibold pt-24">
-            Frequently asked questions <br /> (FAQ)
+          <h2 className="text-3xl md:text-5xl font-semibold pt-24 text-[#61677A]">
+            Frequently asked questions <br /> <span className="text-[#42a6ad]">(FAQ)</span>
           </h2>
-          <p className="pt-4 text-base md:text-lg">
+          <p className="pt-4 text-base md:text-lg text-[#61677A]">
             A frequently asked questions list is often used in articles,
             websites, email lists, and online forums where <br /> common
             questions tend to recur, for example through posts or queries by{" "}
             <br /> new users related to common knowledge gaps.
           </p>
         </div>
-        <div data-aos="zoom-in" className="flex justify-between flex-col-reverse md:w-8/12 my-10 mx-auto md:flex-row gap-2 md:gap-10 md:px-0 items-center bg-[#ffefe7] rounded-xl">
+        <div data-aos="zoom-in" className="flex justify-between flex-col-reverse md:w-8/12 my-10 mx-auto md:flex-row gap-2 md:gap-10 md:px-0 items-center bg-[#5ebdc444] rounded-xl">
           <div className="w-full p-10 ">
             <Accordion open={open === 1} animate={CUSTOM_ANIMATION}>
               <AccordionHeader
                 onClick={() => handleOpen(1)}
-                className="text-2xl hover:text-red-300">
+                className="text-2xl hover:text-[#42a6ad] text-[#61677A]">
                 What are Plan Picker apps?
               </AccordionHeader>
               <AccordionBody className="text-2xl text-black shadow-lg">
@@ -50,7 +50,7 @@ const SecondHero = () => {
             <Accordion open={open === 2} animate={CUSTOM_ANIMATION}>
               <AccordionHeader
                 onClick={() => handleOpen(2)}
-                className="text-2xl hover:text-red-300">
+                className="text-2xl hover:text-[#42a6ad] text-[#61677A]">
                 What are Plan Picker integrations?
               </AccordionHeader>
               <AccordionBody className="text-2xl text-black shadow-lg">
@@ -67,7 +67,7 @@ const SecondHero = () => {
             <Accordion open={open === 3} animate={CUSTOM_ANIMATION}>
               <AccordionHeader
                 onClick={() => handleOpen(3)}
-                className="text-2xl hover:text-red-300">
+                className="text-2xl hover:text-[#42a6ad] text-[#61677A]">
                 How do I install and use integrations?
               </AccordionHeader>
               <AccordionBody className="text-2xl text-black shadow-lg ">
@@ -82,7 +82,7 @@ const SecondHero = () => {
             <Accordion open={open === 4} animate={CUSTOM_ANIMATION}>
               <AccordionHeader
                 onClick={() => handleOpen(4)}
-                className="text-2xl hover:text-red-300">
+                className="text-2xl hover:text-[#42a6ad] text-[#61677A]">
                 Want to build a Plan Picker integration? Learn about our API.
               </AccordionHeader>
               <AccordionBody className="text-2xl text-black shadow-lg">
