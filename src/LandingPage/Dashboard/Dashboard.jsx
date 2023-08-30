@@ -5,30 +5,29 @@ import Sidebar from "./Sidebar";
 import Header from "./Header";
 
 function Dashboard() {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+    const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  return (
-    <div className="flex h-screen overflow-hidden">
-      {/* Sidebar */}
-      <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
+    return (
+        <div className="flex h-screen overflow-hidden">
+            {/* Sidebar */}
+            <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
 
-      {/* Content area */}
-      <div className="relative flex flex-col flex-1 overflow-x-hidden overflow-y-auto">
-        {/*  Site header */}
-        <Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
+            {/* Content area */}
+            <div className="relative flex flex-col flex-1 overflow-x-hidden overflow-y-auto">
+                {/*  Site header */}
+                <Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
 
-        <main>
-          <div className="w-full px-4 py-8 mx-auto sm:px-6 lg:px-8 max-w-9xl">
-            <Outlet />
-          </div>
-        </main>
+                <main>
+                    <div className="w-full px-4 py-8 mx-auto sm:px-6 lg:px-8 max-w-9xl">
+                        <Outlet />
+                    </div>
+                </main>
 
-        {/* <Banner /> */}
-      </div>
-    </div>
-  );
+                {/* <Banner /> */}
+            </div>
+        </div>
+    );
 }
 
 export default Dashboard;
-
 
