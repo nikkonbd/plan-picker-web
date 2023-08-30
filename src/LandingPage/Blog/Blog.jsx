@@ -8,7 +8,7 @@ const Blog = () => {
   const [topArticels, setTopArticels] = useState([]);
 
   useEffect(() => {
-    fetch("topArticels.json")
+    fetch("http://localhost:5000/blogs")
       .then((res) => res.json())
       .then((data) => setTopArticels(data));
   }, []);
