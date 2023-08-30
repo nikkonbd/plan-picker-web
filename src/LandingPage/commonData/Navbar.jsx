@@ -139,8 +139,8 @@ const Navbar = () => {
               {navMenu}
             </ul>
           </div>
-          <GiClockwork className="pr-2 text-5xl text-blue-500"></GiClockwork>
-          <a className="text-base font-bold normal-case md:text-xl hover:text-gray-900">
+          <GiClockwork className="pr-2 text-5xl text-[#5EBEC4]"></GiClockwork>
+          <a className="text-base font-bold normal-case text-[#42a6ad] md:text-xl hover:text-[#5EBEC4]">
             <Link to={"/"}>Plan Picker</Link>
           </a>
         </div>

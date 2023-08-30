@@ -54,7 +54,7 @@ const Login = () => {
 
     return (
         <div>
-            <Button className='bg-teal-500' onClick={handleOpen}>Sign In</Button>
+            <Button className='bg-[#5EBEC4]' onClick={handleOpen}>Sign In</Button>
                 <Dialog
                     size="md"
                     open={open}
@@ -62,7 +62,7 @@ const Login = () => {
                     className="bg-transparent shadow-none"
                 >
                     <Card className="mx-auto w-full md:max-w-2xl">
-                        <CardHeader className='text-center py-3 bg-teal-500'
+                        <CardHeader className='text-center py-3 bg-[#5EBEC4]'
                         >
                             <Typography variant="h3" color="white">
                             Plan Picker Sign In
@@ -79,7 +79,7 @@ const Login = () => {
                                 </div>
                             </CardBody>
                             <div className='px-6'>
-                                <Button className='' variant="gradient" fullWidth>
+                                <Button className='bg-[#5EBEC4]' variant="gradient" fullWidth>
                                 <input className="text-xl cursor-pointer" type="submit" value="Sign In" />
                                 </Button>
                             </div>

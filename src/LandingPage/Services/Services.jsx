@@ -12,10 +12,11 @@ import ServiceCard2 from './serviceCard/ServiceCard2';
 import ServiceCard3 from './serviceCard/ServiceCard3';
 import ServiceCard4 from './serviceCard/ServiceCard4';
 import ServiceCardAccordion from './serviceCard/ServiceCardAccordion';
+import ServiceCard5 from './serviceCard/ServiceCard5';
 
 const Services = () => {
   return (
-    <div className="mx-4 md:mx-24 py-16 sm:px-10">
+    <div className="px-4 md:px-0 md:w-8/12 mx-auto py-16 sm:px-10">
       <Card className="w-full flex-row">
         {/* <CardHeader
           shadow={false}
@@ -32,15 +33,15 @@ const Services = () => {
           <Typography variant="h6" color="gray" className="mb-4 uppercase">
             startups
           </Typography>
-          <Typography variant="h4" color="blue-gray" className="mb-2 text-4xl">
+          <Typography variant="h4" color="blue-gray" className="mb-2 text-4xl text-[#5EBEC4]">
           Pick the perfect plan for your team
           </Typography>
-          <Typography color="gray" className="mb-3 font-normal">
+          <Typography color="gray" className="mb-3 font-normal text-[#61677A]">
           Create organization-wide value with enterprise admin, security, and IT-oriented features to grow pipeline, close more deals, and hire faster. It was until recently a traditional boxed software company
             selling licenses. Yet its own business model disruption is only part
             of the story
           </Typography>
-          <div className='mb-8'>
+          <div className='mb-8 text-[#61677A]'>
             <div className='flex items-center gap-2'>
             <GiCheckMark></GiCheckMark>
             <p>Enable Single Sign-On and advanced user provisioning</p>
@@ -63,7 +64,7 @@ const Services = () => {
             </div>
           </div>
           <a href="#" className="inline-block">
-            <Button variant="text" className="flex items-center gap-2">
+            <Button variant="text" className="flex items-center gap-2 bg-[#5EBEC4] hover:bg-[#42a6ad] text-white">
               Learn More
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -83,11 +84,12 @@ const Services = () => {
           </a>
         </CardBody>
       </Card>
-      <div className='mt-16 md:flex gap-3'>
-        <ServiceCard></ServiceCard>
+      <div className='mt-16 md:flex justify-between gap-3'>
+        {/* <ServiceCard></ServiceCard>
         <ServiceCard2></ServiceCard2>
-        <ServiceCard3></ServiceCard3>
-        <ServiceCard4></ServiceCard4>
+        <ServiceCard3></ServiceCard3> */}
+        {/* <ServiceCard4></ServiceCard4> */}
+        <ServiceCard5></ServiceCard5>
       </div>
       <div>
         <ServiceCardAccordion></ServiceCardAccordion>
