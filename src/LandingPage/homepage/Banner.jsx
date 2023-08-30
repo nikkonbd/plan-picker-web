@@ -1,8 +1,10 @@
+import { useSelector } from "react-redux";
 import image from "../../assets/Info_project_schedule_ss.jpg";
 import img from "../../assets/dd.jpg";
 import img1 from "../../assets/pp.jpg";
 
 const Banner = () => {
+  const users = useSelector(state => console.log(state.auth.user))
   return (
     <div className="md:w-8/12 px-4 md:px-0 mx-auto">
       <div className="text-center pt-20">
