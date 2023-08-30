@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 
 const BlogCard = ({article}) => {
     return (
-        <Card className="mt-6 w-96 hover:shadow-xl">
+        <Card className="mt-6 w-full hover:shadow-xl">
             <CardBody>
                 <svg
                     xmlns="http://www.w3.org/2000/svg"

@@ -17,8 +17,8 @@ const BlogDetails = () => {
   }, []);
 
   return (
-    <div className="">
-      <div className="lg:flex items-center justify-evenly">
+    <div className="md:w-8/12 mx-auto">
+      <div className="lg:flex items-center justify-between">
         <div className="space-y-5">
           <h1>
             <Link className="text-blue-500 font-semibold" to="/">
@@ -47,7 +47,7 @@ const BlogDetails = () => {
           <img className="max-w-[500px]" src={article.imageURL} alt="" />
         </div>
       </div>
-      <div className="md:max-w-7xl mx-auto mb-14">
+      <div className="mb-14">
         <p><strong>Category:</strong> {article.category}</p>
         <p className="py-4">
           <strong>Tags:</strong>{" "}
