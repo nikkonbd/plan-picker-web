@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 
-const imgHostingToken = import.meta.env.VITE_Img_Upload_Token;
 const Profile = () => {
-  const imgHostingUrl = `https://api.imgbb.com/1/upload?key=${imgHostingToken}`;
-
+  const [formData, setFormData] = useState([]);
   const [imgURL, setImgURL] = useState("");
-
+  const imgHostingToken = import.meta.env.VITE_Img_Upload_Token;
+  const imgHostingUrl = `https://api.imgbb.com/1/upload?key=${imgHostingToken}`;
 
   const profileUpdateHandler = async (event) => {
     event.preventDefault();
@@ -36,9 +35,22 @@ const Profile = () => {
     } else {
       console.error('No image selected');
     }
+
+    const newFormData = {
+      imgURL,
+      name: event.target.name.value,
+      email: event.target.email.value,
+      language: event.target.language.value,
+      number: event.target.number.value,
+      dataFormat: event.target.dataFormat.value,
+      timeFormat: event.target.timeFormat.value,
+      address: event.target.address.value,
+    };
+
+    // Update the formData state with the new object
+    setFormData(newFormData);
+    console.log(formData)
   };
-
-
 
   return (
     <div className="mx-4">
@@ -46,29 +58,36 @@ const Profile = () => {
         <p className="ms-10 mt-4 text-2xl mb-2">Welcome Ali H.</p>
         <div className="">
           <div className="flex items-center ms-2">
-            {imgURL ?
+            {imgURL ? (
               <img
                 className="w-32 rounded-full ms-8 me-5 sm:w-24 my-4"
                 src={imgURL}
                 alt=""
               />
-              :
+            ) : (
               <img
                 className="w-32 rounded-full ms-8 me-5 sm:w-24 my-4"
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT38RfA9Hzky4OMp9XXMSUqzC0LkQX8IGxx0A&usqp=CAU"
                 alt=""
               />
-            }
+            )}
 
             <div>
               <div>
-                <div class="relative overflow-hidden border-[1px] rounded-md border-blue-gray-600 w-fit pe-1 mb-2">
-                  <input type="file" name="image" id="fileInput" className="absolute inset-0 w-full h-full opacity-0 cursor-pointer" />
-                  <label htmlFor="fileInput" className=" p-1 ps-2 mb-2">
+                <div className="relative overflow-hidden border-[1px] rounded-md border-blue-gray-600 w-fit pe-1 mb-2">
+                  <input
+                    type="file"
+                    name="image"
+                    id="fileInput"
+                    className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                  />
+                  <label
+                    htmlFor="fileInput"
+                    className="p-1 ps-2 mb-2"
+                  >
                     Upload File
                   </label>
                 </div>
-
               </div>
               <p className="text-blue-gray-400 me-6">
                 JPG, GIF OR PNG. MAX size of 5mb
@@ -82,7 +101,7 @@ const Profile = () => {
             <input
               className="mt-2 me-6 ps-3 md:ms-10 md:w-96 w-full h-9 border-[1px] border-blue-gray-400 rounded-md"
               type="text"
-              name=""
+              name="name"
               id=""
               placeholder="Ali Hasan Mashrafi"
             />
@@ -92,7 +111,7 @@ const Profile = () => {
             <input
               className="mt-2 me-6 ps-3 md:ms-10 md:w-96 w-full h-9 border-[1px] border-blue-gray-400 rounded-md"
               type="text"
-              name=""
+              name="email"
               id=""
               placeholder="mdmasrafi902@gmail.com"
             />
@@ -104,32 +123,34 @@ const Profile = () => {
             <select
               className="mt-2 md:ms-10 ps-3 md:w-96 w-full me-6 border-[1px] border-blue-gray-400 rounded-md h-9"
               name="language"
-              id="language">
-              <option value="">English</option>
-              <option value="">Bangla</option>
+              id="language"
+            >
+              <option value="English">English</option>
+              <option value="Bangla">Bangla</option>
               <option value="Arabic">Arabic</option>
               <option value="Hindi">Hindi</option>
             </select>
+
           </div>
           <div>
             <p className="text-sm font-bold md:ms-10 mt-5">Number</p>
             <input
               className="mt-2 me-6 ps-3 md:ms-10 md:w-96 w-full h-9 border-[1px] border-blue-gray-400 rounded-md"
-              type="text"
-              name=""
+              type="number"
+              name="number"
               id=""
               placeholder="Your Contact Number"
             />
           </div>
         </div>
-        <div className="md:flex items-center">
+        <div className="md:flex item">
           <div className="md:flex">
             <div>
               <p className="mt-6 text-sm font-bold md:ms-10">Data Format</p>
               <select
                 className="mt-2 md:ms-10 ps-3 w-full md:w-[10.4rem]  border-[1px] border-blue-gray-400 rounded-md h-9"
-                name="language"
-                id="language">
+                name="dataFormat"
+                id="dataFormat">
                 <option value="">Bangladesh</option>
                 <option value="">India</option>
                 <option value="">Philippian</option>
@@ -139,8 +160,8 @@ const Profile = () => {
               <p className="mt-6 text-sm font-bold md:ms-10">Time Format</p>
               <select
                 className="mt-2 md:ms-10 ps-3 w-full md:w-[10.4rem] border-[1px] border-blue-gray-400 rounded-md h-9"
-                name="language"
-                id="language">
+                name="timeFormat"
+                id="timeFormat">
                 <option value="">Asia/Dhaka</option>
                 <option value="">India, Sri Lanka Time</option>
               </select>
@@ -151,14 +172,22 @@ const Profile = () => {
             <input
               className="mt-2 me-6 ps-3 md:ms-10 md:w-96 w-full h-9 border-[1px] border-blue-gray-400 rounded-md"
               type="text"
-              name=""
-              id=""
+              name="address"
+              id="address"
               placeholder="Your Address"
             />
           </div>
         </div>
-        <input className="my-4 ms-10 bg-blue-700 text-white py-2 px-3 rounded-xl cursor-pointer" type="submit" value="Save Change" />
-        <input className="ms-3 bg-red-500 text-white py-2 px-3 rounded-xl cursor-pointer" type="button" value="Cancel" />
+        <input
+          className="my-4 ms-10 bg-blue-700 text-white py-2 px-3 rounded-xl cursor-pointer"
+          type="submit"
+          value="Save Change"
+        />
+        <input
+          className="ms-3 bg-red-500 text-white py-2 px-3 rounded-xl cursor-pointer"
+          type="button"
+          value="Cancel"
+        />
       </form>
     </div>
   );
