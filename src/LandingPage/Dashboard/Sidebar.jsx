@@ -91,7 +91,10 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
             </svg>
           </button>
           {/* Logo */}
-          <NavLink end to="/" className="block">
+          <NavLink
+            end
+            to="/"
+            className="block md:flex justify-between gap-3 md:items-center">
             <svg width="40" height="40" viewBox="0 0 32 32">
               <defs>
                 <linearGradient
@@ -127,6 +130,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                 fill="url(#logo-b)"
               />
             </svg>
+            <h2 className="hidden md:block">Plan Picker</h2>
           </NavLink>
         </div>
 
@@ -134,7 +138,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
         <div className="space-y-8">
           {/* Pages group */}
           <div>
-            <h3 className="pl-3 text-xs font-semibold uppercase text-slate-500">
+            {/* <h3 className="pl-3 text-xs font-semibold uppercase text-slate-500">
               <span
                 className="hidden w-6 text-center lg:block lg:sidebar-expanded:hidden 2xl:hidden"
                 aria-hidden="true">
@@ -143,7 +147,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
               <span className="lg:hidden lg:sidebar-expanded:block 2xl:block">
                 Main
               </span>
-            </h3>
+            </h3> */}
             <ul className="mt-3">
               {/* Home */}
               <li
@@ -241,8 +245,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
               <li
                 className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${
                   pathname.includes("messages") && "bg-slate-900"
-                }`}
-              >
+                }`}>
                 <NavLink
                   end
                   to="/dashboard/analytics"
@@ -250,8 +253,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                     pathname.includes("messages")
                       ? "hover:text-slate-200"
                       : "hover:text-white"
-                  }`}
-                >
+                  }`}>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center grow">
                       <BsCheck2Square className="w-6 h-6 shrink-0" />
@@ -290,7 +292,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                 }`}>
                 <NavLink
                   end
-                  to="/calendar"
+                  to="/dashboard/calendar"
                   className={`block text-slate-200 truncate transition duration-150 ${
                     pathname.includes("calendar")
                       ? "hover:text-slate-200"

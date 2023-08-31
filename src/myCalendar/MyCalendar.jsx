@@ -36,8 +36,8 @@ const MyCalendar = () => {
       {/* grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 */}
 
       <div className="md:flex items-center justify-between">
-      <div><h1 className="text-3xl font-semibold pb-3 md:pb-0">Upcoming Events</h1></div>
-          <div><CreateEventButton /></div>
+        <div><h1 className="text-3xl font-semibold pb-3 md:pb-0">Upcoming Events</h1></div>
+        <div><CreateEventButton /></div>
       </div>
       <div className="flex">
         <EventSearch events={events} />

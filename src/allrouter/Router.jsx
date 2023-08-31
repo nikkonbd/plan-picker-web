@@ -92,7 +92,7 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/one-on-one-form/event_set_edit_form",
         element: <EventPage />,
-      },
+      }
     ],
   },
 ]);
