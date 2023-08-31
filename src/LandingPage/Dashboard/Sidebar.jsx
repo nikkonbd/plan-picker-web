@@ -61,18 +61,18 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
     <div>
       {/* Sidebar backdrop (mobile only) */}
       <div
-        className={`fixed inset-0 bg-slate-900 bg-opacity-30 z-40 lg:hidden lg:z-auto transition-opacity duration-200 ${sidebarOpen ? "opacity-100" : "opacity-0 pointer-events-none"
-          }`}
-        aria-hidden="true"
-      ></div>
+        className={`fixed inset-0 bg-slate-900 bg-opacity-30 z-40 lg:hidden lg:z-auto transition-opacity duration-200 ${
+          sidebarOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
+        aria-hidden="true"></div>
 
       {/* Sidebar */}
       <div
         id="sidebar"
         ref={sidebar}
-        className={`flex flex-col absolute z-40 left-0 top-0 lg:static lg:left-auto lg:top-auto lg:translate-x-0 h-screen overflow-y-scroll lg:overflow-y-auto no-scrollbar w-64 lg:w-20 lg:sidebar-expanded:!w-64 2xl:!w-64 shrink-0 bg-slate-800 p-4 transition-all duration-200 ease-in-out bg-teal-500 text-white ${sidebarOpen ? "translate-x-0" : "-translate-x-64"
-          }`}
-      >
+        className={`flex flex-col absolute z-40 left-0 top-0 lg:static lg:left-auto lg:top-auto lg:translate-x-0 h-screen overflow-y-scroll lg:overflow-y-auto no-scrollbar w-64 lg:w-20 lg:sidebar-expanded:!w-64 2xl:!w-64 shrink-0 bg-slate-800 p-4 transition-all duration-200 ease-in-out bg-[#5EBEC4] text-white ${
+          sidebarOpen ? "translate-x-0" : "-translate-x-64"
+        }`}>
         {/* Sidebar header */}
         <div className="flex justify-between pr-3 mb-10 sm:px-2">
           {/* Close button */}
@@ -81,19 +81,20 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
             className="lg:hidden text-slate-500 hover:text-slate-400"
             onClick={() => setSidebarOpen(!sidebarOpen)}
             aria-controls="sidebar"
-            aria-expanded={sidebarOpen}
-          >
+            aria-expanded={sidebarOpen}>
             <span className="sr-only">Close sidebar</span>
             <svg
               className="w-6 h-6 fill-current"
               viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
+              xmlns="http://www.w3.org/2000/svg">
               <path d="M10.7 18.7l1.4-1.4L7.8 13H20v-2H7.8l4.3-4.3-1.4-1.4L4 12z" />
             </svg>
           </button>
           {/* Logo */}
-          <NavLink end to="/" className="block">
+          <NavLink
+            end
+            to="/"
+            className="block md:flex justify-between gap-3 md:items-center">
             <svg width="40" height="40" viewBox="0 0 32 32">
               <defs>
                 <linearGradient
@@ -101,8 +102,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                   y1="20.229%"
                   x2="100%"
                   y2="108.156%"
-                  id="logo-a"
-                >
+                  id="logo-a">
                   <stop stopColor="#A5B4FC" stopOpacity="0" offset="0%" />
                   <stop stopColor="#A5B4FC" offset="100%" />
                 </linearGradient>
@@ -111,8 +111,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                   y1="29.267%"
                   x2="22.42%"
                   y2="100%"
-                  id="logo-b"
-                >
+                  id="logo-b">
                   <stop stopColor="#38BDF8" stopOpacity="0" offset="0%" />
                   <stop stopColor="#38BDF8" offset="100%" />
                 </linearGradient>
@@ -131,6 +130,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                 fill="url(#logo-b)"
               />
             </svg>
+            <h2 className="hidden md:block">Plan Picker</h2>
           </NavLink>
         </div>
 
@@ -138,30 +138,29 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
         <div className="space-y-8">
           {/* Pages group */}
           <div>
-            <h3 className="pl-3 text-xs font-semibold uppercase text-slate-500">
+            {/* <h3 className="pl-3 text-xs font-semibold uppercase text-slate-500">
               <span
                 className="hidden w-6 text-center lg:block lg:sidebar-expanded:hidden 2xl:hidden"
-                aria-hidden="true"
-              >
+                aria-hidden="true">
                 •••
               </span>
               <span className="lg:hidden lg:sidebar-expanded:block 2xl:block">
                 Main
               </span>
-            </h3>
+            </h3> */}
             <ul className="mt-3">
               {/* Home */}
               <li
-                className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${pathname.includes("inbox") && "bg-slate-900"
-                  }`}
-              >
+                className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${
+                  pathname.includes("inbox") && "bg-slate-900"
+                }`}>
                 <NavLink
                   to="/"
-                  className={`block text-slate-200 truncate transition duration-150 ${pathname.includes("inbox")
-                    ? "hover:text-slate-200"
-                    : "hover:text-white"
-                    }`}
-                >
+                  className={`block text-slate-200 truncate transition duration-150 ${
+                    pathname.includes("inbox")
+                      ? "hover:text-slate-200"
+                      : "hover:text-white"
+                  }`}>
                   <div className="flex items-center">
                     <HiOutlineHome className="w-6 h-6 shrink-0" />
                     <span className="ml-3 text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
@@ -173,16 +172,16 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
 
               {/* Profile */}
               <li
-                className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${pathname.includes("inbox") && "bg-slate-900"
-                  }`}
-              >
+                className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${
+                  pathname.includes("inbox") && "bg-slate-900"
+                }`}>
                 <NavLink
                   to="/dashboard/Profile"
-                  className={`block text-slate-200 truncate transition duration-150 ${pathname.includes("inbox")
-                    ? "hover:text-slate-200"
-                    : "hover:text-white"
-                    }`}
-                >
+                  className={`block text-slate-200 truncate transition duration-150 ${
+                    pathname.includes("inbox")
+                      ? "hover:text-slate-200"
+                      : "hover:text-white"
+                  }`}>
                   <div className="flex items-center">
                     <CgProfile className="w-6 h-6 shrink-0" />
                     <span className="ml-3 text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
@@ -200,11 +199,11 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                     <React.Fragment>
                       <NavLink
                         to="/dashboard/schedule"
-                        className={`block text-slate-200 truncate transition duration-150 ${pathname.includes("settings")
-                          ? "hover:text-slate-200"
-                          : "hover:text-white"
-                          }`}
-                      >
+                        className={`block text-slate-200 truncate transition duration-150 ${
+                          pathname.includes("settings")
+                            ? "hover:text-slate-200"
+                            : "hover:text-white"
+                        }`}>
                         <div className="flex items-center justify-between">
                           <div className="flex items-center">
                             <AiOutlineSchedule className="w-6 h-6 shrink-0" />
@@ -221,17 +220,17 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
 
               {/* My Schedule */}
               <li
-                className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${pathname.includes("messages") && "bg-slate-900"
-                  }`}
-              >
+                className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${
+                  pathname.includes("messages") && "bg-slate-900"
+                }`}>
                 <NavLink
                   end
                   to="/dashboard/mySchedule"
-                  className={`block text-slate-200 truncate transition duration-150 ${pathname.includes("messages")
-                    ? "hover:text-slate-200"
-                    : "hover:text-white"
-                    }`}
-                >
+                  className={`block text-slate-200 truncate transition duration-150 ${
+                    pathname.includes("messages")
+                      ? "hover:text-slate-200"
+                      : "hover:text-white"
+                  }`}>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center grow">
                       <BsCheck2Square className="w-6 h-6 shrink-0" />
@@ -244,17 +243,17 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
               </li>
               {/* My Schedule */}
               <li
-                className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${pathname.includes("messages") && "bg-slate-900"
-                  }`}
-              >
+                className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${
+                  pathname.includes("messages") && "bg-slate-900"
+                }`}>
                 <NavLink
                   end
                   to="/dashboard/analytics"
-                  className={`block text-slate-200 truncate transition duration-150 ${pathname.includes("messages")
-                    ? "hover:text-slate-200"
-                    : "hover:text-white"
-                    }`}
-                >
+                  className={`block text-slate-200 truncate transition duration-150 ${
+                    pathname.includes("messages")
+                      ? "hover:text-slate-200"
+                      : "hover:text-white"
+                  }`}>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center grow">
                       <BsCheck2Square className="w-6 h-6 shrink-0" />
@@ -267,17 +266,17 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
               </li>
               {/* Availablity */}
               <li
-                className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${pathname.includes("inbox") && "bg-slate-900"
-                  }`}
-              >
+                className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${
+                  pathname.includes("inbox") && "bg-slate-900"
+                }`}>
                 <NavLink
                   end
                   to="/dashboard/availability"
-                  className={`block text-slate-200 truncate transition duration-150 ${pathname.includes("inbox")
-                    ? "hover:text-slate-200"
-                    : "hover:text-white"
-                    }`}
-                >
+                  className={`block text-slate-200 truncate transition duration-150 ${
+                    pathname.includes("inbox")
+                      ? "hover:text-slate-200"
+                      : "hover:text-white"
+                  }`}>
                   <div className="flex items-center">
                     <MdOutlineEventAvailable className="w-6 h-6 shrink-0" />
                     <span className="ml-3 text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
@@ -288,17 +287,17 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
               </li>
               {/* Calendar */}
               <li
-                className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${pathname.includes("calendar") && "bg-slate-900"
-                  }`}
-              >
+                className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${
+                  pathname.includes("calendar") && "bg-slate-900"
+                }`}>
                 <NavLink
                   end
-                  to="/calendar"
-                  className={`block text-slate-200 truncate transition duration-150 ${pathname.includes("calendar")
-                    ? "hover:text-slate-200"
-                    : "hover:text-white"
-                    }`}
-                >
+                  to="/dashboard/calendar"
+                  className={`block text-slate-200 truncate transition duration-150 ${
+                    pathname.includes("calendar")
+                      ? "hover:text-slate-200"
+                      : "hover:text-white"
+                  }`}>
                   <div className="flex items-center">
                     <RxCalendar className="w-6 h-6 shrink-0" />
                     <span className="ml-3 text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
@@ -309,31 +308,33 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
               </li>
               {/* Campaigns */}
               <li
-                className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${pathname.includes("campaigns") && "bg-slate-900"
-                  }`}
-              >
+                className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${
+                  pathname.includes("campaigns") && "bg-slate-900"
+                }`}>
                 <NavLink
                   end
                   to="/campaigns"
-                  className={`block text-slate-200 truncate transition duration-150 ${pathname.includes("campaigns")
-                    ? "hover:text-slate-200"
-                    : "hover:text-white"
-                    }`}
-                >
+                  className={`block text-slate-200 truncate transition duration-150 ${
+                    pathname.includes("campaigns")
+                      ? "hover:text-slate-200"
+                      : "hover:text-white"
+                  }`}>
                   <div className="flex items-center">
                     <svg className="w-6 h-6 shrink-0" viewBox="0 0 24 24">
                       <path
-                        className={`fill-current ${pathname.includes("campaigns")
-                          ? "text-indigo-500"
-                          : "text-slate-600"
-                          }`}
+                        className={`fill-current ${
+                          pathname.includes("campaigns")
+                            ? "text-indigo-500"
+                            : "text-slate-600"
+                        }`}
                         d="M20 7a.75.75 0 01-.75-.75 1.5 1.5 0 00-1.5-1.5.75.75 0 110-1.5 1.5 1.5 0 001.5-1.5.75.75 0 111.5 0 1.5 1.5 0 001.5 1.5.75.75 0 110 1.5 1.5 1.5 0 00-1.5 1.5A.75.75 0 0120 7zM4 23a.75.75 0 01-.75-.75 1.5 1.5 0 00-1.5-1.5.75.75 0 110-1.5 1.5 1.5 0 001.5-1.5.75.75 0 111.5 0 1.5 1.5 0 001.5 1.5.75.75 0 110 1.5 1.5 1.5 0 00-1.5 1.5A.75.75 0 014 23z"
                       />
                       <path
-                        className={`fill-current ${pathname.includes("campaigns")
-                          ? "text-indigo-300"
-                          : "text-slate-400"
-                          }`}
+                        className={`fill-current ${
+                          pathname.includes("campaigns")
+                            ? "text-indigo-300"
+                            : "text-slate-400"
+                        }`}
                         d="M17 23a1 1 0 01-1-1 4 4 0 00-4-4 1 1 0 010-2 4 4 0 004-4 1 1 0 012 0 4 4 0 004 4 1 1 0 010 2 4 4 0 00-4 4 1 1 0 01-1 1zM7 13a1 1 0 01-1-1 4 4 0 00-4-4 1 1 0 110-2 4 4 0 004-4 1 1 0 112 0 4 4 0 004 4 1 1 0 010 2 4 4 0 00-4 4 1 1 0 01-1 1z"
                       />
                     </svg>
@@ -350,17 +351,17 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                     <React.Fragment>
                       <a
                         href="#0"
-                        className={`block text-slate-200 truncate transition duration-150 ${pathname.includes("settings")
-                          ? "hover:text-slate-200"
-                          : "hover:text-white"
-                          }`}
+                        className={`block text-slate-200 truncate transition duration-150 ${
+                          pathname.includes("settings")
+                            ? "hover:text-slate-200"
+                            : "hover:text-white"
+                        }`}
                         onClick={(e) => {
                           e.preventDefault();
                           sidebarExpanded
                             ? handleClick()
                             : setSidebarExpanded(true);
-                        }}
-                      >
+                        }}>
                         <div className="flex items-center justify-between">
                           <div className="flex items-center">
                             <AiOutlineSetting className="w-6 h-6 shrink-0" />
@@ -371,10 +372,10 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                           {/* Icon */}
                           <div className="flex ml-2 shrink-0">
                             <svg
-                              className={`w-3 h-3 shrink-0 ml-1 fill-current text-slate-400 ${open && "rotate-180"
-                                }`}
-                              viewBox="0 0 12 12"
-                            >
+                              className={`w-3 h-3 shrink-0 ml-1 fill-current text-slate-400 ${
+                                open && "rotate-180"
+                              }`}
+                              viewBox="0 0 12 12">
                               <path d="M5.9 11.4L.5 6l1.4-1.4 4 4 4-4L11.3 6z" />
                             </svg>
                           </div>
@@ -391,8 +392,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                                 (isActive
                                   ? "text-indigo-500"
                                   : "text-slate-400 hover:text-slate-200")
-                              }
-                            >
+                              }>
                               <span className="text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
                                 My Account
                               </span>
@@ -407,8 +407,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                                 (isActive
                                   ? "text-indigo-500"
                                   : "text-slate-400 hover:text-slate-200")
-                              }
-                            >
+                              }>
                               <span className="text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
                                 My Notifications
                               </span>
@@ -423,8 +422,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                                 (isActive
                                   ? "text-indigo-500"
                                   : "text-slate-400 hover:text-slate-200")
-                              }
-                            >
+                              }>
                               <span className="text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
                                 Connected Apps
                               </span>
@@ -439,8 +437,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                                 (isActive
                                   ? "text-indigo-500"
                                   : "text-slate-400 hover:text-slate-200")
-                              }
-                            >
+                              }>
                               <span className="text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
                                 Plans
                               </span>
@@ -455,8 +452,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                                 (isActive
                                   ? "text-indigo-500"
                                   : "text-slate-400 hover:text-slate-200")
-                              }
-                            >
+                              }>
                               <span className="text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
                                 Billing & Invoices
                               </span>
@@ -471,8 +467,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                                 (isActive
                                   ? "text-indigo-500"
                                   : "text-slate-400 hover:text-slate-200")
-                              }
-                            >
+                              }>
                               <span className="text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
                                 Give Feedback
                               </span>
@@ -495,8 +490,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
               <span className="sr-only">Expand / collapse sidebar</span>
               <svg
                 className="w-6 h-6 fill-current sidebar-expanded:rotate-180"
-                viewBox="0 0 24 24"
-              >
+                viewBox="0 0 24 24">
                 <path
                   className="text-slate-400"
                   d="M19.586 11l-5-5L16 4.586 23.414 12 16 19.414 14.586 18l5-5H7v-2z"

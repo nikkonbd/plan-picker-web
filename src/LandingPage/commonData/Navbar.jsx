@@ -81,41 +81,12 @@ const Navbar = () => {
           </>
         )}
       </>
-
-      {/* <div>
-        {user ? (
-          <div className="flex items-center">
-            {user.imgUrl ? (
-              <img
-                className="w-4 h-4 mr-2 rounded-full lg:w-12 lg:h-12"
-                src={user.imgUrl}
-                alt={user.displayName}
-                title={user.displayName}
-              />
-            ) : (
-              <FaUserCircle
-                className="w-4 h-4 mr-2 rounded-full lg:w-12 lg:h-12"
-                title={user.displayName}
-              />
-            )}
-            <button  className="btn btn-accent">
-              LogOut
-            </button>
-          </div>
-        ) : (
-          <div>
-            <div>
-              <Login></Login>
-            </div>
-          </div>
-        )}
-      </div> */}
     </>
   );
 
   return (
     <div className="bg-gray-100">
-      <div className="justify-between md:px-32 mx-auto navbar">
+      <div className="justify-between px-4 md:px-24 mx-auto navbar">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
