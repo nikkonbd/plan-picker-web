@@ -1,19 +1,17 @@
 import { useCallback, useMemo, useState } from "react";
-import { Calendar, momentLocalizer,  Views } from "react-big-calendar";
+import { Calendar, momentLocalizer, Views } from "react-big-calendar";
 import moment from "moment";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import withDragAndDrop from "react-big-calendar/lib/addons/dragAndDrop";
 
-
 const localizer = momentLocalizer(moment);
 
 const EventCalendar = ({ events }) => {
-   const adjEvents = events.map((it, ind) => ({
-     ...it,
-     isResizable: ind % 2 === 0,
-     isDraggable: ind % 2 === 0,
-   }));
-
+  const adjEvents = events.map((it, ind) => ({
+    ...it,
+    isResizable: ind % 2 === 0,
+    isDraggable: ind % 2 === 0,
+  }));
 
   const [selectedEvent, setSelectedEvent] = useState(null);
   // const [myEvents, setMyEvents] = useState(events)
@@ -24,7 +22,6 @@ const EventCalendar = ({ events }) => {
   const handleSelectEvent = (event) => {
     setSelectedEvent(event);
   };
-
 
   const moveEvent = useCallback(
     ({ event, start, end, isAllDay: droppedOnAllDaySlot = false }) => {
@@ -42,7 +39,6 @@ const EventCalendar = ({ events }) => {
     [setMyEvents]
   );
 
-
   const resizeEvent = useCallback(
     ({ event, start, end }) => {
       setMyEvents((prev) => {
@@ -54,24 +50,18 @@ const EventCalendar = ({ events }) => {
     [setMyEvents]
   );
 
-
-
   // Resize function
 
-   const eventPropGetter = useCallback(
-     (event) => ({
-       // add class if not allowing resizing at all, or if
-       // allowing resizing, but not on a specific event
-       ...((!resizable || !event.isResizable) && { className: "nonResizable" }),
-     }),
-     [resizable]
-   );
+  const eventPropGetter = useCallback(
+    (event) => ({
+      // add class if not allowing resizing at all, or if
+      // allowing resizing, but not on a specific event
+      ...((!resizable || !event.isResizable) && { className: "nonResizable" }),
+    }),
+    [resizable]
+  );
 
-   const toggleResizing = useCallback(() => setResizable((prev) => !prev), []);
-
-
-
-
+  const toggleResizing = useCallback(() => setResizable((prev) => !prev), []);
 
   const { defaultDate } = useMemo(
     () => ({
@@ -122,5 +112,3 @@ const EventCalendar = ({ events }) => {
 };
 
 export default EventCalendar;
-
-

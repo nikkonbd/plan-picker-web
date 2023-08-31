@@ -53,9 +53,9 @@ const Navbar = () => {
       <li className="hidden lg:block">
         <Link to="/blog">Blogs</Link>
       </li>
-      <li className="hidden lg:block">
+      {/* <li className="hidden lg:block">
         <Link to="/dashboard/schedule">Dashboard</Link>
-      </li>
+      </li> */}
       <>
         {user ? (
           <p className="flex justify-center gap-2 pl-2 items-">
@@ -85,7 +85,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="bg-gray-100">
+    <div className="bg-[#f6f9fc]">
       <div className="justify-between px-4 md:px-24 mx-auto navbar">
         <div className="navbar-start">
           <div className="dropdown">

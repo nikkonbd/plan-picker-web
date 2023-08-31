@@ -31,7 +31,7 @@ const About = () => {
 
               {/* front text */}
               <div className="flex justify-center items-center flex-col  w-10/12 mx-auto">
-                <h1 className="text-2xl  md:text-4xl border-2 p-4 border-[#5EBEC4] font-semibold text-[#61677A] mb-4 z-10 text-center">
+                <h1 className="text-2xl  md:text-4xl p-4 font-semibold text-[#61677A] mb-4 z-10 text-center">
                   What is a mission Plan Picker?
                 </h1>
                 <p className="text-center">
@@ -186,56 +186,11 @@ const About = () => {
             </div>
           </div>
 
-          {/* App Features */}
-          {/* <div className="py-[75px] md:py-[150px]  bg-[#FDB833] mb-8 rounded-xl">
-            <div className="p-4 mx-auto max-w-7xl">
-              <h1 className="mb-8 text-2xl font-semibold md:text-3xl">
-                App Features
-              </h1>
-
-              <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 ">
-                <div className="text-left">
-                  <h1 className="text-lg">Timezone Sync</h1>
-                  <p className="pt-2">
-                    Automatically adjust to client's timezones.
-                  </p>
-                </div>
-
-                <div>
-                  <h1 className="text-lg">Smart Availability</h1>
-                  <p className="pt-2">
-                    Managing your availability like a charm.
-                  </p>
-                </div>
-
-                <div>
-                  <h1 className="text-lg">Integrations Galore</h1>
-                  <p className="pt-2">
-                    Sync effortlessly with popular platforms.
-                  </p>
-                </div>
-
-                <div>
-                  <h1 className="text-lg">Customization Kingdom</h1>
-                  <p className="pt-2">Tailor every aspect to your brand.</p>
-                </div>
-
-                <div>
-                  <h1 className="text-lg">Team Scheduling</h1>
-                  <p className="pt-2">Harness the power of collaboration.</p>
-                </div>
-
-                <div>
-                  <h1 className="text-lg">Analytics Insights</h1>
-                  <p className="pt-2">Use data to supercharge your meetings.</p>
-                </div>
-              </div>
-            </div>
-          </div> */}
-
           {/* people say about us */}
           <div className="py-16 text-center">
-            <h2 className="text-2xl md:text-4xl font-bold">Our Team Members</h2>
+            <h2 className="text-2xl md:text-4xl font-bold text-[#5EBEC4]">
+              Our Team Members
+            </h2>
             <p>
               Introduce key team members, including founders, executives, and
               other <br className="hidden md:block" />
@@ -243,35 +198,6 @@ const About = () => {
             </p>
           </div>
           <div className="gap-12 grid grid-cols-1 md:pb-20 md:grid-cols-2 lg:grid-cols-3 w-10/12 mx-auto p-4 md:p-0">
-            {/* <div className="transition duration-300 ease-in-out bg-gray-300 shadow-md rounded-xl p-7 hover:bg-gray-200 hover:shadow-lg">
-              <div className="mb-6">
-                <img className="rounded-full w-14 h-14" src={avatar} alt="" />
-              </div>
-              <p className="mb-16">
-                My calendar has never been this organized. I won’t go back!
-              </p>
-              <small>Linda Mathers</small>
-            </div>
-
-            <div className="bg-gray-300 rounded-xl p-7">
-              <div className="mb-6">
-                <img className="rounded-full w-14 h-14" src={avatar} alt="" />
-              </div>
-              <p className="mb-16">
-                Truly game-changing. I’ve saved countless hours.
-              </p>
-              <small>Steve Wellington</small>
-            </div>
-
-            <div className="bg-gray-300 rounded-xl p-7">
-              <div className="mb-6">
-                <img className="rounded-full w-14 h-14" src={avatar} alt="" />
-              </div>
-              <p className="mb-16">
-                Our entire team loves using Calminator. Highly recommended!
-              </p>
-              <small>TechOne Innovations</small>
-            </div> */}
             <AboutCard></AboutCard>
             <AboutCard></AboutCard>
             <AboutCard></AboutCard>
@@ -279,63 +205,6 @@ const About = () => {
             <AboutCard></AboutCard>
             <AboutCard></AboutCard>
           </div>
-
-          {/* questions */}
-          {/* <div className="py-[75px] md:py-[150px] bg-[#333533] text-white rounded-xl">
-            <div className="p-4 mx-auto max-w-7xl">
-              <h1 className="mb-8 text-2xl font-semibold md:text-3xl">
-                Got Questions?
-              </h1>
-              <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:text-left">
-                <div>
-                  <h1 className="text-lg">Can I customize reminders?</h1>
-                  <p className="pt-2">
-                    Absolutely! Customize reminders to suit your preferences and
-                    never miss a beat.
-                  </p>
-                </div>
-
-                <div>
-                  <h1 className="text-lg">Are integrations available?</h1>
-                  <p className="pt-2">
-                    Definitely! Our apps integrate seamlessly with popular
-                    platforms like Google Calendar, Zoom, and more.
-                  </p>
-                </div>
-                <div>
-                  <h1 className="text-lg">How secure is my data?</h1>
-                  <p className="pt-2">
-                    We take security seriously. Your data is encrypted and
-                    securely stored at all times.
-                  </p>
-                </div>
-                <div>
-                  <h1 className="text-lg">What about team pricing?</h1>
-                  <p className="pt-2">
-                    We offer competitive team pricing plans. Head to our pricing
-                    page for details!
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div> */}
-
-          {/*  */}
-          {/* <div className="py-[75px] md:py-[150px]  bg-gray-100">
-            <div className="p-4 mx-auto max-w-7xl">
-              <h1 className="text-2xl font-semibold md:text-4xl">
-                Ready to revolutionize your scheduling? Join us now!
-              </h1>
-              <div className="flex flex-col gap-3 mt-8 gap-x-3 sm:flex-row">
-                <button className=" rounded-full font-semibold bg-[#FFEE32] px-4 py-2 hover:bg-yellow-400   shadow-md hover:shadow-lg">
-                  Sign Up
-                </button>
-                <button className="px-4 py-2 font-semibold text-white bg-black rounded-full shadow-md hover:bg-gray-800 hover:shadow-lg">
-                  Learn More
-                </button>
-              </div>
-            </div>
-          </div> */}
         </div>
       </div>
     </div>
