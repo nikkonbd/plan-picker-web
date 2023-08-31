@@ -14,7 +14,6 @@ import Availability from "../LandingPage/Availability/Availability";
 import Event from "../LandingPage/contact/Event";
 import Event2 from "../LandingPage/contact/Event2";
 import EventPage from "../component/EventPage";
-import Users from "../LandingPage/Users/Users";
 
 const router = createBrowserRouter([
   {
@@ -45,11 +44,6 @@ const router = createBrowserRouter([
         path: "/blog-details/:id",
         element: <BlogDetails></BlogDetails>,
       },
-      ,
-      {
-        path: "/users",
-        element: <Users />
-      }
     ],
   },
   {

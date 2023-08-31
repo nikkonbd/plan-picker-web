@@ -9,7 +9,6 @@ import { MdOutlineEventAvailable } from "react-icons/md";
 import { RxCalendar } from "react-icons/rx";
 import { AiOutlineSetting } from "react-icons/ai";
 import { HiOutlineHome } from "react-icons/hi";
-import Users from "../Users/Users";
 
 function Sidebar({ sidebarOpen, setSidebarOpen }) {
   const location = useLocation();
