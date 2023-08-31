@@ -54,7 +54,7 @@ const Navbar = () => {
         <Link to="/blog">Blogs</Link>
       </li>
       <li className="hidden lg:block">
-        <Link to="/dashboard/schedule">Dashboard</Link>
+        <Link to="/dashboard">Dashboard</Link>
       </li>
       <>
         {user ? (

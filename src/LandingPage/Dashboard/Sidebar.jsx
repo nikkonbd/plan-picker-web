@@ -8,9 +8,11 @@ import { BsCheck2Square } from "react-icons/bs";
 import { MdOutlineEventAvailable } from "react-icons/md";
 import { RxCalendar } from "react-icons/rx";
 import { AiOutlineSetting } from "react-icons/ai";
-import {HiOutlineHome} from "react-icons/hi";
+import { HiOutlineHome, HiOutlineUsers } from "react-icons/hi";
 
 function Sidebar({ sidebarOpen, setSidebarOpen }) {
+
+  const isAdmin = true;
   const location = useLocation();
   const { pathname } = location;
 
@@ -61,18 +63,16 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
     <div>
       {/* Sidebar backdrop (mobile only) */}
       <div
-        className={`fixed inset-0 bg-slate-900 bg-opacity-30 z-40 lg:hidden lg:z-auto transition-opacity duration-200 ${
-          sidebarOpen ? "opacity-100" : "opacity-0 pointer-events-none"
-        }`}
+        className={`fixed inset-0 bg-slate-900 bg-opacity-30 z-40 lg:hidden lg:z-auto transition-opacity duration-200 ${sidebarOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+          }`}
         aria-hidden="true"></div>
 
       {/* Sidebar */}
       <div
         id="sidebar"
         ref={sidebar}
-        className={`flex flex-col absolute z-40 left-0 top-0 lg:static lg:left-auto lg:top-auto lg:translate-x-0 h-screen overflow-y-scroll lg:overflow-y-auto no-scrollbar w-64 lg:w-20 lg:sidebar-expanded:!w-64 2xl:!w-64 shrink-0 bg-slate-800 p-4 transition-all duration-200 ease-in-out bg-teal-500 text-white ${
-          sidebarOpen ? "translate-x-0" : "-translate-x-64"
-        }`}>
+        className={`flex flex-col absolute z-40 left-0 top-0 lg:static lg:left-auto lg:top-auto lg:translate-x-0 h-screen overflow-y-scroll lg:overflow-y-auto no-scrollbar w-64 lg:w-20 lg:sidebar-expanded:!w-64 2xl:!w-64 shrink-0 bg-slate-800 p-4 transition-all duration-200 ease-in-out bg-teal-500 text-white ${sidebarOpen ? "translate-x-0" : "-translate-x-64"
+          }`}>
         {/* Sidebar header */}
         <div className="flex justify-between pr-3 mb-10 sm:px-2">
           {/* Close button */}
@@ -144,316 +144,344 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                 Main
               </span>
             </h3>
-            <ul className="mt-3">
-                {/* Home */}
-              <li
-                className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${
-                  pathname.includes("inbox") && "bg-slate-900"
-                }`}>
-                <NavLink
-                  to="/"
-                  className={`block text-slate-200 truncate transition duration-150 ${
-                    pathname.includes("inbox")
-                      ? "hover:text-slate-200"
-                      : "hover:text-white"
-                  }`}>
-                  <div className="flex items-center">
-                    <HiOutlineHome className="w-6 h-6 shrink-0" />
-                    <span className="ml-3 text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
-                      Home
-                    </span>
-                  </div>
-                </NavLink>
-              </li>
-                
-              {/* Profile */}
-              <li
-                className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${
-                  pathname.includes("inbox") && "bg-slate-900"
-                }`}>
-                <NavLink
-                  to="/dashboard/Profile"
-                  className={`block text-slate-200 truncate transition duration-150 ${
-                    pathname.includes("inbox")
-                      ? "hover:text-slate-200"
-                      : "hover:text-white"
-                  }`}>
-                  <div className="flex items-center">
-                    <CgProfile className="w-6 h-6 shrink-0" />
-                    <span className="ml-3 text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
-                      Profile
-                    </span>
-                  </div>
-                </NavLink>
-              </li>
+            {
+              isAdmin ? <>
+                <ul className="mt-3">
+                  <li
+                    className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${pathname.includes("inbox") && "bg-slate-900"
+                      }`}>
+                    <NavLink
+                      to="/"
+                      className={`block text-slate-200 truncate transition duration-150 ${pathname.includes("inbox")
+                        ? "hover:text-slate-200"
+                        : "hover:text-white"
+                        }`}>
+                      <div className="flex items-center">
+                        <HiOutlineHome className="w-6 h-6 shrink-0" />
+                        <span className="ml-3 text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
+                          Home
+                        </span>
+                      </div>
+                    </NavLink>
+                  </li>
 
-              {/* Schedule */}
+                  <li
+                    className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${pathname.includes("inbox") && "bg-slate-900"
+                      }`}>
+                    <NavLink
+                      to="/dashboard/allUsers"
+                      className={`block text-slate-200 truncate transition duration-150 ${pathname.includes("inbox")
+                        ? "hover:text-slate-200"
+                        : "hover:text-white"
+                        }`}>
+                      <div className="flex items-center">
+                        <HiOutlineUsers className="w-6 h-6 shrink-0" />
+                        <span className="ml-3 text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
+                          All Users
+                        </span>
+                      </div>
+                    </NavLink>
+                  </li>
 
-              <SidebarLinkGroup activecondition={pathname.includes("settings")}>
-                {(handleClick, open) => {
-                  return (
-                    <React.Fragment>
+                </ul>
+              </> :
+                <>
+                  <ul className="mt-3">
+                    {/* Home */}
+                    <li
+                      className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${pathname.includes("inbox") && "bg-slate-900"
+                        }`}>
                       <NavLink
-                        to="/dashboard/schedule"
-                        className={`block text-slate-200 truncate transition duration-150 ${
-                          pathname.includes("settings")
-                            ? "hover:text-slate-200"
-                            : "hover:text-white"
-                        }`}
-                        >
+                        to="/"
+                        className={`block text-slate-200 truncate transition duration-150 ${pathname.includes("inbox")
+                          ? "hover:text-slate-200"
+                          : "hover:text-white"
+                          }`}>
+                        <div className="flex items-center">
+                          <HiOutlineHome className="w-6 h-6 shrink-0" />
+                          <span className="ml-3 text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
+                            Home
+                          </span>
+                        </div>
+                      </NavLink>
+                    </li>
+
+                    {/* Profile */}
+                    <li
+                      className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${pathname.includes("inbox") && "bg-slate-900"
+                        }`}>
+                      <NavLink
+                        to="/dashboard/Profile"
+                        className={`block text-slate-200 truncate transition duration-150 ${pathname.includes("inbox")
+                          ? "hover:text-slate-200"
+                          : "hover:text-white"
+                          }`}>
+                        <div className="flex items-center">
+                          <CgProfile className="w-6 h-6 shrink-0" />
+                          <span className="ml-3 text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
+                            Profile
+                          </span>
+                        </div>
+                      </NavLink>
+                    </li>
+
+                    {/* Schedule */}
+
+                    <SidebarLinkGroup activecondition={pathname.includes("settings")}>
+                      {(handleClick, open) => {
+                        return (
+                          <React.Fragment>
+                            <NavLink
+                              to="/dashboard/schedule"
+                              className={`block text-slate-200 truncate transition duration-150 ${pathname.includes("settings")
+                                ? "hover:text-slate-200"
+                                : "hover:text-white"
+                                }`}
+                            >
+                              <div className="flex items-center justify-between">
+                                <div className="flex items-center">
+                                  <AiOutlineSchedule className="w-6 h-6 shrink-0" />
+                                  <span className="ml-3 text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
+                                    Event Types
+                                  </span>
+                                </div>
+                              </div>
+                            </NavLink>
+                          </React.Fragment>
+                        );
+                      }}
+                    </SidebarLinkGroup>
+
+                    {/* My Schedule */}
+                    <li
+                      className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${pathname.includes("messages") && "bg-slate-900"
+                        }`}>
+                      <NavLink
+                        end
+                        to="/messages"
+                        className={`block text-slate-200 truncate transition duration-150 ${pathname.includes("messages")
+                          ? "hover:text-slate-200"
+                          : "hover:text-white"
+                          }`}>
                         <div className="flex items-center justify-between">
-                          <div className="flex items-center">
-                            <AiOutlineSchedule className="w-6 h-6 shrink-0" />
+                          <div className="flex items-center grow">
+                            <BsCheck2Square className="w-6 h-6 shrink-0" />
                             <span className="ml-3 text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
-                              Event Types
+                              My Schedule
                             </span>
                           </div>
                         </div>
                       </NavLink>
-                    </React.Fragment>
-                  );
-                }}
-              </SidebarLinkGroup>
-
-              {/* My Schedule */}
-              <li
-                className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${
-                  pathname.includes("messages") && "bg-slate-900"
-                }`}>
-                <NavLink
-                  end
-                  to="/messages"
-                  className={`block text-slate-200 truncate transition duration-150 ${
-                    pathname.includes("messages")
-                      ? "hover:text-slate-200"
-                      : "hover:text-white"
-                  }`}>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center grow">
-                      <BsCheck2Square className="w-6 h-6 shrink-0" />
-                      <span className="ml-3 text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
-                        My Schedule
-                      </span>
-                    </div>
-                  </div>
-                </NavLink>
-              </li>
-              {/* Availablity */}
-              <li
-                className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${
-                  pathname.includes("inbox") && "bg-slate-900"
-                }`}>
-                <NavLink
-                  end
-                  to="/dashboard/availability"
-                  className={`block text-slate-200 truncate transition duration-150 ${
-                    pathname.includes("inbox")
-                      ? "hover:text-slate-200"
-                      : "hover:text-white"
-                  }`}>
-                  <div className="flex items-center">
-                    <MdOutlineEventAvailable className="w-6 h-6 shrink-0" />
-                    <span className="ml-3 text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
-                      Availablity
-                    </span>
-                  </div>
-                </NavLink>
-              </li>
-              {/* Calendar */}
-              <li
-                className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${
-                  pathname.includes("calendar") && "bg-slate-900"
-                }`}>
-                <NavLink
-                  end
-                  to="/calendar"
-                  className={`block text-slate-200 truncate transition duration-150 ${
-                    pathname.includes("calendar")
-                      ? "hover:text-slate-200"
-                      : "hover:text-white"
-                  }`}>
-                  <div className="flex items-center">
-                    <RxCalendar className="w-6 h-6 shrink-0" />
-                    <span className="ml-3 text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
-                      Calendar
-                    </span>
-                  </div>
-                </NavLink>
-              </li>
-              {/* Campaigns */}
-              <li
-                className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${
-                  pathname.includes("campaigns") && "bg-slate-900"
-                }`}>
-                <NavLink
-                  end
-                  to="/campaigns"
-                  className={`block text-slate-200 truncate transition duration-150 ${
-                    pathname.includes("campaigns")
-                      ? "hover:text-slate-200"
-                      : "hover:text-white"
-                  }`}>
-                  <div className="flex items-center">
-                    <svg className="w-6 h-6 shrink-0" viewBox="0 0 24 24">
-                      <path
-                        className={`fill-current ${
-                          pathname.includes("campaigns")
-                            ? "text-indigo-500"
-                            : "text-slate-600"
-                        }`}
-                        d="M20 7a.75.75 0 01-.75-.75 1.5 1.5 0 00-1.5-1.5.75.75 0 110-1.5 1.5 1.5 0 001.5-1.5.75.75 0 111.5 0 1.5 1.5 0 001.5 1.5.75.75 0 110 1.5 1.5 1.5 0 00-1.5 1.5A.75.75 0 0120 7zM4 23a.75.75 0 01-.75-.75 1.5 1.5 0 00-1.5-1.5.75.75 0 110-1.5 1.5 1.5 0 001.5-1.5.75.75 0 111.5 0 1.5 1.5 0 001.5 1.5.75.75 0 110 1.5 1.5 1.5 0 00-1.5 1.5A.75.75 0 014 23z"
-                      />
-                      <path
-                        className={`fill-current ${
-                          pathname.includes("campaigns")
-                            ? "text-indigo-300"
-                            : "text-slate-400"
-                        }`}
-                        d="M17 23a1 1 0 01-1-1 4 4 0 00-4-4 1 1 0 010-2 4 4 0 004-4 1 1 0 012 0 4 4 0 004 4 1 1 0 010 2 4 4 0 00-4 4 1 1 0 01-1 1zM7 13a1 1 0 01-1-1 4 4 0 00-4-4 1 1 0 110-2 4 4 0 004-4 1 1 0 112 0 4 4 0 004 4 1 1 0 010 2 4 4 0 00-4 4 1 1 0 01-1 1z"
-                      />
-                    </svg>
-                    <span className="ml-3 text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
-                      Campaigns
-                    </span>
-                  </div>
-                </NavLink>
-              </li>
-              {/* Settings */}
-              <SidebarLinkGroup activecondition={pathname.includes("settings")}>
-                {(handleClick, open) => {
-                  return (
-                    <React.Fragment> 
-                      <a
-                        href="#0"
-                        className={`block text-slate-200 truncate transition duration-150 ${
-                          pathname.includes("settings")
-                            ? "hover:text-slate-200"
-                            : "hover:text-white"
-                        }`}
-                        onClick={(e) => {
-                          e.preventDefault();
-                          sidebarExpanded
-                            ? handleClick()
-                            : setSidebarExpanded(true);
-                        }}>
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center">
-                            <AiOutlineSetting className="w-6 h-6 shrink-0" />
-                            <span className="ml-3 text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
-                              Settings
-                            </span>
-                          </div>
-                          {/* Icon */}
-                          <div className="flex ml-2 shrink-0">
-                            <svg
-                              className={`w-3 h-3 shrink-0 ml-1 fill-current text-slate-400 ${
-                                open && "rotate-180"
-                              }`}
-                              viewBox="0 0 12 12">
-                              <path d="M5.9 11.4L.5 6l1.4-1.4 4 4 4-4L11.3 6z" />
-                            </svg>
-                          </div>
+                    </li>
+                    {/* Availablity */}
+                    <li
+                      className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${pathname.includes("inbox") && "bg-slate-900"
+                        }`}>
+                      <NavLink
+                        end
+                        to="/dashboard/availability"
+                        className={`block text-slate-200 truncate transition duration-150 ${pathname.includes("inbox")
+                          ? "hover:text-slate-200"
+                          : "hover:text-white"
+                          }`}>
+                        <div className="flex items-center">
+                          <MdOutlineEventAvailable className="w-6 h-6 shrink-0" />
+                          <span className="ml-3 text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
+                            Availablity
+                          </span>
                         </div>
-                      </a>
-                      <div className="lg:hidden lg:sidebar-expanded:block 2xl:block">
-                        <ul className={`pl-9 mt-1 ${!open && "hidden"}`}>
-                          <li className="mb-1 last:mb-0">
-                            <NavLink
-                              end
-                              to="/settings/account"
-                              className={({ isActive }) =>
-                                "block transition duration-150 truncate " +
-                                (isActive
-                                  ? "text-indigo-500"
-                                  : "text-slate-400 hover:text-slate-200")
-                              }>
-                              <span className="text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
-                                My Account
-                              </span>
-                            </NavLink>
-                          </li>
-                          <li className="mb-1 last:mb-0">
-                            <NavLink
-                              end
-                              to="/settings/notifications"
-                              className={({ isActive }) =>
-                                "block transition duration-150 truncate " +
-                                (isActive
-                                  ? "text-indigo-500"
-                                  : "text-slate-400 hover:text-slate-200")
-                              }>
-                              <span className="text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
-                                My Notifications
-                              </span>
-                            </NavLink>
-                          </li>
-                          <li className="mb-1 last:mb-0">
-                            <NavLink
-                              end
-                              to="/settings/apps"
-                              className={({ isActive }) =>
-                                "block transition duration-150 truncate " +
-                                (isActive
-                                  ? "text-indigo-500"
-                                  : "text-slate-400 hover:text-slate-200")
-                              }>
-                              <span className="text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
-                                Connected Apps
-                              </span>
-                            </NavLink>
-                          </li>
-                          <li className="mb-1 last:mb-0">
-                            <NavLink
-                              end
-                              to="/settings/plans"
-                              className={({ isActive }) =>
-                                "block transition duration-150 truncate " +
-                                (isActive
-                                  ? "text-indigo-500"
-                                  : "text-slate-400 hover:text-slate-200")
-                              }>
-                              <span className="text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
-                                Plans
-                              </span>
-                            </NavLink>
-                          </li>
-                          <li className="mb-1 last:mb-0">
-                            <NavLink
-                              end
-                              to="/settings/billing"
-                              className={({ isActive }) =>
-                                "block transition duration-150 truncate " +
-                                (isActive
-                                  ? "text-indigo-500"
-                                  : "text-slate-400 hover:text-slate-200")
-                              }>
-                              <span className="text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
-                                Billing & Invoices
-                              </span>
-                            </NavLink>
-                          </li>
-                          <li className="mb-1 last:mb-0">
-                            <NavLink
-                              end
-                              to="/settings/feedback"
-                              className={({ isActive }) =>
-                                "block transition duration-150 truncate " +
-                                (isActive
-                                  ? "text-indigo-500"
-                                  : "text-slate-400 hover:text-slate-200")
-                              }>
-                              <span className="text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
-                                Give Feedback
-                              </span>
-                            </NavLink>
-                          </li>
-                        </ul>
-                      </div>
-                    </React.Fragment>
-                  );
-                }}
-              </SidebarLinkGroup>
-            </ul>
+                      </NavLink>
+                    </li>
+                    {/* Calendar */}
+                    <li
+                      className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${pathname.includes("calendar") && "bg-slate-900"
+                        }`}>
+                      <NavLink
+                        end
+                        to="/calendar"
+                        className={`block text-slate-200 truncate transition duration-150 ${pathname.includes("calendar")
+                          ? "hover:text-slate-200"
+                          : "hover:text-white"
+                          }`}>
+                        <div className="flex items-center">
+                          <RxCalendar className="w-6 h-6 shrink-0" />
+                          <span className="ml-3 text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
+                            Calendar
+                          </span>
+                        </div>
+                      </NavLink>
+                    </li>
+                    {/* Campaigns */}
+                    <li
+                      className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${pathname.includes("campaigns") && "bg-slate-900"
+                        }`}>
+                      <NavLink
+                        end
+                        to="/campaigns"
+                        className={`block text-slate-200 truncate transition duration-150 ${pathname.includes("campaigns")
+                          ? "hover:text-slate-200"
+                          : "hover:text-white"
+                          }`}>
+                        <div className="flex items-center">
+                          <svg className="w-6 h-6 shrink-0" viewBox="0 0 24 24">
+                            <path
+                              className={`fill-current ${pathname.includes("campaigns")
+                                ? "text-indigo-500"
+                                : "text-slate-600"
+                                }`}
+                              d="M20 7a.75.75 0 01-.75-.75 1.5 1.5 0 00-1.5-1.5.75.75 0 110-1.5 1.5 1.5 0 001.5-1.5.75.75 0 111.5 0 1.5 1.5 0 001.5 1.5.75.75 0 110 1.5 1.5 1.5 0 00-1.5 1.5A.75.75 0 0120 7zM4 23a.75.75 0 01-.75-.75 1.5 1.5 0 00-1.5-1.5.75.75 0 110-1.5 1.5 1.5 0 001.5-1.5.75.75 0 111.5 0 1.5 1.5 0 001.5 1.5.75.75 0 110 1.5 1.5 1.5 0 00-1.5 1.5A.75.75 0 014 23z"
+                            />
+                            <path
+                              className={`fill-current ${pathname.includes("campaigns")
+                                ? "text-indigo-300"
+                                : "text-slate-400"
+                                }`}
+                              d="M17 23a1 1 0 01-1-1 4 4 0 00-4-4 1 1 0 010-2 4 4 0 004-4 1 1 0 012 0 4 4 0 004 4 1 1 0 010 2 4 4 0 00-4 4 1 1 0 01-1 1zM7 13a1 1 0 01-1-1 4 4 0 00-4-4 1 1 0 110-2 4 4 0 004-4 1 1 0 112 0 4 4 0 004 4 1 1 0 010 2 4 4 0 00-4 4 1 1 0 01-1 1z"
+                            />
+                          </svg>
+                          <span className="ml-3 text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
+                            Campaigns
+                          </span>
+                        </div>
+                      </NavLink>
+                    </li>
+                    {/* Settings */}
+                    <SidebarLinkGroup activecondition={pathname.includes("settings")}>
+                      {(handleClick, open) => {
+                        return (
+                          <React.Fragment>
+                            <a
+                              href="#0"
+                              className={`block text-slate-200 truncate transition duration-150 ${pathname.includes("settings")
+                                ? "hover:text-slate-200"
+                                : "hover:text-white"
+                                }`}
+                              onClick={(e) => {
+                                e.preventDefault();
+                                sidebarExpanded
+                                  ? handleClick()
+                                  : setSidebarExpanded(true);
+                              }}>
+                              <div className="flex items-center justify-between">
+                                <div className="flex items-center">
+                                  <AiOutlineSetting className="w-6 h-6 shrink-0" />
+                                  <span className="ml-3 text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
+                                    Settings
+                                  </span>
+                                </div>
+                                {/* Icon */}
+                                <div className="flex ml-2 shrink-0">
+                                  <svg
+                                    className={`w-3 h-3 shrink-0 ml-1 fill-current text-slate-400 ${open && "rotate-180"
+                                      }`}
+                                    viewBox="0 0 12 12">
+                                    <path d="M5.9 11.4L.5 6l1.4-1.4 4 4 4-4L11.3 6z" />
+                                  </svg>
+                                </div>
+                              </div>
+                            </a>
+                            <div className="lg:hidden lg:sidebar-expanded:block 2xl:block">
+                              <ul className={`pl-9 mt-1 ${!open && "hidden"}`}>
+                                <li className="mb-1 last:mb-0">
+                                  <NavLink
+                                    end
+                                    to="/settings/account"
+                                    className={({ isActive }) =>
+                                      "block transition duration-150 truncate " +
+                                      (isActive
+                                        ? "text-indigo-500"
+                                        : "text-slate-400 hover:text-slate-200")
+                                    }>
+                                    <span className="text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
+                                      My Account
+                                    </span>
+                                  </NavLink>
+                                </li>
+                                <li className="mb-1 last:mb-0">
+                                  <NavLink
+                                    end
+                                    to="/settings/notifications"
+                                    className={({ isActive }) =>
+                                      "block transition duration-150 truncate " +
+                                      (isActive
+                                        ? "text-indigo-500"
+                                        : "text-slate-400 hover:text-slate-200")
+                                    }>
+                                    <span className="text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
+                                      My Notifications
+                                    </span>
+                                  </NavLink>
+                                </li>
+                                <li className="mb-1 last:mb-0">
+                                  <NavLink
+                                    end
+                                    to="/settings/apps"
+                                    className={({ isActive }) =>
+                                      "block transition duration-150 truncate " +
+                                      (isActive
+                                        ? "text-indigo-500"
+                                        : "text-slate-400 hover:text-slate-200")
+                                    }>
+                                    <span className="text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
+                                      Connected Apps
+                                    </span>
+                                  </NavLink>
+                                </li>
+                                <li className="mb-1 last:mb-0">
+                                  <NavLink
+                                    end
+                                    to="/settings/plans"
+                                    className={({ isActive }) =>
+                                      "block transition duration-150 truncate " +
+                                      (isActive
+                                        ? "text-indigo-500"
+                                        : "text-slate-400 hover:text-slate-200")
+                                    }>
+                                    <span className="text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
+                                      Plans
+                                    </span>
+                                  </NavLink>
+                                </li>
+                                <li className="mb-1 last:mb-0">
+                                  <NavLink
+                                    end
+                                    to="/settings/billing"
+                                    className={({ isActive }) =>
+                                      "block transition duration-150 truncate " +
+                                      (isActive
+                                        ? "text-indigo-500"
+                                        : "text-slate-400 hover:text-slate-200")
+                                    }>
+                                    <span className="text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
+                                      Billing & Invoices
+                                    </span>
+                                  </NavLink>
+                                </li>
+                                <li className="mb-1 last:mb-0">
+                                  <NavLink
+                                    end
+                                    to="/settings/feedback"
+                                    className={({ isActive }) =>
+                                      "block transition duration-150 truncate " +
+                                      (isActive
+                                        ? "text-indigo-500"
+                                        : "text-slate-400 hover:text-slate-200")
+                                    }>
+                                    <span className="text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
+                                      Give Feedback
+                                    </span>
+                                  </NavLink>
+                                </li>
+                              </ul>
+                            </div>
+                          </React.Fragment>
+                        );
+                      }}
+                    </SidebarLinkGroup>
+                  </ul>
+                </>
+            }
+
           </div>
         </div>
 
