@@ -6,8 +6,8 @@ import {
 } from "@material-tailwind/react";
 import img from "../../assets/Images/FaQ.jpg";
 
-import AOS from 'aos';
-import 'aos/dist/aos.css'; // You can also use <link> for styles
+import AOS from "aos";
+import "aos/dist/aos.css"; // You can also use <link> for styles
 // ..
 AOS.init();
 
@@ -22,18 +22,23 @@ const SecondHero = () => {
   return (
     <>
       <div>
-        <div data-aos="fade-down" className="text-center">
+        <div data-aos="fade-down" className="text-center px-4 md:px-0">
           <h2 className="text-3xl md:text-5xl font-semibold pt-24 text-[#61677A]">
-            Frequently asked questions <br /> <span className="text-[#42a6ad]">(FAQ)</span>
+            Frequently asked questions <br />{" "}
+            <span className="text-[#42a6ad]">(FAQ)</span>
           </h2>
           <p className="pt-4 text-base md:text-lg text-[#61677A]">
             A frequently asked questions list is often used in articles,
-            websites, email lists, and online forums where <br /> common
-            questions tend to recur, for example through posts or queries by{" "}
-            <br /> new users related to common knowledge gaps.
+            websites, email lists, and online forums where{" "}
+            <br className="hidden md:block" /> common questions tend to recur,
+            for example through posts or queries by{" "}
+            <br className="hidden md:block" /> new users related to common
+            knowledge gaps.
           </p>
         </div>
-        <div data-aos="zoom-in" className="flex justify-between flex-col-reverse md:w-8/12 my-10 mx-auto md:flex-row gap-2 md:gap-10 md:px-0 items-center bg-[#5ebdc444] rounded-xl">
+        <div
+          data-aos="zoom-in"
+          className="flex justify-between flex-col-reverse md:w-8/12 my-10 mx-auto md:flex-row gap-2 md:gap-10 md:px-0 items-center bg-[#5ebdc444] rounded-xl">
           <div className="w-full p-10 ">
             <Accordion open={open === 1} animate={CUSTOM_ANIMATION}>
               <AccordionHeader
