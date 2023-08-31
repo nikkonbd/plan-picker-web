@@ -23,11 +23,11 @@ const SecondHero = () => {
     <>
       <div>
         <div data-aos="fade-down" className="text-center px-4 md:px-0">
-          <h2 className="text-3xl md:text-5xl font-semibold pt-24 text-[#61677A]">
+          <h2 className="text-2xl md:text-4xl font-semibold pt-10 md:pt-24 text-[#61677A]">
             Frequently asked questions <br />{" "}
             <span className="text-[#42a6ad]">(FAQ)</span>
           </h2>
-          <p className="pt-4 text-base md:text-lg text-[#61677A]">
+          <p className="pt-4 text-base text-[#61677A]">
             A frequently asked questions list is often used in articles,
             websites, email lists, and online forums where{" "}
             <br className="hidden md:block" /> common questions tend to recur,
@@ -43,10 +43,10 @@ const SecondHero = () => {
             <Accordion open={open === 1} animate={CUSTOM_ANIMATION}>
               <AccordionHeader
                 onClick={() => handleOpen(1)}
-                className="text-2xl hover:text-[#42a6ad] text-[#61677A]">
+                className="text-xl hover:text-[#42a6ad] text-[#61677A]">
                 What are Plan Picker apps?
               </AccordionHeader>
-              <AccordionBody className="text-2xl text-black shadow-lg">
+              <AccordionBody className="text-base shadow-lg">
                 Plan Picker apps let you leverage scheduling automation wherever
                 you are on the web via browser extensions, or while you’re
                 on-the-go via mobile apps.
@@ -55,10 +55,10 @@ const SecondHero = () => {
             <Accordion open={open === 2} animate={CUSTOM_ANIMATION}>
               <AccordionHeader
                 onClick={() => handleOpen(2)}
-                className="text-2xl hover:text-[#42a6ad] text-[#61677A]">
+                className="text-xl hover:text-[#42a6ad] text-[#61677A]">
                 What are Plan Picker integrations?
               </AccordionHeader>
-              <AccordionBody className="text-2xl text-black shadow-lg">
+              <AccordionBody className="text-base shadow-lg">
                 Integrations let you use Plan Picker alongside other tools and
                 services. By leveraging an integration, your meeting information
                 and scheduling data can sync directly with other tools in your
@@ -72,10 +72,10 @@ const SecondHero = () => {
             <Accordion open={open === 3} animate={CUSTOM_ANIMATION}>
               <AccordionHeader
                 onClick={() => handleOpen(3)}
-                className="text-2xl hover:text-[#42a6ad] text-[#61677A]">
+                className="text-xl hover:text-[#42a6ad] text-[#61677A]">
                 How do I install and use integrations?
               </AccordionHeader>
-              <AccordionBody className="text-2xl text-black shadow-lg ">
+              <AccordionBody className="text-base shadow-lg ">
                 To install an app or connect an integration, find the tool you
                 need in the integrations directory. Click “Add integration” and
                 follow the prompts to install. Some integrations will be
@@ -87,10 +87,10 @@ const SecondHero = () => {
             <Accordion open={open === 4} animate={CUSTOM_ANIMATION}>
               <AccordionHeader
                 onClick={() => handleOpen(4)}
-                className="text-2xl hover:text-[#42a6ad] text-[#61677A]">
+                className="text-xl hover:text-[#42a6ad] text-[#61677A]">
                 Want to build a Plan Picker integration? Learn about our API.
               </AccordionHeader>
-              <AccordionBody className="text-2xl text-black shadow-lg">
+              <AccordionBody className="text-base shadow-lg">
                 You can use our APIs to build integrations that connect Calendly
                 to your tools. Visit our Developer Portal to find more
                 information about building to our APIs.

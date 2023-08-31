@@ -21,20 +21,22 @@ const Services = () => {
           <Typography
             variant="h4"
             color="blue-gray"
-            className="mb-2 text-4xl text-[#5EBEC4]">
+            className="mb-2 text-2xl md:text-4xl text-[#5EBEC4]">
             Pick the perfect plan for your team
           </Typography>
-          <Typography color="gray" className="mb-3 font-normal text-[#61677A]">
+          <Typography color="gray" className="mb-3 text-base text-[#61677A]">
             Create organization-wide value with enterprise admin, security, and
             IT-oriented features to grow pipeline, close more deals, and hire
             faster. It was until recently a traditional boxed software company
             selling licenses. Yet its own business model disruption is only part
             of the story
           </Typography>
-          <div className="mb-8 text-[#61677A]">
+          <div className="mb-8 pt-10 space-y-3 text-[#61677A]">
             <div className="flex items-center gap-2">
               <GiCheckMark></GiCheckMark>
-              <p>Enable Single Sign-On and advanced user provisioning</p>
+              <p className="text-base text-[#61677A]">
+                Enable Single Sign-On and advanced user provisioning
+              </p>
             </div>
             <div className="flex items-center gap-2">
               <GiCheckMark></GiCheckMark>

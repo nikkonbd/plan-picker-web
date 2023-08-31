@@ -11,7 +11,7 @@ const ServiceCard5 = () => {
               className="font-bold text-[#61677A] tracki uppercase">
               Pricing
             </span>
-            <h2 className="text-4xl font-bold lg:text-5xl text-[#42a6ad]">
+            <h2 className="text-2xl md:text-4xl font-bold text-[#42a6ad]">
               Choose your best plan
             </h2>
           </div>
@@ -27,7 +27,7 @@ const ServiceCard5 = () => {
                 <p className="mt-3 leadi dark:text-gray-400">
                   Etiam ac convallis enim, eget euismod dolor.
                 </p>
-                <ul className="flex-1 mb-6 dark:text-gray-400">
+                <ul className="flex-1 mb-6">
                   <li className="flex mb-2 space-x-2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
