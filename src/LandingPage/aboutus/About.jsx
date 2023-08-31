@@ -38,18 +38,19 @@ const About = () => {
   return (
     <div className="mx-4 md:mx-16">
       {/* <EventType/> */}
+      {/* <WeeklyHoursForm/>
+      <SetMeeting /> */}
+      {/* <WeeklyHoursForm/> */}
 
-      <WeeklyHoursForm/>
-
-      <SetMeeting />
+      {/* <SetMeeting /> */}
 
       {/* <MyCalendar /> */}
 
-      <h1 className="mb-5 text-3xl font-semibold mt-7">Calendar events</h1>
+      {/* <h1 className="mb-5 text-3xl font-semibold mt-7">Calendar events</h1> */}
 
       {/* <EventCalendar events={events} /> */}
 
-      <div className="mt-20 bg-gray-200">
+      <div className="mt-20">
         <div className="">
           <div className="relative">
             <div
@@ -64,7 +65,7 @@ const About = () => {
               {/* front text */}
               <div className="flex justify-center items-center flex-col  max-w-7xl mx-auto lg:h-[700px] md:h-[600px] h-[500px]">
                 <h1 className="text-3xl  md:text-4xl lg:text-6xl font-semibold text-[#FFEE32] mb-4 z-10 text-center">
-                  Experience Exceptional Scheduling Made Simple
+                  About Us Experience Exceptional Scheduling Made Simple
                 </h1>
 
                 <div className="z-10 flex flex-col gap-3 mt-8 sm:flex-row">

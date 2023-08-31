@@ -17,8 +17,8 @@ const BlogDetails = () => {
   }, []);
 
   return (
-    <div>
-      <div className="lg:flex items-center justify-around">
+    <div className="md:w-8/12 mx-auto">
+      <div className="lg:flex items-center justify-between">
         <div className="space-y-5">
           <h1>
             <Link className="text-blue-500 font-semibold" to="/">
@@ -47,15 +47,15 @@ const BlogDetails = () => {
           <img className="max-w-[500px]" src={article.imageURL} alt="" />
         </div>
       </div>
-      <div className="lg:px-10">
-        <p>Category: {article.category}</p>
-        <p>
-          Tags:{" "}
+      <div className="mb-14">
+        <p><strong>Category:</strong> {article.category}</p>
+        <p className="py-4">
+          <strong>Tags:</strong>{" "}
           {article.tags?.map((tag, idx) => (
             <span key={idx}>{tag} ,</span>
           ))}
         </p>
-        <p>About: {article.content}</p>
+        <p><strong>About:</strong> {article.content}</p>
       </div>
     </div>
   );

@@ -46,10 +46,10 @@ const WeeklyHoursForm = () => {
     };
 
     return (
-        <form className='border-2 rounded-lg py-4 px-6' onSubmit={handleSubmit}>
+        <form className='border-2 rounded-lg py-4 px-6 sm:w-[90%] md:w-auto' onSubmit={handleSubmit}>
             <p className='text-sm font-bold mb-2'>Time zone</p>
             {daysOfWeek.map(day => (
-                <div className={`flex align-center ${hours[day].checked ? 'border-2 rounded-xl' : ''}`} key={day}>
+                <div className={`md:flex md:align-center  ${hours[day].checked ? 'border-2 rounded-xl' : ''}`} key={day}>
                     <div className='ms-2'>
                         <label>
                             {day.charAt(0).toUpperCase() + day.slice(1)}:
