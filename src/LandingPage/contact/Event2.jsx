@@ -101,11 +101,8 @@ const Event2 = () => {
               <option disabled selected className="text-gray-200">
                 Add Location
               </option>
-              <option>Dhaka</option>
-              <option>Jhenaidah</option>
-              <option>Magura</option>
-              <option>Barishal</option>
-              <option>Noakhali</option>
+              <option>Audio Call</option>
+              <option>Video Call</option>
             </select>
           </div>
         </div>

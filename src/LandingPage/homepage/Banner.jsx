@@ -8,10 +8,10 @@ const Banner = () => {
   return (
     <div className="md:w-8/12 px-4 md:px-0 mx-auto">
       <div className="text-center pt-20">
-        <h2 className="text-4xl md:text-6xl text-[#61677A] font-bold transition duration-300 ease-in-out hover:scale-90">
+        <h2 className="text-4xl md:text-6xl text-[#61677A] cursor-pointer font-bold transition duration-300 ease-in-out hover:scale-90">
           <span className="text-[#5EBEC4]">Welcome to Easy</span> Scheduling <br /> Ahead For Your Needs.
         </h2>
-        <p className="text-md md:text-xl text-[#61677A] pt-4 pb-10 transition duration-300 ease-in-out hover:scale-110">
+        <p className="text-md md:text-xl text-[#61677A] cursor-pointer pt-4 pb-10 transition duration-300 ease-in-out hover:scale-110">
           Plan Picker is your scheduling platform for eliminating the
           back-and-forth emails <br /> to find the perfect time — and so much
           more.
@@ -28,12 +28,12 @@ const Banner = () => {
           <h2 className="text-3xl text-[#61677A] text-center py-6 font-semibold">
             Book & schedule <br /> with Plan picker
           </h2>
-          <img className="w-[380px] mx-auto rounded-md" src={img} alt="" />
+          <img className="w-[380px] md:h-[242px] mx-auto rounded-md" src={img} alt="" />
         </div>
-        <div className="md:columns-3xl lg:columns-4xl bg-[#ffefe7] rounded-md transition duration-300 ease-in-out hover:scale-90">
+        <div className="columns-md md:columns-3xl lg:columns-4xl xl:columns-4xl bg-[#ffefe7] rounded-md transition duration-300 ease-in-out hover:scale-90">
           <div className="md:flex gap-10 items-center">
             <img
-              className="w-[400px] h-[368px] pt-16 rounded-lg"
+              className="w-[300px] md:h-[362px] pt-20 rounded-lg"
               src={img1}
               alt=""
             />
@@ -43,7 +43,7 @@ const Banner = () => {
               </h2>
               <p className="pt-4 pb-10 md:pb-0 text-[#61677A]">
                 Plan picker support to book <br /> whatever you want for meeting
-                or <br />
+                <br />
                 organize your meeting.
               </p>
             </div>
