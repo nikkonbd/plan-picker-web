@@ -17,9 +17,9 @@ const ServiceCardAccordion = () => {
   const handleOpen = (value) => setOpen(open === value ? 0 : value);
 
     return (
-        <div className='pt-12'>
+        <div className='pt-12 text-[#61677A]'>
             <Accordion open={open === 1} animate={CUSTOM_ANIMATION}>
-                <AccordionHeader onClick={() => handleOpen(1)}>What is Material Tailwind?</AccordionHeader>
+                <AccordionHeader onClick={() => handleOpen(1)}>Core Features!</AccordionHeader>
                 <AccordionBody>
                 We&apos;re not always in the position that we want to be at. We&apos;re constantly
                 growing. We&apos;re constantly making mistakes. We&apos;re constantly trying to express
@@ -28,7 +28,7 @@ const ServiceCardAccordion = () => {
             </Accordion>
             <Accordion open={open === 2} animate={CUSTOM_ANIMATION}>
                 <AccordionHeader onClick={() => handleOpen(2)}>
-                How to use Material Tailwind?
+                Teams!
                 </AccordionHeader>
                 <AccordionBody>
                 We&apos;re not always in the position that we want to be at. We&apos;re constantly
@@ -38,7 +38,7 @@ const ServiceCardAccordion = () => {
             </Accordion>
             <Accordion open={open === 3} animate={CUSTOM_ANIMATION}>
                 <AccordionHeader onClick={() => handleOpen(3)}>
-                What can I do with Material Tailwind?
+                Customizations!
                 </AccordionHeader>
                 <AccordionBody>
                 We&apos;re not always in the position that we want to be at. We&apos;re constantly
@@ -48,7 +48,7 @@ const ServiceCardAccordion = () => {
             </Accordion>
             <Accordion open={open === 4} animate={CUSTOM_ANIMATION}>
                 <AccordionHeader onClick={() => handleOpen(4)}>
-                What can I do with Material Tailwind?
+                Integrations!
                 </AccordionHeader>
                 <AccordionBody>
                 We&apos;re not always in the position that we want to be at. We&apos;re constantly
@@ -58,7 +58,7 @@ const ServiceCardAccordion = () => {
             </Accordion>
             <Accordion open={open === 5} animate={CUSTOM_ANIMATION}>
                 <AccordionHeader onClick={() => handleOpen(5)}>
-                What can I do with Material Tailwind?
+                Business Support!
                 </AccordionHeader>
                 <AccordionBody>
                 We&apos;re not always in the position that we want to be at. We&apos;re constantly

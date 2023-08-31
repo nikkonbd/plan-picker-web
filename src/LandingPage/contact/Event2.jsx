@@ -5,6 +5,7 @@ import "react-quill/dist/quill.snow.css";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { submitFormData } from "../../store/features/formSubmission/formSubmissionSlice";
+import TimeSelect from "./TimeSelect";
 
 const Event2 = () => {
   const navigate = useNavigate();
@@ -100,11 +101,8 @@ const Event2 = () => {
               <option disabled selected className="text-gray-200">
                 Add Location
               </option>
-              <option>Dhaka</option>
-              <option>Jhenaidah</option>
-              <option>Magura</option>
-              <option>Barishal</option>
-              <option>Noakhali</option>
+              <option>Audio Call</option>
+              <option>Video Call</option>
             </select>
           </div>
         </div>

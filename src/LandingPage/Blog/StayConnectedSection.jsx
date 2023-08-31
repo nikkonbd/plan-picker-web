@@ -2,7 +2,7 @@ import { Button } from "@material-tailwind/react";
 
 const StayConnectedSection = () => {
     return (
-        <div className="my-20 py-10 bg-gradient-to-r from-purple-600 to-indigo-600">
+        <div className="my-20 py-10 bg-gradient-to-r from-[#5EBEC4] to-[#42a6ad]">
             <div>
                 <div className="lg:w-1/2 text-white text-center mx-auto space-y-5">
                     <h1 className="text-4xl font-bold">Don't leave your prospects, customers, and candidates waiting</h1>

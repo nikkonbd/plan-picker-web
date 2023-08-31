@@ -59,7 +59,7 @@ const Profile = () => {
 
     // Update the formData state with the new object
     setFormData(newFormData);
-    console.log(formData)
+    console.log(newFormData)
   };
 
   return (
