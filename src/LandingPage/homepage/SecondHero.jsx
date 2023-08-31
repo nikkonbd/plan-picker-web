@@ -28,7 +28,7 @@ const SecondHero = () => {
             <br /> new users related to common knowledge gaps.
           </p>
         </div>
-        <div className="flex justify-between flex-col-reverse md:w-11/12 my-10 mx-auto md:flex-row gap-2 md:gap-10 px-4 md:px-0 items-center bg-[#ffefe7] rounded-xl">
+        <div className="flex justify-between flex-col-reverse md:w-10/12 my-10 mx-auto md:flex-row gap-2 md:gap-10 px-4 md:px-0 items-center bg-[#ffefe7] rounded-xl">
           <div className="w-full p-10 ">
             <Accordion open={open === 1} animate={CUSTOM_ANIMATION}>
               <AccordionHeader

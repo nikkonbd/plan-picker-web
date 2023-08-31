@@ -4,7 +4,7 @@ import img1 from "../../assets/pp.jpg";
 
 const Banner = () => {
   return (
-    <div className="md:w-11/12 mx-auto">
+    <div className="md:w-10/12 mx-auto">
       <div className="text-center pt-20">
         <h2 className="text-4xl md:text-6xl font-bold">
           Welcome to Easy Scheduling <br /> Ahead For Your Needs.

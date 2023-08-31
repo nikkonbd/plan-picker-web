@@ -6,7 +6,7 @@ import { Button } from "@material-tailwind/react";
 
 const Banner1 = () => {
   return (
-    <div className="px-4 md:px-0 md:w-11/12 mx-auto">
+    <div className="px-4 md:px-0 md:w-10/12 mx-auto">
       <div className="text-center">
         <h2 className="text-3xl md:text-5xl font-semibold pt-24">
           We make scheduling for <br /> you easier than ever
@@ -24,11 +24,11 @@ const Banner1 = () => {
               Share your Plan <br /> availability with others
             </h2>
             <p className="py-4">
-              There are a few different ways to ask for <br /> availability. You
-              can email potential attendees ahead of time, or reach <br /> out
-              to them individually by phone or in person. Whichever method{" "}
-              <br /> you choose, be sure to give people plenty of notice so they
-              can adjust their <br /> schedules if need be.
+              There are a few different ways to ask for availability. You can
+              email potential <br /> attendees ahead of time, or reach out to
+              them individually by phone or in <br /> person. Whichever method
+              you choose, be sure to give people plenty of <br /> notice so they
+              can adjust their schedules if need be.
             </p>
           </div>
           <a href="#" className="inline-block pb-10 pt-6 md:pt-0 md:pb-0">
@@ -53,22 +53,22 @@ const Banner1 = () => {
           </a>
         </div>
         <div>
-          <img className="rounded-xl" src={book} alt="" />
+          <img className="rounded-xl md:w-[560px]" src={book} alt="" />
         </div>
       </div>
       <div className="md:flex lg:flex  gap-4 justify-between items-center mt-12">
         <div>
-          <img className="rounded-xl w-full md:w-[620px]" src={book1} alt="" />
+          <img className="rounded-xl w-full md:w-[560px]" src={book1} alt="" />
         </div>
         <div>
           <div className="text-center md:text-end pt-8 md:pt-0">
             <h2 className="text-4xl font-medium">Schedule as Team</h2>
             <p className="py-4">
-              There are a few different ways to ask for availability. <br />
-              You can email potential attendees ahead of time, or reach <br />{" "}
-              out to them individually by phone or in person. Whichever method{" "}
-              <br /> you choose, be sure to give people plenty of notice so they
-              can adjust their <br /> schedules if need be.
+              There are a few different ways to ask for availability. You can
+              email potential <br /> attendees ahead of time, or reach out to
+              them individually by phone or in <br /> person. Whichever method
+              you choose, be sure to give people plenty of <br /> notice so they
+              can adjust their schedules if need be.
             </p>
           </div>
           <div className="flex justify-end">
@@ -102,11 +102,11 @@ const Banner1 = () => {
               Keep prospects engaged in <br /> between meetings
             </h2>
             <p className="py-4">
-              There are a few different ways to ask for <br /> availability. You
-              can email potential attendees ahead of time, or reach <br /> out
-              to them individually by phone or in person. Whichever method{" "}
-              <br /> you choose, be sure to give people plenty of notice so they
-              can adjust their <br /> schedules if need be.
+              There are a few different ways to ask for availability. You can
+              email potential <br /> attendees ahead of time, or reach out to
+              them individually by phone or in <br /> person. Whichever method
+              you choose, be sure to give people plenty of <br /> notice so they
+              can adjust their schedules if need be.
             </p>
           </div>
           <a href="#" className="inline-block pb-10 pt-6 md:pt-0 md:pb-0">
@@ -131,7 +131,7 @@ const Banner1 = () => {
           </a>
         </div>
         <div>
-          <img className="rounded-xl w-full md:w-[620px]" src={book2} alt="" />
+          <img className="rounded-xl w-full md:w-[560px]" src={book2} alt="" />
         </div>
       </div>
     </div>
