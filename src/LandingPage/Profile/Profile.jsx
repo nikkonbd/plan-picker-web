@@ -37,7 +37,7 @@ const Profile = () => {
     }
 
     const newFormData = {
-      imgURL,
+      image: imgURL,
       name: event.target.name.value,
       email: event.target.email.value,
       language: event.target.language.value,
@@ -150,21 +150,25 @@ const Profile = () => {
               <select
                 className="mt-2 md:ms-10 ps-3 w-full md:w-[10.4rem]  border-[1px] border-blue-gray-400 rounded-md h-9"
                 name="dataFormat"
-                id="dataFormat">
-                <option value="">Bangladesh</option>
-                <option value="">India</option>
-                <option value="">Philippian</option>
+                id="dataFormat"
+              >
+                <option value="Bangladesh">Bangladesh</option>
+                <option value="India">India</option>
+                <option value="Philippine">Philippine</option>
               </select>
+
             </div>
             <div>
               <p className="mt-6 text-sm font-bold md:ms-10">Time Format</p>
               <select
                 className="mt-2 md:ms-10 ps-3 w-full md:w-[10.4rem] border-[1px] border-blue-gray-400 rounded-md h-9"
                 name="timeFormat"
-                id="timeFormat">
-                <option value="">Asia/Dhaka</option>
-                <option value="">India, Sri Lanka Time</option>
+                id="timeFormat"
+              >
+                <option value="Asia/Dhaka">Asia/Dhaka</option>
+                <option value="IST">India, Sri Lanka Time</option>
               </select>
+
             </div>
           </div>
           <div className="md:ms-9">
