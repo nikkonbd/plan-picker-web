@@ -7,7 +7,7 @@ import About from "../LandingPage/aboutus/About";
 import Blog from "../LandingPage/Blog/Blog";
 import BlogDetails from "../LandingPage/Blog/blogDetails/BlogDetails";
 import Dashboard from "../LandingPage/Dashboard/Dashboard";
-import Profile from "../LandingPage/Profile/Profile";
+
 import ScheduleEventDetails from "../compnents/ScheduleEventDetails";
 import MyCalendar from "../myCalendar/MyCalendar";
 import Availability from "../LandingPage/Availability/Availability";
@@ -15,6 +15,8 @@ import Event from "../LandingPage/contact/Event";
 import Event2 from "../LandingPage/contact/Event2";
 import EventPage from "../component/EventPage";
 import MySchedule from "../LandingPage/Dashboard/mySchedule/MySchedule";
+import Analytics from "../LandingPage/Dashboard/analytics/Analytics";
+import Profile from "../LandingPage/Dashboard/Profile/Profile";
 
 const router = createBrowserRouter([
   {
@@ -70,6 +72,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/mySchedule",
         element: <MySchedule></MySchedule>,
+      },
+      {
+        path: "/dashboard/analytics",
+        element: <Analytics></Analytics>,
       },
       {
         path: "/dashboard/event_type/one-on-one-form",
