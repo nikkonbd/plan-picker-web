@@ -1,8 +1,24 @@
+import { Toaster, toast } from "react-hot-toast";
 import EventPage from "../../component/EventPage";
 import Event from "./Event";
 import Event2 from "./Event2";
+import emailjs from '@emailjs/browser';
+import { useRef } from "react";
 
 const ContactUS = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_r4pcuge', 'template_6lcz4sg', form.current, 'Isga3c42NwkRdKHwi')
+      .then((result) => {
+        toast.success('Email send Successfuly')
+        e.target.reset()
+      }, (error) => {
+        toast.error('An Accoured Error')
+      });
+  };
   return (
     <div className="md:w-10/12 mx-auto">
       <div>
@@ -20,7 +36,7 @@ const ContactUS = () => {
           </p>
         </div>
         <div className="w-full ">
-          <form className="flex flex-col w-screen px-6 space-y-3 md:w-full md:px-20 ">
+          <form ref={form} onSubmit={sendEmail} className="flex flex-col w-screen px-6 space-y-3 md:w-full md:px-20 ">
             <input
               type="text"
               name="from_name"
@@ -41,6 +57,7 @@ const ContactUS = () => {
             <button className="flex items-center px-6 py-2 mx-auto my-8 font-bold text-white duration-300 rounded-md bg-gradient-to-b from-cyan-500 to-blue-500 hover:scale-110">
               Send
             </button>
+            <Toaster />
           </form>
         </div>
       </div>

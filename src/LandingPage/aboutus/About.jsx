@@ -40,10 +40,18 @@ const About = () => {
       {/* <EventType/> */}
 
 
+
       {/* <WeeklyHoursForm/> */}
 
       <SetMeeting />
 
+      {/* <WeeklyHoursForm/> */}
+
+      {/* <SetMeeting /> */}
+
+
+      <WeeklyHoursForm/>
+      <SetMeeting />
       {/* <WeeklyHoursForm/> */}
 
       {/* <SetMeeting /> */}
