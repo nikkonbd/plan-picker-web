@@ -15,6 +15,7 @@ import Event from "../LandingPage/contact/Event";
 import Event2 from "../LandingPage/contact/Event2";
 import EventPage from "../component/EventPage";
 import MySchedule from "../LandingPage/Dashboard/mySchedule/MySchedule";
+import EventPageData from "../calendar/EventPageData";
 
 const router = createBrowserRouter([
   {
@@ -87,6 +88,10 @@ const router = createBrowserRouter([
         path: "/dashboard/one-on-one-form/event_set_edit_form",
         element: <EventPage />,
       },
+      {
+        path: "/dashboard/calendar",
+        element: <EventPageData/>
+      }
     ],
   },
 ]);

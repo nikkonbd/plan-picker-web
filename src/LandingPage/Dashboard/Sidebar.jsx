@@ -282,7 +282,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
               >
                 <NavLink
                   end
-                  to="/calendar"
+                  to="/dashboard/calendar"
                   className={`block text-slate-200 truncate transition duration-150 ${
                     pathname.includes("calendar")
                       ? "hover:text-slate-200"
