@@ -29,17 +29,17 @@ const Banner1 = () => {
               Share your Plan <br /> availability with others
             </h2>
             <p className="py-4 text-[#61677A]">
-              There are a few different ways to ask for <br /> availability. You
+              There are a few different ways to ask for availability. <br /> You
               can email potential attendees ahead of time, or reach <br /> out
-              to them individually by phone or in person. Whichever method{" "}
-              <br /> you choose, be sure to give people plenty of notice so they
-              can adjust their <br /> schedules if need be.
+              to them individually by phone or in person. Whichever <br /> method{" "}
+               you choose, be sure to give people plenty of notice <br /> so they
+              can adjust their schedules if need be.
             </p>
           </div>
           <a href="#" className="inline-block pt-6 pb-10 md:pt-0 md:pb-0">
             <Button
               variant="text"
-              className="flex text-white items-center gap-2 bg-[#5EBEC4]">
+              className="flex text-white items-center gap-2 bg-[#5EBEC4] hover:bg-[#42a6ad]">
               Learn More
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -58,12 +58,12 @@ const Banner1 = () => {
           </a>
         </div>
         <div data-aos="fade-up-left">
-          <img className="rounded-xl w-full h-full md:h-[400px] md:w-[600px]" src={book} alt="" />
+          <img className="rounded-xl w-full h-full md:h-[340px] md:w-[500px]" src={book} alt="" />
         </div>
       </div>
       <div className="md:flex lg:flex  gap-4 justify-between items-center mt-12">
         <div data-aos="fade-up-right">
-          <img className="rounded-xl w-full h-full md:h-[400px] md:w-[600px]" src={book1} alt="" />
+          <img className="rounded-xl w-full h-full md:h-[340px] md:w-[500px]" src={book1} alt="" />
         </div>
         <div data-aos="fade-up-left">
           <div className="text-center md:text-end pt-8 md:pt-0">
@@ -80,7 +80,7 @@ const Banner1 = () => {
             <a href="#" className="flex items-end pt-6 pb-10 md:pt-0 md:pb-0">
               <Button
                 variant="text"
-                className="flex text-white items-center gap-2 bg-[#5EBEC4]">
+                className="flex text-white items-center gap-2 bg-[#5EBEC4] hover:bg-[#42a6ad]">
                 Learn More
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -117,7 +117,7 @@ const Banner1 = () => {
           <a href="#" className="inline-block pt-6 pb-10 md:pt-0 md:pb-0">
             <Button
               variant="text"
-              className="flex text-white items-center gap-2 bg-[#5EBEC4]">
+              className="flex text-white items-center gap-2 bg-[#5EBEC4] hover:bg-[#42a6ad]">
               Learn More
               <svg
                 xmlns="http://www.w3.org/2000/svg"

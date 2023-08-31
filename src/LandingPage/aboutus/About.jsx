@@ -38,8 +38,8 @@ const About = () => {
   return (
     <div className="mx-4 md:mx-16">
       {/* <EventType/> */}
-      <WeeklyHoursForm/>
-      <SetMeeting />
+      {/* <WeeklyHoursForm/>
+      <SetMeeting /> */}
       {/* <WeeklyHoursForm/> */}
 
       {/* <SetMeeting /> */}
@@ -48,7 +48,7 @@ const About = () => {
 
       {/* <h1 className="mb-5 text-3xl font-semibold mt-7">Calendar events</h1> */}
 
-      <EventCalendar events={events} />
+      {/* <EventCalendar events={events} /> */}
 
       <div className="mt-20">
         <div className="">
