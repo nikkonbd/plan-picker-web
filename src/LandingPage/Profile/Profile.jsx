@@ -6,10 +6,14 @@ const Profile = () => {
   const imgHostingToken = import.meta.env.VITE_Img_Upload_Token;
   const imgHostingUrl = `https://api.imgbb.com/1/upload?key=${imgHostingToken}`;
 
-  const profileUpdateHandler = async (event) => {
-    event.preventDefault();
 
-    const imageFile = event.target.image.files[0];
+
+  const imgUploadHandler = async (event) => {
+    event.preventDefault()
+
+    const imageInput = document.getElementById("fileInput");
+    const imageFile = imageInput.files[0];
+
 
     if (imageFile) {
       const formData = new FormData();
@@ -35,6 +39,12 @@ const Profile = () => {
     } else {
       console.error('No image selected');
     }
+
+    console.log(imgURL)
+  }
+
+  const profileUpdateHandler = event => {
+    event.preventDefault();
 
     const newFormData = {
       image: imgURL,
@@ -76,6 +86,7 @@ const Profile = () => {
               <div>
                 <div className="relative overflow-hidden border-[1px] rounded-md border-blue-gray-600 w-fit pe-1 mb-2">
                   <input
+                    onChange={imgUploadHandler}
                     type="file"
                     name="image"
                     id="fileInput"
