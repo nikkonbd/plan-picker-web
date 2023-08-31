@@ -15,6 +15,7 @@ import Event from "../LandingPage/contact/Event";
 import Event2 from "../LandingPage/contact/Event2";
 import EventPage from "../component/EventPage";
 import MySchedule from "../LandingPage/Dashboard/mySchedule/MySchedule";
+import Analytics from "../LandingPage/Dashboard/analytics/Analytics";
 
 const router = createBrowserRouter([
   {
@@ -70,6 +71,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/mySchedule",
         element: <MySchedule></MySchedule>,
+      },
+      {
+        path: "/dashboard/analytics",
+        element: <Analytics></Analytics>,
       },
       {
         path: "/dashboard/event_type/one-on-one-form",
