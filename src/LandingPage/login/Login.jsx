@@ -96,17 +96,6 @@ const Login = () => {
                         <CardHeader className='text-center py-3 bg-[#5EBEC4]'
                         >
                             <Typography variant="h3" color="white">
-            <Button className='bg-teal-500' onClick={handleOpen}>Sign In</Button>
-            <Dialog
-                size="md"
-                open={open}
-                handler={handleOpen}
-                className="bg-transparent shadow-none"
-            >
-                <Card className="mx-auto w-full md:max-w-2xl">
-                    <CardHeader className='text-center py-3 bg-teal-500'
-                    >
-                        <Typography variant="h3" color="white">
                             Plan Picker Sign In
                         </Typography>
                     </CardHeader>
@@ -146,8 +135,7 @@ const Login = () => {
                             <Typography
                                 as="a"
                                 variant="small"
-                                color="blue"
-                                className="ml-1 font-bold"
+                                className="ml-1 font-bold text-[#5EBEC4]"
                             >
                                 <span><SignUp></SignUp></span>
                             </Typography>
