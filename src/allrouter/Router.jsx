@@ -18,6 +18,7 @@ import MySchedule from "../LandingPage/Dashboard/mySchedule/MySchedule";
 import Analytics from "../LandingPage/Dashboard/analytics/Analytics";
 import Profile from "../LandingPage/Dashboard/Profile/Profile";
 import EventCalendar from "../eventCalendar/EventCalendar";
+import EventTypeDetails from "../myCalendar/eventSearch/EventTypeDetails";
 
 const router = createBrowserRouter([
   {
@@ -57,6 +58,13 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/schedule",
         element: <MyCalendar />,
+        loader: () => fetch("https://mocki.io/v1/d238de33-940e-49c2-b452-79450b25f2c5")
+      },
+      {
+        path: "/dashboard/schedule/:id",
+        element: <EventTypeDetails />,
+        // loader: ({ params }) => fetch(`https://mocki.io/v1/d238de33-940e-49c2-b452-79450b25f2c5/${params.id}`)
+        loader: ({ params }) => fetch("https://mocki.io/v1/d238de33-940e-49c2-b452-79450b25f2c5")
       },
       {
         path: "/dashboard/availability",
