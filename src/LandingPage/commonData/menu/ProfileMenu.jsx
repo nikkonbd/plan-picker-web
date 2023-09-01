@@ -55,7 +55,7 @@ const ProfileMenu = () => {
               />
             </svg>
             <Typography variant="small" className="font-normal">
-              <Link to="/dashboard/schedule">Dashboard</Link>
+              <Link to="/dashboard/schedule">My Dashboard</Link>
             </Typography>
           </MenuItem>
           <MenuItem className="flex items-center gap-2">

@@ -185,7 +185,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                   <div className="flex items-center">
                     <CgProfile className="w-6 h-6 shrink-0" />
                     <span className="ml-3 text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
-                      Profile
+                      My Profile
                     </span>
                   </div>
                 </NavLink>

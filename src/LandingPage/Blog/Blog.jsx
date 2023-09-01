@@ -20,9 +20,9 @@ const Blog = () => {
       {/* banner */}
       <div className="md:flex justify-between items-center min-h-[60vh] my-10">
         <div className="md:w-1/2 px-4 md:px-0">
-          <h1 className="md:text-4xl text-2xl font-bold pb-2 text-[#5EBEC4]">
+          <h1 className="md:text-4xl text-2xl font-bold pb-2 text-[#61677A]">
             Journey to Success: <br />{" "}
-            <span className="text-base text-[#42a6ad]">
+            <span className="text-base">
               Unleash Your Potential Through Articles Our Articles
             </span>
           </h1>
