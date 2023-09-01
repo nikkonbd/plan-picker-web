@@ -61,8 +61,8 @@ const About = () => {
 
           {/* Revolutionize of Schedule */}
           <div className="py-[75px] md:py-[100px] flex flex-col md:flex-row gap-4 w-10/12 mx-auto p-4">
-            <div className="flex flex-col justify-center">
-              <h1 className="text-2xl font-semibold md:text-3xl">
+            <div className="flex flex-col justify-center #61677A">
+              <h1 className="text-2xl text-[#61677A] font-semibold md:text-3xl">
                 Revolutionize Your Schedule
               </h1>
               <p className="mt-6 ">
@@ -74,15 +74,17 @@ const About = () => {
 
               <div className="flex gap-6 mt-6">
                 <div>
-                  <h2 className="text-2xl font-semibold">100</h2>
+                  <h2 className="text-2xl text-[#5EBEC4] font-semibold">100</h2>
                   <p>Time-saving</p>
                 </div>
                 <div>
-                  <h2 className="text-2xl font-semibold">300</h2>
+                  <h2 className="text-2xl font-semibold text-[#5EBEC4]">300</h2>
                   <p>Satisfied Users</p>
                 </div>
                 <div>
-                  <h2 className="text-2xl font-semibold">24/7</h2>
+                  <h2 className="text-2xl font-semibold text-[#5EBEC4]">
+                    24/7
+                  </h2>
                   <p>Support</p>
                 </div>
               </div>
@@ -95,36 +97,14 @@ const About = () => {
             />
           </div>
 
-          {/*  */}
-          {/* <div className="py-[75px] md:py-[150px] bg-[rgb(51,53,51)] text-white  w-full mb-8 rounded-xl ">
-            <div className="flex flex-col gap-8 p-4 mx-auto md:flex-row-reverse max-w-7xl">
-              <img
-                className="h-auto max-w-full md:w-1/2 rounded-xl"
-                src={time}
-                alt=""
-              />
-              <div className="flex flex-col justify-center">
-                <h1 className="text-2xl font-semibold md:text-3xl">
-                  Time Management Superpowers at Your Fingertips
-                </h1>
-                <p className="mt-8 font-semibold">
-                  With our exceptional scheduling technology, making plans,
-                  booking appointments, and coordinating meetings will become as
-                  smooth as silk. Gone are the days of clunky calendars and
-                  double-booked dates.
-                </p>
-              </div>
-            </div>
-          </div> */}
-
           {/* planning features */}
           <div className="gap-4 mb-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-10/12 mx-auto p-4 md:p-0">
             <div className="p-4 rounded-xl bg-slate-300">
-              <div className="p-4 bg-[#f6f9fc] rounded-xl">
+              <div className="p-4 bg-[#f6f9fc] text-center rounded-xl">
                 <div>
                   <img className="rounded-2xl" src={EfficientPlanning} alt="" />
                 </div>
-                <h1 className="my-3 text-lg font-semibold">
+                <h1 className="mt-4 text-lg font-semibold">
                   Efficient Planning
                 </h1>
                 <p className="mb-2">Save hours weekly</p>
@@ -132,17 +112,17 @@ const About = () => {
             </div>
 
             <div className="p-4 rounded-xl bg-slate-300">
-              <div className="p-4 bg-[#f6f9fc] rounded-xl">
+              <div className="p-4 bg-[#f6f9fc] rounded-xl text-center">
                 <img className="rounded-2xl" src={EfficientPlanning} alt="" />
-                <h1 className="my-3 text-lg font-semibold">Seamless Syncing</h1>
+                <h1 className="mt-4 text-lg font-semibold">Seamless Syncing</h1>
                 <p className="mb-2">Never miss an event</p>
               </div>
             </div>
 
             <div className="p-4 rounded-xl bg-slate-300">
-              <div className="p-4 bg-[#f6f9fc] rounded-xl">
+              <div className="p-4 bg-[#f6f9fc] rounded-xl text-center">
                 <img className="rounded-2xl" src={EfficientPlanning} alt="" />
-                <h1 className="my-3 text-lg font-semibold">
+                <h1 className="mt-4 text-lg font-semibold">
                   Enhanced Productivity
                 </h1>
                 <p className="mb-2">Stay on top of tasks</p>
@@ -197,12 +177,7 @@ const About = () => {
               individuals who play important roles in the company
             </p>
           </div>
-          <div className="gap-12 grid grid-cols-1 md:pb-20 md:grid-cols-2 lg:grid-cols-3 w-10/12 mx-auto p-4 md:p-0">
-            <AboutCard></AboutCard>
-            <AboutCard></AboutCard>
-            <AboutCard></AboutCard>
-            <AboutCard></AboutCard>
-            <AboutCard></AboutCard>
+          <div>
             <AboutCard></AboutCard>
           </div>
         </div>

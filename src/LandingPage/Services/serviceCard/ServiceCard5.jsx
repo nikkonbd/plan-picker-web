@@ -11,16 +11,16 @@ const ServiceCard5 = () => {
               className="font-bold text-[#61677A] tracki uppercase">
               Pricing
             </span>
-            <h2 className="text-2xl md:text-4xl font-bold text-[#42a6ad]">
+            <h2 className="text-2xl md:text-4xl font-bold text-[#5EBEC4]">
               Choose your best plan
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             <div className="flex w-full mb-8 sm:px-4  lg:mb-0">
-              <div className="flex flex-col hover:shadow-lg p-6 space-y-6 rounded shadow sm:p-8">
+              <div className="flex flex-col hover:shadow-lg bg-[#f6f9fc] p-6 space-y-6 rounded shadow sm:p-8">
                 <div className="space-y-2">
                   <h4 className="text-2xl font-bold">Beginner</h4>
-                  <span className="text-6xl font-bold text-[#42a6ad]">
+                  <span className="text-6xl font-bold text-[#5EBEC4]">
                     Free
                   </span>
                 </div>
@@ -70,16 +70,16 @@ const ServiceCard5 = () => {
                 </ul>
                 <button
                   type="button"
-                  className="btn inline-block px-5 py-3 font-semibold tracki text-center rounded bg-violet-400 text-[#42a6ad]">
+                  className="btn inline-block px-5 py-3 font-semibold bg-[#5EBEC4] hover:text-[#5EBEC4] text-white tracki text-center rounded bg-violet-400">
                   Get Started
                 </button>
               </div>
             </div>
             <div className="flex w-full mb-8 sm:px-4 lg:mb-0">
-              <div className="flex flex-col p-6 space-y-6 hover:shadow-lg rounded shadow sm:p-8 dark:bg-violet-400 dark:text-gray-900">
+              <div className="flex flex-col p-6 bg-[#f6f9fc] space-y-6 hover:shadow-lg rounded shadow sm:p-8 dark:bg-violet-400 dark:text-gray-900">
                 <div className="space-y-2">
                   <h4 className="text-2xl font-bold">Pro</h4>
-                  <span className="text-6xl font-bold text-[#42a6ad]">
+                  <span className="text-6xl font-bold text-[#5EBEC4]">
                     $24
                     <span className="text-sm tracki">/month</span>
                   </span>
@@ -143,16 +143,16 @@ const ServiceCard5 = () => {
                 </ul>
                 <button
                   type="button"
-                  className="btn inline-block px-5 py-3 font-semibold tracki text-center rounded bg-violet-400 text-[#42a6ad]">
+                  className="btn inline-block px-5 py-3 bg-[#5EBEC4] hover:text-[#5EBEC4] text-white font-semibold tracki text-center rounded bg-violet-400">
                   Get Started
                 </button>
               </div>
             </div>
             <div className="w-full mb-8 sm:px-4 lg:mb-0">
-              <div className="p-6 space-y-6 hover:shadow-lg rounded shadow sm:p-8 dark:bg-gray-900">
+              <div className="p-6 space-y-6 bg-[#f6f9fc] hover:shadow-lg rounded shadow sm:p-8 dark:bg-gray-900">
                 <div className="space-y-2">
                   <h4 className="text-2xl font-bold text-[#61677A]">Team</h4>
-                  <span className="text-6xl font-bold text-[#42a6ad]">
+                  <span className="text-6xl font-bold text-[#5EBEC4]">
                     $72
                     <span className="text-sm tracki">/month</span>
                   </span>
@@ -229,7 +229,7 @@ const ServiceCard5 = () => {
                 </ul>
                 <button
                   type="button"
-                  className="btn w-full inline-block px-5 py-3 font-semibold tracki text-center rounded bg-violet-400 text-[#42a6ad]">
+                  className="btn w-full inline-block bg-[#5EBEC4] hover:text-[#5EBEC4] text-white px-5 py-3 font-semibold tracki text-center rounded bg-violet-400">
                   Get Started
                 </button>
               </div>
