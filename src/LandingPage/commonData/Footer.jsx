@@ -10,12 +10,12 @@ const Footer = () => {
   return (
     <div>
       <footer className="bg-[#f7fafc]">
-        <div className="md:w-11/12 mx-auto px-4 py-16 sm:px-10 lg:px-8">
+        <div className="px-6 py-16 sm:px-10 md:px-24">
           <div className="lg:flex lg:items-start lg:gap-8">
             <div className="mt-8 grid grid-cols-2 gap-8 lg:mt-0 lg:grid-cols-5 lg:gap-y-16">
               <div className="col-span-2">
                 <div>
-                  <h2 className="text-2xl font-bold text-gray-900">
+                  <h2 className="text-2xl text-[#42a6ad] font-bold">
                     Easy Schedule
                   </h2>
                   <p className="mt-4 text-gray-800">
@@ -32,7 +32,7 @@ const Footer = () => {
                       Growth Week: See how 20+ sales, marketing, & CS experts
                       win, keep, and grow revenue!
                     </h2>
-                    <button className="mt-1 w-full bg-teal-500 px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition-none hover:bg-teal-600 sm:mt-0 sm:w-auto sm:shrink-0">
+                    <button className="mt-1 w-full bg-[#5EBEC4] px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition-none hover:bg-[#42a6ad] sm:mt-0 sm:w-auto sm:shrink-0">
                       Explore Seat
                     </button>
                   </div>

@@ -1,48 +1,35 @@
 // src/components/MyCalendar.js
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./MyCalendar.css"; // Import custom CSS for styling
 import EventSearch from "./eventSearch/EventSearch";
 import CreateEventButton from "./createEvent/CreateEvent";
 import NewEventTypes from "./newEventTypes/NewEventTypes";
 import EventNavbar from "./eventNavbar/EventNavbar";
+import { useLoaderData } from "react-router-dom";
 
 const MyCalendar = () => {
-  const events = [
-    {
-      title: "Tech Conference 2023",
-      date: "August 25-27, 2023",
-      location: "San Francisco, CA",
-      description: "Join us for the biggest tech conference of the year...",
-      imageUrl: "https://example.com/event-image-1.jpg",
-    },
-    {
-      title: "Music Festival 2023",
-      date: "September 15-17, 2023",
-      location: "New York City, NY",
-      description: "Get ready for a weekend of music, art, and fun!...",
-      imageUrl: "https://example.com/event-image-2.jpg",
-    },
-  ];
+
+  const Event = useLoaderData();
+
+
+
 
   return (
-    <div className=" py-8">
+    <div className="py-4 md:py-8 md:max-w-6xl">
       {/* grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 */}
 
-      <div className="flex justify-between items-center">
-        <div>
-          <h1 className="">My Calendar</h1>
-          <EventNavbar />
-        </div>
-        <CreateEventButton />
+      <div className="md:flex items-center justify-between">
+        <div><h1 className="text-3xl font-semibold pb-3 md:pb-0">Upcoming Events</h1></div>
+        <div><CreateEventButton /></div>
       </div>
       <div className="flex">
-        <EventSearch events={events} />
+        <EventSearch events={Event} />
       </div>
-      {/* <div className="bg-white p-4 rounded-lg shadow-md">
+      {/* <div className="p-4 bg-white rounded-lg shadow-md">
           
         </div> */}
       {/* R */}
-      <NewEventTypes />
+      {/* <NewEventTypes /> */}
     </div>
   );
 };

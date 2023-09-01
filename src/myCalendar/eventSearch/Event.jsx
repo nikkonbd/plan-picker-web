@@ -3,19 +3,20 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Event = ({ title, date, location, description, imageUrl }) => {
+
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden">
-      <Link to="">
+    <div className="overflow-hidden bg-white rounded-lg shadow-md">
+      <Link to={`/dashboard/schedule/:${title}`}>
         <img
           src={imageUrl}
           alt={`Event: ${title}`}
-          className="w-full h-40 object-cover"
+          className="object-cover w-full h-40"
         />
         <div className="p-4">
           <h2 className="text-xl font-semibold">{title}</h2>
-          <p className="text-gray-600 mt-2">{date}</p>
+          <p className="mt-2 text-gray-600">{date}</p>
           <p className="text-gray-600">{location}</p>
-          <p className="text-gray-700 mt-4">{description}</p>
+          <p className="mt-4 text-gray-700">{description}</p>
         </div>
       </Link>
     </div>

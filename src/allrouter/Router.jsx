@@ -7,11 +7,19 @@ import About from "../LandingPage/aboutus/About";
 import Blog from "../LandingPage/Blog/Blog";
 import BlogDetails from "../LandingPage/Blog/blogDetails/BlogDetails";
 import Dashboard from "../LandingPage/Dashboard/Dashboard";
-import Profile from "../LandingPage/Profile/Profile";
+
 import ScheduleEventDetails from "../compnents/ScheduleEventDetails";
 import MyCalendar from "../myCalendar/MyCalendar";
 import Availability from "../LandingPage/Availability/Availability";
 import MorePlan from "../LandingPage/homepage/morePlan/MorePlan";
+import Event from "../LandingPage/contact/Event";
+import Event2 from "../LandingPage/contact/Event2";
+import EventPage from "../component/EventPage";
+import MySchedule from "../LandingPage/Dashboard/mySchedule/MySchedule";
+import Analytics from "../LandingPage/Dashboard/analytics/Analytics";
+import Profile from "../LandingPage/Dashboard/Profile/Profile";
+import EventCalendar from "../eventCalendar/EventCalendar";
+import EventTypeDetails from "../myCalendar/eventSearch/EventTypeDetails";
 
 const router = createBrowserRouter([
   {
@@ -46,20 +54,6 @@ const router = createBrowserRouter([
         path: "/blog-details/:id",
         element: <BlogDetails></BlogDetails>,
       },
-      // {
-      //   path: "/dashboard",
-      //   element: <Dashboard></Dashboard>,
-      //   children: [
-      //     {
-      //       path: "/dashboard/Availability",
-      //       element: <Availability />
-      //     }
-      //   ]
-      // },
-      {
-        path: "profile",
-        element: <Profile></Profile>,
-      },
     ],
   },
   {
@@ -67,17 +61,60 @@ const router = createBrowserRouter([
     element: <Dashboard></Dashboard>,
     children: [
       {
-        path: "/dashboard",
+        path: "/dashboard/schedule",
         element: <MyCalendar />,
+        loader: () => fetch("https://mocki.io/v1/d238de33-940e-49c2-b452-79450b25f2c5")
       },
       {
-        path: "/dashboard/Availability",
+        path: "/dashboard/schedule/:id",
+        element: <EventTypeDetails />,
+        // loader: ({ params }) => fetch(`https://mocki.io/v1/d238de33-940e-49c2-b452-79450b25f2c5/${params.id}`)
+        loader: ({ params }) => fetch("https://mocki.io/v1/d238de33-940e-49c2-b452-79450b25f2c5")
+      },
+      {
+        path: "/dashboard/availability",
         element: <Availability />,
       },
       // {
       //   path: '/eventDetails',
       //   element: <ScheduleEventDetails></ScheduleEventDetails>
       // }
+      {
+        path: "/dashboard/Profile",
+        element: <Profile></Profile>,
+      },
+      {
+        path: "/dashboard/Schedule",
+        element: <ScheduleEventDetails></ScheduleEventDetails>,
+      },
+      {
+        path: "/dashboard/mySchedule",
+        element: <MySchedule></MySchedule>,
+      },
+      {
+        path: "/dashboard/analytics",
+        element: <Analytics></Analytics>,
+      },
+      {
+        path: "/dashboard/calendar",
+        element: <EventCalendar></EventCalendar>,
+      },
+      {
+        path: "/dashboard/event_type/one-on-one-form",
+        element: <Event />,
+      },
+      {
+        path: "/dashboard/event_type/group-form",
+        element: <Event2 />,
+      },
+      {
+        path: "/dashboard/event_type/collective-form",
+        element: <div>Colective</div>,
+      },
+      {
+        path: "/dashboard/one-on-one-form/event_set_edit_form",
+        element: <EventPage />,
+      }
     ],
   },
 ]);
