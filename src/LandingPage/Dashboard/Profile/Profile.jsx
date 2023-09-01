@@ -70,7 +70,7 @@ const Profile = () => {
           <div className="flex items-center ms-2">
             {imgURL ? (
               <img
-                className="w-32 rounded-full ms-8 me-5 sm:w-24 my-4"
+                className="w-[10px] h-[50px] rounded-full ms-8 me-5 sm:w-24 my-4"
                 src={imgURL}
                 alt=""
               />
