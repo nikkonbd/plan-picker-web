@@ -22,13 +22,10 @@ const Banner = () => {
           Sign up free now
         </button>
         <Link to="/more-plan">
-          <button className="mt-1 rounded-lg border-2 px-6 py-4 text-sm font-bold uppercase tracking-wide hover:text-white transition-none hover:bg-teal-600 sm:mt-0 sm:w-auto sm:shrink-0">
+          <button className="mt-1 rounded-lg border px-4 py-3 text-sm font-bold uppercase tracking-wide hover:text-white transition-none hover:bg-[#5EBEC4] text-[#42a6ad] border-[#5EBEC4] sm:mt-0 sm:w-auto sm:shrink-0">
             Learn more plan
           </button>
         </Link>
-        <button className="mt-1 rounded-lg border px-4 py-3 text-sm font-bold uppercase tracking-wide hover:text-white transition-none hover:bg-[#5EBEC4] text-[#42a6ad] border-[#5EBEC4] sm:mt-0 sm:w-auto sm:shrink-0">
-          Learn more plan
-        </button>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-14">
         <div className="md:columns-md lg:columns-xl bg-[#5ebdc444] rounded-md transition duration-300 ease-in-out hover:scale-90">
