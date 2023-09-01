@@ -11,6 +11,7 @@ import Dashboard from "../LandingPage/Dashboard/Dashboard";
 import ScheduleEventDetails from "../compnents/ScheduleEventDetails";
 import MyCalendar from "../myCalendar/MyCalendar";
 import Availability from "../LandingPage/Availability/Availability";
+import MorePlan from "../LandingPage/homepage/morePlan/MorePlan";
 import Event from "../LandingPage/contact/Event";
 import Event2 from "../LandingPage/contact/Event2";
 import EventPage from "../component/EventPage";
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+      },
+      {
+        path: '/more-plan',
+        element: <MorePlan></MorePlan>
       },
       {
         path: "/services",
@@ -70,6 +75,10 @@ const router = createBrowserRouter([
         path: "/dashboard/availability",
         element: <Availability />,
       },
+      // {
+      //   path: '/eventDetails',
+      //   element: <ScheduleEventDetails></ScheduleEventDetails>
+      // }
       {
         path: "/dashboard/Profile",
         element: <Profile></Profile>,

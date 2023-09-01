@@ -8,11 +8,10 @@ const BlogDetails = () => {
   const [article, setArticle] = useState({});
 
   useEffect(() => {
-    fetch("/topArticels.json")
+    fetch(`http://localhost:5000/blogs/${id}`)
       .then((res) => res.json())
       .then((data) => {
-        const singleData = data.find((article) => article._id === id);
-        setArticle(singleData);
+        setArticle(data);
       });
   }, []);
 

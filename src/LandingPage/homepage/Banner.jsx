@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import image from "../../assets/Info_project_schedule_ss.jpg";
 import img from "../../assets/dd.jpg";
@@ -20,6 +21,11 @@ const Banner = () => {
         <button className="mt-1 rounded-lg bg-[#5EBEC4] px-4 py-3 text-sm font-bold uppercase tracking-wide text-white transition-none hover:bg-[#42a6ad] sm:mt-0 sm:w-auto sm:shrink-0 mr-4">
           Sign up free now
         </button>
+        <Link to="/more-plan">
+          <button className="mt-1 rounded-lg border-2 px-6 py-4 text-sm font-bold uppercase tracking-wide hover:text-white transition-none hover:bg-teal-600 sm:mt-0 sm:w-auto sm:shrink-0">
+            Learn more plan
+          </button>
+        </Link>
         <button className="mt-1 rounded-lg border px-4 py-3 text-sm font-bold uppercase tracking-wide hover:text-white transition-none hover:bg-[#5EBEC4] text-[#42a6ad] border-[#5EBEC4] sm:mt-0 sm:w-auto sm:shrink-0">
           Learn more plan
         </button>
