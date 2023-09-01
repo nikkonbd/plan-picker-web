@@ -1,15 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
 
 const EventTypeDetails = () => {
+
 
     const EventType = useLoaderData();
 
     const paramsId = useParams();
 
-    const EventTypeDetails = EventType.find(event => event.date = paramsId.id)
+    const EventTypeDetails = EventType.find(event => event.title = paramsId.id)
+    console.log(paramsId)
 
-    const { title, date, location, description, imageUrl } = EventTypeDetails
+    const { title, date, location, description, imageUrl } = EventTypeDetails;
 
 
     return (
