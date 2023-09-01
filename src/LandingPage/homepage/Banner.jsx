@@ -1,11 +1,9 @@
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
-import image from "../../assets/Info_project_schedule_ss.jpg";
 import img from "../../assets/dd.jpg";
 import img1 from "../../assets/pp.jpg";
 
 const Banner = () => {
-  const users = useSelector((state) => console.log(state.auth.user));
+  // const users = useSelector((state) => console.log(state.auth.user));
   return (
     <div className="w-10/12 mx-auto sm:px-2 px-4">
       <div className="text-center pt-20">
@@ -33,7 +31,7 @@ const Banner = () => {
             Book & schedule <br /> with Plan picker
           </h2>
           <img
-            className="w-[380px] md:h-[242px] mx-auto rounded-md"
+            className="w-[380px] md:h-[250px] mx-auto rounded-md"
             src={img}
             alt=""
           />

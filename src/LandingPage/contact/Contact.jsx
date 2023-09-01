@@ -9,7 +9,7 @@ const Contact = () => {
         <h2 className="text-5xl font-semibold ">How can we help?</h2>
         <p>Get in touch and let us know how we can help.</p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:w-10/12 mx-auto px-4 md:px-0">
+      <div className="grid grid-cols-1 mt-16 md:grid-cols-2 lg:grid-cols-4 gap-6 md:w-10/12 mx-auto px-4 md:px-0">
         <div className="border-2 p-4 text-center shadow hover:shadow-lg mb-4 md:mb-0 mt-4 md:mt-0">
           <FaConnectdevelop className="text-4xl"></FaConnectdevelop>
           <h2 className="text-2xl font-semibold pt-4">Contact Sales</h2>
