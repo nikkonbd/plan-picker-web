@@ -11,15 +11,12 @@ import Dashboard from "../LandingPage/Dashboard/Dashboard";
 import ScheduleEventDetails from "../compnents/ScheduleEventDetails";
 import MyCalendar from "../myCalendar/MyCalendar";
 import Availability from "../LandingPage/Availability/Availability";
-import MorePlan from "../LandingPage/homepage/morePlan/MorePlan";
 import Event from "../LandingPage/contact/Event";
 import Event2 from "../LandingPage/contact/Event2";
 import EventPage from "../component/EventPage";
 import MySchedule from "../LandingPage/Dashboard/mySchedule/MySchedule";
-import Analytics from "../LandingPage/Dashboard/analytics/Analytics";
+import AllUsers from "../LandingPage/Dashboard/Admin/AllUsers";
 import Profile from "../LandingPage/Dashboard/Profile/Profile";
-import EventCalendar from "../eventCalendar/EventCalendar";
-import EventTypeDetails from "../myCalendar/eventSearch/EventTypeDetails";
 
 const router = createBrowserRouter([
   {
@@ -29,10 +26,6 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-      },
-      {
-        path: '/more-plan',
-        element: <MorePlan></MorePlan>
       },
       {
         path: "/services",
@@ -63,22 +56,15 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/schedule",
         element: <MyCalendar />,
-        loader: () => fetch("https://mocki.io/v1/d238de33-940e-49c2-b452-79450b25f2c5")
       },
       {
-        path: "/dashboard/schedule/:id",
-        element: <EventTypeDetails />,
-        // loader: ({ params }) => fetch(`https://mocki.io/v1/d238de33-940e-49c2-b452-79450b25f2c5/${params.id}`)
-        loader: ({ params }) => fetch("https://mocki.io/v1/d238de33-940e-49c2-b452-79450b25f2c5")
+        path: "/dashboard/allUsers",
+        element: <AllUsers></AllUsers>
       },
       {
         path: "/dashboard/availability",
         element: <Availability />,
       },
-      // {
-      //   path: '/eventDetails',
-      //   element: <ScheduleEventDetails></ScheduleEventDetails>
-      // }
       {
         path: "/dashboard/Profile",
         element: <Profile></Profile>,
@@ -86,18 +72,6 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/Schedule",
         element: <ScheduleEventDetails></ScheduleEventDetails>,
-      },
-      {
-        path: "/dashboard/mySchedule",
-        element: <MySchedule></MySchedule>,
-      },
-      {
-        path: "/dashboard/analytics",
-        element: <Analytics></Analytics>,
-      },
-      {
-        path: "/dashboard/calendar",
-        element: <EventCalendar></EventCalendar>,
       },
       {
         path: "/dashboard/event_type/one-on-one-form",
@@ -114,7 +88,7 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/one-on-one-form/event_set_edit_form",
         element: <EventPage />,
-      }
+      },
     ],
   },
 ]);
