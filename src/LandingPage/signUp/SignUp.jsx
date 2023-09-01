@@ -58,8 +58,9 @@ const SignUp = () => {
                     const { name, email, password } = data
                     const newData = { name, email, imgUrl }
 
+                    console.log(email, password)
                     //firebase
-                    createUser(email, password)
+                    createUser(data.email, data.password)
                         .then(result => {
                             const loggedUser = result.user;
                             console.log('new-user', loggedUser);
@@ -89,6 +90,16 @@ const SignUp = () => {
                                         navigate('/')
                                     }
                                 })
+                        })
+                        .catch(error => {
+                            console.log(error.message);
+                            Swal.fire({
+                                position: 'top-end',
+                                icon: 'error',
+                                title: `${error.message}`,
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
                         })
                 }
             })

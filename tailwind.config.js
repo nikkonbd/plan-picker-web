@@ -6,6 +6,9 @@ export default {
     extend: {},
   },
   plugins: [],
+  daisyui: {
+    themes: ["light", "dark"],
+  },
 };
 module.exports = withMT({
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
@@ -13,4 +16,7 @@ module.exports = withMT({
     extend: {},
   },
   plugins: [require("daisyui")],
+  daisyui: {
+    themes: ["light", "dark"],
+  },
 });
