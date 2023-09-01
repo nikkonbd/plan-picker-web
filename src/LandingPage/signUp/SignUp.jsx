@@ -151,7 +151,7 @@ const SignUp = () => {
                 className="bg-transparent shadow-none"
             >
                 <Card className="mx-auto w-full max-w-[42rem]">
-                    <CardHeader className='text-center py-3 bg-teal-500'
+                    <CardHeader className='text-center py-3 bg-[#5EBEC4]'
                     >
                         <Typography variant="h3" color="white">
                             Plan Picker Sign Up
@@ -189,8 +189,7 @@ const SignUp = () => {
                             <Typography
                                 as="a"
                                 variant="small"
-                                color="blue"
-                                className="ml-1 font-bold cursor-pointer"
+                                className="ml-1 text-[#5EBEC4] font-bold cursor-pointer"
                                 onClick={handleOpen}
                             >
                                 Sign In
