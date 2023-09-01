@@ -14,6 +14,7 @@ import Availability from "../LandingPage/Availability/Availability";
 import Event from "../LandingPage/contact/Event";
 import Event2 from "../LandingPage/contact/Event2";
 import EventPage from "../component/EventPage";
+import MySchedule from "../LandingPage/Dashboard/mySchedule/MySchedule";
 import AllUsers from "../LandingPage/Dashboard/Admin/AllUsers";
 
 const router = createBrowserRouter([

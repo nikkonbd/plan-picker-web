@@ -1,18 +1,50 @@
 import { useQuery } from '@tanstack/react-query';
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { FaUsers } from 'react-icons/fa';
 import { FcEmptyTrash } from "react-icons/fc";
 import { PiUserSwitchBold } from "react-icons/pi";
 import Swal from 'sweetalert2';
+import useAxiosSecure from '../../../hooks/useAxiosSecure';
 
 const AllUsers = () => {
-    const isRole = true;
+
     const [myUsers, setMyusers] = useState([])
-    const { data: users = [], refetch } = useQuery(['users'], async () => {
-        const res = await fetch('http://localhost:5000/users')
-        return res.json()
+    // const { data: users = [], refetch } = useQuery(['users'], async () => {
+    //     const res = await fetch('http://localhost:5000/users')
+    //     return res.json()
+    // })
+    // console.log("AllUsers from DB", users);
+
+    const [axiosSecure] = useAxiosSecure()
+
+    const { data: users = [], refetch } = useQuery(["users"], async () => {
+        const res = await axiosSecure.get('/users')
+        return res.data;
     })
-    console.log("AllUsers from DB", users);
+
+
+    //handleMake Admin
+    const handleMakeAdmin = (user) => {
+        fetch(`http://localhost:5000/users/admin/${user._id}`, {
+            method: "PATCH"
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.modifiedCount) {
+                    refetch()
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: `${user.name} is an admin now!`,
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
+            })
+    }
+
 
 
     //delete user
@@ -51,6 +83,9 @@ const AllUsers = () => {
 
     return (
         <>
+            <Helmet >
+                <title>AllUsers || PlanPicker</title>
+            </Helmet>
             <div className='flex justify-between items-center mb-5'>
                 <h2 className='text-xl md:text-4xl font-serif font-bold'>Total Users : {users.length}
                 </h2>
@@ -97,13 +132,13 @@ const AllUsers = () => {
                                     <td>
                                         {
 
-                                            isRole ?
+                                            user?.role === 'admin' ?
                                                 <button className="btn  btn-circle">
 
                                                     <PiUserSwitchBold fontSize={30}></PiUserSwitchBold>
                                                 </button>
                                                 :
-                                                <button className="btn  btn-circle">
+                                                <button onClick={() => handleMakeAdmin(user)} className="btn  btn-circle">
                                                     <FaUsers fontSize={30} ></FaUsers>
                                                 </button>
                                         }

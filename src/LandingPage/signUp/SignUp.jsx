@@ -60,7 +60,7 @@ const SignUp = () => {
 
                     console.log(email, password)
                     //firebase
-                    createUser(email, password)
+                    createUser(data.email, data.password)
                         .then(result => {
                             const loggedUser = result.user;
                             console.log('new-user', loggedUser);

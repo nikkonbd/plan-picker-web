@@ -85,7 +85,7 @@ const Login = () => {
 
     return (
         <div>
-            <Button className='bg-teal-500' onClick={handleOpen}>Sign In</Button>
+            <Button className='bg-[#5EBEC4]' onClick={handleOpen}>Sign In</Button>
             <Dialog
                 size="md"
                 open={open}
@@ -93,9 +93,10 @@ const Login = () => {
                 className="bg-transparent shadow-none"
             >
                 <Card className="mx-auto w-full md:max-w-2xl">
-                    <CardHeader className='text-center py-3 bg-teal-500'
+                    <CardHeader className='text-center py-3 bg-[#5EBEC4]'
                     >
                         <Typography variant="h3" color="white">
+
                             Plan Picker Sign In
                         </Typography>
                     </CardHeader>
@@ -107,6 +108,10 @@ const Login = () => {
                             {errors.password && <span>Password is Required!</span>}
                             {/* <div className="-ml-2.5">
                                 <Checkbox label="Remember Me" />
+                                </div>
+                            </CardBody>
+                            <div className='px-6'>
+                                <Button className='bg-[#5EBEC4]' variant="gradient" fullWidth>
                             </div> */}
                         </CardBody>
                         <div className='px-6'>
