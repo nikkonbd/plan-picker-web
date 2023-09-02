@@ -9,10 +9,10 @@ const AboutCard = () => {
   return (
     <div>
       <div className="gap-4 text-[#61677A] grid grid-cols-1 md:pb-10 md:grid-cols-2 lg:grid-cols-4 w-10/12 mx-auto p-4 md:p-0">
-        <div className="card w-full md:w-[260px]  bg-[#f6f9fc] border">
+        <div className="card w-full md:w-[260px] shadow-md border">
           <figure className="px-10 pt-10">
             <img
-              src="https://i.ibb.co/JdhWRQN/365756103-673069558199561-6794946048297804025-n.jpg"
+              src="https://media.licdn.com/dms/image/C4D03AQHfo7rwXAgVug/profile-displayphoto-shrink_200_200/0/1633708757212?e=1698883200&v=beta&t=VTLfK2OLZoq-0ZiGtZ231ICy3-F9TNNm4XoxRWcTd3Y"
               alt="Shoes"
               className="rounded-full h-40 w-40"
             />
@@ -28,10 +28,10 @@ const AboutCard = () => {
             </div>
           </div>
         </div>
-        <div className="card w-full md:w-[260px]  bg-[#f6f9fc] border">
+        <div className="card w-full md:w-[260px]  shadow-md border">
           <figure className="px-10 pt-10">
             <img
-              src="https://i.ibb.co/JdhWRQN/365756103-673069558199561-6794946048297804025-n.jpg"
+              src="https://media.licdn.com/dms/image/D5635AQHlh2oNVPX4Lg/profile-framedphoto-shrink_200_200/0/1689451368786?e=1694185200&v=beta&t=WyPY8T11lpp4EJkhMSWCmNK5pjR5_CFP0TpdriHDSDU"
               alt="Shoes"
               className="rounded-full h-40 w-40"
             />
@@ -47,7 +47,7 @@ const AboutCard = () => {
             </div>
           </div>
         </div>
-        <div className="card w-full md:w-[260px]  bg-[#f6f9fc] border">
+        <div className="card w-full md:w-[260px] shadow-md border">
           <figure className="px-10 pt-10">
             <img
               src="https://i.ibb.co/JdhWRQN/365756103-673069558199561-6794946048297804025-n.jpg"
@@ -66,7 +66,7 @@ const AboutCard = () => {
             </div>
           </div>
         </div>
-        <div className="card w-full md:w-[260px]  bg-[#f6f9fc] border">
+        <div className="card w-full md:w-[260px] shadow-md border">
           <figure className="px-10 pt-10">
             <img
               src="https://i.ibb.co/JdhWRQN/365756103-673069558199561-6794946048297804025-n.jpg"
@@ -87,7 +87,7 @@ const AboutCard = () => {
         </div>
       </div>
       <div className="gap-4 text-[#61677A] grid grid-cols-1 md:pb-20 md:grid-cols-2 lg:grid-cols-3 w-8/12 mx-auto p-4 md:p-0">
-        <div className="card w-full md:w-[260px]  bg-[#f6f9fc] border">
+        <div className="card w-full md:w-[260px] shadow-md border">
           <figure className="px-10 pt-10">
             <img
               src="https://i.ibb.co/JdhWRQN/365756103-673069558199561-6794946048297804025-n.jpg"
@@ -106,7 +106,7 @@ const AboutCard = () => {
             </div>
           </div>
         </div>
-        <div className="card w-full md:w-[260px]  bg-[#f6f9fc] border">
+        <div className="card w-full md:w-[260px] shadow-md border">
           <figure className="px-10 pt-10">
             <img
               src="https://i.ibb.co/JdhWRQN/365756103-673069558199561-6794946048297804025-n.jpg"
@@ -125,10 +125,10 @@ const AboutCard = () => {
             </div>
           </div>
         </div>
-        <div className="card w-full md:w-[260px]  bg-[#f6f9fc] border">
+        <div className="card w-full md:w-[260px] shadow-md border">
           <figure className="px-10 pt-10">
             <img
-              src="https://i.ibb.co/JdhWRQN/365756103-673069558199561-6794946048297804025-n.jpg"
+              src="https://media.licdn.com/dms/image/D5635AQH8_3lyAvYERg/profile-framedphoto-shrink_200_200/0/1688351088448?e=1694181600&v=beta&t=BRnHxEu1e3umPywV62vhgkMvFu6YgZkiAoME--eKPS0"
               alt="Shoes"
               className="rounded-full h-40 w-40"
             />

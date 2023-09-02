@@ -4,11 +4,9 @@ import { Helmet } from "react-helmet-async";
 const imgHostingToken = import.meta.env.VITE_Img_Upload_Token;
 
 const Profile = () => {
-
   const imgHostingUrl = `https://api.imgbb.com/1/upload?key=${imgHostingToken}`;
 
   const [imgURL, setImgURL] = useState("");
-
 
   const profileUpdateHandler = async (event) => {
     event.preventDefault();
@@ -17,12 +15,12 @@ const Profile = () => {
 
     if (imageFile) {
       const formData = new FormData();
-      formData.append('image', imageFile);
+      formData.append("image", imageFile);
 
       try {
         const response = await fetch(imgHostingUrl, {
-          method: 'POST',
-          body: formData
+          method: "POST",
+          body: formData,
         });
 
         if (response.ok) {
@@ -31,17 +29,15 @@ const Profile = () => {
           setImgURL(newImgURL); // Update the image URL state
           console.log(imgResponse);
         } else {
-          console.error('Image upload failed:', response.status);
+          console.error("Image upload failed:", response.status);
         }
       } catch (error) {
-        console.error('Error uploading image:', error);
+        console.error("Error uploading image:", error);
       }
     } else {
-      console.error('No image selected');
+      console.error("No image selected");
     }
   };
-
-
 
   return (
     <>
@@ -53,29 +49,33 @@ const Profile = () => {
           <p className="ms-10 mt-4 text-2xl mb-2">Welcome Ali H.</p>
           <div className="">
             <div className="flex items-center ms-2">
-              {imgURL ?
+              {imgURL ? (
                 <img
                   className="w-32 rounded-full ms-8 me-5 sm:w-24 my-4"
                   src={imgURL}
                   alt=""
                 />
-                :
+              ) : (
                 <img
                   className="w-32 rounded-full ms-8 me-5 sm:w-24 my-4"
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT38RfA9Hzky4OMp9XXMSUqzC0LkQX8IGxx0A&usqp=CAU"
                   alt=""
                 />
-              }
+              )}
 
               <div>
                 <div>
-                  <div class="relative overflow-hidden border-[1px] rounded-md border-blue-gray-600 w-fit pe-1 mb-2">
-                    <input type="file" name="image" id="fileInput" className="absolute inset-0 w-full h-full opacity-0 cursor-pointer" />
+                  <div className="relative overflow-hidden border-[1px] rounded-md border-blue-gray-600 w-fit pe-1 mb-2">
+                    <input
+                      type="file"
+                      name="image"
+                      id="fileInput"
+                      className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                    />
                     <label htmlFor="fileInput" className=" p-1 ps-2 mb-2">
                       Upload File
                     </label>
                   </div>
-
                 </div>
                 <p className="text-blue-gray-400 me-6">
                   JPG, GIF OR PNG. MAX size of 5mb
@@ -164,12 +164,19 @@ const Profile = () => {
               />
             </div>
           </div>
-          <input className="my-4 ms-10 bg-blue-700 text-white py-2 px-3 rounded-xl cursor-pointer" type="submit" value="Save Change" />
-          <input className="ms-3 bg-red-500 text-white py-2 px-3 rounded-xl cursor-pointer" type="button" value="Cancel" />
+          <input
+            className="my-4 ms-10 bg-blue-700 text-white py-2 px-3 rounded-xl cursor-pointer"
+            type="submit"
+            value="Save Change"
+          />
+          <input
+            className="ms-3 bg-red-500 text-white py-2 px-3 rounded-xl cursor-pointer"
+            type="button"
+            value="Cancel"
+          />
         </form>
       </div>
     </>
-
   );
 };
 

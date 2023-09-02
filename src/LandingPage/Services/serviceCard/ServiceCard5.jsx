@@ -3,7 +3,7 @@ import React from "react";
 const ServiceCard5 = () => {
   return (
     <div>
-      <section className="py-10 dark:bg-gray-800 dark:text-gray-100">
+      <section className="py-10 dark:text-gray-100">
         <div className="text-[#61677A]">
           <div className="max-w-2xl mx-auto mb-16 text-center">
             <span
@@ -17,7 +17,7 @@ const ServiceCard5 = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             <div className="flex w-full mb-8 sm:px-4  lg:mb-0">
-              <div className="flex flex-col hover:shadow-lg bg-[#f6f9fc] p-6 space-y-6 rounded shadow sm:p-8">
+              <div className="flex flex-col hover:shadow-lg shadow-md p-6 space-y-6 rounded sm:p-8">
                 <div className="space-y-2">
                   <h4 className="text-2xl font-bold">Beginner</h4>
                   <span className="text-6xl font-bold text-[#5EBEC4]">
@@ -76,7 +76,7 @@ const ServiceCard5 = () => {
               </div>
             </div>
             <div className="flex w-full mb-8 sm:px-4 lg:mb-0">
-              <div className="flex flex-col p-6 bg-[#f6f9fc] space-y-6 hover:shadow-lg rounded shadow sm:p-8 dark:bg-violet-400 dark:text-gray-900">
+              <div className="flex flex-col p-6 space-y-6 hover:shadow-lg rounded shadow-md sm:p-8 dark:bg-violet-400 dark:text-gray-900">
                 <div className="space-y-2">
                   <h4 className="text-2xl font-bold">Pro</h4>
                   <span className="text-6xl font-bold text-[#5EBEC4]">
@@ -149,7 +149,7 @@ const ServiceCard5 = () => {
               </div>
             </div>
             <div className="w-full mb-8 sm:px-4 lg:mb-0">
-              <div className="p-6 space-y-6 bg-[#f6f9fc] hover:shadow-lg rounded shadow sm:p-8 dark:bg-gray-900">
+              <div className="p-6 space-y-6 hover:shadow-lg rounded shadow-md sm:p-8 dark:bg-gray-900">
                 <div className="space-y-2">
                   <h4 className="text-2xl font-bold text-[#61677A]">Team</h4>
                   <span className="text-6xl font-bold text-[#5EBEC4]">
