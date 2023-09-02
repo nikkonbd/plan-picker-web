@@ -68,17 +68,17 @@ const ContactUS = () => {
                   type="text"
                   name="from_name"
                   placeholder="Enter Your Name"
-                  className="p-3 text-black bg-transparent border-2 rounded-md border-[#5ebdc45e] focus:outline-none"
+                  className="p-3 text-[#5EBEC4] bg-transparent border-2 rounded-md border-[#5ebdc45e] focus:outline-none"
                 />
                 <input
                   type="email"
                   name="from_email"
                   placeholder="name@gmail.com"
-                  className="p-3 text-black bg-transparent border-2 rounded-md border-[#5ebdc45e] focus:outline-none"
+                  className="p-3 text-[#5EBEC4] bg-transparent border-2 rounded-md border-[#5ebdc45e] focus:outline-none"
                 />
                 <textarea
                   name="message"
-                  className="p-3 text-black bg-transparent border-2 rounded-md border-[#5ebdc45e] focus:outline-none"
+                  className="p-3 text-[#5EBEC4] bg-transparent border-2 rounded-md border-[#5ebdc45e] focus:outline-none"
                   placeholder="Message"
                   rows="8"></textarea>
                 <button className="flex items-center w-ful px-6 py-2 mx-auto my-8 font-bold text-white duration-300 rounded-md bg-gradient-to-b from-[#5EBEC4] to-[#42a6ad] hover:scale-110">

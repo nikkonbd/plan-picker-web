@@ -11,7 +11,7 @@ const Banner1 = () => {
     AOS.init();
   }, []);
   return (
-    <div className="w-10/12 mx-auto sm:px-2 px-4">
+    <div className="w-10/12 mx-auto px-4">
       <div data-aos="fade-up" className="text-center md:pb-8">
         <h2 className="text-2xl text-[#61677A] md:text-4xl font-semibold pt-24">
           <span className="text-[#5EBEC4]">We make scheduling for</span>{" "}

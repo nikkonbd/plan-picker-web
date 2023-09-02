@@ -73,15 +73,21 @@ const About = () => {
 
                 <div className="flex gap-6 mt-6">
                   <div>
-                    <h2 className="text-2xl font-semibold">100</h2>
+                    <h2 className="text-2xl font-semibold text-[#5EBEC4]">
+                      100
+                    </h2>
                     <p>Time-saving</p>
                   </div>
                   <div>
-                    <h2 className="text-2xl font-semibold">300</h2>
+                    <h2 className="text-2xl font-semibold text-[#5EBEC4]">
+                      300
+                    </h2>
                     <p>Satisfied Users</p>
                   </div>
                   <div>
-                    <h2 className="text-2xl font-semibold">24/7</h2>
+                    <h2 className="text-2xl font-semibold text-[#5EBEC4]">
+                      24/7
+                    </h2>
                     <p>Support</p>
                   </div>
                 </div>
@@ -97,7 +103,7 @@ const About = () => {
             {/* planning features */}
             <div className="gap-4 mb-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-10/12 mx-auto p-4 md:p-0">
               <div className="p-4 rounded-xl bg-slate-300">
-                <div className="p-4 bg-[#f6f9fc] rounded-xl">
+                <div className="p-4 text-center bg-[#f6f9fc] rounded-xl">
                   <div>
                     <img
                       className="rounded-2xl"
@@ -105,27 +111,27 @@ const About = () => {
                       alt=""
                     />
                   </div>
-                  <h1 className="my-3 text-lg font-semibold">
+                  <h1 className="mt-4 text-lg font-semibold">
                     Efficient Planning
                   </h1>
                   <p className="mb-2">Save hours weekly</p>
                 </div>
               </div>
 
-              <div className="p-4 rounded-xl bg-slate-300">
+              <div className="p-4 text-center rounded-xl bg-slate-300">
                 <div className="p-4 bg-[#f6f9fc] rounded-xl">
                   <img className="rounded-2xl" src={EfficientPlanning} alt="" />
-                  <h1 className="my-3 text-lg font-semibold">
+                  <h1 className="mt-4 text-lg font-semibold">
                     Seamless Syncing
                   </h1>
                   <p className="mb-2">Never miss an event</p>
                 </div>
               </div>
 
-              <div className="p-4 rounded-xl bg-slate-300">
+              <div className="p-4 text-center rounded-xl bg-slate-300">
                 <div className="p-4 bg-[#f6f9fc] rounded-xl">
                   <img className="rounded-2xl" src={EfficientPlanning} alt="" />
-                  <h1 className="my-3 text-lg font-semibold">
+                  <h1 className="mt-4 text-lg font-semibold">
                     Enhanced Productivity
                   </h1>
                   <p className="mb-2">Stay on top of tasks</p>
