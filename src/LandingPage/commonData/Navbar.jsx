@@ -158,7 +158,7 @@ const Navbar = () => {
 
   return (
     <div className="shadow-md">
-      <div className="justify-between md:px-32 mx-auto navbar">
+      <div className="justify-between md:px-24 mx-auto navbar">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">

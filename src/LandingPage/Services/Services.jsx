@@ -18,7 +18,7 @@ const Services = () => {
         <title>Service || Plan Picker</title>
       </Helmet>
       <div className="px-4 md:px-0 md:w-10/12 mx-auto py-16 sm:px-10">
-        <Card className="w-full flex-row">
+        <Card className="w-full bg-[#f6f9fc] flex-row">
           <CardBody>
             <Typography variant="h6" color="gray" className="mb-4 uppercase">
               startups

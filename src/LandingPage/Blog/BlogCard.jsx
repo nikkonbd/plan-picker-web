@@ -9,8 +9,8 @@ import { Link } from "react-router-dom";
 
 const BlogCard = ({ article }) => {
   return (
-    <Card className="mt-6 w-full hover:shadow-xl text-[#61677A]">
-      <CardBody>
+    <Card className="mt-6 w-full hover:shadow-xl bg-[#f6f9fc] text-[#61677A]">
+      <CardBody className="">
         <img className="rounded-3xl pb-6" src={article.imageURL} alt="" />
         <Typography variant="h5" className="mb-2 text-[#61677A]">
           {article.articleName}
