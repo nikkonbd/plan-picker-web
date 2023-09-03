@@ -5,7 +5,7 @@ import img1 from "../../assets/pp.jpg";
 const Banner = () => {
   // const users = useSelector((state) => console.log(state.auth.user));
   return (
-    <div className="md:w-10/12 mx-auto sm:px-2 px-4">
+    <div className="md:w-10/12 lg:w-8/12 mx-auto sm:px-2 px-4">
       <div className="text-center pt-20">
         <h2 className="text-3xl md:text-5xl text-[#61677A] cursor-pointer font-bold">
           <span className="text-[#5EBEC4]">Welcome to Easy</span> Scheduling{" "}

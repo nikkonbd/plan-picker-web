@@ -38,7 +38,7 @@ const SecondHero = () => {
         </div>
         <div
           data-aos="zoom-in"
-          className="flex justify-between flex-col-reverse md:w-10/12 my-10 mx-auto md:flex-row gap-2 md:gap-10 md:px-0 items-center bg-[#5ebdc444] rounded-xl">
+          className="flex justify-between flex-col-reverse md:w-10/12 lg:w-8/12 my-10 md:mx-auto md:flex-row md:gap-10 md:px-0 items-center bg-[#5ebdc444] rounded-xl">
           <div className="w-full p-10 ">
             <Accordion open={open === 1} animate={CUSTOM_ANIMATION}>
               <AccordionHeader

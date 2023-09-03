@@ -6,7 +6,7 @@ import "aos/dist/aos.css";
 const Hero = () => {
   AOS.init();
   return (
-    <div className="w-10/12 mx-auto sm:px-2 px-4">
+    <div className="md:w-10/12 lg:w-8/12 mx-auto px-4">
       <div data-aos="fade-down" className="text-center">
         <h2 className="text-2xl md:text-4xl text-[#61677A] font-semibold md:pt-24">
           <span className="text-[#42a6ad]">
@@ -20,7 +20,7 @@ const Hero = () => {
           seamless buying experience for your customers.
         </p>
       </div>
-      <div className="md:flex gap-6 flex-grow justify-between items-center mt-20">
+      <div className="md:flex gap-6 flex-grow justify-between items-center md:mt-20 mt-6">
         <div>
           <div
             data-aos="fade-right"

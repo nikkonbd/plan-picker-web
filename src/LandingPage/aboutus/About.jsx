@@ -59,7 +59,7 @@ const About = () => {
             </div>
 
             {/* Revolutionize of Schedule */}
-            <div className="py-[75px] md:py-[100px] flex flex-col md:flex-row gap-4 w-10/12 mx-auto p-4">
+            <div className="py-[75px] md:py-[100px] flex flex-col md:flex-row gap-4 md:w-10/12 lg:w-8/12 mx-auto">
               <div className="flex flex-col justify-center">
                 <h1 className="text-2xl font-semibold md:text-3xl">
                   Revolutionize Your Schedule
@@ -101,7 +101,7 @@ const About = () => {
             </div>
 
             {/* planning features */}
-            <div className="gap-4 mb-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-10/12 mx-auto p-4 md:p-0">
+            <div className="gap-4 mb-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:w-10/12 lg:w-8/12 mx-auto md:p-0">
               <div className="p-4 rounded-xl bg-slate-300">
                 <div className="p-4 text-center bg-[#f6f9fc] rounded-xl">
                   <div>
@@ -140,10 +140,10 @@ const About = () => {
             </div>
 
             {/*  */}
-            <div className="py-[75px] md:pt-24  bg-[#f6f9fc] text-[#5EBEC4] mb-8 rounded-xl">
-              <div className="flex flex-col gap-10 p-4 mx-auto md:flex-row w-10/12">
+            <div className="py-[75px] md:pt-24 bg-[#f6f9fc] text-[#5EBEC4] mb-8 rounded-xl">
+              <div className="flex flex-col gap-10 md:w-10/12 lg:w-8/12 mx-auto md:flex-row">
                 <img
-                  className="h-auto max-w-full md:w-1/2 rounded-xl"
+                  className="h-auto w-[500px] rounded-xl"
                   src={planning}
                   alt=""
                 />

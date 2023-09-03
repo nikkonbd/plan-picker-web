@@ -125,19 +125,13 @@ const Login = () => {
               <Button onClick={handleGoogleSignIN} className='w-full flex items-center justify-center gap-4' variant="outlined"><FcGoogle className='text-xl text-teal-500'></FcGoogle>Sign In With Google</Button>
             </a>
           </div>
-          {/* <div className='px-6'>
-                        <a className=''>
-                            <Button className='w-full flex items-center justify-center gap-4' variant="outlined"><FaMicrosoft className='text-xl'></FaMicrosoft>Sign In With Microsoft</Button>
-                        </a>
-                    </div> */}
           <CardFooter className="pt-0">
             <Typography variant="small" className="mt-6 flex justify-center">
               Don&apos;t have an account?
               <Typography
                 as="a"
                 variant="small"
-                color="blue"
-                className="ml-1 font-bold"
+                className="ml-1 font-bold text-[#5EBEC4]"
               >
                 <span><SignUp></SignUp></span>
               </Typography>
