@@ -15,8 +15,9 @@ import Event from "../LandingPage/contact/Event";
 import Event2 from "../LandingPage/contact/Event2";
 import EventPage from "../component/EventPage";
 import MySchedule from "../LandingPage/Dashboard/mySchedule/MySchedule";
-import Analytics from "../LandingPage/Dashboard/analytics/Analytics";
+import AllUsers from "../LandingPage/Dashboard/Admin/AllUsers";
 import Profile from "../LandingPage/Dashboard/Profile/Profile";
+import Analytics from "../LandingPage/Dashboard/analytics/Analytics";
 
 const router = createBrowserRouter([
   {
@@ -56,6 +57,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/schedule",
         element: <MyCalendar />,
+      },
+      {
+        path: "/dashboard/allUsers",
+        element: <AllUsers></AllUsers>,
       },
       {
         path: "/dashboard/availability",

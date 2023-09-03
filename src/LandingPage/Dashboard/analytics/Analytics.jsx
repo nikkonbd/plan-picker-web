@@ -11,6 +11,8 @@ import {
   Legend,
 } from "recharts";
 
+
+
 const Analytics = () => {
   // data for chart
   const data = [

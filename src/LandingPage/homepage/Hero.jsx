@@ -1,56 +1,66 @@
 import React from "react";
 import book3 from "../../assets/Images/book3.png";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Hero = () => {
   AOS.init();
   return (
-    <div className="md:w-8/12 mx-auto">
+    <div className="md:w-10/12 lg:w-8/12 mx-auto px-4">
       <div data-aos="fade-down" className="text-center">
-        <h2 className="text-3xl md:text-5xl text-[#61677A] font-semibold pt-24">
-          <span className="text-[#42a6ad]">Scheduling automation happens</span>
-           <br /> before and after meetings
+        <h2 className="text-2xl md:text-4xl text-[#61677A] font-semibold md:pt-24">
+          <span className="text-[#42a6ad]">
+            Scheduling automation happens before
+          </span>
+          <br className="hidden md:block" /> and after meetings
         </h2>
-        <p className="pt-4 text-base md:text-md text-[#61677A]">
+        <p className="pt-2 md:pt-5 text-base text-[#61677A]">
           Take advantage of high buying intent right after checkout and create a{" "}
-          <br />
+          <br className="hidden md:block" />
           seamless buying experience for your customers.
         </p>
       </div>
-      <div className="md:flex gap-6 justify-between items-center mt-10">
+      <div className="md:flex gap-6 flex-grow justify-between items-center md:mt-20 mt-6">
         <div>
-          <div data-aos="fade-right" className="hover:bg-[#f8f7ff] p-4 rounded-xl">
+          <div
+            data-aos="fade-right"
+            className="hover:bg-[#f8f7ff] p-4 rounded-xl">
             <h2 className="text-xl font-semibold text-[#42a6ad]">
               Let people schedule meetings on your website
             </h2>
-            <p className="text-base text-[#61677A]">
-              Book high-value meetings in seconds and turn <br /> scheduling
-              into a competitive advantage
+            <p className="text-base pt-2 text-[#61677A]">
+              Book high-value meetings in seconds and turn{" "}
+              <br className="hidden md:block" /> scheduling into a competitive
+              advantage
             </p>
           </div>
-          <div data-aos="fade-down" className="hover:bg-[#f8f7ff] p-4 rounded-xl">
+          <div
+            data-aos="fade-down"
+            className="hover:bg-[#f8f7ff] p-4 rounded-xl">
             <h2 className="text-xl font-semibold text-[#42a6ad]">
               Let people schedule meetings on your website
             </h2>
-            <p className="text-base text-[#61677A]">
-              Book high-value meetings in seconds and turn <br /> scheduling
-              into a competitive advantage
+            <p className="text-base pt-2 text-[#61677A]">
+              Book high-value meetings in seconds and turn{" "}
+              <br className="hidden md:block" /> scheduling into a competitive
+              advantage
             </p>
           </div>
-          <div data-aos="fade-left" className="hover:bg-[#f8f7ff] p-4 rounded-xl">
+          <div
+            data-aos="fade-left"
+            className="hover:bg-[#f8f7ff] p-4 rounded-xl">
             <h2 className="text-xl font-semibold text-[#42a6ad]">
               Let people schedule meetings on your website
             </h2>
-            <p className="text-base text-[#61677A]">
-              Book high-value meetings in seconds and turn <br /> scheduling
-              into a competitive advantage
+            <p className="text-base pt-2 text-[#61677A]">
+              Book high-value meetings in seconds and turn{" "}
+              <br className="hidden md:block" /> scheduling into a competitive
+              advantage
             </p>
           </div>
         </div>
         <div data-aos="fade-left">
-          <img className="rounded-xl w-[500px]" src={book3} alt="" />
+          <img className="rounded-xl md:w-[580px]" src={book3} alt="" />
         </div>
       </div>
     </div>
