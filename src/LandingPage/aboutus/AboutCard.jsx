@@ -50,7 +50,7 @@ const AboutCard = () => {
         <div className="card w-full hover:bg-[#f6f9fc] md:w-[260px] shadow-md border">
           <figure className="px-10 pt-10">
             <img
-              src="https://i.ibb.co/JdhWRQN/365756103-673069558199561-6794946048297804025-n.jpg"
+              src="https://avatars.githubusercontent.com/u/47888960?v=4"
               alt="Shoes"
               className="rounded-full h-40 w-40"
             />
@@ -90,7 +90,7 @@ const AboutCard = () => {
         <div className="card hover:bg-[#f6f9fc] w-full md:w-[260px] shadow-md border">
           <figure className="px-10 pt-10">
             <img
-              src="https://i.ibb.co/JdhWRQN/365756103-673069558199561-6794946048297804025-n.jpg"
+              src="https://avatars.githubusercontent.com/u/121638789?v=4"
               alt="Shoes"
               className="rounded-full h-40 w-40"
             />

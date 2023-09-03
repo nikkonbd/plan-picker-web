@@ -29,7 +29,7 @@ const About = () => {
                 {/* <div className="absolute inset-0 z-10 bg-black rounded-lg opacity-50"></div> */}
 
                 {/* front text */}
-                <div className="flex justify-center items-center flex-col  w-10/12 mx-auto">
+                <div className="flex justify-center items-center flex-col  md:w-10/12 lg:w-8/12 mx-auto">
                   <h1 className="text-2xl  md:text-4xl p-4 font-semibold text-[#61677A] mb-4 z-10 text-center">
                     What is a mission Plan Picker?
                   </h1>
