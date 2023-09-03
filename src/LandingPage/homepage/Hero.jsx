@@ -6,7 +6,7 @@ import "aos/dist/aos.css";
 const Hero = () => {
   AOS.init();
   return (
-    <div className="md:w-10/12 lg:w-8/12 mx-auto px-4">
+    <div className="">
       <div data-aos="fade-down" className="text-center">
         <h2 className="text-2xl md:text-4xl text-[#61677A] font-semibold md:pt-24">
           <span className="text-[#42a6ad]">
