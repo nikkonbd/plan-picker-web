@@ -21,7 +21,7 @@ const About = () => {
       <Helmet>
         <title>AboutUs || Plan Picker</title>
       </Helmet>
-      <div className="">
+      <div className="max-w-[2520px] mx-auto lg:px-48 xl:px-28 md:px-10 px-4">
         <div className="mt-20">
           <div className="">
             <div className="relative text-[#61677A]">
@@ -29,7 +29,7 @@ const About = () => {
                 {/* <div className="absolute inset-0 z-10 bg-black rounded-lg opacity-50"></div> */}
 
                 {/* front text */}
-                <div className="flex justify-center items-center flex-col  md:w-10/12 lg:w-8/12 mx-auto">
+                <div className="flex justify-center items-center flex-col">
                   <h1 className="text-2xl  md:text-4xl p-4 font-semibold text-[#61677A] mb-4 z-10 text-center">
                     What is a mission Plan Picker?
                   </h1>
@@ -59,7 +59,7 @@ const About = () => {
             </div>
 
             {/* Revolutionize of Schedule */}
-            <div className="py-[75px] md:py-[100px] flex flex-col md:flex-row gap-4 md:w-10/12 lg:w-8/12 mx-auto">
+            <div className="py-[75px] md:py-[100px] flex flex-col md:flex-row gap-4">
               <div className="flex flex-col justify-center">
                 <h1 className="text-2xl font-semibold md:text-3xl">
                   Revolutionize Your Schedule
@@ -101,7 +101,7 @@ const About = () => {
             </div>
 
             {/* planning features */}
-            <div className="gap-4 mb-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:w-10/12 lg:w-8/12 mx-auto md:p-0">
+            <div className="gap-4 mb-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
               <div className="p-4 rounded-xl bg-slate-300">
                 <div className="p-4 text-center bg-[#f6f9fc] rounded-xl">
                   <div>
@@ -141,7 +141,7 @@ const About = () => {
 
             {/*  */}
             <div className="py-[75px] md:pt-24 bg-[#f6f9fc] text-[#5EBEC4] mb-8 rounded-xl">
-              <div className="flex flex-col gap-10 md:w-10/12 lg:w-8/12 mx-auto md:flex-row">
+              <div className="flex flex-col gap-10 p-4 md:flex-row">
                 <img
                   className="h-auto w-[500px] rounded-xl"
                   src={planning}

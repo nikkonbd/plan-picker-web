@@ -32,9 +32,9 @@ const ContactUS = () => {
       <Helmet>
         <title>ContactUs || Plan Picker</title>
       </Helmet>
-      <div>
+      <div className="max-w-[2520px] mx-auto lg:px-48 xl:px-28 md:px-10 px-4">
         <Contact></Contact>
-        <div className="md:w-10/12 lg:w-8/12 mx-auto text-[#61677A]">
+        <div className="text-[#61677A]">
           <div>
             <h2 className="pt-20 text-4xl font-semibold text-center">
               Contact <span className="text-[#5EBEC4]">Us</span>
@@ -59,7 +59,7 @@ const ContactUS = () => {
                 <p className="text-base">admin@planpicker.com</p>
               </div>
             </div>
-            <div className="w-full">
+            <div className="w-full mr-6 md:mr-0">
               <form
                 ref={form}
                 onSubmit={sendEmail}

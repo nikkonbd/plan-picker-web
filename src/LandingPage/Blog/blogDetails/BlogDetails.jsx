@@ -21,7 +21,7 @@ const BlogDetails = () => {
       <Helmet>
         <title>BlogDetails || PlanPicker</title>
       </Helmet>
-      <div className="md:w-8/12 mx-auto">
+      <div className="max-w-[2520px] mx-auto lg:px-48 xl:px-28 md:px-10 px-4 mt-4">
         <div className="lg:flex items-center justify-between">
           <div className="space-y-5">
             <h1>
@@ -52,18 +52,21 @@ const BlogDetails = () => {
           </div>
         </div>
         <div className="mb-14">
-          <p><strong>Category:</strong> {article.category}</p>
+          <p>
+            <strong>Category:</strong> {article.category}
+          </p>
           <p className="py-4">
             <strong>Tags:</strong>{" "}
             {article.tags?.map((tag, idx) => (
               <span key={idx}>{tag} ,</span>
             ))}
           </p>
-          <p><strong>About:</strong> {article.content}</p>
+          <p>
+            <strong>About:</strong> {article.content}
+          </p>
         </div>
       </div>
     </>
-
   );
 };
 
