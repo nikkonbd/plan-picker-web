@@ -34,7 +34,7 @@ const ContactUS = () => {
       </Helmet>
       <div>
         <Contact></Contact>
-        <div className="md:w-10/12 mx-auto text-[#61677A]">
+        <div className="md:w-10/12 lg:w-8/12 mx-auto text-[#61677A]">
           <div>
             <h2 className="pt-20 text-4xl font-semibold text-center">
               Contact <span className="text-[#5EBEC4]">Us</span>

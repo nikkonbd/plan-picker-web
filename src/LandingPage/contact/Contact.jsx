@@ -11,7 +11,7 @@ const Contact = () => {
         </h2>
         <p>Get in touch and let us know how we can help.</p>
       </div>
-      <div className="grid grid-cols-1 mt-16 md:grid-cols-2 lg:grid-cols-4 gap-6 md:w-10/12 mx-auto px-4 md:px-0">
+      <div className="grid grid-cols-1 mt-16 md:grid-cols-2 lg:grid-cols-4 gap-6 md:w-10/12 lg:w-8/12 mx-auto px-4 md:px-0">
         <div className="border-2 p-4 text-center shadow hover:shadow-lg mb-4 md:mb-0 mt-4 md:mt-0">
           <FaConnectdevelop className="text-4xl"></FaConnectdevelop>
           <h2 className="text-2xl font-semibold pt-4">Contact Sales</h2>
@@ -133,7 +133,7 @@ const Contact = () => {
           Need some content about joining us in a partner or career adventure!
         </p>
       </div>
-      <div className="md:w-10/12 mx-auto md:flex gap-6 px-4 md:px-0">
+      <div className="md:w-10/12 lg:w-8/12 mx-auto md:flex gap-6 px-4 md:px-0">
         <div className="border-2 p-4 shadow hover:shadow-lg">
           <FaConnectdevelop className="text-4xl"></FaConnectdevelop>
           <h2 className="text-2xl font-semibold pt-4">Join Our Team</h2>

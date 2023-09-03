@@ -11,9 +11,9 @@ const Banner1 = () => {
     AOS.init();
   }, []);
   return (
-    <div className="w-10/12 mx-auto px-4">
+    <div className="md:w-10/12 lg:w-8/12 mx-auto px-4">
       <div data-aos="fade-up" className="text-center md:pb-8">
-        <h2 className="text-2xl text-[#61677A] md:text-4xl font-semibold pt-24">
+        <h2 className="text-2xl text-[#61677A] md:text-4xl font-semibold md:pt-24 pt-10">
           <span className="text-[#5EBEC4]">We make scheduling for</span>{" "}
           <br className="hidden md:block" /> you easier than ever
         </h2>
@@ -26,7 +26,7 @@ const Banner1 = () => {
       <div className="flex flex-col-reverse items-center justify-between gap-4 mt-12 md:flex lg:flex lg:flex-row md:flex-row">
         <div data-aos="fade-up-right">
           <div className="text-center md:text-start">
-            <h2 className="text-2xl md:text-3xl font-medium flex flex-col justify-center text-[#61677A]">
+            <h2 className="text-2xl md:text-3xl pt-4 md:pt-0 font-medium flex flex-col justify-center text-[#61677A]">
               Share your Plan availability with others
             </h2>
             <p className="py-4  text-[#61677A]">
@@ -69,7 +69,7 @@ const Banner1 = () => {
           />
         </div>
       </div>
-      <div className="md:flex lg:flex  gap-4 justify-between items-center mt-20">
+      <div className="md:flex lg:flex  gap-4 justify-between items-center md:mt-20">
         <div data-aos="fade-up-right">
           <img
             className="rounded-xl flex flex-col justify-center w-full h-full md:h-[340px] md:w-[580px]"
@@ -117,10 +117,10 @@ const Banner1 = () => {
           </div>
         </div>
       </div>
-      <div className="md:flex flex flex-col-reverse lg:flex lg:flex-row md:flex-row gap-4 justify-between items-center mt-12">
+      <div className="md:flex flex flex-col-reverse lg:flex lg:flex-row md:flex-row gap-4 justify-between items-center md:mt-12">
         <div data-aos="fade-up-right">
           <div className="flex flex-col justify-center text-center md:text-start">
-            <h2 className="text-2xl md:text-3xl font-medium text-[#61677A]">
+            <h2 className="text-2xl md:text-3xl pt-4 md:pt-0 font-medium text-[#61677A]">
               Keep prospects engaged in between meetings
             </h2>
             <p className="py-4  text-[#61677A]">
