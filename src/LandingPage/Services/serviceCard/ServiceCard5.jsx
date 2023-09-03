@@ -15,8 +15,8 @@ const ServiceCard5 = () => {
               Choose your best plan
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-            <div className="flex w-full mb-8 sm:px-4  lg:mb-0">
+          <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            <div className="w-full mb-8  lg:mb-0">
               <div className="flex flex-col hover:shadow-lg shadow-md p-6 space-y-6 rounded sm:p-8">
                 <div className="space-y-2">
                   <h4 className="text-2xl font-bold">Beginner</h4>
@@ -54,6 +54,19 @@ const ServiceCard5 = () => {
                     </svg>
                     <span>Morbi semper</span>
                   </li>
+                  <li className="flex mb-2 items-start space-x-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      className="flex-shrink-0 w-6 h-6 dark:text-violet-400">
+                      <path
+                        fillRule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clipRule="evenodd"></path>
+                    </svg>
+                    <span>Curabitur dictum</span>
+                  </li>
                   <li className="flex mb-2 space-x-2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -67,6 +80,19 @@ const ServiceCard5 = () => {
                     </svg>
                     <span>Tristique enim nec</span>
                   </li>
+                  <li className="flex items-start space-x-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      className="flex-shrink-0 w-6 h-6 dark:text-violet-400">
+                      <path
+                        fillRule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clipRule="evenodd"></path>
+                    </svg>
+                    <span>Curabitur dictum</span>
+                  </li>
                 </ul>
                 <button
                   type="button"
@@ -75,7 +101,7 @@ const ServiceCard5 = () => {
                 </button>
               </div>
             </div>
-            <div className="flex w-full mb-8 sm:px-4 lg:mb-0">
+            <div className="w-full mb-8 lg:mb-0">
               <div className="flex flex-col p-6 space-y-6 hover:shadow-lg rounded shadow-md sm:p-8 dark:bg-violet-400 dark:text-gray-900">
                 <div className="space-y-2">
                   <h4 className="text-2xl font-bold">Pro</h4>
@@ -100,6 +126,19 @@ const ServiceCard5 = () => {
                         clipRule="evenodd"></path>
                     </svg>
                     <span>Everything in Free</span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      className="flex-shrink-0 w-6 h-6 dark:text-violet-400">
+                      <path
+                        fillRule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clipRule="evenodd"></path>
+                    </svg>
+                    <span>Curabitur dictum</span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <svg
@@ -148,7 +187,7 @@ const ServiceCard5 = () => {
                 </button>
               </div>
             </div>
-            <div className="w-full mb-8 sm:px-4 lg:mb-0">
+            <div className="w-full mb-8 lg:mb-0">
               <div className="p-6 space-y-6 hover:shadow-lg rounded shadow-md sm:p-8 dark:bg-gray-900">
                 <div className="space-y-2">
                   <h4 className="text-2xl font-bold text-[#61677A]">Team</h4>

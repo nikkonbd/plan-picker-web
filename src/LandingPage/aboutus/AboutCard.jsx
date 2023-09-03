@@ -8,7 +8,7 @@ import {
 const AboutCard = () => {
   return (
     <div>
-      <div className="gap-4 text-[#61677A] justify-between grid grid-cols-1 md:pb-10 md:grid-cols-2 lg:grid-cols-4 md:w-10/12 lg:w-8/12 mx-auto p-4 md:p-0">
+      <div className="gap-4 text-[#61677A] justify-between grid grid-cols-1 md:pb-10 md:grid-cols-2 lg:grid-cols-4">
         <div className="card w-full hover:bg-[#f6f9fc] md:w-[260px] shadow-md border">
           <figure className="px-10 pt-10">
             <img
@@ -86,7 +86,7 @@ const AboutCard = () => {
           </div>
         </div>
       </div>
-      <div className="gap-4 text-[#61677A] grid grid-cols-1 justify-center md:pb-20 md:grid-cols-3 md:w-10/12 lg:w-8/12 mx-auto p-4 md:p-0">
+      <div className="gap-6 text-[#61677A] flex flex-col md:flex-row justify-center">
         <div className="card hover:bg-[#f6f9fc] w-full md:w-[260px] shadow-md border">
           <figure className="px-10 pt-10">
             <img
