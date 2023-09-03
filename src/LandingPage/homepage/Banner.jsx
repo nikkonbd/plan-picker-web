@@ -1,13 +1,11 @@
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
-import image from "../../assets/Info_project_schedule_ss.jpg";
 import img from "../../assets/dd.jpg";
 import img1 from "../../assets/pp.jpg";
 
 const Banner = () => {
-  const users = useSelector((state) => console.log(state.auth.user));
+  // const users = useSelector((state) => console.log(state.auth.user));
   return (
-    <div className="w-10/12 mx-auto sm:px-2 px-4">
+    <div className="md:w-10/12 mx-auto sm:px-2 px-4">
       <div className="text-center pt-20">
         <h2 className="text-3xl md:text-5xl text-[#61677A] cursor-pointer font-bold">
           <span className="text-[#5EBEC4]">Welcome to Easy</span> Scheduling{" "}
@@ -28,32 +26,23 @@ const Banner = () => {
         </Link>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-14">
-        <div className="md:columns-md lg:columns-xl bg-[#5ebdc444] rounded-md transition duration-300 ease-in-out hover:scale-90">
-          <h2 className="text-2xl text-[#61677A] text-center py-6 font-semibold">
-            Book & schedule <br /> with Plan picker
+        <div className="md:columns-md lg:columns-xl bg-[#f6f9fc] rounded-md transition duration-300 ease-in-out hover:scale-92">
+          <h2 className="text-2xl text-[#5EBEC4] text-center py-6 font-semibold">
+            Book & schedule with Plan picker
           </h2>
           <img
-            className="w-[380px] md:h-[242px] mx-auto rounded-md"
+            className="w-[420px] md:h-[250px] mx-auto rounded-md"
             src={img}
             alt=""
           />
         </div>
-        <div className="columns-md md:columns-3xl lg:columns-4xl xl:columns-4xl bg-[#ffefe7] rounded-md transition duration-300 ease-in-out hover:scale-90">
-          <div className="md:flex gap-10 items-center">
+        <div className="columns-md mt-8 md:mt-0 md:columns-3xl lg:columns-4xl xl:columns-4xl bg-[#f6f9fc] rounded-md transition duration-300 ease-in-out hover:scale-92">
+          <div className="text-center">
             <img
-              className="w-[300px] md:h-[362px] pt-20 rounded-lg"
-              src={img1}
+              className="md:h-[362px]"
+              src="https://i.stack.imgur.com/PwVy7.png"
               alt=""
             />
-            <div className="text-center md:text-left">
-              <h2 className="text-2xl pt-6 text-[#61677A] text-wrap md:pt-0 font-semibold">
-                Choose <br /> Whatever you <br /> want to book
-              </h2>
-              <p className="pt-4 pb-10 text-base md:pb-0 text-[#61677A]">
-                Plan picker support to book <br /> whatever you want for meeting
-                organize your meeting.
-              </p>
-            </div>
           </div>
         </div>
       </div>
