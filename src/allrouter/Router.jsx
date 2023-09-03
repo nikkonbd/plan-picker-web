@@ -18,6 +18,7 @@ import MySchedule from "../LandingPage/Dashboard/mySchedule/MySchedule";
 import AllUsers from "../LandingPage/Dashboard/Admin/AllUsers";
 import Profile from "../LandingPage/Dashboard/Profile/Profile";
 import Analytics from "../LandingPage/Dashboard/analytics/Analytics";
+import MorePlan from "../LandingPage/homepage/morePlan/MorePlan";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+      },
+      {
+        path: "more-plan",
+        element: <MorePlan></MorePlan>
       },
       {
         path: "/services",
