@@ -125,36 +125,6 @@ const Login = () => {
                 size="lg"
               />
               {errors.password && <span>Password is Required!</span>}
-              {/* <div className="-ml-2.5">
-    return (
-        <div>
-            <Button className='bg-[#5EBEC4]' onClick={handleOpen}>Sign In</Button>
-                <Dialog
-                    size="md"
-                    open={open}
-                    handler={handleOpen}
-                    className="bg-transparent shadow-none"
-                >
-                    <Card className="mx-auto w-full md:max-w-2xl">
-                        <CardHeader className='text-center py-3 bg-[#5EBEC4]'
-                        >
-                            <Typography variant="h3" color="white">
-                            Plan Picker Sign In
-                        </Typography>
-                    </CardHeader>
-                    <form onSubmit={handleSubmit(onSubmit)}>
-                        <CardBody className="flex flex-col gap-4">
-                            <Input type='email' className='outline-none' label="Email" {...register("email", { required: true })} size="lg" />
-                            {errors.email && <span>Email is Required!</span>}
-                            <Input type='password' label="Password" {...register("password", { required: true })} size="lg" />
-                            {errors.password && <span>Password is Required!</span>}
-                            {/* <div className="-ml-2.5">
-                                <Checkbox label="Remember Me" />
-                                </div>
-                            </CardBody>
-                            <div className='px-6'>
-                                <Button className='bg-[#5EBEC4]' variant="gradient" fullWidth>
-                            </div> */}
             </CardBody>
             <div className="px-6">
               <Button className="" variant="gradient" fullWidth>
@@ -178,19 +148,13 @@ const Login = () => {
               </Button>
             </a>
           </div>
-          {/* <div className='px-6'>
-                        <a className=''>
-                            <Button className='w-full flex items-center justify-center gap-4' variant="outlined"><FaMicrosoft className='text-xl'></FaMicrosoft>Sign In With Microsoft</Button>
-                        </a>
-                    </div> */}
           <CardFooter className="pt-0">
             <Typography variant="small" className="mt-6 flex justify-center">
               Don&apos;t have an account?
               <Typography
                 as="a"
                 variant="small"
-                color="blue"
-                className="ml-1 font-bold"
+                className="ml-1 font-bold text-[#5EBEC4]"
               >
                 <span>
                   <SignUp></SignUp>
@@ -202,22 +166,6 @@ const Login = () => {
       </Dialog>
     </div>
   );
-                    <CardFooter className="pt-0">
-                        <Typography variant="small" className="mt-6 flex justify-center">
-                            Don&apos;t have an account?
-                            <Typography
-                                as="a"
-                                variant="small"
-                                className="ml-1 font-bold text-[#5EBEC4]"
-                            >
-                                <span><SignUp></SignUp></span>
-                            </Typography>
-                        </Typography>
-                    </CardFooter>
-                </Card>
-            </Dialog>
-        </div>
-    );
 };
 
 export default Login;

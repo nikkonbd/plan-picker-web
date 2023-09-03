@@ -28,7 +28,7 @@ const Banner = () => {
           <h2 className="text-3xl text-[#61677A] text-center py-6 font-semibold">
             Book & schedule <br /> with Plan picker
           </h2>
-          <img className="w-[380px] md:h-[242px] mx-auto rounded-md" src={img} alt="" />
+          <img className="w-[380px] mx-auto rounded-md" src={img} alt="" />
         </div>
         <div className="columns-md md:columns-3xl lg:columns-4xl xl:columns-4xl bg-[#ffefe7] rounded-md transition duration-300 ease-in-out hover:scale-90">
           <div className="md:flex gap-10 items-center">

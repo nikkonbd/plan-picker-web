@@ -10,10 +10,10 @@ const Hero = () => {
     <div className="md:w-8/12 mx-auto">
       <div data-aos="fade-down" className="text-center">
         <h2 className="text-3xl md:text-5xl text-[#61677A] font-semibold pt-24">
-          <span className="text-[#42a6ad]">Scheduling automation happens before</span>
-           <br /> and after meetings
+          <span className="text-[#42a6ad]">Scheduling automation happens</span>
+           <br /> before and after meetings
         </h2>
-        <p className="pt-4 text-base md:text-lg text-[#61677A]">
+        <p className="pt-4 text-base md:text-md text-[#61677A]">
           Take advantage of high buying intent right after checkout and create a{" "}
           <br />
           seamless buying experience for your customers.
@@ -22,35 +22,35 @@ const Hero = () => {
       <div className="md:flex gap-6 justify-between items-center mt-10">
         <div>
           <div data-aos="fade-right" className="hover:bg-[#f8f7ff] p-4 rounded-xl">
-            <h2 className="text-3xl font-semibold text-[#42a6ad]">
+            <h2 className="text-xl font-semibold text-[#42a6ad]">
               Let people schedule meetings on your website
             </h2>
-            <p className="text-xl text-[#61677A]">
+            <p className="text-base text-[#61677A]">
               Book high-value meetings in seconds and turn <br /> scheduling
               into a competitive advantage
             </p>
           </div>
           <div data-aos="fade-down" className="hover:bg-[#f8f7ff] p-4 rounded-xl">
-            <h2 className="text-3xl font-semibold text-[#42a6ad]">
+            <h2 className="text-xl font-semibold text-[#42a6ad]">
               Let people schedule meetings on your website
             </h2>
-            <p className="text-xl text-[#61677A]">
+            <p className="text-base text-[#61677A]">
               Book high-value meetings in seconds and turn <br /> scheduling
               into a competitive advantage
             </p>
           </div>
           <div data-aos="fade-left" className="hover:bg-[#f8f7ff] p-4 rounded-xl">
-            <h2 className="text-3xl font-semibold text-[#42a6ad]">
+            <h2 className="text-xl font-semibold text-[#42a6ad]">
               Let people schedule meetings on your website
             </h2>
-            <p className="text-xl text-[#61677A]">
+            <p className="text-base text-[#61677A]">
               Book high-value meetings in seconds and turn <br /> scheduling
               into a competitive advantage
             </p>
           </div>
         </div>
         <div data-aos="fade-left">
-          <img className="rounded-xl" src={book3} alt="" />
+          <img className="rounded-xl w-[500px]" src={book3} alt="" />
         </div>
       </div>
     </div>
