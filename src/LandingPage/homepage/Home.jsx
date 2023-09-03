@@ -11,7 +11,7 @@ const Home = () => {
       <Helmet>
         <title>Home ||PlanPicker</title>
       </Helmet>
-      <div>
+      <div className="max-w-[2520px] mx-auto lg:px-48 xl:px-28 md:px-10 px-4">
         <Banner></Banner>
         <Banner1></Banner1>
         <Hero></Hero>
@@ -19,7 +19,6 @@ const Home = () => {
         {/* <Special></Special> */}
       </div>
     </>
-
   );
 };
 
