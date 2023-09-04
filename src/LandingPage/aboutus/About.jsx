@@ -8,7 +8,7 @@ import EventCalendar from "../../eventCalendar/EventCalendar";
 import MyCalendar from "../../myCalendar/MyCalendar";
 import SetMeeting from "../../setMeeting/SetMeeting";
 import EventType from "../../myCalendar/eventType/EventType";
-import WeeklyHoursForm from "../../setMeeting/WeeklyHoursForm";
+// import WeeklyHoursForm from "../../setMeeting/WeeklyHoursForm";
 
 const About = () => {
   const events = [
@@ -43,14 +43,14 @@ const About = () => {
 
       {/* <WeeklyHoursForm/> */}
 
-      <SetMeeting />
+      {/* <SetMeeting /> */}
 
       {/* <WeeklyHoursForm/> */}
 
       {/* <SetMeeting /> */}
 
 
-      <WeeklyHoursForm/>
+      {/* <WeeklyHoursForm/> */}
       <SetMeeting />
       {/* <WeeklyHoursForm/> */}
 

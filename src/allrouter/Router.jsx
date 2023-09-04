@@ -12,7 +12,7 @@ import ScheduleEventDetails from "../compnents/ScheduleEventDetails";
 import MyCalendar from "../myCalendar/MyCalendar";
 import Availability from "../LandingPage/Availability/Availability";
 import Event from "../LandingPage/contact/Event";
-import Event2 from "../LandingPage/contact/Event2";
+// import Event2 from "../LandingPage/contact/Event2";
 import EventPage from "../component/EventPage";
 import MySchedule from "../LandingPage/Dashboard/mySchedule/MySchedule";
 import EventPageData from "../calendar/EventPageData";
@@ -76,10 +76,10 @@ const router = createBrowserRouter([
         path: "/dashboard/event_type/one-on-one-form",
         element: <Event />,
       },
-      {
-        path: "/dashboard/event_type/group-form",
-        element: <Event2 />,
-      },
+      // {
+      //   path: "/dashboard/event_type/group-form",
+      //   element: <Event2 />,
+      // },
       {
         path: "/dashboard/event_type/collective-form",
         element: <div>Colective</div>,

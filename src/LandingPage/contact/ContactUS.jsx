@@ -1,7 +1,7 @@
 import { Toaster, toast } from "react-hot-toast";
 import EventPage from "../../component/EventPage";
 import Event from "./Event";
-import Event2 from "./Event2";
+// import Event2 from "./Event2";
 import emailjs from '@emailjs/browser';
 import { useRef } from "react";
 
@@ -20,7 +20,7 @@ const ContactUS = () => {
       });
   };
   return (
-    <div className="md:w-10/12 mx-auto">
+    <div className="mx-auto md:w-10/12">
       <div>
         <h2 className="pt-20 text-6xl text-center">
           Contact <span className="text-secondary">Us</span>

@@ -4,9 +4,12 @@ import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { submitFormData } from "../../store/features/formSubmission/formSubmissionSlice";
+// import { submitFormData } from "../../store/features/formSubmission/formSubmissionSlice";
+import { setObjectData } from "../../store/features/objectData/ObjectDataSlice";
 
-import ZoomIntegration from "../../integration/zoom/ZoomIntegration";
+import { v4 as uuidv4 } from 'uuid';
+
+// import ZoomIntegration from "../../integration/zoom/ZoomIntegration";
 
 import TimeSelect from "./TimeSelect";
 
@@ -19,16 +22,23 @@ const Event = () => {
   const [eventColor, setEventColor] = useState("");
   const [sanitizedValue, setSanitizedValue] = useState("");
 
+   const uniqueId = uuidv4();
+
   const dispatch = useDispatch();
-  const { isLoading, isSuccess, error } = useSelector(
-    (state) => state.formSubmission
-  );
+  // const { isLoading, isSuccess, error } = useSelector(
+  //   (state) => state.formSubmission
+  // );
+  const arrayData = useSelector((state) => state.formSubmission);
 
   const handleChange = (html) => {
     const sanitizedText = removePTags(html);
     setValue(html);
     setSanitizedValue(sanitizedText);
   };
+  
+  const handleCancel = () => {
+    navigate("/dashboard/schedule")
+  }
 
   const handleNextForm = () => {
     // Store the data in an object
@@ -37,12 +47,13 @@ const Event = () => {
       location,
       description: sanitizedValue,
       eventLink,
-      // eventColor,
+      id: uniqueId,
     };
 
     // dispatch(submitFormData(formData));
+    dispatch(setObjectData(formData));
 
-    console.log(formData); // Display the form data
+    console.log(arrayData); // Display the form data
 
     navigate("/dashboard/one-on-one-form/event_set_edit_form");
   };
@@ -65,7 +76,7 @@ const Event = () => {
           </div>
         </div>
         <div className="flex justify-center gap-4 md:justify-between">
-          <button className="p-2 rounded-md btn">Cancel</button>
+          <button onClick={() => handleCancel()} className="p-2 rounded-md btn">Cancel</button>
           <button
             onClick={() => handleNextForm()}
             className="px-2 rounded-md btn btn-primary ">
@@ -103,11 +114,8 @@ const Event = () => {
               <option disabled selected className="text-gray-200">
                 Add Location
               </option>
-              <option>Dhaka</option>
-              <option>Jhenaidah</option>
-              <option>Magura</option>
-              <option>Barishal</option>
-              <option>Noakhali</option>
+              <option>Audio Call</option>
+              <option>Video Call</option>
             </select>
           </div>
         </div>
