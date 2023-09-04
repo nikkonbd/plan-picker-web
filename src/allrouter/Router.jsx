@@ -19,6 +19,7 @@ import AllUsers from "../LandingPage/Dashboard/Admin/AllUsers";
 import Profile from "../LandingPage/Dashboard/Profile/Profile";
 import Analytics from "../LandingPage/Dashboard/analytics/Analytics";
 import MorePlan from "../LandingPage/homepage/morePlan/MorePlan";
+import ExploreFeatures from "../LandingPage/aboutus/exploreFeatures/ExploreFeatures";
 
 const router = createBrowserRouter([
   {
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <About></About>,
+      },
+      {
+        path: "/about-explore",
+        element:<ExploreFeatures></ExploreFeatures>
       },
       {
         path: "/blog",
