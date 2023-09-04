@@ -10,6 +10,7 @@ import { Toaster, toast } from "react-hot-toast";
 
 const AllUsers = () => {
   const [myUsers, setMyusers] = useState([]);
+  console.log(myUsers);
   // const { data: users = [], refetch } = useQuery(['users'], async () => {
   //     const res = await fetch('http://localhost:5000/users')
   //     return res.json()
@@ -20,6 +21,7 @@ const AllUsers = () => {
 
   const { data: users = [], refetch } = useQuery(["users"], async () => {
     const res = await axiosSecure.get("/users");
+    setMyusers(res.data);
     return res.data;
   });
 
