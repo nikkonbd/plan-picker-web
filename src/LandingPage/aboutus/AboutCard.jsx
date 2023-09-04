@@ -21,10 +21,18 @@ const AboutCard = () => {
             <h2 className="card-title">Badhon Islam</h2>
             <p className="text-[#42a6ad]">Web-Developer</p>
             <div className="flex items-center gap-2 text-[#5EBEC4]">
-              <FaGithub className="text-3xl cursor-pointer border p-1 bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md"></FaGithub>
-              <FaLinkedinIn className="text-3xl cursor-pointer border p-1 bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md"></FaLinkedinIn>
-              <FaFacebook className="text-3xl cursor-pointer border p-1 bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md"></FaFacebook>
-              <FaProductHunt className="text-3xl cursor-pointer border p-1 bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md"></FaProductHunt>
+              <a href="https://github.com/nrb04" target="_blank">
+                <FaGithub className="text-3xl cursor-pointer border p-1 bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md"></FaGithub>
+              </a>
+              <a href="" target="_blank">
+                <FaLinkedinIn className="text-3xl cursor-pointer border p-1 bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md"></FaLinkedinIn>
+              </a>
+              <a href="" target="_blank">
+                <FaFacebook className="text-3xl cursor-pointer border p-1 bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md"></FaFacebook>
+              </a>
+              <a href="" target="_blank">
+                <FaProductHunt className="text-3xl cursor-pointer border p-1 bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md"></FaProductHunt>
+              </a>
             </div>
           </div>
         </div>
@@ -40,10 +48,24 @@ const AboutCard = () => {
             <h2 className="card-title">Nikkon Mondal</h2>
             <p className="text-[#42a6ad]">Front-End Developer</p>
             <div className="flex items-center gap-2 text-[#5EBEC4]">
-              <FaGithub className="text-3xl cursor-pointer border p-1 bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md"></FaGithub>
-              <FaLinkedinIn className="text-3xl cursor-pointer border p-1 bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md"></FaLinkedinIn>
-              <FaFacebook className="text-3xl cursor-pointer border p-1 bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md"></FaFacebook>
-              <FaProductHunt className="text-3xl cursor-pointer border p-1 bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md"></FaProductHunt>
+              <a href="https://github.com/nikkonbd" target="_blank">
+                <FaGithub className="text-3xl cursor-pointer border p-1 bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md"></FaGithub>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/nikkon-mondal-4574b9282/"
+                target="_blank">
+                <FaLinkedinIn className="text-3xl cursor-pointer border p-1 bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md"></FaLinkedinIn>
+              </a>
+              <a
+                href="https://www.facebook.com/nikkon.mondalbd"
+                target="_blank">
+                <FaFacebook className="text-3xl cursor-pointer border p-1 bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md"></FaFacebook>
+              </a>
+              <a
+                href="https://nikkon-mondal-portfolio.netlify.app/"
+                target="_blank">
+                <FaProductHunt className="text-3xl cursor-pointer border p-1 bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md"></FaProductHunt>
+              </a>
             </div>
           </div>
         </div>
@@ -59,10 +81,18 @@ const AboutCard = () => {
             <h2 className="card-title">Himangsu Roy</h2>
             <p className="text-[#42a6ad]">Back-End Developer</p>
             <div className="flex items-center gap-2 text-[#5EBEC4]">
-              <FaGithub className="text-3xl cursor-pointer border p-1 bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md"></FaGithub>
-              <FaLinkedinIn className="text-3xl cursor-pointer border p-1 bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md"></FaLinkedinIn>
-              <FaFacebook className="text-3xl cursor-pointer border p-1 bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md"></FaFacebook>
-              <FaProductHunt className="text-3xl cursor-pointer border p-1 bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md"></FaProductHunt>
+              <a href="https://github.com/Himangsu-Roy" target="_blank">
+                <FaGithub className="text-3xl cursor-pointer border p-1 bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md"></FaGithub>
+              </a>
+              <a href="" target="_blank">
+                <FaLinkedinIn className="text-3xl cursor-pointer border p-1 bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md"></FaLinkedinIn>
+              </a>
+              <a href="" target="_blank">
+                <FaFacebook className="text-3xl cursor-pointer border p-1 bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md"></FaFacebook>
+              </a>
+              <a href="" target="_blank">
+                <FaProductHunt className="text-3xl cursor-pointer border p-1 bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md"></FaProductHunt>
+              </a>
             </div>
           </div>
         </div>
@@ -78,10 +108,18 @@ const AboutCard = () => {
             <h2 className="card-title">Mostofa Asik</h2>
             <p className="text-[#42a6ad]">MERN Stack Developer</p>
             <div className="flex items-center gap-2 text-[#5EBEC4]">
-              <FaGithub className="text-3xl cursor-pointer border p-1 bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md"></FaGithub>
-              <FaLinkedinIn className="text-3xl cursor-pointer border p-1 bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md"></FaLinkedinIn>
-              <FaFacebook className="text-3xl cursor-pointer border p-1 bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md"></FaFacebook>
-              <FaProductHunt className="text-3xl cursor-pointer border p-1 bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md"></FaProductHunt>
+              <a href="https://github.com/MostofaAsik" target="_blank">
+                <FaGithub className="text-3xl cursor-pointer border p-1 bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md"></FaGithub>
+              </a>
+              <a href="" target="_blank">
+                <FaLinkedinIn className="text-3xl cursor-pointer border p-1 bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md"></FaLinkedinIn>
+              </a>
+              <a href="" target="_blank">
+                <FaFacebook className="text-3xl cursor-pointer border p-1 bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md"></FaFacebook>
+              </a>
+              <a href="" target="_blank">
+                <FaProductHunt className="text-3xl cursor-pointer border p-1 bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md"></FaProductHunt>
+              </a>
             </div>
           </div>
         </div>
@@ -99,10 +137,22 @@ const AboutCard = () => {
             <h2 className="card-title">Md Tanjim Islam</h2>
             <p className="text-[#42a6ad]">Front-End Developer</p>
             <div className="flex items-center gap-2 text-[#5EBEC4]">
-              <FaGithub className="text-3xl cursor-pointer border p-1 bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md"></FaGithub>
-              <FaLinkedinIn className="text-3xl cursor-pointer border p-1 bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md"></FaLinkedinIn>
-              <FaFacebook className="text-3xl cursor-pointer border p-1 bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md"></FaFacebook>
-              <FaProductHunt className="text-3xl cursor-pointer border p-1 bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md"></FaProductHunt>
+              <a href="https://github.com/ptan01" target="_blank">
+                <FaGithub className="text-3xl cursor-pointer border p-1 bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md"></FaGithub>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/tanjim-islam-645747278/"
+                target="_blank">
+                <FaLinkedinIn className="text-3xl cursor-pointer border p-1 bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md"></FaLinkedinIn>
+              </a>
+              <a href="https://www.facebook.com/ptanjim01" target="_blank">
+                <FaFacebook className="text-3xl cursor-pointer border p-1 bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md"></FaFacebook>
+              </a>
+              <a
+                href="https://tanjim-portfolio287046.netlify.app/"
+                target="_blank">
+                <FaProductHunt className="text-3xl cursor-pointer border p-1 bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md"></FaProductHunt>
+              </a>
             </div>
           </div>
         </div>
@@ -118,10 +168,18 @@ const AboutCard = () => {
             <h2 className="card-title">Ali Hasan Mashrafi</h2>
             <p className="text-[#42a6ad]">Front-End Developer</p>
             <div className="flex items-center gap-2 text-[#5EBEC4]">
-              <FaGithub className="text-3xl cursor-pointer border p-1 bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md"></FaGithub>
-              <FaLinkedinIn className="text-3xl cursor-pointer border p-1 bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md"></FaLinkedinIn>
-              <FaFacebook className="text-3xl cursor-pointer border p-1 bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md"></FaFacebook>
-              <FaProductHunt className="text-3xl cursor-pointer border p-1 bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md"></FaProductHunt>
+              <a href="https://github.com/Masrafi404" target="_blank">
+                <FaGithub className="text-3xl cursor-pointer border p-1 bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md"></FaGithub>
+              </a>
+              <a href="" target="_blank">
+                <FaLinkedinIn className="text-3xl cursor-pointer border p-1 bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md"></FaLinkedinIn>
+              </a>
+              <a href="" target="_blank">
+                <FaFacebook className="text-3xl cursor-pointer border p-1 bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md"></FaFacebook>
+              </a>
+              <a href="" target="_blank">
+                <FaProductHunt className="text-3xl cursor-pointer border p-1 bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md"></FaProductHunt>
+              </a>
             </div>
           </div>
         </div>
@@ -137,10 +195,20 @@ const AboutCard = () => {
             <h2 className="card-title">Md Aktheruzzaman</h2>
             <p className="text-[#42a6ad]">Front-End Developer</p>
             <div className="flex items-center gap-2 text-[#5EBEC4]">
-              <FaGithub className="text-3xl cursor-pointer border p-1 bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md"></FaGithub>
-              <FaLinkedinIn className="text-3xl cursor-pointer border p-1 bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md"></FaLinkedinIn>
-              <FaFacebook className="text-3xl cursor-pointer border p-1 bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md"></FaFacebook>
-              <FaProductHunt className="text-3xl cursor-pointer border p-1 bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md"></FaProductHunt>
+              <a href="https://github.com/opu183059" target="_blank">
+                <FaGithub className="text-3xl cursor-pointer border p-1 bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md"></FaGithub>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/akther-uz-zaman-852827278/"
+                target="_blank">
+                <FaLinkedinIn className="text-3xl cursor-pointer border p-1 bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md"></FaLinkedinIn>
+              </a>
+              <a href="https://www.facebook.com/opu.fahim" target="_blank">
+                <FaFacebook className="text-3xl cursor-pointer border p-1 bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md"></FaFacebook>
+              </a>
+              <a href="https://aktheruzzaman.netlify.app/" target="_blank">
+                <FaProductHunt className="text-3xl cursor-pointer border p-1 bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md"></FaProductHunt>
+              </a>
             </div>
           </div>
         </div>
