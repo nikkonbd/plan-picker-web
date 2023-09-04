@@ -17,7 +17,7 @@ const Services = () => {
       <Helmet>
         <title>Service || Plan Picker</title>
       </Helmet>
-      <div className="px-4 max-w-[2520px] mx-auto lg:px-48 xl:px-28 md:px-10 py-16">
+      <div className="px-4 max-w-[2520px] mx-auto lg:px-16 xl:px-28 md:px-10 py-16">
         <Card className="w-full bg-[#f6f9fc] flex-row">
           <CardBody>
             <Typography variant="h6" color="gray" className="mb-4 uppercase">

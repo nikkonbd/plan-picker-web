@@ -21,7 +21,7 @@ const Blog = () => {
       <Helmet>
         <title>Blogs || PlanPicker</title>
       </Helmet>
-      <div className="max-w-[2520px] mx-auto lg:px-48 xl:px-28 md:px-10 px-4 text-[#61677A]">
+      <div className="max-w-[2520px] mx-auto lg:px-16 xl:px-28 md:px-10 px-4 text-[#61677A]">
         {/* banner */}
         <div className="md:flex justify-between items-center gap-10 min-h-[60vh] my-10">
           <div className="md:w-1/2 px-4 md:px-0">
