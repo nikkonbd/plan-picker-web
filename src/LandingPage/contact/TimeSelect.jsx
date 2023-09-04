@@ -33,8 +33,9 @@ const time = [
   { id: "33", t: "09:10pm" },
 ];
 
-const TimeSelect = () => {
+const TimeSelect = ({setSelectedTime}) => {
   const [selectedTimezone, setSelectedTimezone] = useState({});
+  
   //👇🏻 This updates the schedule array with the start and end time.
   const handleTimeChange = (e, id) => {
     const { name, value } = e.target;
@@ -48,9 +49,11 @@ const TimeSelect = () => {
     if (JSON.stringify(selectedTimezone) !== "{}") {
       console.log(schedule);
     } else {
-      toast.error("Select your timezone");
+      console.log("Select your timezone");
     }
   };
+  
+
 
   const [schedule, setSchedule] = useState([
     { day: "Sunday", startTime: "", endTime: "" },
@@ -61,6 +64,9 @@ const TimeSelect = () => {
     { day: "Friday", startTime: "", endTime: "" },
     { day: "Saturday", startTime: "", endTime: "" },
   ]);
+  
+  setSelectedTime(schedule)
+  
   return (
     <div>
       <nav className="dashboard__nav">
@@ -72,13 +78,13 @@ const TimeSelect = () => {
             <div className="form" key={id}>
               <p className="font-semibold">{sch.day}:</p>
               <div className="flex gap-2 md:gap-6 md:ml-20">
-                <div className="select__wrapper space-x-2">
+                <div className="space-x-2 select__wrapper">
                   <label className="" htmlFor="startTime">Start Time</label>
                   <select
                     name="startTime"
                     id="startTime"
                     onChange={(e) => handleTimeChange(e, id)}
-                    className="border-2 p-2 mb-3"
+                    className="p-2 mb-3 border-2"
                   >
                     {time.map((t) => (
                       <option key={t.id} value={t.t} id={t.id}>
@@ -87,10 +93,10 @@ const TimeSelect = () => {
                     ))}
                   </select>
                 </div>
-                <div className="select__wrapper space-x-2">
+                <div className="space-x-2 select__wrapper">
                   <label className="" htmlFor="endTime">End Time</label>
                   <select
-                    className="border-2 p-2"
+                    className="p-2 border-2"
                     name="endTime"
                     id="endTime"
                     onChange={(e) => handleTimeChange(e, id)}

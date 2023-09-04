@@ -51,7 +51,6 @@ const EventCalendar = ({ events }) => {
   );
 
   // Resize function
-
   const eventPropGetter = useCallback(
     (event) => ({
       // add class if not allowing resizing at all, or if
@@ -84,6 +83,7 @@ const EventCalendar = ({ events }) => {
           Allow Event Resizing
         </label> */}
       </div>
+
       <DnDCalendar
         localizer={localizer}
         events={myEvents}

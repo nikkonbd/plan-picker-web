@@ -2,8 +2,10 @@ import time from "../../assets/time.jpg";
 import planning from "../../assets/planning.jpg";
 import plannedCalendar from "../../assets/people-planned-in-calendar.jpg";
 import EfficientPlanning from "../../assets/Efficient Planning.jpg";
+// import WeeklyHoursForm from "../../setMeeting/WeeklyHoursForm";
 import AboutCard from "./AboutCard";
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 
 const About = () => {
   const events = [
@@ -47,9 +49,11 @@ const About = () => {
                   </p>
 
                   <div className="z-10 flex flex-col gap-3 mt-8 sm:flex-row">
-                    <button className="bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md px-4 py-3 font-md shadow-md hover:shadow-lg">
-                      Explore Features
-                    </button>
+                    <Link to="/about-explore">
+                      <button className="bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md px-4 py-3 font-md shadow-md hover:shadow-lg">
+                        Explore Features
+                      </button>
+                    </Link>
                     <button className="bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md px-4 py-3 font-md shadow-md hover:shadow-lg">
                       Get Started
                     </button>
