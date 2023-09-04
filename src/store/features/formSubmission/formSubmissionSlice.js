@@ -1,14 +1,22 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+// import { insertId } from "../secoundFormSubmission/SecoundFormSubmissionSlice";
+// import { useState } from "react";
+
+
+
 
 const formSubmissionSlice = createSlice({
     name: "formSubmission",
+   
     initialState: {
+        
         isLoading: false,
         isSuccess: false,
         error: null,
     },
     reducers: {
+
         formSubmissionStart: (state) => {
             state.isLoading = true;
             state.isSuccess = false;
@@ -35,13 +43,19 @@ export const {
 
 export default formSubmissionSlice.reducer;
 
+
+
+
 // Async action creator to send the form data
 export const submitFormData = (formData) => async (dispatch) => {
+
     try {
+
         dispatch(formSubmissionStart());
         const response = await axios.post("http://localhost:5000/addEvent", formData); // Adjust the API endpoint
         dispatch(formSubmissionSuccess());
         console.log(response.data); // Display response data
+        // passData(response.data.insertedId)
     } catch (error) {
         dispatch(formSubmissionFailure(error.message));
     }

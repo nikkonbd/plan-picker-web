@@ -4,15 +4,14 @@ import Event from "./Event";
 
 const EventSearch = ({ events }) => {
   const [searchTerm, setSearchTerm] = useState("");
-
   const filteredEvents = events.filter((event) =>
     event.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
     <div className="py-8">
-      {/* <h1 className="text-3xl font-semibold mb-6">Upcoming Events</h1> */}
-      <div className="mb-4 max-w-md">
+      {/* <h1 className="mb-6 text-3xl font-semibold">Upcoming Events</h1> */}
+      <div className="max-w-md mb-4">
         <input
           type="text"
           placeholder="Search events"
@@ -21,7 +20,7 @@ const EventSearch = ({ events }) => {
           onChange={(e) => setSearchTerm(e.target.value)}
         />
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         {filteredEvents.map((event, index) => (
           <Event key={index} {...event} />
         ))}

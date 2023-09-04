@@ -290,6 +290,154 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                     }}
                   </SidebarLinkGroup>
 
+              {/* My Schedule */}
+              <li
+                className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${
+                  pathname.includes("messages") && "bg-slate-900"
+                }`}
+              >
+                <NavLink
+                  end
+                  to="/dashboard/mySchedule"
+                  className={`block text-slate-200 truncate transition duration-150 ${
+                    pathname.includes("messages")
+                      ? "hover:text-slate-200"
+                      : "hover:text-white"
+                  }`}
+                >
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center grow">
+                      <BsCheck2Square className="w-6 h-6 shrink-0" />
+                      <span className="ml-3 text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
+                        My Schedule
+                      </span>
+                    </div>
+                  </div>
+                </NavLink>
+              </li>
+              {/* Availablity */}
+              <li
+                className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${
+                  pathname.includes("inbox") && "bg-slate-900"
+                }`}
+              >
+                <NavLink
+                  end
+                  to="/dashboard/availability"
+                  className={`block text-slate-200 truncate transition duration-150 ${
+                    pathname.includes("inbox")
+                      ? "hover:text-slate-200"
+                      : "hover:text-white"
+                  }`}
+                >
+                  <div className="flex items-center">
+                    <MdOutlineEventAvailable className="w-6 h-6 shrink-0" />
+                    <span className="ml-3 text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
+                      Availablity
+                    </span>
+                  </div>
+                </NavLink>
+              </li>
+              {/* Calendar */}
+              <li
+                className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${
+                  pathname.includes("calendar") && "bg-slate-900"
+                }`}
+              >
+                <NavLink
+                  end
+                  to="/dashboard/calendar"
+                  className={`block text-slate-200 truncate transition duration-150 ${
+                    pathname.includes("calendar")
+                      ? "hover:text-slate-200"
+                      : "hover:text-white"
+                  }`}
+                >
+                  <div className="flex items-center">
+                    <RxCalendar className="w-6 h-6 shrink-0" />
+                    <span className="ml-3 text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
+                      Calendar
+                    </span>
+                  </div>
+                </NavLink>
+              </li>
+              {/* Campaigns */}
+              <li
+                className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${
+                  pathname.includes("campaigns") && "bg-slate-900"
+                }`}
+              >
+                <NavLink
+                  end
+                  to="/campaigns"
+                  className={`block text-slate-200 truncate transition duration-150 ${
+                    pathname.includes("campaigns")
+                      ? "hover:text-slate-200"
+                      : "hover:text-white"
+                  }`}
+                >
+                  <div className="flex items-center">
+                    <svg className="w-6 h-6 shrink-0" viewBox="0 0 24 24">
+                      <path
+                        className={`fill-current ${
+                          pathname.includes("campaigns")
+                            ? "text-indigo-500"
+                            : "text-slate-600"
+                        }`}
+                        d="M20 7a.75.75 0 01-.75-.75 1.5 1.5 0 00-1.5-1.5.75.75 0 110-1.5 1.5 1.5 0 001.5-1.5.75.75 0 111.5 0 1.5 1.5 0 001.5 1.5.75.75 0 110 1.5 1.5 1.5 0 00-1.5 1.5A.75.75 0 0120 7zM4 23a.75.75 0 01-.75-.75 1.5 1.5 0 00-1.5-1.5.75.75 0 110-1.5 1.5 1.5 0 001.5-1.5.75.75 0 111.5 0 1.5 1.5 0 001.5 1.5.75.75 0 110 1.5 1.5 1.5 0 00-1.5 1.5A.75.75 0 014 23z"
+                      />
+                      <path
+                        className={`fill-current ${
+                          pathname.includes("campaigns")
+                            ? "text-indigo-300"
+                            : "text-slate-400"
+                        }`}
+                        d="M17 23a1 1 0 01-1-1 4 4 0 00-4-4 1 1 0 010-2 4 4 0 004-4 1 1 0 012 0 4 4 0 004 4 1 1 0 010 2 4 4 0 00-4 4 1 1 0 01-1 1zM7 13a1 1 0 01-1-1 4 4 0 00-4-4 1 1 0 110-2 4 4 0 004-4 1 1 0 112 0 4 4 0 004 4 1 1 0 010 2 4 4 0 00-4 4 1 1 0 01-1 1z"
+                      />
+                    </svg>
+                    <span className="ml-3 text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
+                      Campaigns
+                    </span>
+                  </div>
+                </NavLink>
+              </li>
+              {/* Settings */}
+              <SidebarLinkGroup activecondition={pathname.includes("settings")}>
+                {(handleClick, open) => {
+                  return (
+                    <React.Fragment>
+                      <a
+                        href="#0"
+                        className={`block text-slate-200 truncate transition duration-150 ${
+                          pathname.includes("settings")
+                            ? "hover:text-slate-200"
+                            : "hover:text-white"
+                        }`}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          sidebarExpanded
+                            ? handleClick()
+                            : setSidebarExpanded(true);
+                        }}
+                      >
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center">
+                            <AiOutlineSetting className="w-6 h-6 shrink-0" />
+                            <span className="ml-3 text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
+                              Settings
+                            </span>
+                          </div>
+                          {/* Icon */}
+                          <div className="flex ml-2 shrink-0">
+                            <svg
+                              className={`w-3 h-3 shrink-0 ml-1 fill-current text-slate-400 ${
+                                open && "rotate-180"
+                              }`}
+                              viewBox="0 0 12 12"
+                            >
+                              <path d="M5.9 11.4L.5 6l1.4-1.4 4 4 4-4L11.3 6z" />
+                            </svg>
+                          </div>
                   {/* My Schedule */}
                   <li
                     className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${

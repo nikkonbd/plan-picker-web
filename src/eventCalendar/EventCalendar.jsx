@@ -52,6 +52,16 @@ const EventCalendar = ({ events }) => {
 
   // Resize function
 
+   const eventPropGetter = useCallback(
+     (event) => ({
+       // add class if not allowing resizing at all, or if
+       // allowing resizing, but not on a specific event
+       ...((!resizable || !event.isResizable) && { className: "nonResizable" }),
+     }),
+     [resizable]
+   );
+
+
   const eventPropGetter = useCallback(
     (event) => ({
       // add class if not allowing resizing at all, or if
@@ -60,6 +70,7 @@ const EventCalendar = ({ events }) => {
     }),
     [resizable]
   );
+
 
   const toggleResizing = useCallback(() => setResizable((prev) => !prev), []);
 
@@ -74,6 +85,8 @@ const EventCalendar = ({ events }) => {
 
   return (
     <div>
+      
+
       <div>
         {/* <label>
           <input
@@ -84,6 +97,7 @@ const EventCalendar = ({ events }) => {
           Allow Event Resizing
         </label> */}
       </div>
+
       <DnDCalendar
         localizer={localizer}
         events={myEvents}

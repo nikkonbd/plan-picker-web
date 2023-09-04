@@ -31,19 +31,19 @@ const SetMeeting = () => {
   });
 
   return (
-    <div className="flex flex-col items-center lg:items-start text-center lg:text-left h-full lg:flex-row">
-      <div className="xl:w-2/3 lg:w-4/5 md: shadow-2xl p-5 h-full mt-3 rounded-lg">
+    <div className="flex flex-col items-center h-full text-center lg:items-start lg:text-left lg:flex-row">
+      <div className="h-full p-5 mt-3 rounded-lg shadow-2xl xl:w-2/3 lg:w-4/5 md:">
         <EventDetails />
 
-        <div className="mt-5">
-          <h1 className="font-bold mb-2 ">Time zone</h1>
+        <div className="z-10 mt-5">
+          <h1 className="mb-2 font-bold ">Time zone</h1>
           <TimezoneSelect
             value={selectedTimezone}
             onChange={setSelectedTimezone}
           />
         </div>
       </div>
-      <div className="">
+      <div className="-z-0">
         <ScheduleMeeting
           borderRadius={10}
           primaryColor="#3f5b85"
@@ -52,6 +52,7 @@ const SetMeeting = () => {
           onStartTimeSelect={console.log}
           selectedDateDayTitleFormatString="cccc, LLLL do"
           startTimeListStyle="scroll-list"
+          
         />
       </div>
     </div>
