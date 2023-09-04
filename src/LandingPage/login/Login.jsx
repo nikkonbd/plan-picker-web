@@ -56,14 +56,14 @@ const Login = () => {
               toast.success("user loggin Successfuly");
               navigate('/')
 
-              Swal.fire({
-                position: "top-end",
-                icon: "success",
-                title: "User Created Succesfully",
-                showConfirmButton: false,
-                timer: 1500,
-              });
-              navigate("/");
+              // Swal.fire({
+              //   position: "top-end",
+              //   icon: "success",
+              //   title: "User Created Succesfully",
+              //   showConfirmButton: false,
+              //   timer: 1500,
+              // });
+              // navigate("/");
             }
           });
         //
@@ -97,15 +97,15 @@ const Login = () => {
         toast.success("user loggin Successfuly");
         reset()
         navigate('/')
-        Swal.fire({
-          position: "top-end",
-          icon: "success",
-          title: "User logIn Succesfully",
-          showConfirmButton: false,
-          timer: 1500,
-        });
-        reset();
-        navigate("/");
+        // Swal.fire({
+        //   position: "top-end",
+        //   icon: "success",
+        //   title: "User logIn Succesfully",
+        //   showConfirmButton: false,
+        //   timer: 1500,
+        // });
+        // reset();
+        // navigate("/");
       })
       .catch((error) => {
         console.log(error);
