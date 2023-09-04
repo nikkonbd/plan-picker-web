@@ -5,15 +5,13 @@ import book2 from "../../../assets/Images/book2.png";
 import book3 from "../../../assets/Images/book3.png";
 
 const MorePlan = () => {
+  const [scheduleDetails, setScheduleDetails] = useState([]);
 
-  const [scheduleDetails, setScheduleDetails] = useState([])
-  
-  useEffect(()=>{
-    fetch('http://localhost:5000/plans')
-    .then(res => res.json())
-    .then(data => 
-      setScheduleDetails(data))
-  },[])
+  useEffect(() => {
+    fetch("http://localhost:5000/plans")
+      .then((res) => res.json())
+      .then((data) => setScheduleDetails(data));
+  }, []);
 
   return (
     <div className="px-4 md:px-0 md:w-10/12 mx-auto">
