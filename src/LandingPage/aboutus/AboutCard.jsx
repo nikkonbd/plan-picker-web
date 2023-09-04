@@ -8,7 +8,7 @@ import {
 const AboutCard = () => {
   return (
     <div>
-      <div className="gap-4 text-[#61677A] justify-between grid grid-cols-1 md:pb-10 md:grid-cols-2 lg:grid-cols-4">
+      <div className="gap-4 text-[#61677A] flex flex-col md:flex-row justify-center mb-10">
         <div className="card w-full hover:bg-[#f6f9fc] md:w-[260px] shadow-md border">
           <figure className="px-10 pt-10">
             <img
