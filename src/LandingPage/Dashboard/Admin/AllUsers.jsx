@@ -6,6 +6,7 @@ import { FcEmptyTrash } from "react-icons/fc";
 import { PiUserSwitchBold } from "react-icons/pi";
 import Swal from 'sweetalert2';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
+import { Toaster, toast } from 'react-hot-toast';
 
 const AllUsers = () => {
 
@@ -26,7 +27,7 @@ const AllUsers = () => {
 
     //handleMake Admin
     const handleMakeAdmin = (user) => {
-        fetch(`http://localhost:5000/users/admin/${user._id}`, {
+        fetch(`http://localhost:5000/users/admin/${user?._id}`, {
             method: "PATCH"
         })
             .then(res => res.json())
@@ -34,13 +35,14 @@ const AllUsers = () => {
                 console.log(data);
                 if (data.modifiedCount) {
                     refetch()
-                    Swal.fire({
-                        position: 'top-end',
-                        icon: 'success',
-                        title: `${user.name} is an admin now!`,
-                        showConfirmButton: false,
-                        timer: 1500
-                    })
+                    // Swal.fire({
+                    //     position: 'top-end',
+                    //     icon: 'success',
+                    //     title: `${user.name} is an admin now!`,
+                    //     showConfirmButton: false,
+                    //     timer: 1500
+                    // })
+                    toast.success(`${user.name} is an admin now!`);
                 }
             })
     }
@@ -91,7 +93,7 @@ const AllUsers = () => {
                 </h2>
                 <div className='flex text-xl gap-3  md:text-4xl font-serif font-bold md:gap-10'>
                     <div className='flex gap-1 md:gap-2 shadow-md md:p-2 items-center'>
-                        <h2>Admin </h2><PiUserSwitchBold></PiUserSwitchBold>
+                        <h2>Admin </h2><PiUserSwitchBold color='red'></PiUserSwitchBold>
                     </div>
                     <div className='flex gap-1 md:gap-2 shadow-md md:p-2 items-center'>
                         <h2>Users </h2><FaUsers></FaUsers>
@@ -135,13 +137,14 @@ const AllUsers = () => {
                                             user?.role === 'admin' ?
                                                 <button className="btn  btn-circle">
 
-                                                    <PiUserSwitchBold fontSize={30}></PiUserSwitchBold>
+                                                    <PiUserSwitchBold fontSize={30} color='red'></PiUserSwitchBold>
                                                 </button>
                                                 :
                                                 <button onClick={() => handleMakeAdmin(user)} className="btn  btn-circle">
                                                     <FaUsers fontSize={30} ></FaUsers>
                                                 </button>
                                         }
+                                        <Toaster />
                                     </td>
                                     <td>
 
@@ -155,6 +158,7 @@ const AllUsers = () => {
 
                     </tbody>
                 </table>
+
             </div>
         </>
     );

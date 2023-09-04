@@ -19,6 +19,7 @@ import AllUsers from "../LandingPage/Dashboard/Admin/AllUsers";
 import Profile from "../LandingPage/Dashboard/Profile/Profile";
 import Analytics from "../LandingPage/Dashboard/analytics/Analytics";
 import MorePlan from "../LandingPage/homepage/morePlan/MorePlan";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -57,7 +58,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <Dashboard></Dashboard>,
+    element: <PrivateRoute> <Dashboard></Dashboard></PrivateRoute>,
     children: [
       {
         path: "/dashboard/schedule",
