@@ -18,6 +18,7 @@ import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { userCreated } from '../../store/features/users/userSlice';
 import { FcGoogle } from 'react-icons/fc';
+import { Toaster, toast } from 'react-hot-toast';
 
 
 const image_hosting_token = import.meta.env.VITE_Image_Upload_Token;
@@ -80,26 +81,28 @@ const SignUp = () => {
                                     console.log(data);
                                     if (data.insertedId) {
                                         reset()
-                                        Swal.fire({
-                                            position: 'top-end',
-                                            icon: 'success',
-                                            title: 'User Created Succesfully',
-                                            showConfirmButton: false,
-                                            timer: 1500
-                                        })
+                                        // Swal.fire({
+                                        //     position: 'top-end',
+                                        //     icon: 'success',
+                                        //     title: 'User Created Succesfully',
+                                        //     showConfirmButton: false,
+                                        //     timer: 1500
+                                        // })
+                                        toast.success("user created Successfuly");
                                         navigate('/')
                                     }
                                 })
                         })
                         .catch(error => {
                             console.log(error.message);
-                            Swal.fire({
-                                position: 'top-end',
-                                icon: 'error',
-                                title: `${error.message}`,
-                                showConfirmButton: false,
-                                timer: 1500
-                            })
+                            // Swal.fire({
+                            //     position: 'top-end',
+                            //     icon: 'error',
+                            //     title: `${error.message}`,
+                            //     showConfirmButton: false,
+                            //     timer: 1500
+                            // })
+                            toast.error(`${error.message}`);
                         })
                 }
             })
@@ -122,13 +125,14 @@ const SignUp = () => {
                     .then(res => res.json())
                     .then((data) => {
                         if (data.insertedId) {
-                            Swal.fire({
-                                position: 'top-end',
-                                icon: 'success',
-                                title: 'User Created Succesfully',
-                                showConfirmButton: false,
-                                timer: 1500
-                            })
+                            // Swal.fire({
+                            //     position: 'top-end',
+                            //     icon: 'success',
+                            //     title: 'User Created Succesfully',
+                            //     showConfirmButton: false,
+                            //     timer: 1500
+                            // })
+                            toast.success("user loggin Successfuly");
                             navigate('/')
                         }
 
@@ -196,6 +200,7 @@ const SignUp = () => {
                             </Typography>
                         </Typography>
                     </CardFooter>
+                    <Toaster />
                 </Card>
             </Dialog>
         </div>

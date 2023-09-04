@@ -13,10 +13,11 @@ import {
   Input,
   Checkbox,
 } from "@material-tailwind/react";
-import SignUp from "../signUp/SignUp";
-import { AuthContext } from "../../providers/AuthProvider";
-import { useNavigate } from "react-router-dom";
-import Swal from "sweetalert2";
+import SignUp from '../signUp/SignUp';
+import { AuthContext } from '../../providers/AuthProvider';
+import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
+import { Toaster, toast } from 'react-hot-toast';
 
 const Login = () => {
   const [open, setOpen] = React.useState(false);
@@ -45,6 +46,16 @@ const Login = () => {
           .then((res) => res.json())
           .then((data) => {
             if (data.insertedId) {
+              // Swal.fire({
+              //   position: 'top-end',
+              //   icon: 'success',
+              //   title: 'User Created Succesfully',
+              //   showConfirmButton: false,
+              //   timer: 1500
+              // })
+              toast.success("user loggin Successfuly");
+              navigate('/')
+
               Swal.fire({
                 position: "top-end",
                 icon: "success",
@@ -76,6 +87,16 @@ const Login = () => {
         const loggedUser = result.user;
         console.log(loggedUser);
 
+        // Swal.fire({
+        //   position: 'top-end',
+        //   icon: 'success',
+        //   title: 'User logIn Succesfully',
+        //   showConfirmButton: false,
+        //   timer: 1500
+        // })
+        toast.success("user loggin Successfuly");
+        reset()
+        navigate('/')
         Swal.fire({
           position: "top-end",
           icon: "success",
@@ -171,8 +192,10 @@ const Login = () => {
               </Typography>
             </Typography>
           </CardFooter>
+
         </Card>
       </Dialog>
+      <Toaster />
     </div>
   );
 };
