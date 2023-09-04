@@ -58,8 +58,9 @@ const SignUp = () => {
                     const { name, email, password } = data
                     const newData = { name, email, imgUrl }
 
+                    console.log(email, password)
                     //firebase
-                    createUser(email, password)
+                    createUser(data.email, data.password)
                         .then(result => {
                             const loggedUser = result.user;
                             console.log('new-user', loggedUser);
@@ -89,6 +90,16 @@ const SignUp = () => {
                                         navigate('/')
                                     }
                                 })
+                        })
+                        .catch(error => {
+                            console.log(error.message);
+                            Swal.fire({
+                                position: 'top-end',
+                                icon: 'error',
+                                title: `${error.message}`,
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
                         })
                 }
             })
@@ -140,7 +151,7 @@ const SignUp = () => {
                 className="bg-transparent shadow-none"
             >
                 <Card className="mx-auto w-full max-w-[42rem]">
-                    <CardHeader className='text-center py-3 bg-teal-500'
+                    <CardHeader className='text-center py-3 bg-[#5EBEC4]'
                     >
                         <Typography variant="h3" color="white">
                             Plan Picker Sign Up
@@ -178,8 +189,7 @@ const SignUp = () => {
                             <Typography
                                 as="a"
                                 variant="small"
-                                color="blue"
-                                className="ml-1 font-bold cursor-pointer"
+                                className="ml-1 text-[#5EBEC4] font-bold cursor-pointer"
                                 onClick={handleOpen}
                             >
                                 Sign In
