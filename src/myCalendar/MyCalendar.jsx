@@ -10,14 +10,14 @@ import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 
 const MyCalendar = () => {
-  
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     // Axios GET request
-    axios.get('http://localhost:5000/getEvent')
+    axios
+      .get("http://localhost:5000/getEvent")
       .then((response) => {
         setData(response.data);
         setLoading(false);
@@ -35,9 +35,9 @@ const MyCalendar = () => {
   if (error) {
     return <p>Error: {error.message}</p>;
   }
-  
-  console.log(data)
-  
+
+  console.log(data);
+
   const events = [
     {
       title: "Tech Conference 2023",
@@ -58,39 +58,46 @@ const MyCalendar = () => {
       date: "September 15-17, 2023",
       location: "New York City, NY",
       description: "Get ready for a weekend of music, art, and fun!...",
-      imageUrl: "https://i.ibb.co/WHXCrxn/e5ccec4a-40e3-448d-8003-f469eb197bf2.webp",
+      imageUrl:
+        "https://i.ibb.co/WHXCrxn/e5ccec4a-40e3-448d-8003-f469eb197bf2.webp",
     },
   ];
-  
-  
-  
-  
 
   return (
     <>
-      <Helmet >
+      <Helmet>
         <title>MyCalendar || PlanPicker</title>
       </Helmet>
       <div className="py-4 md:py-8 md:max-w-6xl">
         {/* grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 */}
 
-      <div className="items-center justify-between md:flex">
-      <div><h1 className="pb-3 text-3xl font-semibold md:pb-0">Upcoming Events</h1></div>
-        <div className="md:flex items-center justify-between">
-          <div><h1 className="text-3xl font-semibold pb-3 md:pb-0">Upcoming Events</h1></div>
-          <div><CreateEventButton /></div>
-        </div>
-        <div className="flex">
-          <EventSearch events={events} />
-        </div>
-        {/* <div className="p-4 bg-white rounded-lg shadow-md">
+        <div className="items-center justify-between md:flex">
+          <div>
+            <h1 className="pb-3 text-3xl font-semibold md:pb-0">
+              Upcoming Events
+            </h1>
+          </div>
+          <div className="md:flex items-center justify-between">
+            <div>
+              <h1 className="text-3xl font-semibold pb-3 md:pb-0">
+                Upcoming Events
+              </h1>
+            </div>
+            <div>
+              <CreateEventButton />
+            </div>
+          </div>
+          <div className="flex">
+            <EventSearch events={events} />
+          </div>
+          {/* <div className="p-4 bg-white rounded-lg shadow-md">
           
         </div> */}
-        {/* R */}
-        {/* <NewEventTypes /> */}
+          {/* R */}
+          {/* <NewEventTypes /> */}
+        </div>
       </div>
     </>
-
   );
 };
 
