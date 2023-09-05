@@ -11,13 +11,12 @@ import {
   CardFooter,
   Typography,
   Input,
-  Checkbox,
 } from "@material-tailwind/react";
-import SignUp from '../signUp/SignUp';
-import { AuthContext } from '../../providers/AuthProvider';
-import { useNavigate } from 'react-router-dom';
-import Swal from 'sweetalert2';
-import { Toaster, toast } from 'react-hot-toast';
+import SignUp from "../signUp/SignUp";
+import { AuthContext } from "../../providers/AuthProvider";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
+import { Toaster, toast } from "react-hot-toast";
 
 const Login = () => {
   const [open, setOpen] = React.useState(false);
@@ -54,7 +53,7 @@ const Login = () => {
               //   timer: 1500
               // })
               toast.success("user loggin Successfuly");
-              navigate('/')
+              navigate("/");
 
               // Swal.fire({
               //   position: "top-end",
@@ -95,8 +94,8 @@ const Login = () => {
         //   timer: 1500
         // })
         toast.success("user loggin Successfuly");
-        reset()
-        navigate('/')
+        reset();
+        navigate("/");
         // Swal.fire({
         //   position: "top-end",
         //   icon: "success",
@@ -144,13 +143,6 @@ const Login = () => {
                 size="lg"
               />
               {errors.password && <span>Password is Required!</span>}
-              {/* <div className="-ml-2.5">
-                                <Checkbox label="Remember Me" />
-                                </div>
-                            </CardBody>
-                            <div className='px-6'>
-                                <Button className='bg-[#5EBEC4]' variant="gradient" fullWidth>
-                            </div> */}
             </CardBody>
             <div className="px-6">
               <Button className="" variant="gradient" fullWidth>
@@ -173,11 +165,6 @@ const Login = () => {
               </Button>
             </a>
           </div>
-          {/* <div className='px-6'>
-                        <a className=''>
-                            <Button className='flex items-center justify-center w-full gap-4' variant="outlined"><FaMicrosoft className='text-xl'></FaMicrosoft>Sign In With Microsoft</Button>
-                        </a>
-                    </div> */}
           <CardFooter className="pt-0">
             <Typography variant="small" className="flex justify-center mt-6">
               Don&apos;t have an account?
@@ -192,7 +179,6 @@ const Login = () => {
               </Typography>
             </Typography>
           </CardFooter>
-
         </Card>
       </Dialog>
       <Toaster />

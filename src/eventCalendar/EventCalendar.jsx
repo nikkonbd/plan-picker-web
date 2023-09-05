@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Calendar, momentLocalizer, Views } from "react-big-calendar";
 import moment from "moment";
@@ -25,20 +24,18 @@ const EventCalendar = ({ events }) => {
 
   const customStyles = {
     content: {
-      top: '50%',
-      left: '50%',
-      right: 'auto',
-      bottom: 'auto',
-      marginRight: '-50%',
-      transform: 'translate(-50%, -50%)',
-      width: '350px',
-      height: 'auto',
-      background: 'red', // Set the background color to white
-      boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.2)', // Add a shadow for a card-like appearance
-      border: '1px solid #ccc', // Add a border for better visibility
-      overflow: 'hidden'
-
-
+      top: "50%",
+      left: "50%",
+      right: "auto",
+      bottom: "auto",
+      marginRight: "-50%",
+      transform: "translate(-50%, -50%)",
+      width: "350px",
+      height: "auto",
+      background: "red", // Set the background color to white
+      boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.2)", // Add a shadow for a card-like appearance
+      border: "1px solid #ccc", // Add a border for better visibility
+      overflow: "hidden",
     },
   };
 
@@ -53,7 +50,7 @@ const EventCalendar = ({ events }) => {
           defaultView={Views.MONTH}
           startAccessor="start"
           endAccessor="end"
-          style={{ height: "500px", overflow: 'hidden' }}
+          style={{ height: "500px", overflow: "hidden" }}
         />
         {selectedDate && (
           <div>
@@ -62,40 +59,22 @@ const EventCalendar = ({ events }) => {
           </div>
         )}
       </div>
-
       <div className="z-50">
         <Modal
           isOpen={isModalOpen}
           onRequestClose={closeModal}
           contentLabel="Selected Date Modal"
-          style={customStyles}
-        >
+          style={customStyles}>
           <div className="">
             <h2>Form</h2>
             {selectedDate && (
               <p>Selected Date: {moment(selectedDate).format("YYYY-MM-DD")}</p>
             )}
-
-
             <EventModal></EventModal>
-
-            <button className="mt-4" onClick={closeModal}>Cancel</button>
+            <button className="mt-4" onClick={closeModal}>
+              Cancel
+            </button>
           </div>
-  return (
-    <div>
-      
-
-      <div>
-        {/* <label>
-          <input
-            type="checkbox"
-            checked={resizable}
-            onChange={toggleResizing}
-          />
-          Allow Event Resizing
-        </label> */}
-      </div>
-
         </Modal>
       </div>
     </div>

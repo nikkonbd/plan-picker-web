@@ -1,7 +1,6 @@
 import { Toaster, toast } from "react-hot-toast";
 import EventPage from "../../component/EventPage";
 import Event from "./Event";
-// import Event2 from "./Event2";
 import emailjs from "@emailjs/browser";
 import { useRef } from "react";
 import Contact from "./Contact";
