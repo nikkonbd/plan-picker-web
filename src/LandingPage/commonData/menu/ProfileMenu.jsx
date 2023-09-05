@@ -9,14 +9,17 @@ import {
 } from "@material-tailwind/react";
 import { AuthContext } from "../../../providers/AuthProvider";
 import { Link } from "react-router-dom";
+import useAdmin from "../../../hooks/useAdmin";
 
 const ProfileMenu = () => {
   const { logOut, user } = useContext(AuthContext);
   console.log(user);
 
+
+
   const handleLogOut = () => {
     logOut()
-      .then(() => {})
+      .then(() => { })
       .catch((error) => console.log(error));
   };
   return (
@@ -55,7 +58,7 @@ const ProfileMenu = () => {
               />
             </svg>
             <Typography variant="small" className="font-normal">
-              <Link to="/dashboard/schedule">My Dashboard</Link>
+              <Link to="/dashboard">My Dashboard</Link>
             </Typography>
           </MenuItem>
           <MenuItem className="flex items-center gap-2">
