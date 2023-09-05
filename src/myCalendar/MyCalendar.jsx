@@ -10,9 +10,6 @@ import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 
 const MyCalendar = () => {
-import { Helmet } from "react-helmet-async";
-
-const MyCalendar = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -65,10 +62,6 @@ const MyCalendar = () => {
         "https://i.ibb.co/WHXCrxn/e5ccec4a-40e3-448d-8003-f469eb197bf2.webp",
     },
   ];
-  
-  
-  
-  
 
   return (
     <>
@@ -78,13 +71,8 @@ const MyCalendar = () => {
       <div className="py-4 md:py-8 md:max-w-6xl">
         {/* grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 */}
 
-        <div className="items-center justify-between md:flex">
-          <div>
-            <h1 className="pb-3 text-3xl font-semibold md:pb-0">
-              Upcoming Events
-            </h1>
-          </div>
-          <div className="md:flex items-center justify-between">
+        <div className="">
+          <div className="md:flex justify-between items-center">
             <div>
               <h1 className="text-3xl font-semibold pb-3 md:pb-0">
                 Upcoming Events

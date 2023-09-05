@@ -8,8 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setObjectData } from "../../store/features/objectData/ObjectDataSlice";
 import axios from "axios";
 
-import { v4 as uuidv4 } from 'uuid';
-
+import { v4 as uuidv4 } from "uuid";
 
 // import ZoomIntegration from "../../integration/zoom/ZoomIntegration";
 
@@ -25,7 +24,7 @@ const Event = () => {
   const [eventColor, setEventColor] = useState("");
   const [sanitizedValue, setSanitizedValue] = useState("");
 
-   const uniqueId = uuidv4();
+  const uniqueId = uuidv4();
 
   const dispatch = useDispatch();
   // const { isLoading, isSuccess, error } = useSelector(
@@ -38,10 +37,6 @@ const Event = () => {
     setValue(html);
     setSanitizedValue(sanitizedText);
   };
-  
-  const handleCancel = () => {
-    navigate("/dashboard/schedule")
-  }
 
   const handleCancel = () => {
     navigate("/dashboard/schedule");
@@ -154,7 +149,7 @@ const Event = () => {
               onChange={(e) => setLocation(e.target.value)}>
               <option>Select One</option>
               <option>Google Meet</option>
-              <option >Zoom</option>
+              <option>Zoom</option>
               <option>Skype</option>
               <option>WhatsApp</option>
               <option>Microsoft Team</option>
