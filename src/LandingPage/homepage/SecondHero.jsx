@@ -5,6 +5,8 @@ import {
   AccordionBody,
 } from "@material-tailwind/react";
 import img from "../../assets/Images/FaQ.jpg";
+import Lottie from "lottie-react";
+import faq from "../../../public/faq.json";
 
 import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
@@ -98,11 +100,12 @@ const SecondHero = () => {
             </Accordion>
           </div>
           <div className="w-full">
-            <img
+            {/* <img
               src={img}
               alt="Image Here"
               className="w-full p-10 md:mx-auto transition hover:scale-110 hover:duration-500 "
-            />
+            /> */}
+            <Lottie animationData={faq} loop={true} className="" />
           </div>
         </div>
       </div>
