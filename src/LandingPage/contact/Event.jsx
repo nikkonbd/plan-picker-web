@@ -10,6 +10,7 @@ import axios from "axios";
 
 import { v4 as uuidv4 } from 'uuid';
 
+
 // import ZoomIntegration from "../../integration/zoom/ZoomIntegration";
 
 import TimeSelect from "./TimeSelect";
@@ -42,6 +43,10 @@ const Event = () => {
     navigate("/dashboard/schedule")
   }
 
+  const handleCancel = () => {
+    navigate("/dashboard/schedule");
+  };
+
   const handleNextForm = () => {
     // Store the data in an object
     const formData = {
@@ -56,7 +61,6 @@ const Event = () => {
     dispatch(setObjectData(formData));
 
     console.log(arrayData); // Display the form data
-    
 
     navigate("/dashboard/one-on-one-form/event_set_edit_form");
   };
@@ -69,7 +73,6 @@ const Event = () => {
   };
 
   console.log(location);
-
   return (
     <div className="py-6 md:max-w-6xl">
       <div className="flex flex-col gap-6 md:flex-row md:justify-between">

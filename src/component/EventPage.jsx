@@ -183,7 +183,10 @@ import React, { useEffect, useState } from "react";
 import { addDays } from "date-fns";
 import "react-date-range/dist/styles.css"; // main style file
 import "react-date-range/dist/theme/default.css"; // theme css file
-
+import React, { useState } from "react";
+import { addDays } from "date-fns";
+import "react-date-range/dist/styles.css"; // main style file
+import "react-date-range/dist/theme/default.css"; // theme css file
 import { DateRangePicker } from "react-date-range";
 import TimeRangeSelector from "./TimeRangeSelector";
 import { BsCalendar4Event, BsListStars } from "react-icons/bs";
@@ -223,11 +226,13 @@ function Icon({ id, open }) {
 }
 
 const EventPage = () => {
+  const [open, setOpen] = React.useState(0);
+  const handleOpen = (value) => setOpen(open === value ? 0 : value);
   const navigate = useNavigate();
 
   const [eventDuration, setEventDuration] = useState("");
   const [selectedTimezone, setSelectedTimezone] = useState({});
-
+  
   const [selectedTime, setSelectedTime] = useState({});
   const [state, setState] = useState([
     {
@@ -236,6 +241,7 @@ const EventPage = () => {
       key: "selection",
     },
   ]);
+  
   const [{ startDate, endDate }] = state;
   const [startHour, setStartHour] = useState("");
   const [startMinute, setStartMinute] = useState("");
@@ -247,6 +253,7 @@ const EventPage = () => {
 
   const dispatch = useDispatch();
   const objectData = useSelector((state) => state.objectData);
+
 
   const text = eventDuration;
   const regex = /\d+/;
@@ -266,6 +273,11 @@ const EventPage = () => {
       endTime: endHours + ":" + endMinute + " " + endAmPm,
       startDate,
       endDate,
+  const handleSubmit = () => {
+    const formData = {
+      selectedTimezone,
+      eventDuration,
+      selectedTime,
     };
 
     const obj = { ...objectData, formData };
@@ -297,7 +309,7 @@ const EventPage = () => {
     });
 
 
-
+    console.log(obj);
   };
 
   const handleCancel = () => {
@@ -375,6 +387,15 @@ const EventPage = () => {
                 Select Timezone
               </p>
             </div>
+            <EventCalendar events={events} />
+          </div>
+          <div className="w-full mt-6 border-2 p-4">
+            <div className="flex items-center gap-2">
+              <BsCalendar4Event fontSize={20}></BsCalendar4Event>
+              <p className="text-xl font-semibold label-text">
+                Select Timezone
+              </p>
+            </div>
             <TimezoneSelect
               value={selectedTimezone}
               onChange={setSelectedTimezone}
@@ -412,6 +433,7 @@ const EventPage = () => {
           </div>
           <div>
             <TimeRangeSelector handleSelectTime={handleSelectTime} />
+            <TimeRangeSelector />
           </div>
         </div>
       </div>

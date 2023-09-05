@@ -20,6 +20,9 @@ import Profile from "../LandingPage/Dashboard/Profile/Profile";
 import Analytics from "../LandingPage/Dashboard/analytics/Analytics";
 import MorePlan from "../LandingPage/homepage/morePlan/MorePlan";
 import EventPage from "../component/EventPage";
+import PrivateRoute from "./PrivateRoute";
+import ExploreFeatures from "../LandingPage/aboutus/exploreFeatures/ExploreFeatures";
+import LearnAvailability from "../LandingPage/homepage/LearnAvailability/LearnAvailability";
 
 const router = createBrowserRouter([
   {
@@ -47,6 +50,10 @@ const router = createBrowserRouter([
         element: <About></About>,
       },
       {
+        path: "/about-explore",
+        element: <ExploreFeatures></ExploreFeatures>
+      },
+      {
         path: "/blog",
         element: <Blog></Blog>,
       },
@@ -54,11 +61,15 @@ const router = createBrowserRouter([
         path: "/blog-details/:id",
         element: <BlogDetails></BlogDetails>,
       },
+      {
+        path: "/learn-availability",
+        element: <LearnAvailability />
+      }
     ],
   },
   {
     path: "/dashboard",
-    element: <Dashboard></Dashboard>,
+    element: <PrivateRoute> <Dashboard></Dashboard></PrivateRoute>,
     children: [
       {
         path: "/dashboard/schedule",
@@ -92,10 +103,10 @@ const router = createBrowserRouter([
         path: "/dashboard/event_type/one-on-one-form",
         element: <Event />,
       },
-      {
-        path: "/dashboard/event_type/group-form",
-        element: <Event2 />,
-      },
+      // {
+      //   path: "/dashboard/event_type/group-form",
+      //   element: <Event2 />,
+      // },
       {
         path: "/dashboard/event_type/collective-form",
         element: <div>Colective</div>,
@@ -106,7 +117,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/dashboard/calendar",
-        element: <EventPageData/>
+        element: <EventPageData />
       }
     ],
   },
