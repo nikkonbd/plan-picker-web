@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import {
   Menu,
   MenuHandler,
@@ -14,14 +14,13 @@ import useAdmin from "../../../hooks/useAdmin";
 const ProfileMenu = () => {
   const { logOut, user } = useContext(AuthContext);
   console.log(user);
-
-
-
+  // const [isAdmin, setIsAdmin] = useState(false);
   const handleLogOut = () => {
     logOut()
       .then(() => { })
       .catch((error) => console.log(error));
   };
+
   return (
     <div>
       <Menu>

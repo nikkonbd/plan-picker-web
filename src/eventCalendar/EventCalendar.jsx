@@ -81,6 +81,20 @@ const EventCalendar = ({ events }) => {
 
             <button className="mt-4" onClick={closeModal}>Cancel</button>
           </div>
+  return (
+    <div>
+      
+
+      <div>
+        {/* <label>
+          <input
+            type="checkbox"
+            checked={resizable}
+            onChange={toggleResizing}
+          />
+          Allow Event Resizing
+        </label> */}
+      </div>
 
         </Modal>
       </div>

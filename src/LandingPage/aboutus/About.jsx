@@ -23,7 +23,7 @@ const About = () => {
       <Helmet>
         <title>AboutUs || Plan Picker</title>
       </Helmet>
-      <div className="max-w-[2520px] mx-auto lg:px-48 xl:px-28 md:px-10 px-4">
+      <div className="max-w-[2520px] mx-auto lg:px-16 xl:px-28 md:px-10 px-4">
         <div className="mt-20">
           <div className="">
             <div className="relative text-[#61677A]">
@@ -147,7 +147,7 @@ const About = () => {
             <div className="py-[75px] md:pt-24 bg-[#f6f9fc] text-[#5EBEC4] mb-8 rounded-xl">
               <div className="flex flex-col gap-10 p-4 md:flex-row">
                 <img
-                  className="h-auto w-[500px] rounded-xl"
+                  className="h-auto flex-col md:w-[500px] rounded-xl"
                   src={planning}
                   alt=""
                 />
