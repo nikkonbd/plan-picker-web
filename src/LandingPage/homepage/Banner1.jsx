@@ -5,6 +5,7 @@ import book2 from "../../assets/Images/book2.png";
 import { Button } from "@material-tailwind/react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Link } from "react-router-dom";
 
 const Banner1 = () => {
   useEffect(() => {
@@ -40,7 +41,7 @@ const Banner1 = () => {
               schedules if need be.
             </p>
           </div>
-          <a href="#" className="inline-block pt-6 pb-10 md:pt-0 md:pb-0">
+          <Link to="/learn-availability" className="inline-block pt-6 pb-10 md:pt-0 md:pb-0">
             <Button
               variant="text"
               className="flex text-white items-center gap-2 bg-[#5EBEC4] hover:bg-[#42a6ad]">
@@ -59,7 +60,7 @@ const Banner1 = () => {
                 />
               </svg>
             </Button>
-          </a>
+          </Link>
         </div>
         <div data-aos="fade-up-left">
           <img
