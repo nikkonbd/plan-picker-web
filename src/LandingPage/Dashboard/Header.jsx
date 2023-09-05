@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 // import SearchModal from '../components/ModalSearch';
 // import Notifications from '../components/DropdownNotifications';
@@ -10,7 +10,7 @@ function Header({ sidebarOpen, setSidebarOpen }) {
   const [searchModalOpen, setSearchModalOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 bg-white dark:bg-[#182235] border-b border-slate-200 dark:border-slate-700 z-30">
+    <header className="sticky top-0 shadow-md z-30">
       <div className="px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 -mb-px">
           {/* Header: Left side */}
@@ -23,10 +23,12 @@ function Header({ sidebarOpen, setSidebarOpen }) {
               onClick={(e) => {
                 e.stopPropagation();
                 setSidebarOpen(!sidebarOpen);
-              }}
-            >
+              }}>
               <span className="sr-only">Open sidebar</span>
-              <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <svg
+                className="w-6 h-6 fill-current"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
                 <rect x="4" y="5" width="16" height="2" />
                 <rect x="4" y="11" width="16" height="2" />
                 <rect x="4" y="17" width="16" height="2" />
@@ -39,16 +41,18 @@ function Header({ sidebarOpen, setSidebarOpen }) {
             <div>
               <button
                 className={`w-8 h-8 flex items-center justify-center bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600/80 rounded-full ml-3 ${
-                  searchModalOpen && 'bg-slate-200'
+                  searchModalOpen && "bg-slate-200"
                 }`}
                 onClick={(e) => {
                   e.stopPropagation();
                   setSearchModalOpen(true);
                 }}
-                aria-controls="search-modal"
-              >
+                aria-controls="search-modal">
                 <span className="sr-only">Search</span>
-                <svg className="w-4 h-4" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                <svg
+                  className="w-4 h-4"
+                  viewBox="0 0 16 16"
+                  xmlns="http://www.w3.org/2000/svg">
                   <path
                     className="fill-current text-slate-500 dark:text-slate-400"
                     d="M7 14c-3.86 0-7-3.14-7-7s3.14-7 7-7 7 3.14 7 7-3.14 7-7 7zM7 2C4.243 2 2 4.243 2 7s2.243 5 5 5 5-2.243 5-5-2.243-5-5-5z"

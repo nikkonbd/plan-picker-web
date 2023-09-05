@@ -8,6 +8,7 @@ import EventNavbar from "./eventNavbar/EventNavbar";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
+import { Helmet } from "react-helmet-async";
 
 const MyCalendar = () => {
   
@@ -67,22 +68,28 @@ const MyCalendar = () => {
   
 
   return (
-    <div className="py-4 md:py-8 md:max-w-6xl">
-      {/* grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 */}
+    <>
+      <Helmet >
+        <title>MyCalendar || PlanPicker</title>
+      </Helmet>
+      <div className="py-4 md:py-8 md:max-w-6xl">
+        {/* grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 */}
 
-      <div className="items-center justify-between md:flex">
-      <div><h1 className="pb-3 text-3xl font-semibold md:pb-0">Upcoming Events</h1></div>
+        <div className="md:flex items-center justify-between">
+          <div><h1 className="text-3xl font-semibold pb-3 md:pb-0">Upcoming Events</h1></div>
           <div><CreateEventButton /></div>
-      </div>
-      <div className="flex">
-        <EventSearch events={events} />
-      </div>
-      {/* <div className="p-4 bg-white rounded-lg shadow-md">
+        </div>
+        <div className="flex">
+          <EventSearch events={events} />
+        </div>
+        {/* <div className="p-4 bg-white rounded-lg shadow-md">
           
         </div> */}
-      {/* R */}
-      {/* <NewEventTypes /> */}
-    </div>
+        {/* R */}
+        {/* <NewEventTypes /> */}
+      </div>
+    </>
+
   );
 };
 

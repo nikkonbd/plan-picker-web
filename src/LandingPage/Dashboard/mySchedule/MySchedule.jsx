@@ -57,12 +57,11 @@ const MySchedule = () => {
   return (
     <div>
       <h2 className="text-2xl">Today ({date})</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 my-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-5">
         {todayScedule.map((scheduleData) => (
           <ScheduleCard
             key={scheduleData.id}
-            scheduleData={scheduleData}
-          ></ScheduleCard>
+            scheduleData={scheduleData}></ScheduleCard>
         ))}
       </div>
       <h2 className="text-2xl relative">
@@ -71,12 +70,11 @@ const MySchedule = () => {
           {schedule.length}
         </span>
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 my-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-5">
         {schedule.map((scheduleData) => (
           <ScheduleCard
             key={scheduleData.id}
-            scheduleData={scheduleData}
-          ></ScheduleCard>
+            scheduleData={scheduleData}></ScheduleCard>
         ))}
       </div>
     </div>

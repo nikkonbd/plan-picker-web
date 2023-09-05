@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BiInfoCircle } from "react-icons/bi";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
@@ -6,12 +6,14 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 // import { submitFormData } from "../../store/features/formSubmission/formSubmissionSlice";
 import { setObjectData } from "../../store/features/objectData/ObjectDataSlice";
+import axios from "axios";
 
 import { v4 as uuidv4 } from 'uuid';
 
 // import ZoomIntegration from "../../integration/zoom/ZoomIntegration";
 
 import TimeSelect from "./TimeSelect";
+import { Helmet } from "react-helmet-async";
 
 const Event = () => {
   const navigate = useNavigate();
@@ -54,6 +56,7 @@ const Event = () => {
     dispatch(setObjectData(formData));
 
     console.log(arrayData); // Display the form data
+    
 
     navigate("/dashboard/one-on-one-form/event_set_edit_form");
   };
@@ -64,6 +67,8 @@ const Event = () => {
     div.innerHTML = content;
     return div.textContent || div.innerText || "";
   };
+
+  console.log(location);
 
   return (
     <div className="py-6 md:max-w-6xl">
@@ -76,7 +81,9 @@ const Event = () => {
           </div>
         </div>
         <div className="flex justify-center gap-4 md:justify-between">
-          <button onClick={() => handleCancel()} className="p-2 rounded-md btn">Cancel</button>
+          <button onClick={() => handleCancel()} className="p-2 rounded-md btn">
+            Cancel
+          </button>
           <button
             onClick={() => handleNextForm()}
             className="px-2 rounded-md btn btn-primary ">
@@ -144,7 +151,7 @@ const Event = () => {
               onChange={(e) => setLocation(e.target.value)}>
               <option>Select One</option>
               <option>Google Meet</option>
-              <option>Zoom</option>
+              <option >Zoom</option>
               <option>Skype</option>
               <option>WhatsApp</option>
               <option>Microsoft Team</option>

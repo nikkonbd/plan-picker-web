@@ -1,16 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-// import { insertId } from "../secoundFormSubmission/SecoundFormSubmissionSlice";
-// import { useState } from "react";
-
-
 
 
 const formSubmissionSlice = createSlice({
     name: "formSubmission",
-   
+
     initialState: {
-        
+
         isLoading: false,
         isSuccess: false,
         error: null,
@@ -42,8 +38,6 @@ export const {
 } = formSubmissionSlice.actions;
 
 export default formSubmissionSlice.reducer;
-
-
 
 
 // Async action creator to send the form data
