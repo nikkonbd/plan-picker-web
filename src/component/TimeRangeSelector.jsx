@@ -1,3 +1,14 @@
+
+// import React, { useState } from 'react';
+
+// function TimeRangeSelector({handleSelectTime}) {
+//   const [startHour, setStartHour] = useState("00");
+//   const [startMinute, setStartMinute] = useState("00");
+//   const [startAmPm, setStartAmPm] = useState("AM");
+//   const [endHour, setEndHour] = useState("00");
+//   const [endMinute, setEndMinute] = useState("00");
+//   const [endAmPm, setEndAmPm] = useState("AM");
+
 // import React, { useState } from 'react';
 
 // function TimeRangeSelector() {
@@ -151,6 +162,17 @@ function TimeRangeSelector() {
   const handleEndAmPmChange = (e) => {
     setEndAmPm(e.target.value);
   };
+
+  const setTime = {
+    startHour,
+    startMinute,
+    startAmPm,
+    endHour,
+    endMinute,
+    endAmPm,
+  };
+
+  handleSelectTime(setTime);
 
   return (
     <div className="container p-6 mx-auto mt-10 border rounded-lg shadow-lg">
