@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BiInfoCircle } from "react-icons/bi";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 // import { submitFormData } from "../../store/features/formSubmission/formSubmissionSlice";
 import { setObjectData } from "../../store/features/objectData/ObjectDataSlice";
+import axios from "axios";
 
 import { v4 as uuidv4 } from "uuid";
 
@@ -66,6 +67,7 @@ const Event = () => {
     return div.textContent || div.innerText || "";
   };
 
+  console.log(location);
   return (
     <div className="py-6 md:max-w-6xl">
       <div className="flex flex-col gap-6 md:flex-row md:justify-between">

@@ -12,14 +12,13 @@ import ScheduleEventDetails from "../compnents/ScheduleEventDetails";
 import MyCalendar from "../myCalendar/MyCalendar";
 import Availability from "../LandingPage/Availability/Availability";
 import Event from "../LandingPage/contact/Event";
-// import Event2 from "../LandingPage/contact/Event2";
-import EventPage from "../component/EventPage";
 import MySchedule from "../LandingPage/Dashboard/mySchedule/MySchedule";
 import EventPageData from "../calendar/EventPageData";
 import AllUsers from "../LandingPage/Dashboard/Admin/AllUsers";
 import Profile from "../LandingPage/Dashboard/Profile/Profile";
 import Analytics from "../LandingPage/Dashboard/analytics/Analytics";
 import MorePlan from "../LandingPage/homepage/morePlan/MorePlan";
+import EventPage from "../component/EventPage";
 import PrivateRoute from "./PrivateRoute";
 import ExploreFeatures from "../LandingPage/aboutus/exploreFeatures/ExploreFeatures";
 import LearnAvailability from "../LandingPage/homepage/LearnAvailability/LearnAvailability";
@@ -35,7 +34,7 @@ const router = createBrowserRouter([
       },
       {
         path: "more-plan",
-        element: <MorePlan></MorePlan>
+        element: <MorePlan></MorePlan>,
       },
       {
         path: "/services",
@@ -51,7 +50,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/about-explore",
-        element: <ExploreFeatures></ExploreFeatures>
+        element: <ExploreFeatures></ExploreFeatures>,
       },
       {
         path: "/blog",
@@ -63,13 +62,18 @@ const router = createBrowserRouter([
       },
       {
         path: "/learn-availability",
-        element: <LearnAvailability />
-      }
+        element: <LearnAvailability />,
+      },
     ],
   },
   {
     path: "/dashboard",
-    element: <PrivateRoute> <Dashboard></Dashboard></PrivateRoute>,
+    element: (
+      <PrivateRoute>
+        {" "}
+        <Dashboard></Dashboard>
+      </PrivateRoute>
+    ),
     children: [
       {
         path: "/dashboard/schedule",
@@ -117,8 +121,8 @@ const router = createBrowserRouter([
       },
       {
         path: "/dashboard/calendar",
-        element: <EventPageData />
-      }
+        element: <EventPageData />,
+      },
     ],
   },
 ]);

@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { addDays } from "date-fns";
+import "react-date-range/dist/styles.css"; // main style file
+import "react-date-range/dist/theme/default.css"; // theme css file
 import "react-date-range/dist/styles.css"; // main style file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import { DateRangePicker } from "react-date-range";
@@ -9,6 +11,16 @@ import TimezoneSelect from "react-timezone-select";
 import { useDispatch, useSelector } from "react-redux";
 import { submitFormData } from "../store/features/formSubmission/formSubmissionSlice";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import {
+  Accordion,
+  AccordionHeader,
+  AccordionBody,
+} from "@material-tailwind/react";
+import WeeklyHoursForm from "./WeeklyHoursForm";
+import EventCalendar from "../eventCalendar/EventCalendar";
+import TimeSelect from "../LandingPage/contact/TimeSelect";
+import { Helmet } from "react-helmet-async";
 
 function Icon({ id, open }) {
   return (
@@ -37,6 +49,7 @@ const EventPage = () => {
 
   const [eventDuration, setEventDuration] = useState("");
   const [selectedTimezone, setSelectedTimezone] = useState({});
+
   const [selectedTime, setSelectedTime] = useState({});
   const [state, setState] = useState([
     {
@@ -46,24 +59,82 @@ const EventPage = () => {
     },
   ]);
 
+  const [{ startDate, endDate }] = state;
+  const [startHour, setStartHour] = useState("");
+  const [startMinute, setStartMinute] = useState("");
+  const [startAmPm, setStartAmPm] = useState("");
+  const [endHours, setEndHours] = useState("");
+  const [endMinute, setEndMinute] = useState("");
+  const [endAmPm, setEndAmPm] = useState("");
+  const [meetLink, setMeetLink] = useState({});
+
   const dispatch = useDispatch();
   const objectData = useSelector((state) => state.objectData);
 
-  const handleSubmit = () => {
+  const text = eventDuration;
+  const regex = /\d+/;
+
+  // Use the match function to extract the number
+  const matches = text.match(regex);
+
+  // Check if there is a match and extract the number
+  const extractedNumber = matches ? matches[0] : null;
+  const number = parseInt(extractedNumber);
+
+  const handleSubmit = async () => {
     const formData = {
       selectedTimezone,
-      eventDuration,
-      selectedTime,
+      eventDuration: number,
+      startTime: startHour + ":" + startMinute + " " + startAmPm,
+      endTime: endHours + ":" + endMinute + " " + endAmPm,
+      startDate,
+      endDate,
     };
 
     const obj = { ...objectData, formData };
 
     dispatch(submitFormData(obj));
+    console.log(obj.id);
+
+    // Axios POST request for Create Meeting
+    axios.post("http://localhost:5000/createMeeting", obj).then((response) => {
+      if (response.status === 200) {
+        const data = response.data;
+        alert("Meeting created successfully!");
+        console.log(data);
+        setMeetLink(data);
+      } else {
+        alert("Failed to create meeting.");
+      }
+    });
+
+    axios.get(`http://localhost:5000/addEvent/${obj.id}`).then((response) => {
+      if (response.status === 200) {
+        const data = response.data;
+        // alert("Meeting created successfully!");
+        setMeetLink(data);
+      } else {
+        alert("Failed to create meeting.");
+      }
+    });
+
     console.log(obj);
   };
 
   const handleCancel = () => {
     navigate("/dashboard/schedule");
+  };
+
+  const handleSelectTime = (selectTime) => {
+    console.log(selectTime);
+    const { endAmPm, endHour, endMinute, startAmPm, startHour, startMinute } =
+      selectTime;
+    setStartHour(startHour);
+    setStartMinute(startMinute);
+    setStartAmPm(startAmPm);
+    setEndHours(endHour);
+    setEndMinute(endMinute);
+    setEndAmPm(endAmPm);
   };
 
   return (
@@ -91,7 +162,7 @@ const EventPage = () => {
 
       <div className="divider"></div>
       {/* 3rd part */}
-      <div className="flex-col-reverse items-center gap-10 mt-10 md:flex md:gap-6 md:flex-row ">
+      <div className="flex-col-reverse items-center gap-10 mt-10 mb-10 md:flex md:gap-6 md:flex-row ">
         <div className="w-full">
           <div className="w-full max-w-xs form-control">
             <label className="label">
@@ -117,11 +188,24 @@ const EventPage = () => {
             </select>
           </div>
         </div>
+        <div className="w-full mt-4">
+          <div className="w-full">
+            <div className="flex items-center gap-2">
+              <BsCalendar4Event fontSize={20}></BsCalendar4Event>
+              <p className="text-xl font-semibold label-text">
+                Select Timezone
+              </p>
+            </div>
+            <TimezoneSelect
+              value={selectedTimezone}
+              onChange={setSelectedTimezone}
+            />
+          </div>
+        </div>
       </div>
-      <div className="divider"></div>
       {/* Part Calendar */}
-      <div className="gap-10 md:flex">
-        <div className="w-full p-4 mt-6 border-2">
+      <div className="gap-6 md:flex border-2 p-6">
+        <div className="w-full p-4 mt-6">
           <div className="flex items-center gap-2 pb-4">
             <BsCalendar4Event fontSize={20}></BsCalendar4Event>
             <p className="text-xl font-semibold label-text">
@@ -136,18 +220,13 @@ const EventPage = () => {
             months={1}
             ranges={state}
             direction="horizontal"
-            className="flex flex-col w-full"
+            className="flex flex-col gap-6 md:flex-row w-full"
           />
         </div>
-        <div className="w-full p-4 mt-6 border-2">
-          <div className="flex items-center gap-2">
-            <BsListStars fontSize={20}></BsListStars>
-            <p className="pb-4 text-xl font-semibold label-text">
-              Select Your Availability
-            </p>
-          </div>
+        <div className="w-full mt-6">
           <div>
-            <TimeRangeSelector />
+            <TimeRangeSelector handleSelectTime={handleSelectTime} />
+            {/* <TimeRangeSelector /> */}
           </div>
         </div>
       </div>
