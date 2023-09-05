@@ -117,29 +117,6 @@ const EventPage = () => {
             </select>
           </div>
         </div>
-        <div className="w-full md:mt-4">
-          <div className="w-full max-w-xs timezone__wrapper">
-            <div className="flex items-center gap-2">
-              <BsCalendar4Event fontSize={20}></BsCalendar4Event>
-              <p className="text-xl font-semibold label-text">
-                Select Timezone
-              </p>
-            </div>
-            <EventCalendar events={events} />
-          </div>
-          <div className="w-full mt-6 border-2 p-4">
-            <div className="flex items-center gap-2">
-              <BsListStars fontSize={20}></BsListStars>
-              <p className="label-text text-xl font-semibold pb-4">
-                Select Your Availability
-              </p>
-            </div>
-            {/* <WeeklyHoursForm></WeeklyHoursForm> */}
-            <div>
-              <TimeSelect></TimeSelect>
-            </div>
-          </div>
-        </div>
       </div>
       <div className="divider"></div>
       {/* Part Calendar */}
