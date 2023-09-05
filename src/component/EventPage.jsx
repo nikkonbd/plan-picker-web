@@ -285,12 +285,11 @@ const EventPage = () => {
       }
     });
 
-    
+
     axios.get(`http://localhost:5000/addEvent/${obj.id}`).then((response) => {
       if (response.status === 200) {
         const data = response.data;
         // alert("Meeting created successfully!");
-        console.log(data);
         setMeetLink(data);
       } else {
         alert("Failed to create meeting.");
