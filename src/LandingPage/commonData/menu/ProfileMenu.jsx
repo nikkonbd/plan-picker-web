@@ -17,7 +17,7 @@ const ProfileMenu = () => {
   // const [isAdmin, setIsAdmin] = useState(false);
   const handleLogOut = () => {
     logOut()
-      .then(() => { })
+      .then(() => {})
       .catch((error) => console.log(error));
   };
 
@@ -57,7 +57,7 @@ const ProfileMenu = () => {
               />
             </svg>
             <Typography variant="small" className="font-normal">
-              <Link to="/dashboard">My Dashboard</Link>
+              <Link to="/dashboard/schedule">My Dashboard</Link>
             </Typography>
           </MenuItem>
           <MenuItem className="flex items-center gap-2">
