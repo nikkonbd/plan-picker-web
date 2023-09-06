@@ -67,7 +67,6 @@ const Event = () => {
     return div.textContent || div.innerText || "";
   };
 
-
   return (
     <div className="py-6 md:max-w-6xl">
       <div className="flex flex-col gap-6 md:flex-row md:justify-between">
@@ -78,13 +77,15 @@ const Event = () => {
             <p className="text-gray">Schedule Information Billow</p>
           </div>
         </div>
-        <div className="flex justify-center gap-4 md:justify-between">
-          <button onClick={() => handleCancel()} className="p-2 rounded-md btn">
+        <div className="flex justify-center items-center gap-2 md:justify-between">
+          <button
+            onClick={() => handleCancel()}
+            className="px-3 rounded-md btn bg-[#61677A] hover:bg-[#464955] text-white">
             Cancel
           </button>
           <button
             onClick={() => handleNextForm()}
-            className="px-2 rounded-md btn btn-primary ">
+            className="bg-[#5EBEC4] hover:bg-[#42a6ad] duration-200 text-white px-3 rounded-md btn">
             Next
           </button>
         </div>

@@ -31,15 +31,16 @@ const Demo = () => {
 
   return (
     <div>
-      <Button className="bg-[#5EBEC4]" onClick={handleOpen}>
-        Open
-      </Button>
+      <button
+        className="bg-[#5EBEC4] hover:bg-[#42a6ad] duration-200 text-white px-3 rounded-md btn"
+        onClick={handleOpen}>
+        Preview
+      </button>
       <Dialog
         size="md"
         open={open}
         handler={handleOpen}
-        className="bg-transparent shadow-none"
-      >
+        className="bg-transparent shadow-none">
         <Card className="mx-auto w-full md:max-w-2xl">
           <CardHeader className="text-center py-3 bg-[#5EBEC4]">
             <Typography variant="h4" color="white">
@@ -96,8 +97,8 @@ const Demo = () => {
                 {data.eventLink}
               </p>
               <div className="flex justify-end gap-3 mt-4">
-                <button className="px-5 py-1 bg-[#5EBEC4] hover:bg-[#2a7a80] duration-200 text-white rounded-md">
-                  OK
+                <button className="px-4 text-xl font-semibold py-2 bg-[#5EBEC4] hover:bg-[#42a6ad] duration-200 text-white rounded-md">
+                  <Link to={"/dashboard/mySchedule"}>OK</Link>
                 </button>
               </div>
             </div>
