@@ -24,11 +24,13 @@ import ExploreFeatures from "../LandingPage/aboutus/exploreFeatures/ExploreFeatu
 import LearnAvailability from "../LandingPage/homepage/LearnAvailability/LearnAvailability";
 import ScheduleDetails from "../LandingPage/homepage/ScheduleDetails/ScheduleDetails";
 import EngagedDetails from "../LandingPage/homepage/EngagedDetails/EngagedDetails";
+import ErrorPage from "../LandingPage/errorPage/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <LandingPage></LandingPage>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
