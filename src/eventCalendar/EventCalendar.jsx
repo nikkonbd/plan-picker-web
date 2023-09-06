@@ -32,7 +32,7 @@ const EventCalendar = ({ events }) => {
       transform: "translate(-50%, -50%)",
       width: "350px",
       height: "auto",
-      background: "red", // Set the background color to white
+      background: "", // Set the background color to white
       boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.2)", // Add a shadow for a card-like appearance
       border: "1px solid #ccc", // Add a border for better visibility
       overflow: "hidden",
@@ -50,7 +50,7 @@ const EventCalendar = ({ events }) => {
           defaultView={Views.MONTH}
           startAccessor="start"
           endAccessor="end"
-          style={{ height: "500px", overflow: "hidden" }}
+          style={{ height: "460px", overflow: "hidden" }}
         />
         {selectedDate && (
           <div>
