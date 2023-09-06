@@ -22,6 +22,8 @@ import EventPage from "../component/EventPage";
 import PrivateRoute from "./PrivateRoute";
 import ExploreFeatures from "../LandingPage/aboutus/exploreFeatures/ExploreFeatures";
 import LearnAvailability from "../LandingPage/homepage/LearnAvailability/LearnAvailability";
+import ScheduleDetails from "../LandingPage/homepage/ScheduleDetails/ScheduleDetails";
+import EngagedDetails from "../LandingPage/homepage/EngagedDetails/EngagedDetails";
 
 const router = createBrowserRouter([
   {
@@ -64,6 +66,14 @@ const router = createBrowserRouter([
         path: "/learn-availability",
         element: <LearnAvailability />,
       },
+      {
+        path: "/scheduleDetails",
+        element: <ScheduleDetails />
+      },
+      {
+        path: "/engagedDetails",
+        element: <EngagedDetails />
+      }
     ],
   },
   {
@@ -92,7 +102,7 @@ const router = createBrowserRouter([
         element: <Profile></Profile>,
       },
       {
-        path: "/dashboard/Schedule",
+        path: "/dashboard/Schedule/:id",
         element: <ScheduleEventDetails></ScheduleEventDetails>,
       },
       {
