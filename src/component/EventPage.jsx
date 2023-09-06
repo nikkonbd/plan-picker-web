@@ -21,6 +21,7 @@ import WeeklyHoursForm from "./WeeklyHoursForm";
 import EventCalendar from "../eventCalendar/EventCalendar";
 import TimeSelect from "../LandingPage/contact/TimeSelect";
 import { Helmet } from "react-helmet-async";
+import Demo from "./Demo";
 
 function Icon({ id, open }) {
   return (
@@ -104,13 +105,12 @@ const EventPage = () => {
       }
     });
 
-
     axios.get(`http://localhost:5000/addEvent/${obj.id}`).then((response) => {
       if (response.status === 200) {
         const data = response.data;
         // alert("Meeting created successfully!");
         // setMeetLink(data);
-        console.log(data)
+        console.log(data);
       } else {
         alert("Failed to create meeting.");
       }
@@ -119,11 +119,9 @@ const EventPage = () => {
     console.log(obj);
   };
 
-
   const handleCancel = () => {
     navigate("/dashboard/schedule");
   };
-
 
   const handleSelectTime = (selectTime) => {
     console.log(selectTime);
@@ -137,7 +135,6 @@ const EventPage = () => {
     setEndAmPm(endAmPm);
   };
 
-
   return (
     <div className="px-4 py-6 border md:px-10">
       {/* 1st part */}
@@ -149,14 +146,14 @@ const EventPage = () => {
             <p className="text-gray-400">30 min, 60 rolling calendar days</p>
           </div>
         </div>
-        <div className="flex justify-center gap-4 md:justify-between">
-          <button onClick={() => handleCancel()} className="p-2 rounded-md btn">
+        <div className="flex justify-center items-center gap-4 md:justify-between">
+          <button
+            onClick={() => handleCancel()}
+            className="px-3 rounded-md btn bg-[#61677A] hover:bg-[#464955] text-white">
             Cancel
           </button>
-          <button
-            onClick={() => handleSubmit()}
-            className="px-2 rounded-md btn btn-primary">
-            Next
+          <button onClick={() => handleSubmit()} className="">
+            <Demo />
           </button>
         </div>
       </div>
@@ -178,9 +175,7 @@ const EventPage = () => {
               className="select select-bordered"
               value={eventDuration}
               onChange={(e) => setEventDuration(e.target.value)}>
-              <option  selected>
-                Set Duration
-              </option>
+              <option selected>Set Duration</option>
               <option>15 min</option>
               <option>30 min</option>
               <option>45 min</option>

@@ -6,7 +6,7 @@ import EfficientPlanning from "../../assets/Efficient Planning.jpg";
 import AboutCard from "./AboutCard";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import Demo from "./Demo";
+import Demo from "../../component/Demo";
 
 const About = () => {
   const events = [
