@@ -67,7 +67,7 @@ const Event = () => {
     return div.textContent || div.innerText || "";
   };
 
-  console.log(location);
+
   return (
     <div className="py-6 md:max-w-6xl">
       <div className="flex flex-col gap-6 md:flex-row md:justify-between">

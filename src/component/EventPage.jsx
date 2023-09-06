@@ -43,18 +43,13 @@ function Icon({ id, open }) {
 }
 
 const EventPage = () => {
-  const [open, setOpen] = React.useState(0);
-  const handleOpen = (value) => setOpen(open === value ? 0 : value);
   const navigate = useNavigate();
-
   const [eventDuration, setEventDuration] = useState("");
   const [selectedTimezone, setSelectedTimezone] = useState({});
-
-  const [selectedTime, setSelectedTime] = useState({});
   const [state, setState] = useState([
     {
       startDate: new Date(),
-      endDate: addDays(new Date(), 7),
+      endDate: addDays(new Date(), 0),
       key: "selection",
     },
   ]);
@@ -71,6 +66,7 @@ const EventPage = () => {
   const dispatch = useDispatch();
   const objectData = useSelector((state) => state.objectData);
 
+  //extract number from text
   const text = eventDuration;
   const regex = /\d+/;
 
@@ -108,11 +104,13 @@ const EventPage = () => {
       }
     });
 
+
     axios.get(`http://localhost:5000/addEvent/${obj.id}`).then((response) => {
       if (response.status === 200) {
         const data = response.data;
         // alert("Meeting created successfully!");
-        setMeetLink(data);
+        // setMeetLink(data);
+        console.log(data)
       } else {
         alert("Failed to create meeting.");
       }
@@ -121,9 +119,11 @@ const EventPage = () => {
     console.log(obj);
   };
 
+
   const handleCancel = () => {
     navigate("/dashboard/schedule");
   };
+
 
   const handleSelectTime = (selectTime) => {
     console.log(selectTime);
@@ -136,6 +136,7 @@ const EventPage = () => {
     setEndMinute(endMinute);
     setEndAmPm(endAmPm);
   };
+
 
   return (
     <div className="px-4 py-6 border md:px-10">
@@ -177,7 +178,7 @@ const EventPage = () => {
               className="select select-bordered"
               value={eventDuration}
               onChange={(e) => setEventDuration(e.target.value)}>
-              <option disabled selected>
+              <option  selected>
                 Set Duration
               </option>
               <option>15 min</option>
