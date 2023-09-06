@@ -23,6 +23,7 @@ import PrivateRoute from "./PrivateRoute";
 import ExploreFeatures from "../LandingPage/aboutus/exploreFeatures/ExploreFeatures";
 import LearnAvailability from "../LandingPage/homepage/LearnAvailability/LearnAvailability";
 import ErrorPage from "../LandingPage/errorPage/ErrorPage";
+import Partner from "../LandingPage/contact/Partner";
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element: <ContactUS></ContactUS>,
+      },
+      {
+        path: "partner",
+        element: <Partner></Partner>,
       },
       {
         path: "/about",
