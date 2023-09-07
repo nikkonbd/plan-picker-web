@@ -23,11 +23,16 @@ import PrivateRoute from "./PrivateRoute";
 import ExploreFeatures from "../LandingPage/aboutus/exploreFeatures/ExploreFeatures";
 import LearnAvailability from "../LandingPage/homepage/LearnAvailability/LearnAvailability";
 import MoreService from "../LandingPage/Services/moreService/MoreService";
+import ScheduleDetails from "../LandingPage/homepage/ScheduleDetails/ScheduleDetails";
+import EngagedDetails from "../LandingPage/homepage/EngagedDetails/EngagedDetails";
+import ErrorPage from "../LandingPage/errorPage/ErrorPage";
+import Partner from "../LandingPage/contact/Partner";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <LandingPage></LandingPage>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -50,6 +55,10 @@ const router = createBrowserRouter([
         element: <ContactUS></ContactUS>,
       },
       {
+        path: "partner",
+        element: <Partner></Partner>,
+      },
+      {
         path: "/about",
         element: <About></About>,
       },
@@ -69,6 +78,14 @@ const router = createBrowserRouter([
         path: "/learn-availability",
         element: <LearnAvailability />,
       },
+      {
+        path: "/scheduleDetails",
+        element: <ScheduleDetails />
+      },
+      {
+        path: "/engagedDetails",
+        element: <EngagedDetails />
+      }
     ],
   },
   {
@@ -97,7 +114,7 @@ const router = createBrowserRouter([
         element: <Profile></Profile>,
       },
       {
-        path: "/dashboard/Schedule",
+        path: "/dashboard/Schedule/:id",
         element: <ScheduleEventDetails></ScheduleEventDetails>,
       },
       {

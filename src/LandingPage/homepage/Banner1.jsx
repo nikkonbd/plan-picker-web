@@ -24,11 +24,11 @@ const Banner1 = () => {
           seamless buying experience for your customers.
         </p>
       </div>
-      <div className="flex flex-col-reverse items-center justify-between gap-4 mt-12 md:flex lg:flex lg:flex-row md:flex-row">
+      <div className="flex flex-col-reverse items-center justify-center gap-4 mt-12 md:flex-row">
         <div data-aos="fade-up-right">
           <div className="text-center md:text-start">
             <h2 className="text-2xl md:text-3xl pt-4 md:pt-0 font-medium flex flex-col justify-center text-[#61677A]">
-              Share your Plan availability with others
+              Share your Plan availability with others Meeting
             </h2>
             <p className="py-4  text-[#61677A]">
               There are a few different ways to ask for availability.{" "}
@@ -41,7 +41,9 @@ const Banner1 = () => {
               schedules if need be.
             </p>
           </div>
-          <Link to="/learn-availability" className="inline-block pt-6 pb-10 md:pt-0 md:pb-0">
+          <Link
+            to="/learn-availability"
+            className="inline-block pt-6 pb-10 md:pt-0 md:pb-0">
             <Button
               variant="text"
               className="flex text-white items-center gap-2 bg-[#5EBEC4] hover:bg-[#42a6ad]">
@@ -70,18 +72,18 @@ const Banner1 = () => {
           />
         </div>
       </div>
-      <div className="md:flex lg:flex  gap-4 justify-between items-center md:mt-20">
-        <div data-aos="fade-up-right">
+      <div className="flex flex-col md:flex-row  gap-10 justify-center items-center md:mt-20">
+        <div className="" data-aos="fade-up-right">
           <img
             className="rounded-xl flex flex-col justify-center w-full h-full md:h-[340px] md:w-[580px]"
             src={book1}
             alt=""
           />
         </div>
-        <div data-aos="fade-up-left">
+        <div className="" data-aos="fade-up-left">
           <div className="text-center flex flex-col justify-center md:text-end pt-8 md:pt-0">
             <h2 className="text-2xl md:text-3xl font-medium text-[#61677A]">
-              Schedule as Team
+              Schedule as Team availability with others Team
             </h2>
             <p className="py-4 text-base text-[#61677A]">
               There are a few different ways to ask for availability.{" "}
@@ -96,29 +98,31 @@ const Banner1 = () => {
           </div>
           <div className="flex justify-end">
             <a href="#" className="flex items-end pt-6 pb-10 md:pt-0 md:pb-0">
-              <Button
-                variant="text"
-                className="flex text-white items-center gap-2 bg-[#5EBEC4] hover:bg-[#42a6ad]">
-                Learn More
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  className="w-4 h-4">
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-                  />
-                </svg>
-              </Button>
+              <Link to="/scheduleDetails">
+                <Button
+                  variant="text"
+                  className="flex text-white items-center gap-2 bg-[#5EBEC4] hover:bg-[#42a6ad]">
+                  Learn More
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                    className="w-4 h-4">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+                    />
+                  </svg>
+                </Button>
+              </Link>
             </a>
           </div>
         </div>
       </div>
-      <div className="md:flex flex flex-col-reverse lg:flex lg:flex-row md:flex-row gap-4 justify-between items-center md:mt-12">
+      <div className="md:flex flex flex-col-reverse justify-center md:flex-row gap-10 items-center md:mt-12">
         <div data-aos="fade-up-right">
           <div className="flex flex-col justify-center text-center md:text-start">
             <h2 className="text-2xl md:text-3xl pt-4 md:pt-0 font-medium text-[#61677A]">
@@ -135,7 +139,9 @@ const Banner1 = () => {
               schedules if need be.
             </p>
           </div>
-          <a href="#" className="inline-block pt-6 pb-10 md:pt-0 md:pb-0">
+          <Link
+            to="/engagedDetails"
+            className="inline-block pt-6 pb-10 md:pt-0 md:pb-0">
             <Button
               variant="text"
               className="flex text-white items-center gap-2 bg-[#5EBEC4] hover:bg-[#42a6ad]">
@@ -154,7 +160,7 @@ const Banner1 = () => {
                 />
               </svg>
             </Button>
-          </a>
+          </Link>
         </div>
         <div data-aos="fade-up-left">
           <img

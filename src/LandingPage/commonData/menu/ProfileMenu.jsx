@@ -9,6 +9,7 @@ import {
 } from "@material-tailwind/react";
 import { AuthContext } from "../../../providers/AuthProvider";
 import { Link } from "react-router-dom";
+import useAdmin from "../../../hooks/useAdmin";
 
 const ProfileMenu = () => {
   const { logOut, user } = useContext(AuthContext);
