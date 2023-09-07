@@ -20,12 +20,12 @@ const Hero = () => {
           seamless buying experience for your customers.
         </p>
       </div>
-      <div className="md:flex gap-6 flex-grow justify-between items-center md:mt-20 mt-6">
-        <div>
+      <div className="flex gap-6 flex-grow justify-center flex-col md:flex-row items-center md:mt-20 mt-6">
+        <div className="">
           <div
             data-aos="fade-right"
             className="hover:bg-[#f8f7ff] p-4 rounded-xl">
-            <h2 className="text-xl font-semibold text-[#42a6ad]">
+            <h2 className="text-2xl font-semibold text-[#42a6ad]">
               Let people schedule meetings on your website
             </h2>
             <p className="text-base pt-2 text-[#61677A]">
@@ -37,7 +37,7 @@ const Hero = () => {
           <div
             data-aos="fade-down"
             className="hover:bg-[#f8f7ff] p-4 rounded-xl">
-            <h2 className="text-xl font-semibold text-[#42a6ad]">
+            <h2 className="text-2xl font-semibold text-[#42a6ad]">
               Let people schedule meetings on your website
             </h2>
             <p className="text-base pt-2 text-[#61677A]">
@@ -49,7 +49,7 @@ const Hero = () => {
           <div
             data-aos="fade-left"
             className="hover:bg-[#f8f7ff] p-4 rounded-xl">
-            <h2 className="text-xl font-semibold text-[#42a6ad]">
+            <h2 className="text-2xl font-semibold text-[#42a6ad]">
               Let people schedule meetings on your website
             </h2>
             <p className="text-base pt-2 text-[#61677A]">

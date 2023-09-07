@@ -23,7 +23,7 @@ const Blog = () => {
       </Helmet>
       <div className="max-w-[2520px] mx-auto lg:px-16 xl:px-28 md:px-10 px-4 text-[#61677A]">
         {/* banner */}
-        <div className="md:flex justify-between items-center gap-10 min-h-[60vh] my-10">
+        <div className="md:flex justify-between items-center md:max-w-6xl mx-auto gap-10 min-h-[60vh] my-10">
           <div className="md:w-1/2 px-4 md:px-0">
             <h1 className="md:text-4xl text-2xl font-bold pb-2 text-[#61677A]">
               Journey to Success: <br />{" "}
