@@ -25,7 +25,7 @@ const SecondHero = () => {
     <>
       <div>
         <div data-aos="fade-down" className="text-center px-4 md:px-0">
-          <h2 className="text-2xl md:text-4xl font-semibold pt-10 md:pt-24 text-[#61677A]">
+          <h2 className="text-2xl md:text-4xl font-semibold text-[#61677A]">
             Frequently asked questions <br />{" "}
             <span className="text-[#42a6ad]">(FAQ)</span>
           </h2>

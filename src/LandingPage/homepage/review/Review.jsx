@@ -31,9 +31,10 @@ const Review = () => {
   ];
   return (
     <div className="min-h-screen flex flex-col justify-center">
-      <h2 className="text-xl md:text-4xl text-[#42a6ad] font-semibold text-center">
+      <h2 className="text-2xl md:text-4xl text-[#42a6ad] font-semibold text-center">
         What users say's about us
       </h2>
+      <p className="text-center">All users Review.</p>
       <div className="mt-10">
         <Swiper
           spaceBetween={30}
@@ -47,11 +48,10 @@ const Review = () => {
           }}
           navigation={true}
           modules={[Autoplay, Navigation]}
-          className="mySwiper"
-        >
+          className="mySwiper">
           {sliderData.map((item, index) => (
             <SwiperSlide key={index}>
-              <div className="md:h-[350px] md:w-7/12 w-9/12 bg-teal-50/80 rounded-lg flex md:flex-row flex-col items-center justify-center border-2 border-teal-700/50 md:p-5 p-2 relative overflow-hidden">
+              <div className="md:h-[350px] md:w-10/12 w-9/12 bg-teal-50/80 rounded-lg flex md:flex-row flex-col items-center justify-center border-2 border-teal-500/50 md:p-5 p-2 relative overflow-hidden">
                 <div className="hidden md:block bg-white shadow-lg shadow-teal-800/30 absolute top-9 -left-60 -rotate-[25deg] z-10 w-full text-center py-1">
                   <p className="font-semibold uppercase">{item.company}</p>
                 </div>
