@@ -24,6 +24,7 @@ import ExploreFeatures from "../LandingPage/aboutus/exploreFeatures/ExploreFeatu
 import LearnAvailability from "../LandingPage/homepage/LearnAvailability/LearnAvailability";
 import ScheduleDetails from "../LandingPage/homepage/ScheduleDetails/ScheduleDetails";
 import EngagedDetails from "../LandingPage/homepage/EngagedDetails/EngagedDetails";
+import PaymentStripe from "../LandingPage/Payment/Stripe/PaymentStripe";
 
 const router = createBrowserRouter([
   {
@@ -135,6 +136,13 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path: "/paymentStripe/:id",
+    element: <PaymentStripe />,
+    loader: ({ params }) => fetch(`http://localhost:5000/paymentCard/${params.id}`)
+  }
+
+
 ]);
 
 export default router;

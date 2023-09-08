@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>Home ||PlanPicker</title>
+        <title>Home || PlanPicker</title>
       </Helmet>
       <div className="max-w-[2520px] mx-auto lg:px-16 xl:px-28 md:px-10 px-4">
         <Banner></Banner>
