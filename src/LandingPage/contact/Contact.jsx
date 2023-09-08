@@ -1,6 +1,7 @@
 import { Button } from "@material-tailwind/react";
 import React from "react";
 import { FaConnectdevelop } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Contact = () => {
   return (
@@ -173,7 +174,7 @@ const Contact = () => {
             <Button
               variant="text"
               className="flex text-white items-center gap-2 bg-[#5EBEC4] hover:bg-[#42a6ad]">
-              Contact Sels
+              <Link to={"/partner"}>Contact Seels</Link>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"

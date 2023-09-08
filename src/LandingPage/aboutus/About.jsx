@@ -6,6 +6,7 @@ import EfficientPlanning from "../../assets/Efficient Planning.jpg";
 import AboutCard from "./AboutCard";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
+import Demo from "../../component/Demo";
 
 const About = () => {
   const events = [
@@ -57,6 +58,8 @@ const About = () => {
                     <button className="bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md px-4 py-3 font-md shadow-md hover:shadow-lg">
                       Get Started
                     </button>
+
+                    <Demo></Demo>
                   </div>
                 </div>
               </div>

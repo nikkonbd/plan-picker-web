@@ -22,7 +22,15 @@ import EventPage from "../component/EventPage";
 import PrivateRoute from "./PrivateRoute";
 import ExploreFeatures from "../LandingPage/aboutus/exploreFeatures/ExploreFeatures";
 import LearnAvailability from "../LandingPage/homepage/LearnAvailability/LearnAvailability";
+import ScheduleDetails from "../LandingPage/homepage/ScheduleDetails/ScheduleDetails";
+import EngagedDetails from "../LandingPage/homepage/EngagedDetails/EngagedDetails";
 import ErrorPage from "../LandingPage/errorPage/ErrorPage";
+import Partner from "../LandingPage/contact/Partner";
+import SetMeeting from "../setMeeting/SetMeeting";
+
+
+
+
 
 const router = createBrowserRouter([
   {
@@ -47,6 +55,10 @@ const router = createBrowserRouter([
         element: <ContactUS></ContactUS>,
       },
       {
+        path: "partner",
+        element: <Partner></Partner>,
+      },
+      {
         path: "/about",
         element: <About></About>,
       },
@@ -65,6 +77,14 @@ const router = createBrowserRouter([
       {
         path: "/learn-availability",
         element: <LearnAvailability />,
+      },
+      {
+        path: "/scheduleDetails",
+        element: <ScheduleDetails />,
+      },
+      {
+        path: "/engagedDetails",
+        element: <EngagedDetails />,
       },
     ],
   },
@@ -93,12 +113,12 @@ const router = createBrowserRouter([
         path: "/dashboard/Profile",
         element: <Profile></Profile>,
       },
+      // {
+      //   path: "/dashboard/Schedule/:id",
+      //   element: <ScheduleEventDetails></ScheduleEventDetails>,
+      // },
       {
-        path: "/dashboard/Schedule",
-        element: <ScheduleEventDetails></ScheduleEventDetails>,
-      },
-      {
-        path: "/dashboard/mySchedule",
+        path: "/dashboard/mySchedule/",
         element: <MySchedule></MySchedule>,
       },
       {
@@ -126,6 +146,12 @@ const router = createBrowserRouter([
         element: <EventPageData />,
       },
     ],
+  },
+  {
+    path: "/event/:eventName/:id",
+    element: <SetMeeting />,
+    loader: ({ params }) =>
+      fetch(`http://localhost:5000/getEvent/${params.id}`),
   },
 ]);
 
