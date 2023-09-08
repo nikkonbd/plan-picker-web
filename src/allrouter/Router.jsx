@@ -25,6 +25,7 @@ import LearnAvailability from "../LandingPage/homepage/LearnAvailability/LearnAv
 import MoreService from "../LandingPage/Services/moreService/MoreService";
 import ScheduleDetails from "../LandingPage/homepage/ScheduleDetails/ScheduleDetails";
 import EngagedDetails from "../LandingPage/homepage/EngagedDetails/EngagedDetails";
+import PaymentStripe from "../LandingPage/Payment/Stripe/PaymentStripe";
 import ErrorPage from "../LandingPage/errorPage/ErrorPage";
 import Partner from "../LandingPage/contact/Partner";
 import SetMeeting from "../setMeeting/SetMeeting";
@@ -53,7 +54,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/services-learn-more",
-        element:<MoreService></MoreService>
+        element: <MoreService></MoreService>
       },
       {
         path: "/contact",
@@ -151,6 +152,11 @@ const router = createBrowserRouter([
         element: <EventPageData />,
       },
     ],
+  },
+  {
+    path: "/paymentStripe/:id",
+    element: <PaymentStripe />,
+    loader: ({ params }) => fetch(`http://localhost:5000/paymentCard/${params.id}`)
   },
   {
     path: "/event/:eventName/:id",
