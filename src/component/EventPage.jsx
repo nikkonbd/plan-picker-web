@@ -21,6 +21,7 @@ import WeeklyHoursForm from "./WeeklyHoursForm";
 import EventCalendar from "../eventCalendar/EventCalendar";
 import TimeSelect from "../LandingPage/contact/TimeSelect";
 import { Helmet } from "react-helmet-async";
+import Demo from "./Demo";
 
 function Icon({ id, open }) {
   return (
@@ -43,18 +44,13 @@ function Icon({ id, open }) {
 }
 
 const EventPage = () => {
-  const [open, setOpen] = React.useState(0);
-  const handleOpen = (value) => setOpen(open === value ? 0 : value);
   const navigate = useNavigate();
-
   const [eventDuration, setEventDuration] = useState("");
   const [selectedTimezone, setSelectedTimezone] = useState({});
-
-  const [selectedTime, setSelectedTime] = useState({});
   const [state, setState] = useState([
     {
       startDate: new Date(),
-      endDate: addDays(new Date(), 7),
+      endDate: addDays(new Date(), 0),
       key: "selection",
     },
   ]);
@@ -71,6 +67,7 @@ const EventPage = () => {
   const dispatch = useDispatch();
   const objectData = useSelector((state) => state.objectData);
 
+  //extract number from text
   const text = eventDuration;
   const regex = /\d+/;
 
@@ -112,7 +109,8 @@ const EventPage = () => {
       if (response.status === 200) {
         const data = response.data;
         // alert("Meeting created successfully!");
-        setMeetLink(data);
+        // setMeetLink(data);
+        console.log(data);
       } else {
         alert("Failed to create meeting.");
       }
@@ -148,14 +146,14 @@ const EventPage = () => {
             <p className="text-gray-400">30 min, 60 rolling calendar days</p>
           </div>
         </div>
-        <div className="flex justify-center gap-4 md:justify-between">
-          <button onClick={() => handleCancel()} className="p-2 rounded-md btn">
+        <div className="flex justify-center items-center gap-4 md:justify-between">
+          <button
+            onClick={() => handleCancel()}
+            className="px-3 rounded-md btn bg-[#61677A] hover:bg-[#464955] text-white">
             Cancel
           </button>
-          <button
-            onClick={() => handleSubmit()}
-            className="px-2 rounded-md btn btn-primary">
-            Next
+          <button onClick={() => handleSubmit()} className="">
+            <Demo />
           </button>
         </div>
       </div>
@@ -177,9 +175,7 @@ const EventPage = () => {
               className="select select-bordered"
               value={eventDuration}
               onChange={(e) => setEventDuration(e.target.value)}>
-              <option disabled selected>
-                Set Duration
-              </option>
+              <option selected>Set Duration</option>
               <option>15 min</option>
               <option>30 min</option>
               <option>45 min</option>

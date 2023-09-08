@@ -22,14 +22,18 @@ import EventPage from "../component/EventPage";
 import PrivateRoute from "./PrivateRoute";
 import ExploreFeatures from "../LandingPage/aboutus/exploreFeatures/ExploreFeatures";
 import LearnAvailability from "../LandingPage/homepage/LearnAvailability/LearnAvailability";
+import MoreService from "../LandingPage/Services/moreService/MoreService";
 import ScheduleDetails from "../LandingPage/homepage/ScheduleDetails/ScheduleDetails";
 import EngagedDetails from "../LandingPage/homepage/EngagedDetails/EngagedDetails";
 import PaymentStripe from "../LandingPage/Payment/Stripe/PaymentStripe";
+import ErrorPage from "../LandingPage/errorPage/ErrorPage";
+import Partner from "../LandingPage/contact/Partner";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <LandingPage></LandingPage>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -44,8 +48,16 @@ const router = createBrowserRouter([
         element: <Services></Services>,
       },
       {
+        path: "/services-learn-more",
+        element: <MoreService></MoreService>
+      },
+      {
         path: "/contact",
         element: <ContactUS></ContactUS>,
+      },
+      {
+        path: "partner",
+        element: <Partner></Partner>,
       },
       {
         path: "/about",

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Calendar from "./Calendar";
+
 import EventCalendar from "../eventCalendar/EventCalendar";
 
 const EventPageData = () => {
@@ -48,3 +49,4 @@ const EventPageData = () => {
 };
 
 export default EventPageData;
+

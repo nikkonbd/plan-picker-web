@@ -1,0 +1,13 @@
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.round {
+  -webkit-clip-path: ellipse(41% 47% at 50% 50%);
+  clip-path: ellipse(41% 47% at 50% 50%);
+}
+
+:root {
+  --swiper-navigation-size: 24px;
+}

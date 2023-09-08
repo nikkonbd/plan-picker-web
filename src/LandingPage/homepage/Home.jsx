@@ -4,6 +4,7 @@ import Banner1 from "./Banner1";
 import Hero from "./Hero";
 import SecondHero from "./SecondHero";
 import Special from "./Special";
+import Review from "./review/Review";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
         <Banner></Banner>
         <Banner1></Banner1>
         <Hero></Hero>
+        <Review></Review>
         <SecondHero></SecondHero>
         {/* <Special></Special> */}
       </div>
