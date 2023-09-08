@@ -141,7 +141,7 @@ const MoreService = () => {
               {data.title}
             </Typography>
             <ul className="mt-2 ml-2 list-inside list-disc">
-              <li>{data.description}</li>
+              <li className="text-[#61677A]">{data.description}</li>
             </ul>
           </Alert>
         ))}

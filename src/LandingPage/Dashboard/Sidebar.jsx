@@ -10,6 +10,7 @@ import { RxCalendar } from "react-icons/rx";
 import { AiOutlineSetting } from "react-icons/ai";
 import { HiOutlineHome } from "react-icons/hi";
 import useAdmin from "../../hooks/useAdmin";
+import { FaRegChartBar } from "react-icons/fa";
 
 function Sidebar({ sidebarOpen, setSidebarOpen }) {
   // const isAdmin = true;
@@ -207,7 +208,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                       }`}>
                       <div className="flex items-center justify-between">
                         <div className="flex items-center grow">
-                          <BsCheck2Square className="w-6 h-6 shrink-0" />
+                          <FaRegChartBar className="w-6 h-6 shrink-0" />
                           <span className="ml-3 text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
                             Analytics
                           </span>
