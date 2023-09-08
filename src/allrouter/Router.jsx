@@ -25,6 +25,7 @@ import LearnAvailability from "../LandingPage/homepage/LearnAvailability/LearnAv
 import MoreService from "../LandingPage/Services/moreService/MoreService";
 import ScheduleDetails from "../LandingPage/homepage/ScheduleDetails/ScheduleDetails";
 import EngagedDetails from "../LandingPage/homepage/EngagedDetails/EngagedDetails";
+import PaymentStripe from "../LandingPage/Payment/Stripe/PaymentStripe";
 import ErrorPage from "../LandingPage/errorPage/ErrorPage";
 import Partner from "../LandingPage/contact/Partner";
 import JoinTeam from "../LandingPage/contact/JoinTeam";
@@ -154,10 +155,16 @@ const router = createBrowserRouter([
     ],
   },
   {
+    path: "/paymentStripe/:id",
+    element: <PaymentStripe />,
+    loader: ({ params }) =>
+      fetch(`https://plan-picker-server.vercel.app/paymentCard/${params.id}`),
+  },
+  {
     path: "/event/:eventName/:id",
     element: <SetMeeting />,
     loader: ({ params }) =>
-      fetch(`http://localhost:5000/getEvent/${params.id}`),
+      fetch(`https://plan-picker-server.vercel.app/getEvent/${params.id}`),
   },
 ]);
 

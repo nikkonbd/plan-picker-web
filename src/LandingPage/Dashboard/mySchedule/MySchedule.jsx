@@ -6,42 +6,39 @@ import axios from "axios";
 
 const MySchedule = () => {
   const { user } = useContext(AuthContext);
-const [schedule, setSchedule] = useState([]);
- const [loading, setLoading] = useState(true);
-
+  const [schedule, setSchedule] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/getEventByEmail/${user?.email}`)
+      .get(
+        `https://plan-picker-server.vercel.app/getEventByEmail/${user?.email}`
+      )
       .then((response) => {
         const data = response.data;
         setSchedule(data);
-        setLoading(true)
+        setLoading(true);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
       });
   }, [user?.email, schedule]);
 
-  
   if (loading) {
-    setLoading(false)
+    setLoading(false);
     return <p>Loading...</p>;
   }
 
   // if (error) {
   //   return <p>Error: {error.message}</p>;
   // }
-  
+
   // const today = new Date();
   // const date =
   // today.getDate() + "-" + (today.getMonth() + 1) + "-" + today.getFullYear();
-  
-  
-  
+
   return (
     <div>
-    
       <h2 className="relative text-2xl">
         My Schedule
         <span className="absolute px-2 py-1 text-xs text-white bg-orange-600 rounded-full animate-pulse">

@@ -12,7 +12,6 @@ import { Toaster } from "react-hot-toast";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-
 const Demo = ({ handleSubmit, eventData }) => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen((cur) => !cur);
@@ -25,7 +24,7 @@ const Demo = ({ handleSubmit, eventData }) => {
     selectedTimezone,
     eventDuration,
     eventLink,
-    formData
+    formData,
   } = eventData;
   console.log(formData?.startDate);
   // const { startTime, endTime, startDate, endDate } = eventData.formData.formData;
@@ -37,7 +36,7 @@ const Demo = ({ handleSubmit, eventData }) => {
   // }
   // useEffect(() => {
   //   axios
-  //     .get(`http://localhost:5000/getEvent/${id}`)
+  //     .get(`https://plan-picker-server.vercel.app/getEvent/${id}`)
   //     .then((response) => {
   //       const data = response.data;
   //       // setEventData(data);
