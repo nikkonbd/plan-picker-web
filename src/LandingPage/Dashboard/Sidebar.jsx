@@ -10,10 +10,11 @@ import { RxCalendar } from "react-icons/rx";
 import { AiOutlineSetting } from "react-icons/ai";
 import { HiOutlineHome } from "react-icons/hi";
 import useAdmin from "../../hooks/useAdmin";
+import { FaRegChartBar } from "react-icons/fa";
 import { AuthContext } from "../../providers/AuthProvider";
 
 function Sidebar({ sidebarOpen, setSidebarOpen }) {
-  const {user} = useContext(AuthContext)
+  const { user } = useContext(AuthContext);
   // const isAdmin = true;
   const [isAdmin] = useAdmin();
   console.log(isAdmin);
@@ -209,7 +210,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                       }`}>
                       <div className="flex items-center justify-between">
                         <div className="flex items-center grow">
-                          <BsCheck2Square className="w-6 h-6 shrink-0" />
+                          <FaRegChartBar className="w-6 h-6 shrink-0" />
                           <span className="ml-3 text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
                             Analytics
                           </span>
@@ -300,10 +301,11 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                     <NavLink
                       end
                       to="/dashboard/mySchedule/"
-                      className={`block text-slate-200 truncate transition duration-150 ${pathname.includes("messages")
-                        ? "hover:text-slate-200"
-                        : "hover:text-white"
-                        }`}>
+                      className={`block text-slate-200 truncate transition duration-150 ${
+                        pathname.includes("messages")
+                          ? "hover:text-slate-200"
+                          : "hover:text-white"
+                      }`}>
                       <div className="flex items-center justify-between">
                         <div className="flex items-center grow">
                           <BsCheck2Square className="w-6 h-6 shrink-0" />

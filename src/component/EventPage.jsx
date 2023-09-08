@@ -43,9 +43,6 @@ function Icon({ id, open }) {
   );
 }
 
-
-
-
 const EventPage = () => {
   const navigate = useNavigate();
   const [eventDuration, setEventDuration] = useState("");
@@ -69,10 +66,6 @@ const EventPage = () => {
   const [eventData, setEventData] = useState("");
   // console.log(eventData.id);
 
-
-
-
-
   const dispatch = useDispatch();
   const objectData = useSelector((state) => state.objectData);
   const { isLoading, isSuccess, error } = useSelector(
@@ -83,7 +76,7 @@ const EventPage = () => {
 
   console.log("Inserted ID:", insertedId);
 
-  console.log(isSuccess)
+  console.log(isSuccess);
 
   //extract number from text
   const text = eventDuration;
@@ -107,7 +100,6 @@ const EventPage = () => {
     };
 
     const obj = { ...objectData, formData };
-   
 
     setEventData(obj);
     dispatch(submitFormData(obj));
@@ -118,7 +110,6 @@ const EventPage = () => {
   const handleCancel = () => {
     navigate("/dashboard/schedule");
   };
-  
 
   const handleSelectTime = (selectTime) => {
     console.log(selectTime);
@@ -132,14 +123,10 @@ const EventPage = () => {
     setEndAmPm(endAmPm);
   };
 
- 
-
- 
-
   // useEffect(() => {
   // if (insertedId) {
   //     axios
-  //       .get(`http://localhost:5000/getEvent/${insertedId}`)
+  //       .get(`https://plan-picker-server.vercel.app/getEvent/${insertedId}`)
   //       .then((response) => {
   //         const data = response.data;
   //         // setEventData(data);

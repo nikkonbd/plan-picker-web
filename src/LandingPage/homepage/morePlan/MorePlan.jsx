@@ -8,7 +8,7 @@ const MorePlan = () => {
   const [scheduleDetails, setScheduleDetails] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/plans")
+    fetch("https://plan-picker-server.vercel.app/plans")
       .then((res) => res.json())
       .then((data) => setScheduleDetails(data));
   }, []);

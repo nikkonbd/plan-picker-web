@@ -2,19 +2,16 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const ServiceCard5 = () => {
-
   const [card, setCard] = useState([]);
 
-
-
   useEffect(() => {
-    fetch('http://localhost:5000/paymentCard')
-      .then(res => res.json())
-      .then(data => {
-        setCard(data)
-        console.log(data)
-      })
-  }, [])
+    fetch("https://plan-picker-server.vercel.app/paymentCard")
+      .then((res) => res.json())
+      .then((data) => {
+        setCard(data);
+        console.log(data);
+      });
+  }, []);
 
   return (
     <div>
@@ -31,8 +28,8 @@ const ServiceCard5 = () => {
             </h2>
           </div>
           <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-            {
-              card.map(pCard => <div className="w-full mb-8  lg:mb-0">
+            {card.map((pCard) => (
+              <div className="w-full mb-8  lg:mb-0">
                 <div className="flex flex-col hover:shadow-lg shadow-md p-6 space-y-6 rounded sm:p-8">
                   <div className="space-y-2">
                     <h4 className="text-2xl font-bold"> {pCard.title}</h4>
@@ -118,8 +115,8 @@ const ServiceCard5 = () => {
                     </button>
                   </Link>
                 </div>
-              </div>)
-            }
+              </div>
+            ))}
           </div>
         </div>
       </section>

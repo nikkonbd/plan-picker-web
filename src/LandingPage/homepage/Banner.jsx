@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import img from "../../assets/dd.jpg";
 import img1 from "../../assets/pp.jpg";
+import calendar from "../../assets/Images/calander.png";
 
 const Banner = () => {
   // const users = useSelector((state) => console.log(state.auth.user));
@@ -38,11 +39,7 @@ const Banner = () => {
         </div>
         <div className="columns-md mt-8 md:mt-0 md:columns-3xl lg:columns-4xl xl:columns-4xl bg-[#f6f9fc] rounded-md transition duration-300 ease-in-out hover:scale-92">
           <div className="text-center">
-            <img
-              className="md:h-[362px]"
-              src="https://i.stack.imgur.com/PwVy7.png"
-              alt=""
-            />
+            <img className="md:h-[362px]" src={calendar} alt="" />
           </div>
         </div>
       </div>
