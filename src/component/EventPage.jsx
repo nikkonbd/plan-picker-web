@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { addDays } from "date-fns";
 import "react-date-range/dist/styles.css"; // main style file
 import "react-date-range/dist/theme/default.css"; // theme css file
@@ -43,6 +43,9 @@ function Icon({ id, open }) {
   );
 }
 
+
+
+
 const EventPage = () => {
   const navigate = useNavigate();
   const [eventDuration, setEventDuration] = useState("");
@@ -62,10 +65,25 @@ const EventPage = () => {
   const [endHours, setEndHours] = useState("");
   const [endMinute, setEndMinute] = useState("");
   const [endAmPm, setEndAmPm] = useState("");
-  const [meetLink, setMeetLink] = useState({});
+  const [callEvent, setCallEvnt] = useState(false);
+  const [eventData, setEventData] = useState("");
+  // console.log(eventData.id);
+
+
+
+
 
   const dispatch = useDispatch();
   const objectData = useSelector((state) => state.objectData);
+  const { isLoading, isSuccess, error } = useSelector(
+    (state) => state.formSubmission
+  );
+
+  const insertedId = useSelector((state) => state.formSubmission.insertedId);
+
+  console.log("Inserted ID:", insertedId);
+
+  console.log(isSuccess)
 
   //extract number from text
   const text = eventDuration;
@@ -89,39 +107,18 @@ const EventPage = () => {
     };
 
     const obj = { ...objectData, formData };
+   
 
+    setEventData(obj);
     dispatch(submitFormData(obj));
-    console.log(obj.id);
 
-    // Axios POST request for Create Meeting
-    axios.post("http://localhost:5000/createMeeting", obj).then((response) => {
-      if (response.status === 200) {
-        const data = response.data;
-        alert("Meeting created successfully!");
-        console.log(data);
-        setMeetLink(data);
-      } else {
-        alert("Failed to create meeting.");
-      }
-    });
-
-    axios.get(`http://localhost:5000/addEvent/${obj.id}`).then((response) => {
-      if (response.status === 200) {
-        const data = response.data;
-        // alert("Meeting created successfully!");
-        // setMeetLink(data);
-        console.log(data);
-      } else {
-        alert("Failed to create meeting.");
-      }
-    });
-
-    console.log(obj);
+    setCallEvnt(!callEvent);
   };
 
   const handleCancel = () => {
     navigate("/dashboard/schedule");
   };
+  
 
   const handleSelectTime = (selectTime) => {
     console.log(selectTime);
@@ -135,6 +132,25 @@ const EventPage = () => {
     setEndAmPm(endAmPm);
   };
 
+ 
+
+ 
+
+  // useEffect(() => {
+  // if (insertedId) {
+  //     axios
+  //       .get(`http://localhost:5000/getEvent/${insertedId}`)
+  //       .then((response) => {
+  //         const data = response.data;
+  //         // setEventData(data);
+  //         console.log(data);
+  //       })
+  //       .catch((error) => {
+  //         console.error("Error fetching data:", error);
+  //       });
+  //     }
+  //   }, [insertedId]);
+
   return (
     <div className="px-4 py-6 border md:px-10">
       {/* 1st part */}
@@ -146,14 +162,14 @@ const EventPage = () => {
             <p className="text-gray-400">30 min, 60 rolling calendar days</p>
           </div>
         </div>
-        <div className="flex justify-center items-center gap-4 md:justify-between">
+        <div className="flex items-center justify-center gap-4 md:justify-between">
           <button
             onClick={() => handleCancel()}
             className="px-3 rounded-md btn bg-[#61677A] hover:bg-[#464955] text-white">
             Cancel
           </button>
-          <button onClick={() => handleSubmit()} className="">
-            <Demo />
+          <button className="">
+            <Demo handleSubmit={handleSubmit} eventData={eventData} />
           </button>
         </div>
       </div>
@@ -200,7 +216,7 @@ const EventPage = () => {
         </div>
       </div>
       {/* Part Calendar */}
-      <div className="gap-6 md:flex border-2 p-6">
+      <div className="gap-6 p-6 border-2 md:flex">
         <div className="w-full p-4 mt-6">
           <div className="flex items-center gap-2 pb-4">
             <BsCalendar4Event fontSize={20}></BsCalendar4Event>
@@ -216,7 +232,7 @@ const EventPage = () => {
             months={1}
             ranges={state}
             direction="horizontal"
-            className="flex flex-col gap-6 md:flex-row w-full"
+            className="flex flex-col w-full gap-6 md:flex-row"
           />
         </div>
         <div className="w-full mt-6">

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Button,
   Dialog,
@@ -8,25 +8,55 @@ import {
   Typography,
 } from "@material-tailwind/react";
 
-import { Toaster, toast } from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 import { Link } from "react-router-dom";
-const Demo = () => {
+import axios from "axios";
+
+
+const Demo = ({ handleSubmit, eventData }) => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen((cur) => !cur);
+  console.log(eventData);
+  const {
+    id,
+    eventName,
+    location,
+    description,
+    selectedTimezone,
+    eventDuration,
+    eventLink,
+    formData
+  } = eventData;
+  console.log(formData?.startDate);
+  // const { startTime, endTime, startDate, endDate } = eventData.formData.formData;
+  // console.log(startDate);
+
+  // console.log(id);
+
+  // if (isSuccess) {
+  // }
+  // useEffect(() => {
+  //   axios
+  //     .get(`http://localhost:5000/getEvent/${id}`)
+  //     .then((response) => {
+  //       const data = response.data;
+  //       // setEventData(data);
+  //       console.log(data);
+  //     });
+  // }, []);
 
   const data = {
-    _id: "11",
-    eventName: "Test Event",
-    location: "Video",
-    description:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore ad ut aut qui architecto hic et, deleniti nemo mollitia maxime Lorem ipsum dolor sit amet consectetur, adipisicing elit",
-    eventLink: "meet.com/ghy-gght-hfd",
-    selectedTimezone: "GMT 6+",
-    eventDuration: 3,
-    startTime: "12.00 pm",
-    endTime: "2.00 pm",
-    startDate: "12-01-2024",
-    endDate: "12-01-2024",
+    id,
+    eventName,
+    location,
+    description,
+    eventLink,
+    selectedTimezone: formData?.selectedTimezone?.label,
+    eventDuration: formData?.eventDuration,
+    startTime: formData?.startTime,
+    endTime: formData?.endTime,
+    startDate: formData?.startDate.toDateString(),
+    endDate: formData?.endDate.toDateString(),
   };
 
   return (
@@ -34,14 +64,14 @@ const Demo = () => {
       <button
         className="bg-[#5EBEC4] hover:bg-[#42a6ad] duration-200 text-white px-3 rounded-md btn"
         onClick={handleOpen}>
-        Preview
+        <span onClick={() => handleSubmit()}>Preview</span>
       </button>
       <Dialog
         size="md"
         open={open}
         handler={handleOpen}
         className="bg-transparent shadow-none">
-        <Card className="mx-auto w-full md:max-w-2xl">
+        <Card className="w-full mx-auto md:max-w-2xl">
           <CardHeader className="text-center py-3 bg-[#5EBEC4]">
             <Typography variant="h4" color="white">
               Event Information
@@ -52,53 +82,54 @@ const Demo = () => {
             <div className="">
               <h1 className="font-semibold">
                 Event Name:
-                <span className="ms-1 text-xl font-bold text-teal-800">
-                  {data.eventName}
+                <span className="text-xl font-bold text-teal-800 ms-1">
+                  {data?.eventName}
                 </span>
               </h1>
               <p className="mt-2">
                 <span className="font-semibold me-1">Description:</span>
-                {data.description}
+                {data?.description}
               </p>
               <p className="mt-5">
                 <span className="font-semibold me-1">Location:</span>
-                {data.location}
+                {data?.location}
               </p>
               <p>
                 <span className="font-semibold me-1">Selected Time Zone:</span>
-                {data.selectedTimezone}
+                {data?.selectedTimezone}
               </p>
               <p>
                 <span className="font-semibold me-1">Event Duration:</span>
-                {data.eventDuration} hour
+                {data?.eventDuration} minute
               </p>
               <div className="flex justify-between mt-2">
                 <p>
                   <span className="font-semibold me-1">Start Time:</span>
-                  {data.startTime}
+                  {data?.startTime}
                 </p>
                 <p>
                   <span className="font-semibold me-1">Start Date:</span>
-                  {data.startDate}
+                  {data?.startDate}
                 </p>
               </div>
               <div className="flex justify-between">
                 <p>
                   <span className="font-semibold me-1">End Time:</span>
-                  {data.endTime}
+                  {data?.endTime}
                 </p>
                 <p>
                   <span className="font-semibold me-1">End Date:</span>
-                  {data.endDate}
+                  {data?.endDate}
                 </p>
               </div>
               <p className="mt-5">
                 <span className="font-semibold me-1">Meet Link:</span>
-                {data.eventLink}
+                {data?.eventLink}
               </p>
               <div className="flex justify-end gap-3 mt-4">
                 <button className="px-4 text-xl font-semibold py-2 bg-[#5EBEC4] hover:bg-[#42a6ad] duration-200 text-white rounded-md">
-                  <Link to={"/dashboard/mySchedule"}>OK</Link>
+                  <Link to="/dashboard/mySchedule">OK</Link>
+                  {/* {"/dashboard/mySchedule"} */}
                 </button>
               </div>
             </div>

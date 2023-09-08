@@ -27,6 +27,11 @@ import ScheduleDetails from "../LandingPage/homepage/ScheduleDetails/ScheduleDet
 import EngagedDetails from "../LandingPage/homepage/EngagedDetails/EngagedDetails";
 import ErrorPage from "../LandingPage/errorPage/ErrorPage";
 import Partner from "../LandingPage/contact/Partner";
+import SetMeeting from "../setMeeting/SetMeeting";
+
+
+
+
 
 const router = createBrowserRouter([
   {
@@ -80,12 +85,12 @@ const router = createBrowserRouter([
       },
       {
         path: "/scheduleDetails",
-        element: <ScheduleDetails />
+        element: <ScheduleDetails />,
       },
       {
         path: "/engagedDetails",
-        element: <EngagedDetails />
-      }
+        element: <EngagedDetails />,
+      },
     ],
   },
   {
@@ -113,12 +118,12 @@ const router = createBrowserRouter([
         path: "/dashboard/Profile",
         element: <Profile></Profile>,
       },
+      // {
+      //   path: "/dashboard/Schedule/:id",
+      //   element: <ScheduleEventDetails></ScheduleEventDetails>,
+      // },
       {
-        path: "/dashboard/Schedule/:id",
-        element: <ScheduleEventDetails></ScheduleEventDetails>,
-      },
-      {
-        path: "/dashboard/mySchedule",
+        path: "/dashboard/mySchedule/",
         element: <MySchedule></MySchedule>,
       },
       {
@@ -146,6 +151,12 @@ const router = createBrowserRouter([
         element: <EventPageData />,
       },
     ],
+  },
+  {
+    path: "/event/:eventName/:id",
+    element: <SetMeeting />,
+    loader: ({ params }) =>
+      fetch(`http://localhost:5000/getEvent/${params.id}`),
   },
 ]);
 

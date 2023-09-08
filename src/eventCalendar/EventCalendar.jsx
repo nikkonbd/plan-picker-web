@@ -6,6 +6,7 @@ import "react-big-calendar/lib/addons/dragAndDrop";
 import Modal from "react-modal"; // Import the modal library
 import EventModal from "./EventModal";
 
+
 const localizer = momentLocalizer(moment);
 
 const EventCalendar = ({ events }) => {
@@ -22,6 +23,24 @@ const EventCalendar = ({ events }) => {
     setIsModalOpen(false); // Close the modal
   };
 
+  // const customStyles = {
+  //   content: {
+  //     top: "50%",
+  //     left: "50%",
+  //     right: "auto",
+  //     bottom: "auto",
+  //     marginRight: "-50%",
+  //     transform: "translate(-50%, -50%)",
+  //     width: "350px",
+  //     height: "auto",
+  //     background: "red", // Set the background color to white
+  //     boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.2)", // Add a shadow for a card-like appearance
+  //     border: "1px solid #ccc", // Add a border for better visibility
+  //     overflow: "hidden",
+  //   },
+  // };
+
+
   const customStyles = {
     content: {
       top: "50%",
@@ -31,13 +50,16 @@ const EventCalendar = ({ events }) => {
       marginRight: "-50%",
       transform: "translate(-50%, -50%)",
       width: "350px",
-      height: "auto",
-      background: "", // Set the background color to white
-      boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.2)", // Add a shadow for a card-like appearance
-      border: "1px solid #ccc", // Add a border for better visibility
-      overflow: "hidden",
+      maxHeight: "80%",
+      overflowY: "auto",
+      background: "white",
+      boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.2)",
+      border: "1px solid #ccc",
+      zIndex: 1000, // Set the desired z-index value
     },
   };
+
+
 
   return (
     <div className="md:max-w-6xl">
@@ -50,7 +72,7 @@ const EventCalendar = ({ events }) => {
           defaultView={Views.MONTH}
           startAccessor="start"
           endAccessor="end"
-          style={{ height: "460px", overflow: "hidden" }}
+          style={{ height: "500px", overflow: "hidden", zIndex: "-10" }}
         />
         {selectedDate && (
           <div>
@@ -65,7 +87,7 @@ const EventCalendar = ({ events }) => {
           onRequestClose={closeModal}
           contentLabel="Selected Date Modal"
           style={customStyles}>
-          <div className="">
+          <div className="z-50">
             <h2>Form</h2>
             {selectedDate && (
               <p>Selected Date: {moment(selectedDate).format("YYYY-MM-DD")}</p>
@@ -77,6 +99,7 @@ const EventCalendar = ({ events }) => {
           </div>
         </Modal>
       </div>
+      
     </div>
   );
 };
