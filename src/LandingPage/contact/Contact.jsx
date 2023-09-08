@@ -143,24 +143,26 @@ const Contact = () => {
             open positions and apply.
           </p>
           <a href="#" className="inline-block pt-6 pb-10 md:pt-0 md:pb-0 mt-4">
-            <Button
-              variant="text"
-              className="flex text-white items-center gap-2 bg-[#5EBEC4] hover:bg-[#42a6ad]">
-              Plan Picker Visit
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-                className="w-4 h-4">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-                />
-              </svg>
-            </Button>
+            <Link to={"/join-team"}>
+              <Button
+                variant="text"
+                className="flex text-white items-center gap-2 bg-[#5EBEC4] hover:bg-[#42a6ad]">
+                Plan Picker Visit
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                  className="w-4 h-4">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+                  />
+                </svg>
+              </Button>
+            </Link>
           </a>
         </div>
         <div className="border-2 p-4 shadow hover:shadow-lg mt-4 md:mt-0">

@@ -27,6 +27,7 @@ import ScheduleDetails from "../LandingPage/homepage/ScheduleDetails/ScheduleDet
 import EngagedDetails from "../LandingPage/homepage/EngagedDetails/EngagedDetails";
 import ErrorPage from "../LandingPage/errorPage/ErrorPage";
 import Partner from "../LandingPage/contact/Partner";
+import JoinTeam from "../LandingPage/contact/JoinTeam";
 
 const router = createBrowserRouter([
   {
@@ -48,11 +49,15 @@ const router = createBrowserRouter([
       },
       {
         path: "/services-learn-more",
-        element:<MoreService></MoreService>
+        element: <MoreService></MoreService>,
       },
       {
         path: "/contact",
         element: <ContactUS></ContactUS>,
+      },
+      {
+        path: "join-team",
+        element: <JoinTeam></JoinTeam>,
       },
       {
         path: "partner",
@@ -80,12 +85,12 @@ const router = createBrowserRouter([
       },
       {
         path: "/scheduleDetails",
-        element: <ScheduleDetails />
+        element: <ScheduleDetails />,
       },
       {
         path: "/engagedDetails",
-        element: <EngagedDetails />
-      }
+        element: <EngagedDetails />,
+      },
     ],
   },
   {
