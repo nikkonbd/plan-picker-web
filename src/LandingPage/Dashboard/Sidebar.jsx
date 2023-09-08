@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { CgProfile } from "react-icons/cg";
 import { AiOutlineSchedule } from "react-icons/ai";
@@ -11,8 +11,10 @@ import { AiOutlineSetting } from "react-icons/ai";
 import { HiOutlineHome } from "react-icons/hi";
 import useAdmin from "../../hooks/useAdmin";
 import { FaRegChartBar } from "react-icons/fa";
+import { AuthContext } from "../../providers/AuthProvider";
 
 function Sidebar({ sidebarOpen, setSidebarOpen }) {
+  const { user } = useContext(AuthContext);
   // const isAdmin = true;
   const [isAdmin] = useAdmin();
   console.log(isAdmin);
@@ -298,7 +300,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                     }`}>
                     <NavLink
                       end
-                      to="/dashboard/mySchedule"
+                      to="/dashboard/mySchedule/"
                       className={`block text-slate-200 truncate transition duration-150 ${
                         pathname.includes("messages")
                           ? "hover:text-slate-200"
