@@ -11,6 +11,7 @@ import { Toaster, toast } from "react-hot-toast";
 const AllUsers = () => {
   const [myUsers, setMyusers] = useState([]);
   console.log(myUsers);
+
   // const { data: users = [], refetch } = useQuery(['users'], async () => {
   //     const res = await fetch('http://localhost:5000/users')
   //     return res.json()
@@ -67,7 +68,7 @@ const AllUsers = () => {
           .then((data) => {
             console.log(data);
             if (data.deletedCount > 0) {
-              Swal.fire("Deleted!", "Your Toy has been deleted.", "success");
+              Swal.fire("Deleted!", "User has been deleted.", "success");
               const remaining = myUsers.filter((user) => user._id !== _id);
               setMyusers(remaining);
             }

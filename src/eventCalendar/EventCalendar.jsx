@@ -62,7 +62,7 @@ const EventCalendar = ({ events }) => {
 
 
   return (
-    <div>
+    <div className="md:max-w-6xl">
       <div className="-z-10">
         <Calendar
           localizer={localizer}

@@ -10,6 +10,7 @@ import { GiCheckMark } from "react-icons/gi";
 import ServiceCardAccordion from "./serviceCard/ServiceCardAccordion";
 import ServiceCard5 from "./serviceCard/ServiceCard5";
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 
 const Services = () => {
   return (
@@ -60,7 +61,7 @@ const Services = () => {
                 <p>Access expedited support, onboarding and implementation</p>
               </div>
             </div>
-            <a href="#" className="inline-block">
+            <Link to="/services-learn-more">
               <Button
                 variant="text"
                 className="flex items-center gap-2 bg-[#5EBEC4] hover:bg-[#42a6ad] text-white">
@@ -79,7 +80,7 @@ const Services = () => {
                   />
                 </svg>
               </Button>
-            </a>
+            </Link>
           </CardBody>
         </Card>
         <div className="mt-16">
