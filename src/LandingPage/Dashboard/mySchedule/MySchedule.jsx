@@ -6,42 +6,44 @@ import axios from "axios";
 
 const MySchedule = () => {
   const { user } = useContext(AuthContext);
-const [schedule, setSchedule] = useState([]);
- const [loading, setLoading] = useState(true);
+  const [schedule, setSchedule] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  
 
-
+  
   useEffect(() => {
+    // Axios GET request
     axios
       .get(`http://localhost:5000/getEventByEmail/${user?.email}`)
       .then((response) => {
-        const data = response.data;
-        setSchedule(data);
-        setLoading(true)
+        setSchedule(response.data);
+        setLoading(false);
       })
       .catch((error) => {
-        console.error("Error fetching data:", error);
+        setError(error);
+        setLoading(false);
       });
-  }, [user?.email, schedule]);
+  }, []); // Empty dependency array means the effect runs once after initial render
 
-  
   if (loading) {
-    setLoading(false)
     return <p>Loading...</p>;
   }
 
-  // if (error) {
-  //   return <p>Error: {error.message}</p>;
-  // }
+  if (error) {
+    return <p>Error: {error.message}</p>;
+  }
   
+  
+
   // const today = new Date();
   // const date =
   // today.getDate() + "-" + (today.getMonth() + 1) + "-" + today.getFullYear();
-  
+
   
   
   return (
     <div>
-    
       <h2 className="relative text-2xl">
         My Schedule
         <span className="absolute px-2 py-1 text-xs text-white bg-orange-600 rounded-full animate-pulse">

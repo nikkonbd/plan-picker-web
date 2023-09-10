@@ -11,6 +11,7 @@ const formSubmissionSlice = createSlice({
         isSuccess: false,
         error: null,
         insertedId: null,
+        eventData: [],
     },
     reducers: {
 
@@ -32,6 +33,11 @@ const formSubmissionSlice = createSlice({
         formSubmissionInsertId: (state, action) => {
             state.insertedId = action.payload;
         },
+        setEventData: (state, action) => {
+            state.eventData = action.payload;
+            state.isLoading = false;
+            
+        },
 
     },
 });
@@ -41,6 +47,7 @@ export const {
     formSubmissionSuccess,
     formSubmissionFailure,
     formSubmissionInsertId,
+    setEventData,
 } = formSubmissionSlice.actions;
 
 export default formSubmissionSlice.reducer;
@@ -53,10 +60,20 @@ export const submitFormData = (formData) => async (dispatch) => {
 
         dispatch(formSubmissionStart());
         const response = await axios.post("http://localhost:5000/addEvent", formData); // Adjust the API endpoint
-        dispatch(formSubmissionSuccess());
+       
         console.log(response.data); // Display response data
-        
-        dispatch(formSubmissionInsertId(response.data.insertedId));
+
+        const insertedId = response.data.insertedId;
+
+        // Now, fetch data associated with the inserted ID
+        const dataResponse = await axios.get(`http://localhost:5000/getEventData/${insertedId}`); // Adjust the API endpoint
+
+        const eventData = dataResponse.data; // Assuming the response contains the data you need
+
+        // Dispatch the inserted ID and eventData to your component
+        dispatch(setEventData(eventData)); // Replace with an appropriate action
+        dispatch(formSubmissionInsertId(insertedId));
+        dispatch(formSubmissionSuccess());
     } catch (error) {
         dispatch(formSubmissionFailure(error.message));
     }

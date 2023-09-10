@@ -122,11 +122,11 @@ const Event = () => {
               value={location}
               required
               onChange={(e) => setLocation(e.target.value)}>
-              <option disabled selected className="text-gray-200">
+              <option value="" disabled selected className="text-gray-200">
                 Add Location
               </option>
-              <option>Audio Call</option>
-              <option>Video Call</option>
+              <option value="Audio Call">Audio Call</option>
+              <option value="Video Call">Video Call</option>
             </select>
           </div>
         </div>
@@ -185,3 +185,106 @@ const Event = () => {
 };
 
 export default Event;
+
+
+
+
+
+// import React, { useContext, useState } from "react";
+// import { useDispatch } from "react-redux";
+// import { v4 as uuidv4 } from "uuid";
+// import { AuthContext } from "../../providers/AuthProvider";
+// import { setObjectData } from "../../store/features/objectData/ObjectDataSlice";
+// import { useNavigate } from "react-router-dom";
+
+// const Event = () => {
+//   const { user } = useContext(AuthContext);
+//   const uniqueId = uuidv4();
+//   const dispatch = useDispatch();
+//   const navigate = useNavigate();
+
+//   const [eventName, setEventName] = useState("");
+//   const [location, setLocation] = useState("");
+//   const [value, setValue] = useState("");
+//   const [eventLink, setEventLink] = useState("");
+//   const [eventTypeError, setEventTypeError] = useState("");
+//   const [eventNameError, setEventNameError] = useState("");
+//   const [eventLinkError, setEventLinkError] = useState("");
+//   const [descriptionError, setDescriptionError] = useState("");
+
+//   const handleNextForm = () => {
+//     setEventTypeError("");
+//     setEventNameError("");
+//     setEventLinkError("");
+//     setDescriptionError("");
+
+//     let isValid = true;
+
+//     if (!location) {
+//       setEventTypeError("Event Type is required");
+//       isValid = false;
+//     }
+
+//     if (!eventName) {
+//       setEventNameError("Event Name is required");
+//       isValid = false;
+//     }
+
+//     if (!eventLink) {
+//       setEventLinkError("Event Link is required");
+//       isValid = false;
+//     }
+
+//     if (!value) {
+//       setDescriptionError("Description is required");
+//       isValid = false;
+//     }
+
+//     if (isValid) {
+//       const formData = {
+//         eventName,
+//         location,
+//         description: value,
+//         eventLink,
+//         id: uniqueId,
+//         email: user?.email,
+//       };
+
+//       dispatch(setObjectData(formData));
+
+//       navigate("/dashboard/one-on-one-form/event_set_edit_form");
+//     }
+//   };
+
+//   return (
+//     <div className="py-6 md:max-w-6xl">
+//       <form className="mt-6">
+//         {/* ... (Your other form content) */}
+//         <div className="w-full mt-10 form-control md:max-w-4xl">
+//           <label className="label">
+//             <span className="flex items-center gap-3 font-bold label-text">
+//               Event Link *
+//             </span>
+//           </label>
+//           <input
+//             type="text"
+//             placeholder="Skype, Whatsapp, Microsoft, Hangouts for link here"
+//             className="w-full max-w-md font-semibold input input-bordered"
+//             value={eventLink}
+//             onChange={(e) => setEventLink(e.target.value)}
+//           />
+//           <p className="text-red-500">{eventLinkError}</p>
+//         </div>
+//         <button
+//           type="button"
+//           onClick={() => handleNextForm()}
+//           className="bg-[#5EBEC4] hover:bg-[#42a6ad] duration-200 text-white px-3 rounded-md btn"
+//           disabled={!isValid}>
+//           Next
+//         </button>
+//       </form>
+//     </div>
+//   );
+// };
+
+// export default Event;
