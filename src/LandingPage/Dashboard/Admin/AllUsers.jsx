@@ -69,7 +69,7 @@ const AllUsers = () => {
             console.log(data);
             if (data.deletedCount > 0) {
               Swal.fire("Deleted!", "User has been deleted.", "success");
-              const remaining = myUsers.filter((user) => user._id !== _id);
+              const remaining = myUsers.filter((item) => item._id !== _id);
               setMyusers(remaining);
             }
           });
@@ -136,7 +136,7 @@ const AllUsers = () => {
                     </button>
                   ) : (
                     <button
-                      onClick={() => handleMakeAdmin(user)}
+                      onClick={() => handleMakeAdmin(user?._id)}
                       className="btn  btn-circle">
                       <FaUsers fontSize={30}></FaUsers>
                     </button>
@@ -145,7 +145,7 @@ const AllUsers = () => {
                 </td>
                 <td>
                   <button
-                    onClick={() => handleDelete(user._id)}
+                    onClick={() => handleDelete(user)}
                     className="btn  btn-circle">
                     <FcEmptyTrash
                       fontSize={30}
