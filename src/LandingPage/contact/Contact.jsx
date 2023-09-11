@@ -20,7 +20,7 @@ const Contact = () => {
             Talk to our sales team about purchasing Calendly for your team
             request friendly
           </p>
-          <a href="#" className="inline-block pt-6 pb-10 md:pt-0 md:pb-0 mt-4">
+          <Link to="/contact-sales" className="inline-block pt-6 pb-10 md:pt-0 md:pb-0 mt-4">
             <Button
               variant="text"
               className="flex text-white items-center gap-2 bg-[#5EBEC4] hover:bg-[#42a6ad]">
@@ -39,7 +39,7 @@ const Contact = () => {
                 />
               </svg>
             </Button>
-          </a>
+          </Link>
         </div>
         <div className="border-2 p-4 text-center shadow mb-4 md:mb-0 hover:shadow-lg">
           <FaConnectdevelop className="text-4xl"></FaConnectdevelop>

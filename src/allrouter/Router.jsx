@@ -30,6 +30,8 @@ import ErrorPage from "../LandingPage/errorPage/ErrorPage";
 import Partner from "../LandingPage/contact/Partner";
 import JoinTeam from "../LandingPage/contact/JoinTeam";
 import SetMeeting from "../setMeeting/SetMeeting";
+import ContactSales from "../LandingPage/contact/contactSupportPages/ContactSales";
+import AddReview from "../LandingPage/Dashboard/AddReview/AddReview";
 
 const router = createBrowserRouter([
   {
@@ -56,6 +58,10 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element: <ContactUS></ContactUS>,
+      },
+      {
+        path: "/contact-sales",
+        element: <ContactSales></ContactSales>
       },
       {
         path: "join-team",
@@ -119,6 +125,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/Profile",
         element: <Profile></Profile>,
+      },
+      {
+        path: "/dashboard/AddReview",
+        element: <AddReview></AddReview>,
       },
       // {
       //   path: "/dashboard/Schedule/:id",
