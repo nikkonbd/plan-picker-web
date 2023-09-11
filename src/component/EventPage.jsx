@@ -2,8 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import { addDays } from "date-fns";
 import "react-date-range/dist/styles.css"; // main style file
 import "react-date-range/dist/theme/default.css"; // theme css file
-import "react-date-range/dist/styles.css"; // main style file
-import "react-date-range/dist/theme/default.css"; // theme css file
 import { DateRangePicker } from "react-date-range";
 import TimeRangeSelector from "./TimeRangeSelector";
 import { BsCalendar4Event, BsListStars } from "react-icons/bs";
@@ -62,17 +60,19 @@ const EventPage = () => {
   const [endHours, setEndHours] = useState("");
   const [endMinute, setEndMinute] = useState("");
   const [endAmPm, setEndAmPm] = useState("");
+  const [eventData, setEventData] = useState([]) || null;
   const [callEvent, setCallEvnt] = useState(false);
   const [eventData, setEventData] = useState("");
   // console.log(eventData.id);
 
   const dispatch = useDispatch();
   const objectData = useSelector((state) => state.objectData);
+
   const { isLoading, isSuccess, error } = useSelector(
     (state) => state.formSubmission
   );
-
   const insertedId = useSelector((state) => state.formSubmission.insertedId);
+  const events = useSelector((state) => state.formSubmission.eventData);
 
   console.log("Inserted ID:", insertedId);
 
@@ -101,10 +101,17 @@ const EventPage = () => {
 
     const obj = { ...objectData, formData };
 
-    setEventData(obj);
     dispatch(submitFormData(obj));
+    // setEventData(obj);
 
-    setCallEvnt(!callEvent);
+    // setEventData(events)
+
+    // if (insertedId) {
+    //     dispatch(submitFormData(insertedId));
+    //     setEventData(events);
+    //     // Fetch the data associated with the inserted ID
+
+    //   }
   };
 
   const handleCancel = () => {
@@ -112,7 +119,6 @@ const EventPage = () => {
   };
 
   const handleSelectTime = (selectTime) => {
-    console.log(selectTime);
     const { endAmPm, endHour, endMinute, startAmPm, startHour, startMinute } =
       selectTime;
     setStartHour(startHour);
@@ -156,7 +162,7 @@ const EventPage = () => {
             Cancel
           </button>
           <button className="">
-            <Demo handleSubmit={handleSubmit} eventData={eventData} />
+            <Demo handleSubmit={handleSubmit}  />
           </button>
         </div>
       </div>

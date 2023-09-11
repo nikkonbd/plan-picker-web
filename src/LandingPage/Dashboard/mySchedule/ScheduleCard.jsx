@@ -18,6 +18,7 @@ const ScheduleCard = ({ scheduleData }) => {
     link,
   } = scheduleData;
 
+
   console.log(eventData);
 
   const [axiosSecure] = useAxiosSecure();
@@ -46,13 +47,13 @@ const ScheduleCard = ({ scheduleData }) => {
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
             if (data.deletedCount > 0) {
               Swal.fire("Deleted!", "Your Toy has been deleted.", "success");
               const remainingEvent = eventData.filter(
                 (event) => event.id !== id
               );
               setEventData(remainingEvent);
+
               console.log(remainingEvent);
               refetch();
             }

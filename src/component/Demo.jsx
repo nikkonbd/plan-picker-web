@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Button,
   Dialog,
@@ -10,8 +10,18 @@ import {
 
 import { Toaster } from "react-hot-toast";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import { useSelector } from "react-redux";
 
+const Demo = ({ handleSubmit }) => {
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen((cur) => !cur);
+  // const [loading, setLoading] = useState(true);
+  const insertedId = useSelector((state) => state.formSubmission.insertedId);
+  const events = useSelector((state) => state.formSubmission.eventData);
+  const { isLoading, isSuccess, error } = useSelector(
+    (state) => state.formSubmission
+  );
+  const [data, setData] = useState([]);
 const Demo = ({ handleSubmit, eventData }) => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen((cur) => !cur);
@@ -30,8 +40,21 @@ const Demo = ({ handleSubmit, eventData }) => {
   // const { startTime, endTime, startDate, endDate } = eventData.formData.formData;
   // console.log(startDate);
 
-  // console.log(id);
+  useEffect(() => {
+    const fetchData = async (events) => {
+      try {
+        const data = await events;
+        setData(data);
+        // setLoading(false);
+      } catch (error) {
+        // setLoading(false);
+        setError(error);
+        console.error("Error fetching data:", error);
+      }
+    };
 
+    fetchData(events);
+  }, [insertedId]);
   // if (isSuccess) {
   // }
   // useEffect(() => {
@@ -44,19 +67,7 @@ const Demo = ({ handleSubmit, eventData }) => {
   //     });
   // }, []);
 
-  const data = {
-    id,
-    eventName,
-    location,
-    description,
-    eventLink,
-    selectedTimezone: formData?.selectedTimezone?.label,
-    eventDuration: formData?.eventDuration,
-    startTime: formData?.startTime,
-    endTime: formData?.endTime,
-    startDate: formData?.startDate.toDateString(),
-    endDate: formData?.endDate.toDateString(),
-  };
+ 
 
   return (
     <div>
@@ -77,62 +88,73 @@ const Demo = ({ handleSubmit, eventData }) => {
             </Typography>
           </CardHeader>
 
-          <CardBody>
-            <div className="">
-              <h1 className="font-semibold">
-                Event Name:
-                <span className="text-xl font-bold text-teal-800 ms-1">
-                  {data?.eventName}
-                </span>
-              </h1>
-              <p className="mt-2">
-                <span className="font-semibold me-1">Description:</span>
-                {data?.description}
-              </p>
-              <p className="mt-5">
-                <span className="font-semibold me-1">Location:</span>
-                {data?.location}
-              </p>
-              <p>
-                <span className="font-semibold me-1">Selected Time Zone:</span>
-                {data?.selectedTimezone}
-              </p>
-              <p>
-                <span className="font-semibold me-1">Event Duration:</span>
-                {data?.eventDuration} minute
-              </p>
-              <div className="flex justify-between mt-2">
-                <p>
-                  <span className="font-semibold me-1">Start Time:</span>
-                  {data?.startTime}
-                </p>
-                <p>
-                  <span className="font-semibold me-1">Start Date:</span>
-                  {data?.startDate}
-                </p>
-              </div>
-              <div className="flex justify-between">
-                <p>
-                  <span className="font-semibold me-1">End Time:</span>
-                  {data?.endTime}
-                </p>
-                <p>
-                  <span className="font-semibold me-1">End Date:</span>
-                  {data?.endDate}
-                </p>
-              </div>
-              <p className="mt-5">
-                <span className="font-semibold me-1">Meet Link:</span>
-                {data?.eventLink}
-              </p>
-              <div className="flex justify-end gap-3 mt-4">
-                <button className="px-4 text-xl font-semibold py-2 bg-[#5EBEC4] hover:bg-[#42a6ad] duration-200 text-white rounded-md">
-                  <Link to="/dashboard/mySchedule">OK</Link>
-                  {/* {"/dashboard/mySchedule"} */}
-                </button>
-              </div>
+          {isLoading ? (
+            <div className="flex justify-center items-center">Loading...</div>
+          ) : (
+            <div>
+              {data.map((event) => (
+                <CardBody>
+                  <div className="">
+                    <h1 className="font-semibold">
+                      Event Name:
+                      <span className="text-xl font-bold text-teal-800 ms-1">
+                        {event?.eventName}
+                      </span>
+                    </h1>
+                    <p className="mt-2">
+                      <span className="font-semibold me-1">Description:</span>
+                      {event?.description}
+                    </p>
+                    <p className="mt-5">
+                      <span className="font-semibold me-1">Location:</span>
+                      {event?.location}
+                    </p>
+                    <p>
+                      <span className="font-semibold me-1">
+                        Selected Time Zone:
+                      </span>
+                      {event?.formData?.selectedTimezone?.label}
+                    </p>
+                    <p>
+                      <span className="font-semibold me-1">
+                        Event Duration:
+                      </span>
+                      {event?.formData?.eventDuration} minute
+                    </p>
+                    <div className="flex justify-between mt-2">
+                      <p>
+                        <span className="font-semibold me-1">Start Time:</span>
+                        {event?.formData?.startTime}
+                      </p>
+                      <p>
+                        <span className="font-semibold me-1">Start Date:</span>
+                        {event?.formData?.startDate}
+                      </p>
+                    </div>
+                    <div className="flex justify-between">
+                      <p>
+                        <span className="font-semibold me-1">End Time:</span>
+                        {event?.formData?.endTime}
+                      </p>
+                      <p>
+                        <span className="font-semibold me-1">End Date:</span>
+                        {event?.formData?.endDate}
+                      </p>
+                    </div>
+                    <p className="mt-5">
+                      <span className="font-semibold me-1">Meet Link:</span>
+                      {event?.link?.meetLink}
+                    </p>
+                    <div className="flex justify-end gap-3 mt-4">
+                      <button className="px-4 text-xl font-semibold py-2 bg-[#5EBEC4] hover:bg-[#42a6ad] duration-200 text-white rounded-md">
+                        <Link to="/dashboard/mySchedule">OK</Link>
+                      </button>
+                    </div>
+                  </div>
+                </CardBody>
+              ))}
             </div>
-          </CardBody>
+          )}
         </Card>
       </Dialog>
       <Toaster />
