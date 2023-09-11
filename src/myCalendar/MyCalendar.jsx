@@ -67,7 +67,7 @@ const MyCalendar = () => {
       <Helmet>
         <title>MyCalendar || PlanPicker</title>
       </Helmet>
-      <div className="py-4 md:py-8 md:max-w-6xl">
+      <div className="md:max-w-6xl">
         {/* grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 */}
 
         <div className="">

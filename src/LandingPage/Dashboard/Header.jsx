@@ -10,7 +10,7 @@ function Header({ sidebarOpen, setSidebarOpen }) {
   const [searchModalOpen, setSearchModalOpen] = useState(false);
 
   return (
-    <header className="sticky bg-gray-100 top-0 shadow-md z-30">
+    <header className="sticky bg-white top-0 z-30">
       <div className="px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 -mb-px">
           {/* Header: Left side */}
@@ -37,7 +37,7 @@ function Header({ sidebarOpen, setSidebarOpen }) {
           </div>
 
           {/* Header: Right side */}
-          <div className="flex items-center space-x-3">
+          {/* <div className="flex items-center space-x-3">
             <div>
               <button
                 className={`w-8 h-8 flex items-center justify-center bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600/80 rounded-full ml-3 ${
@@ -63,15 +63,9 @@ function Header({ sidebarOpen, setSidebarOpen }) {
                   />
                 </svg>
               </button>
-              {/* <SearchModal id="search-modal" searchId="search" modalOpen={searchModalOpen} setModalOpen={setSearchModalOpen} /> */}
             </div>
-            {/* <Notifications align="right" /> */}
-            {/* <Help align="right" /> */}
-            {/* <ThemeToggle /> */}
-            {/*  Divider */}
             <hr className="w-px h-6 border-none bg-slate-200 dark:bg-slate-700" />
-            {/* <UserMenu align="right" /> */}
-          </div>
+          </div> */}
         </div>
       </div>
     </header>

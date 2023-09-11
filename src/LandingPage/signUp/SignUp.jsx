@@ -56,7 +56,7 @@ const SignUp = () => {
       .then((imageResponse) => {
         if (imageResponse.success) {
           const imgUrl = imageResponse.data.display_url;
-          console.log(imgUrl);
+          // console.log(imgUrl);
           const { name, email, password } = data;
           const newData = { name, email, imgUrl };
 
@@ -65,9 +65,9 @@ const SignUp = () => {
           createUser(data.email, data.password)
             .then((result) => {
               const loggedUser = result.user;
-              console.log("new-user", loggedUser);
+              // console.log("new-user", loggedUser);
               updateUserProfile(loggedUser, name, imgUrl);
-              console.log(newData);
+              // console.log(newData);
               dispatch(userCreated({ newData }));
               //to backend
               fetch("https://plan-picker-server.vercel.app/users", {
@@ -79,7 +79,7 @@ const SignUp = () => {
               })
                 .then((res) => res.json())
                 .then((data) => {
-                  console.log(data);
+                  // console.log(data);
                   if (data.insertedId) {
                     reset();
                     // Swal.fire({
@@ -114,7 +114,7 @@ const SignUp = () => {
     googleLogin()
       .then((result) => {
         const loggedUser = result.user;
-        console.log(loggedUser);
+        // console.log(loggedUser);
         const saveUser = {
           name: loggedUser.displayName,
           email: loggedUser.email,
