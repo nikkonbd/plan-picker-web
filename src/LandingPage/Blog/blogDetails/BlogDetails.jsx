@@ -9,7 +9,7 @@ const BlogDetails = () => {
   const [article, setArticle] = useState({});
 
   useEffect(() => {
-    fetch(`http://localhost:5000/blogs/${id}`)
+    fetch(`https://plan-picker-server.vercel.app/blogs/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setArticle(data);

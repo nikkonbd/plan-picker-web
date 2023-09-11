@@ -9,16 +9,20 @@ const MySchedule = () => {
   const [schedule, setSchedule] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  
 
   
   useEffect(() => {
     // Axios GET request
     axios
-      .get(`http://localhost:5000/getEventByEmail/${user?.email}`)
+      .get(
+        `https://plan-picker-server.vercel.app/getEventByEmail/${user?.email}`
+      )
       .then((response) => {
         setSchedule(response.data);
         setLoading(false);
+        const data = response.data;
+        setSchedule(data);
+        setLoading(true);
       })
       .catch((error) => {
         setError(error);
@@ -35,13 +39,19 @@ const MySchedule = () => {
   }
   
   
+    setLoading(false);
+    return <p>Loading...</p>;
+  }
+
+  // if (error) {
+  //   return <p>Error: {error.message}</p>;
+  // }
 
   // const today = new Date();
   // const date =
   // today.getDate() + "-" + (today.getMonth() + 1) + "-" + today.getFullYear();
 
-  
-  
+
   return (
     <div>
       <h2 className="relative text-2xl">

@@ -61,7 +61,8 @@ const EventPage = () => {
   const [endMinute, setEndMinute] = useState("");
   const [endAmPm, setEndAmPm] = useState("");
   const [eventData, setEventData] = useState([]) || null;
-
+  const [callEvent, setCallEvnt] = useState(false);
+  const [eventData, setEventData] = useState("");
   // console.log(eventData.id);
 
   const dispatch = useDispatch();
@@ -73,6 +74,9 @@ const EventPage = () => {
   const insertedId = useSelector((state) => state.formSubmission.insertedId);
   const events = useSelector((state) => state.formSubmission.eventData);
 
+  console.log("Inserted ID:", insertedId);
+
+  console.log(isSuccess);
 
   //extract number from text
   const text = eventDuration;
@@ -124,6 +128,21 @@ const EventPage = () => {
     setEndMinute(endMinute);
     setEndAmPm(endAmPm);
   };
+
+  // useEffect(() => {
+  // if (insertedId) {
+  //     axios
+  //       .get(`https://plan-picker-server.vercel.app/getEvent/${insertedId}`)
+  //       .then((response) => {
+  //         const data = response.data;
+  //         // setEventData(data);
+  //         console.log(data);
+  //       })
+  //       .catch((error) => {
+  //         console.error("Error fetching data:", error);
+  //       });
+  //     }
+  //   }, [insertedId]);
 
   return (
     <div className="px-4 py-6 border md:px-10">

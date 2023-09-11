@@ -18,7 +18,7 @@ const MyCalendar = () => {
   useEffect(() => {
     // Axios GET request
     axios
-      .get("http://localhost:5000/getEvent")
+      .get("https://plan-picker-server.vercel.app/getEvent")
       .then((response) => {
         setData(response.data);
         setLoading(false);
@@ -36,8 +36,6 @@ const MyCalendar = () => {
   if (error) {
     return <p>Error: {error.message}</p>;
   }
-
-  
 
   const events = [
     {

@@ -18,6 +18,9 @@ const ScheduleCard = ({ scheduleData }) => {
     link,
   } = scheduleData;
 
+
+  console.log(eventData);
+
   const [axiosSecure] = useAxiosSecure();
 
   const { data: events = [], refetch } = useQuery(["getEvent"], async () => {
@@ -25,6 +28,8 @@ const ScheduleCard = ({ scheduleData }) => {
     setEventData(res.data);
     return res.data;
   });
+
+  console.log(events);
 
   const eventDelete = (id) => {
     Swal.fire({
@@ -37,7 +42,7 @@ const ScheduleCard = ({ scheduleData }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/deleteEventById/${id}`, {
+        fetch(`https://plan-picker-server.vercel.app/deleteEventById/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -48,6 +53,8 @@ const ScheduleCard = ({ scheduleData }) => {
                 (event) => event.id !== id
               );
               setEventData(remainingEvent);
+
+              console.log(remainingEvent);
               refetch();
             }
           });
