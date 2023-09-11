@@ -46,6 +46,27 @@ const WeeklyHoursForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    // Initialize an array to store the selected hours
+    const selectedHours = [];
+
+    // Iterate through each day of the week
+    daysOfWeek.forEach((day) => {
+      // Check if the day is checked
+      if (hours[day].checked) {
+        // Add the selected hours for the checked day to the array
+        selectedHours.push({
+          day,
+          startTime: hours[day].startTime,
+          endTime: hours[day].endTime,
+        });
+      }
+    });
+
+
+    console.log(selectedHours);
+
+
     // Send the hours to an API or perform other actions here
   };
 
@@ -71,7 +92,7 @@ const WeeklyHoursForm = () => {
               onChange={() => handleHoursChange(day)}
             />
             <label className="text-gray-600 cursor-pointer">
-              {day.charAt(0).toUpperCase() + day.slice(1)} 
+              {day.charAt(0).toUpperCase() + day.slice(1)}
             </label>
           </div>
           <div>
@@ -129,273 +150,4 @@ export default WeeklyHoursForm;
 
 
 
-// import React, { useState } from 'react';
-
-// function TimeRangeSelector() {
-//   const [startHour, setStartHour] = useState('00');
-//   const [startMinute, setStartMinute] = useState('00');
-//   const [startAmPm, setStartAmPm] = useState('AM');
-//   const [endHour, setEndHour] = useState('00');
-//   const [endMinute, setEndMinute] = useState('00');
-//   const [endAmPm, setEndAmPm] = useState('AM');
-
-//   const handleStartHourChange = (e) => {
-//     setStartHour(e.target.value);
-//   };
-
-//   const handleStartMinuteChange = (e) => {
-//     setStartMinute(e.target.value);
-//   };
-
-//   const handleStartAmPmChange = (e) => {
-//     setStartAmPm(e.target.value);
-//   };
-
-//   const handleEndHourChange = (e) => {
-//     setEndHour(e.target.value);
-//   };
-
-//   const handleEndMinuteChange = (e) => {
-//     setEndMinute(e.target.value);
-//   };
-
-//   const handleEndAmPmChange = (e) => {
-//     setEndAmPm(e.target.value);
-//   };
-
-//   return (
-//     <div>
-//       <h2>Time Range Selector</h2>
-//       <div>
-//         <label>Start Time:</label>
-//         <select value={startHour} onChange={handleStartHourChange}>
-//           {Array.from({ length: 12 }, (_, i) => (i + 1).toString().padStart(2, '0')).map((hour) => (
-//             <option key={hour} value={hour}>
-//               {hour}
-//             </option>
-//           ))}
-//         </select>
-//         <select value={startMinute} onChange={handleStartMinuteChange}>
-//           {Array.from({ length: 60 }, (_, i) => i.toString().padStart(2, '0')).map((minute) => (
-//             <option key={minute} value={minute}>
-//               {minute}
-//             </option>
-//           ))}
-//         </select>
-//         <select value={startAmPm} onChange={handleStartAmPmChange}>
-//           <option value="AM">AM</option>
-//           <option value="PM">PM</option>
-//         </select>
-//       </div>
-//       <div>
-//         <label>End Time:</label>
-//         <select value={endHour} onChange={handleEndHourChange}>
-//           {Array.from({ length: 12 }, (_, i) => (i + 1).toString().padStart(2, '0')).map((hour) => (
-//             <option key={hour} value={hour}>
-//               {hour}
-//             </option>
-//           ))}
-//         </select>
-//         <select value={endMinute} onChange={handleEndMinuteChange}>
-//           {Array.from({ length: 60 }, (_, i) => i.toString().padStart(2, '0')).map((minute) => (
-//             <option key={minute} value={minute}>
-//               {minute}
-//             </option>
-//           ))}
-//         </select>
-//         <select value={endAmPm} onChange={handleEndAmPmChange}>
-//           <option value="AM">AM</option>
-//           <option value="PM">PM</option>
-//         </select>
-//       </div>
-//       <p>
-//         Selected Time Range: {startHour}:{startMinute} {startAmPm} - {endHour}:{endMinute} {endAmPm}
-//       </p>
-//     </div>
-//   );
-// }
-
-// export default TimeRangeSelector;
-
-
-
-// import React, { useState } from 'react';
-
-// function TimeRangeSelector() {
-//   const [startHour, setStartHour] = useState('00');
-//   const [startMinute, setStartMinute] = useState('00');
-//   const [startAmPm, setStartAmPm] = useState('AM');
-//   const [endHour, setEndHour] = useState('00');
-//   const [endMinute, setEndMinute] = useState('00');
-//   const [endAmPm, setEndAmPm] = useState('AM');
-
-//   const handleStartHourChange = (e) => {
-//     setStartHour(e.target.value);
-//   };
-
-//   const handleStartMinuteChange = (e) => {
-//     setStartMinute(e.target.value);
-//   };
-
-//   const handleStartAmPmChange = (e) => {
-//     setStartAmPm(e.target.value);
-//   };
-
-//   const handleEndHourChange = (e) => {
-//     setEndHour(e.target.value);
-//   };
-
-//   const handleEndMinuteChange = (e) => {
-//     setEndMinute(e.target.value);
-//   };
-
-//   const handleEndAmPmChange = (e) => {
-//     setEndAmPm(e.target.value);
-//   };
-
-//   return (
-//     <div className="container p-6 mx-auto mt-10 border rounded-lg shadow-lg">
-//       <h2 className="mb-4 text-2xl font-semibold">Time Range Selector</h2>
-//       <div className="mb-4">
-//         <label className="block text-sm font-medium text-gray-700">Start Time:</label>
-//         <div className="flex items-center">
-//           <select
-//             className="px-2 py-1 mr-2 border rounded"
-//             value={startHour}
-//             onChange={handleStartHourChange}
-//           >
-//            {Array.from({ length: 12 }, (_, i) => (i + 1).toString().padStart(2, '0')).map((hour) => (
-//             <option key={hour} value={hour}>
-//               {hour}
-//             </option>
-//           ))}
-//           </select>
-//           <span className="mr-2">:</span>
-//           <select
-//             className="px-2 py-1 mr-2 border rounded"
-//             value={startMinute}
-//             onChange={handleStartMinuteChange}
-//           >
-//             {Array.from({ length: 60 }, (_, i) => i.toString().padStart(2, '0')).map((minute) => (
-//             <option key={minute} value={minute}>
-//               {minute}
-//             </option>
-//           ))}
-//           </select>
-//           <select
-//             className="px-4 py-1 border rounded"
-//             value={startAmPm}
-//             onChange={handleStartAmPmChange}
-//           >
-//             <option value="AM">AM</option>
-//             <option value="PM">PM</option>
-//           </select>
-//         </div>
-//       </div>
-//       <div className="mb-4">
-//         <label className="block text-sm font-medium text-gray-700">End Time:</label>
-//         <div className="flex items-center">
-//           <select
-//             className="px-2 py-1 mr-2 border rounded"
-//             value={endHour}
-//             onChange={handleEndHourChange}
-//           >
-//             {Array.from({ length: 12 }, (_, i) => (i + 1).toString().padStart(2, '0')).map((hour) => (
-//             <option key={hour} value={hour}>
-//               {hour}
-//             </option>
-//           ))}
-//           </select>
-//           <span className="mr-2">:</span>
-//           <select
-//             className="px-2 py-1 mr-2 border rounded"
-//             value={endMinute}
-//             onChange={handleEndMinuteChange}
-//           >
-//             {Array.from({ length: 60 }, (_, i) => i.toString().padStart(2, '0')).map((minute) => (
-//             <option key={minute} value={minute}>
-//               {minute}
-//             </option>
-//           ))}
-//           </select>
-//           <select
-//             className="px-4 py-1 border rounded"
-//             value={endAmPm}
-//             onChange={handleEndAmPmChange}
-//           >
-//             <option value="AM">AM</option>
-//             <option value="PM">PM</option>
-//           </select>
-//         </div>
-//       </div>
-//       <p className="text-xl font-semibold">
-//         Selected Time Range: {startHour}:{startMinute} {startAmPm} - {endHour}:{endMinute} {endAmPm}
-//       </p>
-//     </div>
-//   );
-// }
-
-// export default TimeRangeSelector;
-
-
-
-
-// import React, { useState } from 'react';
-// import { format, addDays, isBefore } from 'date-fns';
-
-// const DateRangePicker = () => {
-//   const [startDate, setStartDate] = useState(null);
-//   const [endDate, setEndDate] = useState(null);
-
-//   const handleStartDateChange = (date) => {
-//     if (!endDate || isBefore(date, endDate)) {
-//       setStartDate(date);
-//     }
-//   };
-
-//   const handleEndDateChange = (date) => {
-//     if (!startDate || isBefore(startDate, date)) {
-//       setEndDate(date);
-//     }
-//   };
-
-//   const resetDates = () => {
-//     setStartDate(null);
-//     setEndDate(null);
-//   };
-
-//   return (
-//     <div>
-//       <div>
-//         <label>Start Date:</label>
-//         <input
-//           type="date"
-//           value={startDate ? format(startDate, 'yyyy-MM-dd') : ''}
-//           onChange={(e) => handleStartDateChange(new Date(e.target.value))}
-//         />
-//       </div>
-//       <div>
-//         <label>End Date:</label>
-//         <input
-//           type="date"
-//           value={endDate ? format(endDate, 'yyyy-MM-dd') : ''}
-//           onChange={(e) => handleEndDateChange(new Date(e.target.value))}
-//         />
-//       </div>
-//       <button onClick={resetDates}>Reset Dates</button>
-//       <div>
-//         <p>Selected Date Range:</p>
-//         {startDate && endDate ? (
-//           <p>
-//             {format(startDate, 'MMMM dd, yyyy')} - {format(endDate, 'MMMM dd, yyyy')}
-//           </p>
-//         ) : (
-//           <p>Please select a date range.</p>
-//         )}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default DateRangePicker;
 
