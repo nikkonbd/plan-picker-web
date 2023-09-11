@@ -9,7 +9,7 @@ const ServiceCard5 = () => {
       .then((res) => res.json())
       .then((data) => {
         setCard(data);
-        console.log(data);
+        // console.log(data);
       });
   }, []);
 
@@ -18,9 +18,7 @@ const ServiceCard5 = () => {
       <section className="py-10 dark:text-gray-100">
         <div className="text-[#61677A]">
           <div className="max-w-2xl mx-auto mb-16 text-center">
-            <span
-              color="gray"
-              className="font-bold text-[#61677A] tracki uppercase">
+            <span color="gray" className="font-bold text-[#61677A] uppercase">
               Pricing
             </span>
             <h2 className="text-2xl md:text-4xl font-bold text-[#5EBEC4]">
@@ -29,7 +27,7 @@ const ServiceCard5 = () => {
           </div>
           <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {card.map((pCard) => (
-              <div className="w-full mb-8  lg:mb-0">
+              <div key={pCard._id} className="w-full mb-8  lg:mb-0">
                 <div className="flex flex-col hover:shadow-lg shadow-md p-6 space-y-6 rounded sm:p-8">
                   <div className="space-y-2">
                     <h4 className="text-2xl font-bold"> {pCard.title}</h4>
