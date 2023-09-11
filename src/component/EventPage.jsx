@@ -60,7 +60,6 @@ const EventPage = () => {
   const [endHours, setEndHours] = useState("");
   const [endMinute, setEndMinute] = useState("");
   const [endAmPm, setEndAmPm] = useState("");
-  const [eventData, setEventData] = useState([]) || null;
   const [callEvent, setCallEvnt] = useState(false);
   const [eventData, setEventData] = useState("");
   // console.log(eventData.id);
@@ -162,7 +161,7 @@ const EventPage = () => {
             Cancel
           </button>
           <button className="">
-            <Demo handleSubmit={handleSubmit}  />
+            <Demo handleSubmit={handleSubmit} />
           </button>
         </div>
       </div>

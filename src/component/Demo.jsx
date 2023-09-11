@@ -22,23 +22,6 @@ const Demo = ({ handleSubmit }) => {
     (state) => state.formSubmission
   );
   const [data, setData] = useState([]);
-const Demo = ({ handleSubmit, eventData }) => {
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen((cur) => !cur);
-  console.log(eventData);
-  const {
-    id,
-    eventName,
-    location,
-    description,
-    selectedTimezone,
-    eventDuration,
-    eventLink,
-    formData,
-  } = eventData;
-  console.log(formData?.startDate);
-  // const { startTime, endTime, startDate, endDate } = eventData.formData.formData;
-  // console.log(startDate);
 
   useEffect(() => {
     const fetchData = async (events) => {
@@ -55,19 +38,6 @@ const Demo = ({ handleSubmit, eventData }) => {
 
     fetchData(events);
   }, [insertedId]);
-  // if (isSuccess) {
-  // }
-  // useEffect(() => {
-  //   axios
-  //     .get(`https://plan-picker-server.vercel.app/getEvent/${id}`)
-  //     .then((response) => {
-  //       const data = response.data;
-  //       // setEventData(data);
-  //       console.log(data);
-  //     });
-  // }, []);
-
- 
 
   return (
     <div>
