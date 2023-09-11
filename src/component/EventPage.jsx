@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { addDays } from "date-fns";
-import "react-date-range/dist/styles.css"; // main style file
-import "react-date-range/dist/theme/default.css"; // theme css file
 import "react-date-range/dist/styles.css"; // main style file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import { DateRangePicker } from "react-date-range";
@@ -21,6 +19,7 @@ import WeeklyHoursForm from "./WeeklyHoursForm";
 import EventCalendar from "../eventCalendar/EventCalendar";
 import TimeSelect from "../LandingPage/contact/TimeSelect";
 import { Helmet } from "react-helmet-async";
+import Demo from "./Demo";
 
 function Icon({ id, open }) {
   return (
@@ -43,18 +42,13 @@ function Icon({ id, open }) {
 }
 
 const EventPage = () => {
-  const [open, setOpen] = React.useState(0);
-  const handleOpen = (value) => setOpen(open === value ? 0 : value);
   const navigate = useNavigate();
-
   const [eventDuration, setEventDuration] = useState("");
   const [selectedTimezone, setSelectedTimezone] = useState({});
-
-  const [selectedTime, setSelectedTime] = useState({});
   const [state, setState] = useState([
     {
       startDate: new Date(),
-      endDate: addDays(new Date(), 7),
+      endDate: addDays(new Date(), 0),
       key: "selection",
     },
   ]);
@@ -66,11 +60,24 @@ const EventPage = () => {
   const [endHours, setEndHours] = useState("");
   const [endMinute, setEndMinute] = useState("");
   const [endAmPm, setEndAmPm] = useState("");
-  const [meetLink, setMeetLink] = useState({});
+  const [callEvent, setCallEvnt] = useState(false);
+  const [eventData, setEventData] = useState("");
+  // console.log(eventData.id);
 
   const dispatch = useDispatch();
   const objectData = useSelector((state) => state.objectData);
 
+  const { isLoading, isSuccess, error } = useSelector(
+    (state) => state.formSubmission
+  );
+  const insertedId = useSelector((state) => state.formSubmission.insertedId);
+  const events = useSelector((state) => state.formSubmission.eventData);
+
+  console.log("Inserted ID:", insertedId);
+
+  console.log(isSuccess);
+
+  //extract number from text
   const text = eventDuration;
   const regex = /\d+/;
 
@@ -94,31 +101,16 @@ const EventPage = () => {
     const obj = { ...objectData, formData };
 
     dispatch(submitFormData(obj));
-    console.log(obj.id);
+    // setEventData(obj);
 
-    // Axios POST request for Create Meeting
-    axios.post("http://localhost:5000/createMeeting", obj).then((response) => {
-      if (response.status === 200) {
-        const data = response.data;
-        alert("Meeting created successfully!");
-        console.log(data);
-        setMeetLink(data);
-      } else {
-        alert("Failed to create meeting.");
-      }
-    });
+    // setEventData(events)
 
-    axios.get(`http://localhost:5000/addEvent/${obj.id}`).then((response) => {
-      if (response.status === 200) {
-        const data = response.data;
-        // alert("Meeting created successfully!");
-        setMeetLink(data);
-      } else {
-        alert("Failed to create meeting.");
-      }
-    });
+    // if (insertedId) {
+    //     dispatch(submitFormData(insertedId));
+    //     setEventData(events);
+    //     // Fetch the data associated with the inserted ID
 
-    console.log(obj);
+    //   }
   };
 
   const handleCancel = () => {
@@ -126,7 +118,6 @@ const EventPage = () => {
   };
 
   const handleSelectTime = (selectTime) => {
-    console.log(selectTime);
     const { endAmPm, endHour, endMinute, startAmPm, startHour, startMinute } =
       selectTime;
     setStartHour(startHour);
@@ -136,6 +127,21 @@ const EventPage = () => {
     setEndMinute(endMinute);
     setEndAmPm(endAmPm);
   };
+
+  // useEffect(() => {
+  // if (insertedId) {
+  //     axios
+  //       .get(`https://plan-picker-server.vercel.app/getEvent/${insertedId}`)
+  //       .then((response) => {
+  //         const data = response.data;
+  //         // setEventData(data);
+  //         console.log(data);
+  //       })
+  //       .catch((error) => {
+  //         console.error("Error fetching data:", error);
+  //       });
+  //     }
+  //   }, [insertedId]);
 
   return (
     <div className="px-4 py-6 border md:px-10">
@@ -148,14 +154,14 @@ const EventPage = () => {
             <p className="text-gray-400">30 min, 60 rolling calendar days</p>
           </div>
         </div>
-        <div className="flex justify-center gap-4 md:justify-between">
-          <button onClick={() => handleCancel()} className="p-2 rounded-md btn">
+        <div className="flex items-center justify-center gap-4 md:justify-between">
+          <button
+            onClick={() => handleCancel()}
+            className="px-3 rounded-md btn bg-[#61677A] hover:bg-[#464955] text-white">
             Cancel
           </button>
-          <button
-            onClick={() => handleSubmit()}
-            className="px-2 rounded-md btn btn-primary">
-            Next
+          <button className="">
+            <Demo handleSubmit={handleSubmit} />
           </button>
         </div>
       </div>
@@ -177,9 +183,7 @@ const EventPage = () => {
               className="select select-bordered"
               value={eventDuration}
               onChange={(e) => setEventDuration(e.target.value)}>
-              <option disabled selected>
-                Set Duration
-              </option>
+              <option selected>Set Duration</option>
               <option>15 min</option>
               <option>30 min</option>
               <option>45 min</option>
@@ -204,7 +208,7 @@ const EventPage = () => {
         </div>
       </div>
       {/* Part Calendar */}
-      <div className="gap-6 md:flex border-2 p-6">
+      <div className="gap-6 p-6 border-2 md:flex">
         <div className="w-full p-4 mt-6">
           <div className="flex items-center gap-2 pb-4">
             <BsCalendar4Event fontSize={20}></BsCalendar4Event>
@@ -220,7 +224,7 @@ const EventPage = () => {
             months={1}
             ranges={state}
             direction="horizontal"
-            className="flex flex-col gap-6 md:flex-row w-full"
+            className="flex flex-col w-full gap-6 md:flex-row"
           />
         </div>
         <div className="w-full mt-6">

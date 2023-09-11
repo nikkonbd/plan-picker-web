@@ -26,7 +26,7 @@ const About = () => {
       <div className="max-w-[2520px] mx-auto lg:px-16 xl:px-28 md:px-10 px-4">
         <div className="mt-20">
           <div className="">
-            <div className="relative text-[#61677A]">
+            <div className="relative text-[#61677A] md:max-w-6xl mx-auto">
               <div className="rounded-lg text-[#61677A]">
                 {/* <div className="absolute inset-0 z-10 bg-black rounded-lg opacity-50"></div> */}
 
@@ -63,7 +63,7 @@ const About = () => {
             </div>
 
             {/* Revolutionize of Schedule */}
-            <div className="py-[75px] md:py-[100px] flex flex-col md:flex-row gap-4">
+            <div className="py-[75px] md:py-[100px] md:max-w-6xl mx-auto flex flex-col md:flex-row gap-4">
               <div className="flex flex-col justify-center">
                 <h1 className="text-2xl font-semibold md:text-3xl">
                   Revolutionize Your Schedule
@@ -105,7 +105,7 @@ const About = () => {
             </div>
 
             {/* planning features */}
-            <div className="gap-4 mb-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            <div className="gap-4 mb-24 grid md:max-w-6xl mx-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
               <div className="p-4 rounded-xl bg-slate-300">
                 <div className="p-4 text-center bg-[#f6f9fc] rounded-xl">
                   <div>
@@ -144,7 +144,7 @@ const About = () => {
             </div>
 
             {/*  */}
-            <div className="py-[75px] md:pt-24 bg-[#f6f9fc] text-[#5EBEC4] mb-8 rounded-xl">
+            <div className="py-[75px] md:pt-24 md:max-w-6xl mx-auto bg-[#f6f9fc] text-[#5EBEC4] mb-8 rounded-xl">
               <div className="flex flex-col gap-10 p-4 md:flex-row">
                 <img
                   className="h-auto flex-col md:w-[500px] rounded-xl"

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { FaPlus } from "react-icons/fa";
 
 const CreateEventButton = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,9 +30,10 @@ const CreateEventButton = () => {
         <Link>
           <button
             type="button"
-            className="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm group hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            className="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-[#5EBEC4] border border-transparent rounded-md shadow-sm group hover:bg-[#42a6ad] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             onClick={toggleDropdown}>
-            <span className="mr-2">➕</span> Add Event
+            <FaPlus className="mr-2"></FaPlus>
+            <span>Add Event</span>
           </button>
         </Link>
       </div>
@@ -152,6 +154,3 @@ const CreateEventButton = () => {
 };
 
 export default CreateEventButton;
-
-
-

@@ -1,41 +1,99 @@
-import React from "react";
+import { useState } from "react";
 import { RxCross2 } from "react-icons/rx";
+import Swal from "sweetalert2";
+import { useQuery } from "@tanstack/react-query";
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
+
 const ScheduleCard = ({ scheduleData }) => {
+  const [eventData, setEventData] = useState([]);
   const {
     id,
-    title,
+    eventName,
+    location,
     description,
-    address,
-    date,
-    start_time,
-    end_time,
-    expected_perticipents,
-    total_host,
-  } = scheduleData || {};
+    selectedTimezone,
+    eventDuration,
+    eventLink,
+    formData,
+    link,
+  } = scheduleData;
+
+
+  console.log(eventData);
+
+  const [axiosSecure] = useAxiosSecure();
+
+  const { data: events = [], refetch } = useQuery(["getEvent"], async () => {
+    const res = await axiosSecure.get("/getEvent");
+    setEventData(res.data);
+    return res.data;
+  });
+
+  console.log(events);
+
+  const eventDelete = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`https://plan-picker-server.vercel.app/deleteEventById/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount > 0) {
+              Swal.fire("Deleted!", "Your Toy has been deleted.", "success");
+              const remainingEvent = eventData.filter(
+                (event) => event.id !== id
+              );
+              setEventData(remainingEvent);
+
+              console.log(remainingEvent);
+              refetch();
+            }
+          });
+      }
+    });
+  };
+
   return (
     <div className="relative border-[1px] border-teal-500 bg-gradient-to-tl from-teal-50/30 via-teal-100/30 to-teal-200/30 p-8 rounded-lg shadow hover:shadow-xl cursor-default">
-      <button className="bg-red-500 text-white p-1 rounded-full absolute -right-2 -top-2">
+      <button
+        onClick={() => eventDelete(id)}
+        className="absolute p-1 text-white bg-red-500 rounded-full -right-2 -top-2">
         {" "}
         <RxCross2 size={18}></RxCross2>
       </button>
-      <p className="mb-4">
-        Schedule Date:
-        <span className="ml-1 font-semibold text-lg text-teal-900">{date}</span>
+      <p className="pb-2 font-semibold">
+        Time Zone: {formData?.selectedTimezone?.value}
       </p>
-      <h3 className="text-xl font-bold text-teal-800">{title}</h3>
-      <h4 className="mb-1">{description}</h4>
-      <p className="pb-2 border-b-[1px] border-teal-700">{address}</p>
-
+      <p className="mb-4 font-semibold border-b-[1px] border-teal-700">
+        Schedule Date:
+        <span className="ml-1 text-teal-900">{formData?.startDate}</span>
+      </p>
+      <h3 className="font-semibold text-teal-800">
+        <span className="text-black ">Event Name:</span> {eventName}
+      </h3>
+      <h4 className="py-2">Description: {description}</h4>
+      <p className="pb-4 border-b-[1px] border-teal-700">
+        Location: {location}
+      </p>
       <div className="flex justify-between mt-5">
-        <p>Start Time: {start_time}</p>
-        <p>End Time: {end_time}</p>
+        <p>Start Time: {formData?.startTime}</p>
+        <p>End Time: {formData?.endTime}</p>
       </div>
-      <div className="flex justify-between">
-        <p>Host: {total_host}</p>
+      <p>Duration: {formData?.eventDuration} min</p>
+      <div className="flex justify-between pt-3">
         <p>
-          Perticipents:
-          <span className="text-teal-800 font-bold">
-            {expected_perticipents}
+          <span className="font-semibold ">Meeting Link:</span>
+          <span className="pl-2 font-bold text-teal-800">
+            {eventLink ? eventLink : link?.meetLink}
           </span>
         </p>
       </div>

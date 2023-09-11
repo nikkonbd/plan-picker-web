@@ -10,6 +10,7 @@ import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 
 const MyCalendar = () => {
+  // const [events, setEvents] = useState([]);
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -17,7 +18,7 @@ const MyCalendar = () => {
   useEffect(() => {
     // Axios GET request
     axios
-      .get("http://localhost:5000/getEvent")
+      .get("https://plan-picker-server.vercel.app/getEvent")
       .then((response) => {
         setData(response.data);
         setLoading(false);
@@ -35,8 +36,6 @@ const MyCalendar = () => {
   if (error) {
     return <p>Error: {error.message}</p>;
   }
-
-  console.log(data);
 
   const events = [
     {
@@ -72,9 +71,9 @@ const MyCalendar = () => {
         {/* grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 */}
 
         <div className="">
-          <div className="md:flex justify-between items-center">
+          <div className="items-center justify-between md:flex">
             <div>
-              <h1 className="text-3xl font-semibold pb-3 md:pb-0">
+              <h1 className="pb-3 text-3xl font-semibold md:pb-0">
                 Upcoming Events
               </h1>
             </div>

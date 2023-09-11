@@ -22,7 +22,14 @@ import EventPage from "../component/EventPage";
 import PrivateRoute from "./PrivateRoute";
 import ExploreFeatures from "../LandingPage/aboutus/exploreFeatures/ExploreFeatures";
 import LearnAvailability from "../LandingPage/homepage/LearnAvailability/LearnAvailability";
+import MoreService from "../LandingPage/Services/moreService/MoreService";
+import ScheduleDetails from "../LandingPage/homepage/ScheduleDetails/ScheduleDetails";
+import EngagedDetails from "../LandingPage/homepage/EngagedDetails/EngagedDetails";
+import PaymentStripe from "../LandingPage/Payment/Stripe/PaymentStripe";
 import ErrorPage from "../LandingPage/errorPage/ErrorPage";
+import Partner from "../LandingPage/contact/Partner";
+import JoinTeam from "../LandingPage/contact/JoinTeam";
+import SetMeeting from "../setMeeting/SetMeeting";
 
 const router = createBrowserRouter([
   {
@@ -43,8 +50,20 @@ const router = createBrowserRouter([
         element: <Services></Services>,
       },
       {
+        path: "/services-learn-more",
+        element: <MoreService></MoreService>,
+      },
+      {
         path: "/contact",
         element: <ContactUS></ContactUS>,
+      },
+      {
+        path: "join-team",
+        element: <JoinTeam></JoinTeam>,
+      },
+      {
+        path: "partner",
+        element: <Partner></Partner>,
       },
       {
         path: "/about",
@@ -65,6 +84,14 @@ const router = createBrowserRouter([
       {
         path: "/learn-availability",
         element: <LearnAvailability />,
+      },
+      {
+        path: "/scheduleDetails",
+        element: <ScheduleDetails />,
+      },
+      {
+        path: "/engagedDetails",
+        element: <EngagedDetails />,
       },
     ],
   },
@@ -93,12 +120,12 @@ const router = createBrowserRouter([
         path: "/dashboard/Profile",
         element: <Profile></Profile>,
       },
+      // {
+      //   path: "/dashboard/Schedule/:id",
+      //   element: <ScheduleEventDetails></ScheduleEventDetails>,
+      // },
       {
-        path: "/dashboard/Schedule",
-        element: <ScheduleEventDetails></ScheduleEventDetails>,
-      },
-      {
-        path: "/dashboard/mySchedule",
+        path: "/dashboard/mySchedule/",
         element: <MySchedule></MySchedule>,
       },
       {
@@ -126,6 +153,18 @@ const router = createBrowserRouter([
         element: <EventPageData />,
       },
     ],
+  },
+  {
+    path: "/paymentStripe/:id",
+    element: <PaymentStripe />,
+    loader: ({ params }) =>
+      fetch(`https://plan-picker-server.vercel.app/paymentCard/${params.id}`),
+  },
+  {
+    path: "/event/:eventName/:id",
+    element: <SetMeeting />,
+    loader: ({ params }) =>
+      fetch(`https://plan-picker-server.vercel.app/getEvent/${params.id}`),
   },
 ]);
 

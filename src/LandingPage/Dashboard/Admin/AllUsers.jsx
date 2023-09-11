@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import React, { useState } from "react";
 import { Helmet } from "react-helmet-async";
-import { FaUsers } from "react-icons/fa";
+import { FaTrashAlt, FaUsers } from "react-icons/fa";
 import { FcEmptyTrash } from "react-icons/fc";
 import { PiUserSwitchBold } from "react-icons/pi";
 import Swal from "sweetalert2";
@@ -10,10 +10,10 @@ import { Toaster, toast } from "react-hot-toast";
 
 const AllUsers = () => {
   const [myUsers, setMyusers] = useState([]);
-  console.log(myUsers);
+  // console.log(myUsers);
 
   // const { data: users = [], refetch } = useQuery(['users'], async () => {
-  //     const res = await fetch('http://localhost:5000/users')
+  //     const res = await fetch('https://plan-picker-server.vercel.app/users')
   //     return res.json()
   // })
   // console.log("AllUsers from DB", users);
@@ -28,12 +28,12 @@ const AllUsers = () => {
 
   //handleMake Admin
   const handleMakeAdmin = (user) => {
-    fetch(`http://localhost:5000/users/admin/${user?._id}`, {
+    fetch(`https://plan-picker-server.vercel.app/users/admin/${user?._id}`, {
       method: "PATCH",
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         if (data.modifiedCount) {
           refetch();
           // Swal.fire({
@@ -50,7 +50,7 @@ const AllUsers = () => {
 
   //delete user
   const handleDelete = (_id) => {
-    console.log(_id);
+    // console.log(_id);
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -61,16 +61,17 @@ const AllUsers = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/deleteuser/${_id}`, {
+        fetch(`https://plan-picker-server.vercel.app/deleteuser/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
+            // console.log(data);
             if (data.deletedCount > 0) {
               Swal.fire("Deleted!", "User has been deleted.", "success");
               const remaining = myUsers.filter((item) => item._id !== _id);
               setMyusers(remaining);
+              refetch();
             }
           });
       }
@@ -83,15 +84,15 @@ const AllUsers = () => {
         <title>AllUsers || PlanPicker</title>
       </Helmet>
       <div className="flex justify-between items-center mb-5">
-        <h2 className="text-xl md:text-4xl font-serif font-bold">
+        <h2 className="text-xl md:text-2xl font-bold">
           Total Users : {users.length}
         </h2>
-        <div className="flex text-xl gap-3  md:text-4xl font-serif font-bold md:gap-10">
-          <div className="flex gap-1 md:gap-2 shadow-md md:p-2 items-center">
+        <div className="flex text-xl gap-3  md:text-2xl font-bold md:gap-10">
+          <div className="flex gap-1 md:gap-2 md:p-2 items-center">
             <h2>Admin </h2>
-            <PiUserSwitchBold color="red"></PiUserSwitchBold>
+            <PiUserSwitchBold color="green"></PiUserSwitchBold>
           </div>
-          <div className="flex gap-1 md:gap-2 shadow-md md:p-2 items-center">
+          <div className="flex gap-1 md:gap-2 md:p-2 items-center">
             <h2>Users </h2>
             <FaUsers></FaUsers>
           </div>
@@ -101,7 +102,7 @@ const AllUsers = () => {
         <table className="table">
           {/* head */}
           <thead>
-            <tr className="md:text-2xl">
+            <tr className="md:text-xl">
               <th className="hidden md:table-cell">Info</th>
               <th>Email</th>
               <th>Role</th>
@@ -113,26 +114,26 @@ const AllUsers = () => {
             {users?.map((user) => (
               <tr key={user._id}>
                 <td className="hidden md:table-cell">
-                  <div className="flex items-center space-x-3">
+                  <div className="flex items-center space-x-4">
                     <div className="avatar">
-                      <div className="mask mask-squircle w-12 h-12">
+                      <div className="mask mask-circle w-12 h-12">
                         <img src={user?.imgUrl} />
                       </div>
                     </div>
                     <div>
-                      <div className="font-bold text-2xl">{user?.name}</div>
+                      <div className="font-semibold text-xl">{user?.name}</div>
                     </div>
                   </div>
                 </td>
                 <td>
-                  <p className="md:text-2xl">{user?.email}</p>
+                  <p className="md:text-xl">{user?.email}</p>
                 </td>
                 <td>
                   {user?.role === "admin" ? (
                     <button className="btn  btn-circle">
                       <PiUserSwitchBold
                         fontSize={30}
-                        color="red"></PiUserSwitchBold>
+                        color="green"></PiUserSwitchBold>
                     </button>
                   ) : (
                     <button
@@ -147,9 +148,9 @@ const AllUsers = () => {
                   <button
                     onClick={() => handleDelete(user)}
                     className="btn  btn-circle">
-                    <FcEmptyTrash
-                      fontSize={30}
-                      className="text-red-600"></FcEmptyTrash>
+                    <FaTrashAlt
+                      fontSize={26}
+                      className="text-red-600"></FaTrashAlt>
                   </button>
                 </td>
               </tr>

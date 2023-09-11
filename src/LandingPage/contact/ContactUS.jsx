@@ -34,7 +34,7 @@ const ContactUS = () => {
       <Helmet>
         <title>ContactUs || Plan Picker</title>
       </Helmet>
-      <div className="max-w-[2520px] mx-auto lg:px-48 xl:px-28 md:px-10 px-4">
+      <div className="max-w-[2520px] mx-auto lg:px-20 xl:px-28 md:px-10 px-4">
         <Contact></Contact>
         <div className="text-[#61677A]">
           <div>

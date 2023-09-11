@@ -13,7 +13,7 @@ import useAdmin from "../../../hooks/useAdmin";
 
 const ProfileMenu = () => {
   const { logOut, user } = useContext(AuthContext);
-  console.log(user);
+  // console.log(user);
   // const [isAdmin, setIsAdmin] = useState(false);
   const handleLogOut = () => {
     logOut()
