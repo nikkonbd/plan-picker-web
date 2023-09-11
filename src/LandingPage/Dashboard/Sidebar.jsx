@@ -11,14 +11,14 @@ import { RxCalendar } from "react-icons/rx";
 import { AiOutlineSetting } from "react-icons/ai";
 import { HiOutlineHome } from "react-icons/hi";
 import useAdmin from "../../hooks/useAdmin";
-import { FaRegChartBar } from "react-icons/fa";
+import { FaRegChartBar, FaAmazonPay, FaComments } from "react-icons/fa";
 import { AuthContext } from "../../providers/AuthProvider";
 
 function Sidebar({ sidebarOpen, setSidebarOpen }) {
   const { user } = useContext(AuthContext);
   // const isAdmin = true;
   const [isAdmin] = useAdmin();
-  console.log(isAdmin);
+  // console.log(isAdmin);
 
   const location = useLocation();
   const { pathname } = location;
@@ -104,7 +104,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
             </svg>
           </button>
           {/* Logo */}
-          <NavLink end to="/" className="block">
+          {/* <NavLink end to="/" className="block">
             <svg width="40" height="40" viewBox="0 0 32 32">
               <defs>
                 <linearGradient
@@ -142,14 +142,18 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                 fill="url(#logo-b)"
               />
             </svg>
-          </NavLink>
+          </NavLink> */}
+          <div className="mx-auto">
+            <img className="w-20 rounded-full" src={user.photoURL} alt="" />
+            <h2 className="text-xl">{user.displayName}</h2>
+          </div>
         </div>
 
         {/* Links */}
-        <div className="space-y-8">
+        <div className="space-y-4">
           {/* Pages group */}
           <div>
-            <h3 className="pl-3 text-xs font-semibold uppercase text-slate-500">
+            {/* <h3 className="pl-3 text-xs font-semibold uppercase text-slate-500">
               <span
                 className="hidden w-6 text-center lg:block lg:sidebar-expanded:hidden 2xl:hidden"
                 aria-hidden="true"
@@ -159,7 +163,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
               <span className="lg:hidden lg:sidebar-expanded:block 2xl:block">
                 Main
               </span>
-            </h3>
+            </h3> */}
             {isAdmin ? (
               <>
                 <ul className="mt-3">
@@ -236,7 +240,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
               </>
             ) : (
               <>
-                <ul className="mt-3">
+                <ul className="">
                   {/* Home */}
                   <li
                     className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${
@@ -277,7 +281,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                       <div className="flex items-center">
                         <CgProfile className="w-6 h-6 shrink-0" />
                         <span className="ml-3 text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
-                          Profile
+                          My Profile
                         </span>
                       </div>
                     </NavLink>
@@ -303,7 +307,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                               <div className="flex items-center">
                                 <AiOutlineSchedule className="w-6 h-6 shrink-0" />
                                 <span className="ml-3 text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
-                                  Event Types
+                                  Create Event
                                 </span>
                               </div>
                             </div>
@@ -356,7 +360,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                       <div className="flex items-center">
                         <MdOutlineEventAvailable className="w-6 h-6 shrink-0" />
                         <span className="ml-3 text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
-                          Availablity
+                          Availability
                         </span>
                       </div>
                     </NavLink>
@@ -379,11 +383,16 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                       <div className="flex items-center">
                         <RxCalendar className="w-6 h-6 shrink-0" />
                         <span className="ml-3 text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
-                          Calendar
+                          My Calendar
                         </span>
                       </div>
                     </NavLink>
                   </li>
+                  {/* Billing & Invoices */}
+                  <li
+                    className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${
+                      pathname.includes("calendar") && "bg-slate-900"
+                    }`}>
                   {/* Add Review */}
                   <li
                     className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${
@@ -415,34 +424,17 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                   >
                     <NavLink
                       end
-                      to="/campaigns"
+                      to="/dashboard/calendar"
                       className={`block text-slate-200 truncate transition duration-150 ${
-                        pathname.includes("campaigns")
+                        pathname.includes("calendar")
                           ? "hover:text-slate-200"
                           : "hover:text-white"
                       }`}
                     >
                       <div className="flex items-center">
-                        <svg className="w-6 h-6 shrink-0" viewBox="0 0 24 24">
-                          <path
-                            className={`fill-current ${
-                              pathname.includes("campaigns")
-                                ? "text-indigo-500"
-                                : "text-slate-600"
-                            }`}
-                            d="M20 7a.75.75 0 01-.75-.75 1.5 1.5 0 00-1.5-1.5.75.75 0 110-1.5 1.5 1.5 0 001.5-1.5.75.75 0 111.5 0 1.5 1.5 0 001.5 1.5.75.75 0 110 1.5 1.5 1.5 0 00-1.5 1.5A.75.75 0 0120 7zM4 23a.75.75 0 01-.75-.75 1.5 1.5 0 00-1.5-1.5.75.75 0 110-1.5 1.5 1.5 0 001.5-1.5.75.75 0 111.5 0 1.5 1.5 0 001.5 1.5.75.75 0 110 1.5 1.5 1.5 0 00-1.5 1.5A.75.75 0 014 23z"
-                          />
-                          <path
-                            className={`fill-current ${
-                              pathname.includes("campaigns")
-                                ? "text-indigo-300"
-                                : "text-slate-400"
-                            }`}
-                            d="M17 23a1 1 0 01-1-1 4 4 0 00-4-4 1 1 0 010-2 4 4 0 004-4 1 1 0 012 0 4 4 0 004 4 1 1 0 010 2 4 4 0 00-4 4 1 1 0 01-1 1zM7 13a1 1 0 01-1-1 4 4 0 00-4-4 1 1 0 110-2 4 4 0 004-4 1 1 0 112 0 4 4 0 004 4 1 1 0 010 2 4 4 0 00-4 4 1 1 0 01-1 1z"
-                          />
-                        </svg>
+                        <FaAmazonPay className="w-6 h-6 shrink-0" />
                         <span className="ml-3 text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
-                          Campaigns
+                          Billing & Invoices
                         </span>
                       </div>
                     </NavLink>

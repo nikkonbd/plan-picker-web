@@ -5,6 +5,9 @@ import {
   FaProductHunt,
 } from "react-icons/fa";
 
+import nikkon from "../../assets/nikkon.jpg";
+import akhter from "../../assets/akhter.jpeg";
+
 const AboutCard = () => {
   return (
     <div>
@@ -38,11 +41,7 @@ const AboutCard = () => {
         </div>
         <div className="card w-full hover:bg-[#f6f9fc] md:w-[260px]  shadow-md border">
           <figure className="px-10 pt-10">
-            <img
-              src="https://media.licdn.com/dms/image/D5635AQHlh2oNVPX4Lg/profile-framedphoto-shrink_200_200/0/1689451368786?e=1694185200&v=beta&t=WyPY8T11lpp4EJkhMSWCmNK5pjR5_CFP0TpdriHDSDU"
-              alt="Shoes"
-              className="rounded-full h-40 w-40"
-            />
+            <img src={nikkon} alt="Shoes" className="rounded-full h-40 w-40" />
           </figure>
           <div className="card-body items-center text-center">
             <h2 className="card-title">Nikkon Mondal</h2>
@@ -185,11 +184,7 @@ const AboutCard = () => {
         </div>
         <div className="card hover:bg-[#f6f9fc] w-full md:w-[260px] shadow-md border">
           <figure className="px-10 pt-10">
-            <img
-              src="https://media.licdn.com/dms/image/D5635AQH8_3lyAvYERg/profile-framedphoto-shrink_200_200/0/1688351088448?e=1694181600&v=beta&t=BRnHxEu1e3umPywV62vhgkMvFu6YgZkiAoME--eKPS0"
-              alt="Shoes"
-              className="rounded-full h-40 w-40"
-            />
+            <img src={akhter} alt="Shoes" className="rounded-full h-40 w-40" />
           </figure>
           <div className="card-body items-center text-center">
             <h2 className="card-title">Md Aktheruzzaman</h2>

@@ -14,16 +14,16 @@ const Profile = () => {
   const [axiosSecure] = useAxiosSecure();
 
   const { user } = useContext(AuthContext);
-  console.log(user);
+  // console.log(user);
 
   const { data: users = [], refetch } = useQuery(["users/email"], async () => {
     const res = await axiosSecure.get(`/users/${user?.email}`);
     return res.data;
   });
 
-  console.log(users);
+  // console.log(users);
 
-  console.log(imgUrl);
+  // console.log(imgUrl);
 
   const profileUpdateHandler = async (event) => {
     event.preventDefault();
@@ -63,7 +63,7 @@ const Profile = () => {
           const imgResponse = await response.json();
           const newImgURL = imgResponse.data.display_url;
           setImgUrl(newImgURL); // Update the image URL state
-          console.log(imgUrl);
+          // console.log(imgUrl);
         } else {
           console.error("Image upload failed:", response.status);
         }
