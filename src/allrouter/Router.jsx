@@ -32,6 +32,7 @@ import JoinTeam from "../LandingPage/contact/JoinTeam";
 import SetMeeting from "../setMeeting/SetMeeting";
 import ContactSales from "../LandingPage/contact/contactSupportPages/ContactSales";
 import AddReview from "../LandingPage/Dashboard/AddReview/AddReview";
+import ContactSupport from "../LandingPage/contact/contactSupportPages/ContactSupport";
 
 const router = createBrowserRouter([
   {
@@ -62,6 +63,10 @@ const router = createBrowserRouter([
       {
         path: "/contact-sales",
         element: <ContactSales></ContactSales>
+      },
+      {
+        path: "/contact-support",
+        element: <ContactSupport></ContactSupport>
       },
       {
         path: "join-team",
