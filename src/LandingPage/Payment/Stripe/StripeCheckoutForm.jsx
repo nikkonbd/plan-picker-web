@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useState, useEffect } from "react";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
+import { useNavigate } from "react-router-dom";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import { AuthContext } from "../../../providers/AuthProvider";
 
 
 const CheckOutForm = ({ id, price }) => {
@@ -13,6 +15,8 @@ const CheckOutForm = ({ id, price }) => {
     const [transactionId, setTransactionId] = useState('');
     const [submitting, setSubmitting] = useState(false);
     const [axiosSecure] = useAxiosSecure();
+    const navigate = useNavigate()
+    const { user } = useContext(AuthContext)
 
     useEffect(() => {
         if (price > 0) {
@@ -74,18 +78,25 @@ const CheckOutForm = ({ id, price }) => {
 
             if (paymentIntent.status === 'succeeded') {
                 setTransactionId(paymentIntent.id);
-
                 const payment = {
-                    email: 'mdmasrafi09@gmail.com', // Replace with the correct email
+                    name: user.displayName,
+                    email: user.email,
                     transactionId: paymentIntent.id,
                     date: new Date(),
-                    id: id,
+                    cardId: id,
+                    price,
                     status: 'service approved',
                 };
-                const paymentData = JSON.stringify(payment);
-                axiosSecure.post('/payment', paymentData).then((res) => {
-                    console.log(res.data)
-                });
+                console.log(payment)
+                axiosSecure.post('/payments', payment)
+                    .then((res) => {
+                        console.log(res.data)
+                        if (res.data.insertedId) {
+                            navigate('/')
+                        }
+                    });
+
+
             }
 
             setProcessing(false);
@@ -96,6 +107,7 @@ const CheckOutForm = ({ id, price }) => {
             setProcessing(false);
             setSubmitting(false);
         }
+
     };
 
 
@@ -106,7 +118,7 @@ const CheckOutForm = ({ id, price }) => {
 
     return (
         <>
-            <form className="w-75 mx-auto" onSubmit={handleSubmit}>
+            <form className="w-75 mx-auto py-5" onSubmit={handleSubmit}>
                 <CardElement
                     options={{
                         style: {
@@ -123,12 +135,14 @@ const CheckOutForm = ({ id, price }) => {
                         },
                     }}
                 />
-                <button className="btn btn-primary mt-4 ms-4" type="submit" disabled={!stripe || !clientSecret || processing || submitting}>
-                    Pay ${price}
-                </button>
+                <div className="flex justify-center">
+                    <button className="btn btn-success mt-4" type="submit" disabled={!stripe || !clientSecret || processing || submitting}>
+                        Pay ${price}
+                    </button>
+                </div>
             </form>
             {cardError && <p className="text-red-400 ms-4 mt-3">{cardError}</p>}
-            {transactionId && <p className="text-blue-400 ms-4 mt-3">Transaction complete with transactionId: {transactionId}</p>}
+            {/* {transactionId && <p className="text-blue-400 ms-4 mt-3">Transaction complete with transactionId: {transactionId}</p>} */}
         </>
     );
 };
