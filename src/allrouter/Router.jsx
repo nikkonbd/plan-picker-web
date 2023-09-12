@@ -32,6 +32,8 @@ import JoinTeam from "../LandingPage/contact/JoinTeam";
 import SetMeeting from "../setMeeting/SetMeeting";
 import ContactSales from "../LandingPage/contact/contactSupportPages/ContactSales";
 import AddReview from "../LandingPage/Dashboard/AddReview/AddReview";
+import AllBillings from "../LandingPage/Dashboard/billing/AllBillings";
+import Billing from "../LandingPage/Dashboard/billing/Billing";
 
 const router = createBrowserRouter([
   {
@@ -61,7 +63,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/contact-sales",
-        element: <ContactSales></ContactSales>
+        element: <ContactSales></ContactSales>,
       },
       {
         path: "join-team",
@@ -127,6 +129,10 @@ const router = createBrowserRouter([
         element: <Profile></Profile>,
       },
       {
+        path: "/dashboard/billing",
+        element: <Billing></Billing>,
+      },
+      {
         path: "/dashboard/AddReview",
         element: <AddReview></AddReview>,
       },
@@ -141,6 +147,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/analytics",
         element: <Analytics></Analytics>,
+      },
+      {
+        path: "/dashboard/billings",
+        element: <AllBillings></AllBillings>,
       },
       {
         path: "/dashboard/event_type/one-on-one-form",
