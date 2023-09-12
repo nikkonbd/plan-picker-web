@@ -34,6 +34,9 @@ import ContactSales from "../LandingPage/contact/contactSupportPages/ContactSale
 import AddReview from "../LandingPage/Dashboard/AddReview/AddReview";
 import AllBillings from "../LandingPage/Dashboard/billing/AllBillings";
 import Billing from "../LandingPage/Dashboard/billing/Billing";
+import ContactSupport from "../LandingPage/contact/contactSupportPages/ContactSupport";
+import HelpCenter from "../LandingPage/contact/contactSupportPages/HelpCenter";
+import MediaAndPress from "../LandingPage/contact/contactSupportPages/MediaAndPress";
 
 const router = createBrowserRouter([
   {
@@ -64,6 +67,18 @@ const router = createBrowserRouter([
       {
         path: "/contact-sales",
         element: <ContactSales></ContactSales>,
+      },
+      {
+        path: "/contact-support",
+        element: <ContactSupport></ContactSupport>,
+      },
+      {
+        path: "/help-center",
+        element: <HelpCenter></HelpCenter>,
+      },
+      {
+        path: "/media-press",
+        element: <MediaAndPress></MediaAndPress>,
       },
       {
         path: "join-team",
