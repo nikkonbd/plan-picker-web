@@ -2,10 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import Calendar from "./Calendar";
 
 import EventCalendar from "../eventCalendar/EventCalendar";
-import useAxiosSecure from "../hooks/useAxiosSecure";
 import { data } from "autoprefixer";
-import { useQuery } from "@tanstack/react-query";
-import { AuthContext } from "../providers/AuthProvider";
 
 const EventPageData = () => {
   const currentDate = new Date();
@@ -13,23 +10,6 @@ const EventPageData = () => {
   //   const month = currentDate.getMonth();
   const [year, setYear] = useState(currentDate.getFullYear());
   const [month, setMonth] = useState(currentDate.getMonth());
-
-  const [axiosSecure] = useAxiosSecure();
-  const { user } = useContext(AuthContext)
-  const [paymentUser, setPaymentUser] = useState([])
-
-  const { data: payment = [], refetch } = useQuery(["getPayment"], async () => {
-    const res = await axiosSecure.get("/payments");
-    return res.data;
-  });
-
-  useEffect(() => {
-    const PremiumUser = payment.find(pu => pu.email === user.email)
-    console.log(PremiumUser)
-    if (PremiumUser) {
-      setPaymentUser(PremiumUser);
-    }
-  }, [payment, user]);
 
   //   const [events, setEvents] = useState([
   //     { id: 1, title: "Meeting", date: new Date(year, month, 5) },
@@ -70,4 +50,3 @@ const EventPageData = () => {
 };
 
 export default EventPageData;
-
