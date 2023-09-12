@@ -35,6 +35,8 @@ import AddReview from "../LandingPage/Dashboard/AddReview/AddReview";
 import ContactSupport from "../LandingPage/contact/contactSupportPages/ContactSupport";
 import HelpCenter from "../LandingPage/contact/contactSupportPages/HelpCenter";
 import MediaAndPress from "../LandingPage/contact/contactSupportPages/MediaAndPress";
+import RefundPolicy from "../LandingPage/commonData/refundPolicy/RefundPolicy";
+import ReturnPolicy from "../LandingPage/commonData/returnPolicy/ReturnPolicy";
 
 const router = createBrowserRouter([
   {
@@ -64,19 +66,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/contact-sales",
-        element: <ContactSales></ContactSales>
+        element: <ContactSales></ContactSales>,
       },
       {
         path: "/contact-support",
-        element: <ContactSupport></ContactSupport>
+        element: <ContactSupport></ContactSupport>,
       },
       {
         path: "/help-center",
-        element: <HelpCenter></HelpCenter>
+        element: <HelpCenter></HelpCenter>,
       },
       {
         path: "/media-press",
-        element: <MediaAndPress></MediaAndPress>
+        element: <MediaAndPress></MediaAndPress>,
       },
       {
         path: "join-team",
@@ -97,6 +99,14 @@ const router = createBrowserRouter([
       {
         path: "/blog",
         element: <Blog></Blog>,
+      },
+      {
+        path: "/refundPolicy",
+        element: <RefundPolicy></RefundPolicy>,
+      },
+      {
+        path: "/returnPolicy",
+        element: <ReturnPolicy></ReturnPolicy>,
       },
       {
         path: "/blog-details/:id",
