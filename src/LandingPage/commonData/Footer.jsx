@@ -45,27 +45,27 @@ const Footer = () => {
                 <p className="font-medium">Services</p>
                 <ul className="mt-6 space-y-4 text-sm">
                   <li>
-                    <a href="#" className="transition hover:opacity-75">
+                    <a href="#" className="transition hover:text-teal-800">
                       1on1 Coaching
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="transition hover:opacity-75">
+                    <a href="#" className="transition hover:text-teal-800">
                       Company Review
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="transition hover:opacity-75">
+                    <a href="#" className="transition hover:text-teal-800">
                       Accounts Review
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="transition hover:opacity-75">
+                    <a href="#" className="transition hover:text-teal-800">
                       HR Consulting
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="transition hover:opacity-75">
+                    <a href="#" className="transition hover:text-teal-800">
                       SEO Optimisation
                     </a>
                   </li>
@@ -76,15 +76,8 @@ const Footer = () => {
                 <p className="font-semibold text-[#42a6ad]">Company</p>
                 <ul className="mt-6 space-y-4 text-sm">
                   <li>
-                    <Link to={"/"}>
-                      <a href="" className="transition hover:opacity-75">
-                        Home
-                      </a>
-                    </Link>
-                  </li>
-                  <li>
                     <Link to={"/about"}>
-                      <a href="" className="transition hover:opacity-75">
+                      <a href="" className="transition hover:text-teal-800">
                         About
                       </a>
                     </Link>
@@ -92,8 +85,15 @@ const Footer = () => {
 
                   <li>
                     <Link to={"/about"}>
-                      <a href="" className="transition hover:opacity-75">
+                      <a href="" className="transition hover:text-teal-800">
                         Meet the Team
+                      </a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to={"/"}>
+                      <a href="" className="transition hover:text-teal-800">
+                        Home
                       </a>
                     </Link>
                   </li>
@@ -106,14 +106,17 @@ const Footer = () => {
                 <ul className="mt-6 space-y-4 text-sm">
                   <li>
                     <Link to={"/contact"}>
-                      <a href="#" className="transition hover:opacity-75">
-                        Contact
+                      <a href="#" className="transition hover:text-teal-800">
+                        Contact us
                       </a>
                     </Link>
                   </li>
 
                   <li>
-                    <a href="#faqHome" className="transition hover:opacity-75">
+                    <a
+                      href="#faqHome"
+                      className="transition hover:text-teal-800"
+                    >
                       FAQs
                     </a>
                   </li>
@@ -124,22 +127,26 @@ const Footer = () => {
                 <p className="font-semibold text-[#42a6ad]">Legal</p>
                 <ul className="mt-6 space-y-4 text-sm">
                   <li>
-                    <a href="#" className="transition hover:opacity-75">
+                    <a href="#" className="transition hover:text-teal-800">
                       Accessibility
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="transition hover:opacity-75">
-                      Returns Policy
-                    </a>
+                    <Link to={"/refundPolicy"}>
+                      <a href="" className="transition hover:text-teal-800">
+                        Refund Policy
+                      </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" className="transition hover:opacity-75">
-                      Refund Policy
-                    </a>
+                    <Link to={"/returnPolicy"}>
+                      <a href="" className="transition hover:text-teal-800">
+                        Returns Policy
+                      </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" className="transition hover:opacity-75">
+                    <a href="#" className="transition hover:text-teal-800">
                       Hiring Statistics
                     </a>
                   </li>
@@ -200,7 +207,7 @@ const Footer = () => {
                     href="/"
                     rel="noreferrer"
                     target="_blank"
-                    className="text-2xl transition hover:opacity-75"
+                    className="text-2xl transition hover:text-teal-800"
                   >
                     <span className="sr-only">Facebook</span>
                     <FaFacebook></FaFacebook>
@@ -212,7 +219,7 @@ const Footer = () => {
                     href="/"
                     rel="noreferrer"
                     target="_blank"
-                    className="text-2xl transition hover:opacity-75"
+                    className="text-2xl transition hover:text-teal-800"
                   >
                     <span className="sr-only">Instagram</span>
                     <FaInstagram></FaInstagram>
@@ -224,7 +231,7 @@ const Footer = () => {
                     href="/"
                     rel="noreferrer"
                     target="_blank"
-                    className="text-2xl transition hover:opacity-75"
+                    className="text-2xl transition hover:text-teal-800"
                   >
                     <span className="sr-only">Twitter</span>
                     <FaTwitter></FaTwitter>
@@ -236,7 +243,7 @@ const Footer = () => {
                     href="/"
                     rel="noreferrer"
                     target="_blank"
-                    className="text-2xl transition hover:opacity-75"
+                    className="text-2xl transition hover:text-teal-800"
                   >
                     <span className="sr-only">GitHub</span>
                     <FaGithub></FaGithub>
@@ -248,7 +255,7 @@ const Footer = () => {
                     href="/"
                     rel="noreferrer"
                     target="_blank"
-                    className="text-2xl transition hover:opacity-75"
+                    className="text-2xl transition hover:text-teal-800"
                   >
                     <span className="sr-only">Dribbble</span>
                     <FaDribbble></FaDribbble>
@@ -266,19 +273,19 @@ const Footer = () => {
 
               <ul className="mt-8 flex flex-wrap justify-start gap-4 text-xs sm:mt-0 lg:justify-end">
                 <li>
-                  <a href="#" className="transition hover:opacity-75">
+                  <a href="#" className="transition hover:text-teal-800">
                     Terms & Conditions
                   </a>
                 </li>
 
                 <li>
-                  <a href="#" className="transition hover:opacity-75">
+                  <a href="#" className="transition hover:text-teal-800">
                     Privacy Policy
                   </a>
                 </li>
 
                 <li>
-                  <a href="#" className="transition hover:opacity-75">
+                  <a href="#" className="transition hover:text-teal-800">
                     Cookies
                   </a>
                 </li>
