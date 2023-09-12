@@ -31,10 +31,8 @@ const AddReview = () => {
       .then((data) => {
         console.log(data);
         if (data.insertedId) {
-          // reset();
           form.reset();
           toast.success("user created Succeessfuly");
-          // navigate("/");
         }
       })
       .catch((error) => {
@@ -84,7 +82,7 @@ const AddReview = () => {
               </label>
               <input
                 placeholder="company name"
-                id="name"
+                id="company"
                 name="company"
                 type="text"
                 className="input input-bordered input-accent w-full h-9 ps-3 rounded-md text-gray-900"

@@ -5,6 +5,7 @@ import {
   FaInstagram,
   FaTwitter,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -74,9 +75,11 @@ const Footer = () => {
                 <p className="font-medium ">Company</p>
                 <ul className="mt-6 space-y-4 text-sm">
                   <li>
-                    <a href="#" className="transition hover:opacity-75">
-                      About
-                    </a>
+                    <Link to={"/about"}>
+                      <a href="" className="transition hover:opacity-75">
+                        About
+                      </a>
+                    </Link>
                   </li>
 
                   <li>
