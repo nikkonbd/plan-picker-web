@@ -76,7 +76,7 @@ const Contact = () => {
             Read helpful articles, watch tutorials, and get help with Calendly
             request friendly
           </p>
-          <a href="#" className="inline-block pt-6 pb-10 md:pt-0 md:pb-0 mt-4">
+          <Link to="/help-center" className="inline-block pt-6 pb-10 md:pt-0 md:pb-0 mt-4">
             <Button
               variant="text"
               className="flex text-white items-center gap-2 bg-[#5EBEC4] hover:bg-[#42a6ad]">
@@ -95,7 +95,7 @@ const Contact = () => {
                 />
               </svg>
             </Button>
-          </a>
+          </Link>
         </div>
         <div className="border-2 p-4 text-center shadow hover:shadow-lg">
           <p>
@@ -106,7 +106,7 @@ const Contact = () => {
             Download Calendly’s press kit, read press releases, and request
             interviews
           </p>
-          <a href="#" className="inline-block pt-6 pb-10 md:pt-0 md:pb-0 mt-4">
+          <Link to="/media-press" className="inline-block pt-6 pb-10 md:pt-0 md:pb-0 mt-4">
             <Button
               variant="text"
               className="flex text-white items-center gap-2 bg-[#5EBEC4] hover:bg-[#42a6ad]">
@@ -125,7 +125,7 @@ const Contact = () => {
                 />
               </svg>
             </Button>
-          </a>
+          </Link>
         </div>
       </div>
       <div className="text-[#61677A] text-center py-20 px-4 md:px-0">
