@@ -24,10 +24,10 @@ const ServiceCardAccordion = () => {
           Core Features!
         </AccordionHeader>
         <AccordionBody>
-          We&apos;re not always in the position that we want to be at.
-          We&apos;re constantly growing. We&apos;re constantly making mistakes.
-          We&apos;re constantly trying to express ourselves and actualize our
-          dreams.
+          A product's core feature is its more basic function. If the product is
+          a chair, then its core feature is to give the customer a place to sit.
+          Any additional features, like cushions or a reclining option, are
+          considered augmented features.
         </AccordionBody>
       </Accordion>
       <Accordion open={open === 2} animate={CUSTOM_ANIMATION}>
@@ -37,10 +37,11 @@ const ServiceCardAccordion = () => {
           Teams!
         </AccordionHeader>
         <AccordionBody>
-          We&apos;re not always in the position that we want to be at.
-          We&apos;re constantly growing. We&apos;re constantly making mistakes.
-          We&apos;re constantly trying to express ourselves and actualize our
-          dreams.
+          Plan-Picker Teams is a proprietary business communication platform
+          developed by Microsoft, as part of the Plan-Picker 365 family of
+          products. Teams primarily competes with the similar service Slack,
+          offering workspace chat and videoconferencing, file storage and
+          application integration.
         </AccordionBody>
       </Accordion>
       <Accordion open={open === 3} animate={CUSTOM_ANIMATION}>
@@ -50,10 +51,15 @@ const ServiceCardAccordion = () => {
           Customizations!
         </AccordionHeader>
         <AccordionBody>
-          We&apos;re not always in the position that we want to be at.
-          We&apos;re constantly growing. We&apos;re constantly making mistakes.
-          We&apos;re constantly trying to express ourselves and actualize our
-          dreams.
+          Customization is done by the user. Users are asked to identify their
+          preferences and they are then shown things that they prefer. For
+          example, when customers sign up for Netflix, the service asks users to
+          select a few shows they like and then displays a list of options based
+          on those choices. A custom or customized design is something built to
+          a specific order. A fitting example of custom design is a 'custom-made
+          wedding gown' where the dress is created as directed by the
+          bride-to-be. The client usually gives the directions or asks the
+          designer for their suggestion to create something unique.
         </AccordionBody>
       </Accordion>
       <Accordion open={open === 4} animate={CUSTOM_ANIMATION}>
@@ -63,10 +69,10 @@ const ServiceCardAccordion = () => {
           Integrations!
         </AccordionHeader>
         <AccordionBody>
-          We&apos;re not always in the position that we want to be at.
-          We&apos;re constantly growing. We&apos;re constantly making mistakes.
-          We&apos;re constantly trying to express ourselves and actualize our
-          dreams.
+          At the simplest level, integration is the process of combining two or
+          more things to create a whole. For businesses, the term integration
+          often refers to software or system integration, which means bringing
+          together multiple business systems to operate as a collaborative unit.
         </AccordionBody>
       </Accordion>
       <Accordion open={open === 5} animate={CUSTOM_ANIMATION}>
@@ -76,23 +82,9 @@ const ServiceCardAccordion = () => {
           Business Support!
         </AccordionHeader>
         <AccordionBody>
-          We&apos;re not always in the position that we want to be at.
-          We&apos;re constantly growing. We&apos;re constantly making mistakes.
-          We&apos;re constantly trying to express ourselves and actualize our
-          dreams.
-        </AccordionBody>
-      </Accordion>
-      <Accordion open={open === 6} animate={CUSTOM_ANIMATION}>
-        <AccordionHeader
-          className="text-2xl hover:text-[#5EBEC4]"
-          onClick={() => handleOpen(6)}>
-          What can I do with Material Tailwind?
-        </AccordionHeader>
-        <AccordionBody>
-          We&apos;re not always in the position that we want to be at.
-          We&apos;re constantly growing. We&apos;re constantly making mistakes.
-          We&apos;re constantly trying to express ourselves and actualize our
-          dreams.
+          Join our mailing list for the latest updates on public sector support
+          for businesses in Scotland, including grants, funding, training,
+          innovation, international trade, net zero, events and more.
         </AccordionBody>
       </Accordion>
     </div>

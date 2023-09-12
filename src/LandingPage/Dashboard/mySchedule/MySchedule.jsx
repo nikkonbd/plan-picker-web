@@ -11,6 +11,7 @@ const MySchedule = () => {
   const [schedule, setSchedule] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
   const [eventData, setEventData] = useState([]);
 
   const [axiosSecure] = useAxiosSecure();
@@ -56,6 +57,7 @@ const MySchedule = () => {
     });
   };
 
+
   if (loading) {
     return <p>Loading...</p>;
   }
@@ -63,6 +65,7 @@ const MySchedule = () => {
   if (error) {
     return <p>Error: {error.message}</p>;
   }
+
 
   return (
     <div>

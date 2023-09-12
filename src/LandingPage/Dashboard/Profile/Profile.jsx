@@ -13,34 +13,40 @@ const Profile = () => {
   const [imgUrl, setImgUrl] = useState("");
   const [axiosSecure] = useAxiosSecure();
 
-  const { user } = useContext(AuthContext)
-  console.log(user);
-
-
+  const { user } = useContext(AuthContext);
+  // console.log(user);
 
   const { data: users = [], refetch } = useQuery(["users/email"], async () => {
     const res = await axiosSecure.get(`/users/${user?.email}`);
     return res.data;
   });
 
-  console.log(users);
+  // console.log(users);
 
-  console.log(imgUrl);
+  // console.log(imgUrl);
 
   const profileUpdateHandler = async (event) => {
-
     event.preventDefault();
-    const form = event.target
+    const form = event.target;
     const imageFile = form.image.files[0];
-    const name = form.name.value
-    const email = form.email.value
-    const language = form.language.value
-    const number = form.number.value
-    const country = form.country.value
-    const timezone = form.timezone.value
-    const address = form.address.value
+    const name = form.name.value;
+    const email = form.email.value;
+    const language = form.language.value;
+    const number = form.number.value;
+    const country = form.country.value;
+    const timezone = form.timezone.value;
+    const address = form.address.value;
 
-    const data = { name, email, imgUrl: imgUrl, language, number, country, timezone, address }
+    const data = {
+      name,
+      email,
+      imgUrl: imgUrl,
+      language,
+      number,
+      country,
+      timezone,
+      address,
+    };
     // console.log('25', data);
 
     if (imageFile) {
@@ -57,8 +63,7 @@ const Profile = () => {
           const imgResponse = await response.json();
           const newImgURL = imgResponse.data.display_url;
           setImgUrl(newImgURL); // Update the image URL state
-          console.log(imgUrl);
-
+          // console.log(imgUrl);
         } else {
           console.error("Image upload failed:", response.status);
         }
@@ -69,34 +74,30 @@ const Profile = () => {
       console.error("No image selected");
     }
 
-    fetch(`http://localhost:5000/updateuser/${user?.email}`, {
+    fetch(`https://plan-picker-server.vercel.app/updateuser/${user?.email}`, {
       method: "PUT",
       headers: {
-        'content-type': "application/json"
+        "content-type": "application/json",
       },
-      body: JSON.stringify(data)
+      body: JSON.stringify(data),
     })
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         console.log(71, data);
         if (data.modifiedCount > 0) {
           Swal.fire({
-            title: 'Success!',
-            text: 'Profile Updated Succesfully',
-            icon: 'success',
-            confirmButtonText: 'wow!'
-          })
+            title: "Success!",
+            text: "Profile Updated Succesfully",
+            icon: "success",
+            confirmButtonText: "wow!",
+          });
         }
-      })
-
-
+      });
   };
 
-
   const handleCancel = () => {
-    reset()
-  }
-
+    reset();
+  };
 
   return (
     <>
@@ -105,9 +106,8 @@ const Profile = () => {
       </Helmet>
       <div className="mx-4">
         <form onSubmit={profileUpdateHandler}>
-          <p className="ms-10 mt-4 text-2xl mb-2">Welcome {user?.displayName
-          }
-
+          <p className="ms-10 mt-4 text-2xl mb-2">
+            Welcome {user?.displayName}
           </p>
           <div className="">
             <div className="flex items-center ms-2">
@@ -155,8 +155,7 @@ const Profile = () => {
                 name="name"
                 id=""
                 placeholder="Enter Your Name"
-                defaultValue={user?.displayName
-                }
+                defaultValue={user?.displayName}
               />
             </div>
             <div>

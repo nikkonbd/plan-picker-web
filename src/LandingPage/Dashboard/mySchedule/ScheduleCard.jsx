@@ -1,6 +1,5 @@
 import { RxCross2 } from "react-icons/rx";
 
-
 const ScheduleCard = ({ scheduleData, eventDelete }) => {
   const {
     id,
@@ -13,6 +12,8 @@ const ScheduleCard = ({ scheduleData, eventDelete }) => {
     formData,
     link,
   } = scheduleData;
+
+ 
 
   return (
     <div className="relative border-[1px] border-teal-500 bg-gradient-to-tl from-teal-50/30 via-teal-100/30 to-teal-200/30 p-8 rounded-lg shadow hover:shadow-xl cursor-default">
