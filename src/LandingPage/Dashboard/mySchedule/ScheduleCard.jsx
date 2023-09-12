@@ -4,8 +4,15 @@ import Swal from "sweetalert2";
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 
+
 const ScheduleCard = ({ scheduleData }) => {
+  console.log(scheduleData);
   const [eventData, setEventData] = useState([]);
+
+
+
+
+
   const {
     id,
     eventName,
@@ -29,7 +36,7 @@ const ScheduleCard = ({ scheduleData }) => {
     return res.data;
   });
 
-  console.log(events);
+  // console.log(events);
 
   const eventDelete = (id) => {
     Swal.fire({
@@ -48,7 +55,7 @@ const ScheduleCard = ({ scheduleData }) => {
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {
-              Swal.fire("Deleted!", "Your Toy has been deleted.", "success");
+              Swal.fire("Deleted!", "Your Schedule has been deleted.", "success");
               const remainingEvent = eventData.filter(
                 (event) => event.id !== id
               );
@@ -97,6 +104,7 @@ const ScheduleCard = ({ scheduleData }) => {
           </span>
         </p>
       </div>
+
     </div>
   );
 };
