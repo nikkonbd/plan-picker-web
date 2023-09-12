@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Footer from "./commonData/Footer";
 import Navbar from "./commonData/Navbar";
-
+import { Toaster } from "react-hot-toast";
 
 const LandingPage = () => {
   return (
@@ -11,6 +11,7 @@ const LandingPage = () => {
       </div>
       <Outlet></Outlet>
       <Footer></Footer>
+      <Toaster />
     </div>
   );
 };

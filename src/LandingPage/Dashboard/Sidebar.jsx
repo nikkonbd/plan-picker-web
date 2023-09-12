@@ -139,9 +139,15 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
               />
             </svg>
           </NavLink> */}
-          <div className="mx-auto">
-            <img className="w-20 rounded-full" src={user.photoURL} alt="" />
-            <h2 className="text-xl">{user.displayName}</h2>
+          <div className="relative h-28 flex justify-center w-full bg-[url('https://img.freepik.com/free-vector/geometric-science-education-background-vector-gradient-blue-digital-remix_53876-125993.jpg')] bg-cover mb-12 rounded-t-xl rounded-b-md">
+            <img
+              className="absolute top-8 border-4 border-[#5EBEC4] mt-4 w-26 h-26 mx-2 rounded-full"
+              src={user.photoURL}
+              alt=""
+            />
+            <h2 className="text-xl absolute -bottom-16 text-teal-900">
+              {user.displayName}
+            </h2>
           </div>
         </div>
 
