@@ -4,6 +4,30 @@ const MediaAndPress = () => {
     return (
         <div>
             <div>
+                <div className="bg-gradient-to-r from-[#42a6ad] to- text-white py-12">
+                    <div className="container mx-auto px-4">
+                        <div className="max-w-3xl mx-auto p-8">
+                            <h2 className="text-4xl font-semibold mb-6">
+                                Contact Media Relations
+                            </h2>
+                            <p className="text-lg mb-8">
+                                For media inquiries, interview requests, and additional information, please contact our Media Relations team.
+                            </p>
+                            <div className="border-t border-white pt-4">
+                                <h3 className="text-2xl font-semibold mb-4">Media Relations Contact:</h3>
+                                <p className="text-lg">John Doe</p>
+                                <p className="text-lg">Director of Media Relations</p>
+                                <p className="text-lg">
+                                    Email: <a href="mailto:media@yourwebsite.com" className="underline">media@yourwebsite.com</a>
+                                </p>
+                                <p className="text-lg">
+                                    Phone: <a href="tel:+1234567890" className="underline">+1 (123) 456-7890</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div className="bg-gray-100 py-12">
                     <div className="container mx-auto px-4">
                         <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-md p-8">
@@ -41,32 +65,6 @@ const MediaAndPress = () => {
                                         Request Interviews
                                     </a>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-
-                <div className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white py-12">
-                    <div className="container mx-auto px-4">
-                        <div className="max-w-3xl mx-auto p-8">
-                            <h2 className="text-4xl font-semibold mb-6">
-                                Contact Media Relations
-                            </h2>
-                            <p className="text-lg mb-8">
-                                For media inquiries, interview requests, and additional information, please contact our Media Relations team.
-                            </p>
-                            <div className="border-t border-white pt-4">
-                                <h3 className="text-2xl font-semibold mb-4">Media Relations Contact:</h3>
-                                <p className="text-lg">John Doe</p>
-                                <p className="text-lg">Director of Media Relations</p>
-                                <p className="text-lg">
-                                    Email: <a href="mailto:media@yourwebsite.com" className="underline">media@yourwebsite.com</a>
-                                </p>
-                                <p className="text-lg">
-                                    Phone: <a href="tel:+1234567890" className="underline">+1 (123) 456-7890</a>
-                                </p>
                             </div>
                         </div>
                     </div>
