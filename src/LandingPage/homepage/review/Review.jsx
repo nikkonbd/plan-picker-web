@@ -121,7 +121,7 @@ const Review = () => {
                   <p className="text-teal-700">"{item.review}"</p>
                   <h3 className="mt-5 font-bold text-black">{item.name}</h3>
                   <p className="text-teal-800 font-semibold text-xl">
-                    {item.email}
+                    {item.company}
                   </p>
                 </div>
               </div>
