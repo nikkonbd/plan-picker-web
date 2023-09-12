@@ -101,13 +101,15 @@ const Footer = () => {
 
                 <ul className="mt-6 space-y-4 text-sm">
                   <li>
-                    <a href="#" className="transition hover:opacity-75">
-                      Contact
-                    </a>
+                    <Link to={"/contact"}>
+                      <a href="#" className="transition hover:opacity-75">
+                        Contact
+                      </a>
+                    </Link>
                   </li>
 
                   <li>
-                    <a href="#" className="transition hover:opacity-75">
+                    <a href="#faqHome" className="transition hover:opacity-75">
                       FAQs
                     </a>
                   </li>
@@ -168,7 +170,8 @@ const Footer = () => {
                     href="/"
                     rel="noreferrer"
                     target="_blank"
-                    className="text-2xl transition hover:opacity-75">
+                    className="text-2xl transition hover:opacity-75"
+                  >
                     <span className="sr-only">Facebook</span>
                     <FaFacebook></FaFacebook>
                   </a>
@@ -179,7 +182,8 @@ const Footer = () => {
                     href="/"
                     rel="noreferrer"
                     target="_blank"
-                    className="text-2xl transition hover:opacity-75">
+                    className="text-2xl transition hover:opacity-75"
+                  >
                     <span className="sr-only">Instagram</span>
                     <FaInstagram></FaInstagram>
                   </a>
@@ -190,7 +194,8 @@ const Footer = () => {
                     href="/"
                     rel="noreferrer"
                     target="_blank"
-                    className="text-2xl transition hover:opacity-75">
+                    className="text-2xl transition hover:opacity-75"
+                  >
                     <span className="sr-only">Twitter</span>
                     <FaTwitter></FaTwitter>
                   </a>
@@ -201,7 +206,8 @@ const Footer = () => {
                     href="/"
                     rel="noreferrer"
                     target="_blank"
-                    className="text-2xl transition hover:opacity-75">
+                    className="text-2xl transition hover:opacity-75"
+                  >
                     <span className="sr-only">GitHub</span>
                     <FaGithub></FaGithub>
                   </a>
@@ -212,7 +218,8 @@ const Footer = () => {
                     href="/"
                     rel="noreferrer"
                     target="_blank"
-                    className="text-2xl transition hover:opacity-75">
+                    className="text-2xl transition hover:opacity-75"
+                  >
                     <span className="sr-only">Dribbble</span>
                     <FaDribbble></FaDribbble>
                   </a>
