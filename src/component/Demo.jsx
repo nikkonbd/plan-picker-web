@@ -12,7 +12,7 @@ import { Toaster } from "react-hot-toast";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-const Demo = ({ handleSubmit }) => {
+const Demo = ({ handleSubmit, isDataValid }) => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen((cur) => !cur);
   // const [loading, setLoading] = useState(true);
@@ -39,10 +39,16 @@ const Demo = ({ handleSubmit }) => {
     fetchData(events);
   }, [insertedId]);
 
+  
+
   return (
     <div>
       <button
-        className="bg-[#5EBEC4] hover:bg-[#42a6ad] duration-200 text-white px-3 rounded-md btn"
+        // className="bg-[#5EBEC4] hover:bg-[#42a6ad] duration-200 text-white px-3 rounded-md btn"
+        className={`${
+          isDataValid ? "" : "disabled:opacity-50 cursor-not-allowed"
+        } bg-[#5EBEC4] hover:bg-[#42a6ad] duration-200 text-white px-3 rounded-md btn`}
+        disabled={!isDataValid}
         onClick={handleOpen}>
         <span onClick={() => handleSubmit()}>Preview</span>
       </button>
@@ -63,7 +69,7 @@ const Demo = ({ handleSubmit }) => {
           ) : (
             <div>
               {data.map((event) => (
-                <CardBody>
+                <CardBody key={event?._id}>
                   <div className="">
                     <h1 className="font-semibold">
                       Event Name:
@@ -113,7 +119,7 @@ const Demo = ({ handleSubmit }) => {
                     </div>
                     <p className="mt-5">
                       <span className="font-semibold me-1">Meet Link:</span>
-                      {event?.link?.meetLink}
+                      {event?.eventLink ? event?.eventLink : event?.link?.meetLink}
                     </p>
                     <div className="flex justify-end gap-3 mt-4">
                       <button className="px-4 text-xl font-semibold py-2 bg-[#5EBEC4] hover:bg-[#42a6ad] duration-200 text-white rounded-md">
