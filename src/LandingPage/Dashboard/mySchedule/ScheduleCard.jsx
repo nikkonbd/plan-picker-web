@@ -159,6 +159,12 @@ const ScheduleCard = ({ scheduleData, eventDelete }) => {
         <p>End Time: {formData?.endTime}</p>
       </div>
       <p>Duration: {formattedDuration}</p>
+      <p className="flex flex-wrap">
+        <span className="font-semibold ">Meeting Link:</span>
+        <span className="pl-2 font-medium text-teal-800 ">
+          {eventLink ? eventLink : link?.meetLink}
+        </span>
+      </p>
 
       <div className="flex justify-end pt-3">
         {isCopied ? <span className="text-green-500 pr-2">Copied!</span> : null}
@@ -173,12 +179,3 @@ const ScheduleCard = ({ scheduleData, eventDelete }) => {
 };
 
 export default ScheduleCard;
-
-{
-  /* <p className="flex flex-wrap">
-          <span className="font-semibold ">Meeting Link:</span>
-          <span className="pl-2 font-bold text-teal-800 ">
-            {eventLink ? eventLink : link?.meetLink}
-          </span>
-        </p> */
-}

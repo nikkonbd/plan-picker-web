@@ -37,7 +37,7 @@ const Review = () => {
   // ];
 
   useEffect(() => {
-    fetch("http://localhost:5000/reviews")
+    fetch("https://plan-picker-server.vercel.app/reviews")
       .then((res) => res.json())
       .then((reviewsData) => {
         // console.log(data);

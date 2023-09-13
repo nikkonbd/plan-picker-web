@@ -24,7 +24,9 @@ const MySchedule = () => {
   useEffect(() => {
     // Axios GET request
     axios
-      .get(`http://localhost:5000/getEventByEmail/${user?.email}`)
+      .get(
+        `https://plan-picker-server.vercel.app/getEventByEmail/${user?.email}`
+      )
       .then((response) => {
         setSchedule(response.data);
         setLoading(false);
@@ -68,7 +70,7 @@ const MySchedule = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/deleteEventById/${id}`, {
+        fetch(`https://plan-picker-server.vercel.app/deleteEventById/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
