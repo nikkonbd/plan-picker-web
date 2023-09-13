@@ -108,7 +108,7 @@ const ServiceCard5 = () => {
                   <Link to={`/paymentStripe/${pCard._id}`}>
                     <button
                       type="button"
-                      className="btn inline-block px-5 py-3 font-semibold bg-[#5EBEC4] hover:text-[#5EBEC4] text-white tracki text-center rounded bg-violet-400">
+                      className="btn inline-block px-5 py-3 w-full font-semibold bg-[#5EBEC4] hover:text-[#5EBEC4] text-white text-center rounded bg-violet-400">
                       Get Started
                     </button>
                   </Link>
