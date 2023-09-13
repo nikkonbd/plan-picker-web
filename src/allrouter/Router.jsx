@@ -39,6 +39,7 @@ import HelpCenter from "../LandingPage/contact/contactSupportPages/HelpCenter";
 import MediaAndPress from "../LandingPage/contact/contactSupportPages/MediaAndPress";
 import RefundPolicy from "../LandingPage/commonData/refundPolicy/RefundPolicy";
 import ReturnPolicy from "../LandingPage/commonData/returnPolicy/ReturnPolicy";
+import GettingStarted from "../LandingPage/aboutus/exploreFeatures/GettingStarted";
 
 const router = createBrowserRouter([
   {
@@ -93,6 +94,10 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <About></About>,
+      },
+      {
+        path: "/getting-Started",
+        element: <GettingStarted></GettingStarted>
       },
       {
         path: "/about-explore",
