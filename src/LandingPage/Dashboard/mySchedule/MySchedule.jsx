@@ -37,20 +37,26 @@ const MySchedule = () => {
 
   const [eventData, setEventData] = useState([]);
 
+  // call axios hook
   const [axiosSecure] = useAxiosSecure();
 
-  const { data: events = [], refetch } = useQuery(["getEvent"], async () => {
-    try {
-      const res = await axiosSecure.get("/getEvent");
-      setEventData(res.data);
-      setLoading(false);
-      return res.data;
-    } catch (error) {
-      setError(error);
-      setLoading(false);
+  // fetch event data by email
+  const { data: events = [], refetch } = useQuery(
+    ["getEventByEmail"],
+    async () => {
+      try {
+        const res = await axiosSecure.get(`/getEventByEmail/${user?.email}`);
+        setEventData(res.data);
+        setLoading(false);
+        return res.data;
+      } catch (error) {
+        setError(error);
+        setLoading(false);
+      }
     }
-  });
+  );
 
+  // Delete MySchedule events from database and ui
   const eventDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -80,6 +86,7 @@ const MySchedule = () => {
     });
   };
 
+  //Show Loading in ui until the data load
   if (loading) {
     return <p>Loading...</p>;
   }
@@ -96,7 +103,7 @@ const MySchedule = () => {
       <h2 className="relative text-2xl">
         My Schedule
         <span className="absolute px-2 py-1 text-xs text-white bg-orange-600 rounded-full animate-pulse">
-          {schedule.length}
+          {events.length}
         </span>
       </h2>
       <div className="grid grid-cols-1 gap-5 my-5 md:grid-cols-2 lg:grid-cols-2">
