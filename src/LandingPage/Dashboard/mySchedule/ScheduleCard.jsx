@@ -125,10 +125,11 @@ const ScheduleCard = ({ scheduleData, eventDelete }) => {
   // };
 
   return (
-    <div className="relative border-[1px] border-teal-500 bg-gradient-to-tl from-teal-50/30 via-teal-100/30 to-teal-200/30 p-8 rounded-lg shadow hover:shadow-xl cursor-default">
+    <div className="relative border-[1px] border-teal-500 bg-[#5ebdc4cd] p-8 rounded-lg shadow hover:shadow-xl cursor-default">
       <button
         onClick={() => eventDelete(id)}
-        className="absolute p-1 text-white bg-red-500 rounded-full -right-2 -top-2">
+        className="absolute p-1 text-white bg-red-500 rounded-full -right-2 -top-2"
+      >
         {" "}
         <RxCross2 size={18}></RxCross2>
       </button>

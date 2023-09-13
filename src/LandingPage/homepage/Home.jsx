@@ -5,8 +5,12 @@ import Hero from "./Hero";
 import SecondHero from "./SecondHero";
 import Special from "./Special";
 import Review from "./review/Review";
+import { useEffect } from "react";
 
 const Home = () => {
+  useEffect(() => {
+    scrollTo(0, 0);
+  }, []);
   return (
     <>
       <Helmet>
