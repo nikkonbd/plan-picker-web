@@ -1,8 +1,4 @@
-import { useState } from "react";
 import { RxCross2 } from "react-icons/rx";
-import Swal from "sweetalert2";
-import { useQuery } from "@tanstack/react-query";
-import useAxiosSecure from "../../../hooks/useAxiosSecure";
 
 
 const ScheduleCard = ({ scheduleData }) => {
@@ -10,8 +6,7 @@ const ScheduleCard = ({ scheduleData }) => {
   const [eventData, setEventData] = useState([]);
 
 
-
-
+const ScheduleCard = ({ scheduleData, eventDelete }) => {
 
   const {
     id,
@@ -24,7 +19,6 @@ const ScheduleCard = ({ scheduleData }) => {
     formData,
     link,
   } = scheduleData;
-
 
   console.log(eventData);
 
@@ -97,9 +91,9 @@ const ScheduleCard = ({ scheduleData }) => {
       </div>
       <p>Duration: {formData?.eventDuration} min</p>
       <div className="flex justify-between pt-3">
-        <p>
+        <p className="flex flex-wrap">
           <span className="font-semibold ">Meeting Link:</span>
-          <span className="pl-2 font-bold text-teal-800">
+          <span className="pl-2 font-bold text-teal-800 ">
             {eventLink ? eventLink : link?.meetLink}
           </span>
         </p>

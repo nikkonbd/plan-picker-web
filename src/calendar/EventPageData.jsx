@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Calendar from "./Calendar";
 
 import EventCalendar from "../eventCalendar/EventCalendar";
+import { data } from "autoprefixer";
 
 const EventPageData = () => {
   const currentDate = new Date();
@@ -49,4 +50,3 @@ const EventPageData = () => {
 };
 
 export default EventPageData;
-

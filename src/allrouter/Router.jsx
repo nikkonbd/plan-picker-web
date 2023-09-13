@@ -32,6 +32,13 @@ import JoinTeam from "../LandingPage/contact/JoinTeam";
 import SetMeeting from "../setMeeting/SetMeeting";
 import ContactSales from "../LandingPage/contact/contactSupportPages/ContactSales";
 import AddReview from "../LandingPage/Dashboard/AddReview/AddReview";
+import AllBillings from "../LandingPage/Dashboard/billing/AllBillings";
+import Billing from "../LandingPage/Dashboard/billing/Billing";
+import ContactSupport from "../LandingPage/contact/contactSupportPages/ContactSupport";
+import HelpCenter from "../LandingPage/contact/contactSupportPages/HelpCenter";
+import MediaAndPress from "../LandingPage/contact/contactSupportPages/MediaAndPress";
+import RefundPolicy from "../LandingPage/commonData/refundPolicy/RefundPolicy";
+import ReturnPolicy from "../LandingPage/commonData/returnPolicy/ReturnPolicy";
 
 const router = createBrowserRouter([
   {
@@ -61,7 +68,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/contact-sales",
-        element: <ContactSales></ContactSales>
+        element: <ContactSales></ContactSales>,
+      },
+      {
+        path: "/contact-support",
+        element: <ContactSupport></ContactSupport>,
+      },
+      {
+        path: "/help-center",
+        element: <HelpCenter></HelpCenter>,
+      },
+      {
+        path: "/media-press",
+        element: <MediaAndPress></MediaAndPress>,
       },
       {
         path: "join-team",
@@ -82,6 +101,14 @@ const router = createBrowserRouter([
       {
         path: "/blog",
         element: <Blog></Blog>,
+      },
+      {
+        path: "/refundPolicy",
+        element: <RefundPolicy></RefundPolicy>,
+      },
+      {
+        path: "/returnPolicy",
+        element: <ReturnPolicy></ReturnPolicy>,
       },
       {
         path: "/blog-details/:id",
@@ -127,6 +154,10 @@ const router = createBrowserRouter([
         element: <Profile></Profile>,
       },
       {
+        path: "/dashboard/billing",
+        element: <Billing></Billing>,
+      },
+      {
         path: "/dashboard/AddReview",
         element: <AddReview></AddReview>,
       },
@@ -141,6 +172,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/analytics",
         element: <Analytics></Analytics>,
+      },
+      {
+        path: "/dashboard/billings",
+        element: <AllBillings></AllBillings>,
       },
       {
         path: "/dashboard/event_type/one-on-one-form",
