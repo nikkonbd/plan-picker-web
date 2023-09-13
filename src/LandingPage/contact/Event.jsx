@@ -386,6 +386,7 @@ const Event = () => {
         eventLink,
         id: uniqueId,
         email: user?.email,
+        
       };
 
       dispatch(setObjectData(formData));

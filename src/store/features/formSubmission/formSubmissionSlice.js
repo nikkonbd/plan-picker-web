@@ -64,10 +64,10 @@ export const submitFormData = (formData) => async (dispatch) => {
       `http://localhost:5000/getEventData/${insertedId}`
     ); // Adjust the API endpoint
 
-    const eventData = dataResponse.data; // Assuming the response contains the data you need
+    const eventData = dataResponse.data;
 
     // Dispatch the inserted ID and eventData to your component
-    dispatch(setEventData(eventData)); // Replace with an appropriate action
+    dispatch(setEventData(eventData));
     dispatch(formSubmissionInsertId(insertedId));
     dispatch(formSubmissionSuccess());
   } catch (error) {
