@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const RefundPolicy = () => {
+  useEffect(() => {
+    scrollTo(0, 0);
+  }, []);
   return (
     <div className="max-w-[2520px] md:text-lg mx-auto lg:px-16 xl:px-28 md:px-10 px-4">
       <h2 className="mt-8 text-2xl md:text-3xl font-semibold text-[#42a6ad]">
