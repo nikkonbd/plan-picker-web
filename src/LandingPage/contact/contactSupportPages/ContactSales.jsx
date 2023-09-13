@@ -37,7 +37,7 @@ const ContactSales = () => {
                         </p>
                         <div className="border-t border-gray-300 pt-4">
                             <h3 className="text-xl font-semibold text-gray-800">Contact Information:</h3>
-                            <p className="text-gray-600">Email: sales@planpicker.com</p>
+                            <a href='mailto:sales@planpicker.com' className="text-gray-600">Email: sales@planpicker.com</a>
                             <p className="text-gray-600">Phone: +1 (123) 456-7890</p>
                         </div>
                     </div>

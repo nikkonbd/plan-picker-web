@@ -5,6 +5,8 @@ import {
   FaInstagram,
   FaTwitter,
 } from "react-icons/fa";
+import { GiClockwork } from "react-icons/gi";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -12,13 +14,13 @@ const Footer = () => {
       <footer className="shadow-md text-[#61677A]">
         <div className="px-6 py-16 sm:px-10 md:px-24">
           <div className="lg:flex lg:items-start lg:gap-8">
-            <div className="mt-8 grid grid-cols-2 gap-8 lg:mt-0 lg:grid-cols-5 lg:gap-y-16">
+            <div className="mt-8 grid grid-cols-2 gap-5 lg:mt-0 lg:grid-cols-5 lg:gap-y-16">
               <div className="col-span-2">
                 <div>
                   <h2 className="text-2xl text-[#42a6ad] font-bold">
                     Easy Schedule
                   </h2>
-                  <p className="mt-4 text-[#61677A]">
+                  <p className="mt-1 text-[#61677A]">
                     We take the work out of connecting with others so you can
                     accomplish more.
                   </p>
@@ -39,133 +41,174 @@ const Footer = () => {
                 </form>
               </div>
 
-              <div className="col-span-2 sm:col-span-1">
+              {/* <div className="col-span-2 sm:col-span-1">
                 <p className="font-medium">Services</p>
                 <ul className="mt-6 space-y-4 text-sm">
                   <li>
-                    <a href="#" className="transition hover:opacity-75">
+                    <a href="#" className="transition hover:text-teal-800">
                       1on1 Coaching
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="transition hover:opacity-75">
+                    <a href="#" className="transition hover:text-teal-800">
                       Company Review
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="transition hover:opacity-75">
+                    <a href="#" className="transition hover:text-teal-800">
                       Accounts Review
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="transition hover:opacity-75">
+                    <a href="#" className="transition hover:text-teal-800">
                       HR Consulting
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="transition hover:opacity-75">
+                    <a href="#" className="transition hover:text-teal-800">
                       SEO Optimisation
                     </a>
                   </li>
                 </ul>
-              </div>
+              </div> */}
 
               <div className="col-span-2 sm:col-span-1">
-                <p className="font-medium ">Company</p>
+                <p className="font-semibold text-[#42a6ad]">Company</p>
                 <ul className="mt-6 space-y-4 text-sm">
                   <li>
-                    <a href="#" className="transition hover:opacity-75">
-                      About
-                    </a>
+                    <Link to={"/about"}>
+                      <a href="" className="transition hover:text-teal-800">
+                        About
+                      </a>
+                    </Link>
                   </li>
 
                   <li>
-                    <a href="#" className="transition hover:opacity-75">
-                      Meet the Team
-                    </a>
+                    <Link to={"/about"}>
+                      <a href="" className="transition hover:text-teal-800">
+                        Meet the Team
+                      </a>
+                    </Link>
                   </li>
-
                   <li>
-                    <a href="#" className="transition hover:opacity-75">
-                      Accounts Review
-                    </a>
+                    <Link to={"/"}>
+                      <a href="" className="transition hover:text-teal-800">
+                        Home
+                      </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
 
               <div className="col-span-2 sm:col-span-1">
-                <p className="font-medium">Helpful Links</p>
+                <p className="font-semibold text-[#42a6ad]">Helpful Links</p>
 
                 <ul className="mt-6 space-y-4 text-sm">
                   <li>
-                    <a href="#" className="transition hover:opacity-75">
-                      Contact
-                    </a>
+                    <Link to={"/contact"}>
+                      <a href="#" className="transition hover:text-teal-800">
+                        Contact us
+                      </a>
+                    </Link>
                   </li>
 
                   <li>
-                    <a href="#" className="transition hover:opacity-75">
+                    <a
+                      href="#faqHome"
+                      className="transition hover:text-teal-800"
+                    >
                       FAQs
                     </a>
                   </li>
-
-                  <li>
-                    <a href="#" className="transition hover:opacity-75">
-                      Live Chat
-                    </a>
-                  </li>
                 </ul>
               </div>
 
               <div className="col-span-2 sm:col-span-1">
-                <p className="font-medium">Legal</p>
+                <p className="font-semibold text-[#42a6ad]">Legal</p>
                 <ul className="mt-6 space-y-4 text-sm">
                   <li>
-                    <a href="#" className="transition hover:opacity-75">
+                    <a href="#" className="transition hover:text-teal-800">
                       Accessibility
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="transition hover:opacity-75">
-                      Returns Policy
-                    </a>
+                    <Link to={"/refundPolicy"}>
+                      <a href="" className="transition hover:text-teal-800">
+                        Refund Policy
+                      </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" className="transition hover:opacity-75">
-                      Refund Policy
-                    </a>
+                    <Link to={"/returnPolicy"}>
+                      <a href="" className="transition hover:text-teal-800">
+                        Returns Policy
+                      </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" className="transition hover:opacity-75">
+                    <a href="#" className="transition hover:text-teal-800">
                       Hiring Statistics
                     </a>
                   </li>
                 </ul>
               </div>
 
-              <div className="col-span-2 sm:col-span-1">
-                <p className="font-medium">Downloads</p>
-                <ul className="mt-6 space-y-4 text-sm">
-                  <li>
-                    <a href="#" className="transition hover:opacity-75">
-                      Marketing Calendar
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="transition hover:opacity-75">
-                      SEO Infographics
-                    </a>
-                  </li>
-                </ul>
+              <div className="col-span-2 md:text-right">
+                <div className="flex items-center md:justify-end gap-1">
+                  <GiClockwork className="pr-2 text-5xl text-[#5EBEC4]"></GiClockwork>
+                  <a className="text-base font-bold normal-case text-[#42a6ad] md:text-xl">
+                    <Link to={"/"}>Plan Picker</Link>
+                  </a>
+                </div>
+                <p>
+                  Stay organized and manage your schedule effortlessly with Plan
+                  Picker. Your time is precious, and we're here to make it
+                  count. Explore powerful features, sync with ease, and stay on
+                  top of your appointments.
+                </p>
+                <div className="flex items-center md:justify-end gap-4 mt-3">
+                  <h3>Follow us on:</h3>
+                  <a href="#">
+                    <FaFacebook
+                      size={25}
+                      className="hover:text-light-blue-600"
+                    ></FaFacebook>
+                  </a>
+                  <a href="#">
+                    <FaInstagram
+                      size={25}
+                      className="hover:text-orange-900"
+                    ></FaInstagram>
+                  </a>
+                  <a href="#">
+                    <FaTwitter
+                      size={25}
+                      className="hover:text-light-blue-500"
+                    ></FaTwitter>
+                  </a>
+                  <a href="#">
+                    <FaGithub
+                      size={25}
+                      className="hover:text-gray-900"
+                    ></FaGithub>
+                  </a>
+                  <a href="#">
+                    <FaDribbble
+                      size={25}
+                      className="hover:text-pink-500"
+                    ></FaDribbble>
+                  </a>
+                </div>
               </div>
 
-              <ul className="col-span-2 flex justify-start gap-6 lg:col-span-5 lg:justify-end">
+              {/* <ul className="col-span-2 flex justify-start gap-6 lg:col-span-5 lg:justify-end">
                 <li>
                   <a
                     href="/"
                     rel="noreferrer"
                     target="_blank"
-                    className="text-2xl transition hover:opacity-75">
+                    className="text-2xl transition hover:text-teal-800"
+                  >
                     <span className="sr-only">Facebook</span>
                     <FaFacebook></FaFacebook>
                   </a>
@@ -176,7 +219,8 @@ const Footer = () => {
                     href="/"
                     rel="noreferrer"
                     target="_blank"
-                    className="text-2xl transition hover:opacity-75">
+                    className="text-2xl transition hover:text-teal-800"
+                  >
                     <span className="sr-only">Instagram</span>
                     <FaInstagram></FaInstagram>
                   </a>
@@ -187,7 +231,8 @@ const Footer = () => {
                     href="/"
                     rel="noreferrer"
                     target="_blank"
-                    className="text-2xl transition hover:opacity-75">
+                    className="text-2xl transition hover:text-teal-800"
+                  >
                     <span className="sr-only">Twitter</span>
                     <FaTwitter></FaTwitter>
                   </a>
@@ -198,7 +243,8 @@ const Footer = () => {
                     href="/"
                     rel="noreferrer"
                     target="_blank"
-                    className="text-2xl transition hover:opacity-75">
+                    className="text-2xl transition hover:text-teal-800"
+                  >
                     <span className="sr-only">GitHub</span>
                     <FaGithub></FaGithub>
                   </a>
@@ -209,12 +255,13 @@ const Footer = () => {
                     href="/"
                     rel="noreferrer"
                     target="_blank"
-                    className="text-2xl transition hover:opacity-75">
+                    className="text-2xl transition hover:text-teal-800"
+                  >
                     <span className="sr-only">Dribbble</span>
                     <FaDribbble></FaDribbble>
                   </a>
                 </li>
-              </ul>
+              </ul> */}
             </div>
           </div>
 
@@ -226,19 +273,19 @@ const Footer = () => {
 
               <ul className="mt-8 flex flex-wrap justify-start gap-4 text-xs sm:mt-0 lg:justify-end">
                 <li>
-                  <a href="#" className="transition hover:opacity-75">
+                  <a href="#" className="transition hover:text-teal-800">
                     Terms & Conditions
                   </a>
                 </li>
 
                 <li>
-                  <a href="#" className="transition hover:opacity-75">
+                  <a href="#" className="transition hover:text-teal-800">
                     Privacy Policy
                   </a>
                 </li>
 
                 <li>
-                  <a href="#" className="transition hover:opacity-75">
+                  <a href="#" className="transition hover:text-teal-800">
                     Cookies
                   </a>
                 </li>

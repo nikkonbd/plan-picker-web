@@ -39,8 +39,6 @@ const Demo = ({ handleSubmit, isDataValid }) => {
     fetchData(events);
   }, [insertedId]);
 
-  
-
   return (
     <div>
       <button
