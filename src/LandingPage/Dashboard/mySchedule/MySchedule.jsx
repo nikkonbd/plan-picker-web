@@ -1,6 +1,6 @@
 import React from "react";
 import ScheduleCard from "./ScheduleCard";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
 import axios from "axios";
 import Pagination from "./Pagination";
@@ -15,11 +15,11 @@ const MySchedule = () => {
   const [error, setError] = useState(null);
 
   //pagination
-  const [currentPage, setCurrentPage] = useState(1)
-  const [postPerPage, setPostPerPage] = useState(2)
-  const lastPostIndex = currentPage * postPerPage
-  const firstPostIndex = lastPostIndex - postPerPage
-  const currentPost = schedule.slice(firstPostIndex, lastPostIndex)
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postPerPage, setPostPerPage] = useState(2);
+  const lastPostIndex = currentPage * postPerPage;
+  const firstPostIndex = lastPostIndex - postPerPage;
+  const currentPost = schedule.slice(firstPostIndex, lastPostIndex);
 
   useEffect(() => {
     // Axios GET request
@@ -95,7 +95,6 @@ const MySchedule = () => {
     return <p>Error: {error.message}</p>;
   }
 
-
   console.log(schedule);
 
   return (
@@ -113,7 +112,7 @@ const MySchedule = () => {
             scheduleData={scheduleData}></ScheduleCard>
         ))} */}
         {currentPost.map((scheduleData) => (
-        {events.map((scheduleData) => (
+          // {events.map((scheduleData) => (
           <ScheduleCard
             key={scheduleData._id}
             scheduleData={scheduleData}
@@ -124,8 +123,7 @@ const MySchedule = () => {
         totalPosts={schedule.length}
         postPerPage={postPerPage}
         setCurrentPage={setCurrentPage}
-        currentPage={currentPage}
-      ></Pagination>
+        currentPage={currentPage}></Pagination>
     </div>
   );
 };
