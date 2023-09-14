@@ -25,7 +25,7 @@ const image_hosting_token = import.meta.env.VITE_Image_Upload_Token;
 const SignUp = () => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen((cur) => !cur);
-  const { createUser, updateUserProfile, googleLogin } =
+  const { createUser, updateUserProfile, googleLogin, monthName } =
     useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -58,9 +58,9 @@ const SignUp = () => {
           const imgUrl = imageResponse.data.display_url;
           // console.log(imgUrl);
           const { name, email, password } = data;
-          const newData = { name, email, imgUrl };
+          const newData = { name, email, imgUrl, monthName };
 
-          console.log(email, password);
+          // console.log(email, password);
           //firebase
           createUser(data.email, data.password)
             .then((result) => {
@@ -119,6 +119,7 @@ const SignUp = () => {
           name: loggedUser.displayName,
           email: loggedUser.email,
           imgUrl: loggedUser.photoURL,
+          monthName,
         };
         fetch(`${import.meta.env.VITE_API_URL}/users`, {
           method: "POST",
@@ -157,7 +158,8 @@ const SignUp = () => {
         size="md"
         open={open}
         handler={handleOpen}
-        className="bg-transparent shadow-none">
+        className="bg-transparent shadow-none"
+      >
         <Card className="mx-auto w-full max-w-[42rem]">
           <CardHeader className="text-center py-3 bg-[#5EBEC4]">
             <Typography variant="h3" color="white">
@@ -215,7 +217,8 @@ const SignUp = () => {
               <Button
                 onClick={handleGoogleSignIN}
                 className="w-full flex items-center justify-center gap-4"
-                variant="outlined">
+                variant="outlined"
+              >
                 <FcGoogle className="text-xl text-teal-500"></FcGoogle>Sign In
                 With Google
               </Button>
@@ -228,7 +231,8 @@ const SignUp = () => {
                 as="a"
                 variant="small"
                 className="ml-1 text-[#5EBEC4] font-bold cursor-pointer"
-                onClick={handleOpen}>
+                onClick={handleOpen}
+              >
                 Sign In
               </Typography>
             </Typography>
