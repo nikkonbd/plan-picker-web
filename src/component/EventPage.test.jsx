@@ -26,4 +26,3 @@ it("EventPage component test", () => {
   const message = screen.queryByText(/Select Event Duration/i);
   expect(message).toBeVisible();
 });
-
