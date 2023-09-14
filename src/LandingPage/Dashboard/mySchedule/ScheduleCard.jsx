@@ -77,7 +77,7 @@ const ScheduleCard = ({ scheduleData, eventDelete }) => {
     unitOfTime === "hour"
       ? `${durationInHours.toFixed(1)} ${unitOfTime}`
       : `${formData?.eventDuration} ${unitOfTime}`;
-  console.log(eventData);
+  // console.log(eventData);
 
   // const [axiosSecure] = useAxiosSecure();
 
@@ -125,12 +125,11 @@ const ScheduleCard = ({ scheduleData, eventDelete }) => {
   // };
 
   return (
-    <div className="relative border-[1px] border-teal-500 bg-[#5ebdc4cd] p-8 rounded-lg shadow hover:shadow-xl cursor-default">
+    <div className="relative border-[1px] border-teal-500 bg-[#68d8e0] text-black p-8 rounded-lg shadow hover:shadow-xl cursor-default">
       <button
         onClick={() => eventDelete(id)}
         className="absolute p-1 text-white bg-red-500 rounded-full -right-2 -top-2"
       >
-        {" "}
         <RxCross2 size={18}></RxCross2>
       </button>
       <p className="pb-2 font-semibold">
@@ -155,7 +154,7 @@ const ScheduleCard = ({ scheduleData, eventDelete }) => {
       <p className="pb-4 border-b-[1px] border-teal-700">
         Location: {location}
       </p>
-      <div className="flex justify-between mt-5">
+      <div className="flex justify-between mt-1 font-semibold">
         <p>Start Time: {formData?.startTime}</p>
         <p>End Time: {formData?.endTime}</p>
       </div>
