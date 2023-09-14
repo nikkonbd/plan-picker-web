@@ -61,7 +61,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/contact-sales",
-        element: <ContactSales></ContactSales>
+        element: <ContactSales></ContactSales>,
       },
       {
         path: "join-team",
@@ -170,9 +170,16 @@ const router = createBrowserRouter([
     loader: ({ params }) =>
       fetch(`https://plan-picker-server.vercel.app/paymentCard/${params.id}`),
   },
+
   {
     path: "/event/:eventName/:id",
     element: <SetMeeting />,
+    loader: ({ params }) =>
+      fetch(`https://plan-picker-server.vercel.app/getEvent/${params.id}`),
+  },
+  {
+    path: "/event/confirmation/:eventName/:id",
+    element: <ScheduleEventDetails />,
     loader: ({ params }) =>
       fetch(`https://plan-picker-server.vercel.app/getEvent/${params.id}`),
   },

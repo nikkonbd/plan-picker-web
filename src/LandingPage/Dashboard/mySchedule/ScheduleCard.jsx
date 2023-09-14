@@ -21,6 +21,7 @@ const ScheduleCard = ({ scheduleData, eventDelete }) => {
 
   // Link copy function
   const handleCopyLinkToClipboard = () => {
+    // const domainAndPort = "planpicker.web.app"; // Replace with your actual domain and port
     const domainAndPort = "localhost:5173"; // Replace with your actual domain and port
 
     const eventLink = `http://${domainAndPort}/event/${eventName}/${id}`;
@@ -107,7 +108,7 @@ const ScheduleCard = ({ scheduleData, eventDelete }) => {
       <p>Duration: {formattedDuration}</p>
 
       <div className="flex justify-end pt-3">
-        {isCopied ? <span className="text-green-500 pr-2">Copied!</span> : null}
+        {isCopied ? <span className="pr-2 text-green-500">Copied!</span> : null}
         <button onClick={handleCopyLinkToClipboard}>
           <AiOutlineCopy
             className={`w-8 h-8 ${isCopied ? "text-green-500" : ""}`}
