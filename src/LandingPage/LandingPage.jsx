@@ -3,6 +3,7 @@ import Footer from "./commonData/Footer";
 import Navbar from "./commonData/Navbar";
 import { Toaster } from "react-hot-toast";
 
+
 const LandingPage = () => {
   return (
     <div>
