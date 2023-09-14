@@ -22,18 +22,19 @@ const Login = () => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen((cur) => !cur);
 
-  const { logIn, googleLogin } = useContext(AuthContext);
+  const { logIn, googleLogin, monthName } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleGoogleSignIN = () => {
     googleLogin()
       .then((result) => {
         const loggedUser = result.user;
-        console.log(loggedUser);
+        // console.log(loggedUser);
         const saveUser = {
           name: loggedUser.displayName,
           email: loggedUser.email,
           imgUrl: loggedUser.photoURL,
+          monthName,
         };
         fetch(`${import.meta.env.VITE_API_URL}/users`, {
           method: "POST",
@@ -80,11 +81,11 @@ const Login = () => {
   } = useForm();
   const onSubmit = (data, e) => {
     e.target.reset();
-    console.log(data);
+    // console.log(data);
     logIn(data.email, data.password)
       .then((result) => {
         const loggedUser = result.user;
-        console.log(loggedUser);
+        // console.log(loggedUser);
 
         // Swal.fire({
         //   position: 'top-end',
@@ -119,7 +120,8 @@ const Login = () => {
         size="md"
         open={open}
         handler={handleOpen}
-        className="bg-transparent shadow-none">
+        className="bg-transparent shadow-none"
+      >
         <Card className="mx-auto w-full md:max-w-2xl">
           <CardHeader className="text-center py-3 bg-[#5EBEC4]">
             <Typography variant="h3" color="white">
@@ -159,7 +161,8 @@ const Login = () => {
               <Button
                 onClick={handleGoogleSignIN}
                 className="flex items-center justify-center w-full gap-4"
-                variant="outlined">
+                variant="outlined"
+              >
                 <FcGoogle className="text-xl text-teal-500"></FcGoogle>Sign In
                 With Google
               </Button>
@@ -172,7 +175,8 @@ const Login = () => {
                 as="a"
                 variant="small"
                 color="blue"
-                className="ml-1 font-bold">
+                className="ml-1 font-bold"
+              >
                 <span>
                   <SignUp></SignUp>
                 </span>

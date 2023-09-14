@@ -65,7 +65,7 @@ const MySchedule = () => {
       text: "You won't be able to revert this!",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: "#3085d6",
+      confirmButtonColor: "#5EBEC4",
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
@@ -76,7 +76,7 @@ const MySchedule = () => {
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {
-              Swal.fire("Deleted!", "Your Toy has been deleted.", "success");
+              Swal.fire("Deleted!", "Your Event has been deleted.", "success");
               const remainingEvent = eventData.filter(
                 (event) => event.id !== id
               );
@@ -118,14 +118,16 @@ const MySchedule = () => {
           <ScheduleCard
             key={scheduleData._id}
             scheduleData={scheduleData}
-            eventDelete={eventDelete}></ScheduleCard>
+            eventDelete={eventDelete}
+          ></ScheduleCard>
         ))}
       </div>
       <Pagination
         totalPosts={schedule.length}
         postPerPage={postPerPage}
         setCurrentPage={setCurrentPage}
-        currentPage={currentPage}></Pagination>
+        currentPage={currentPage}
+      ></Pagination>
     </div>
   );
 };
