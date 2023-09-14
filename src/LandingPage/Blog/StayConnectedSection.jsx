@@ -1,4 +1,6 @@
 import { Button } from "@material-tailwind/react";
+import Login from "../login/Login";
+import { Link } from "react-router-dom";
 
 const StayConnectedSection = () => {
   return (
@@ -14,12 +16,12 @@ const StayConnectedSection = () => {
           </p>
         </div>
         <div className="flex md:flex-row flex-col gap-5 justify-center my-10">
-          <Button className="block" color="blue">
-            Sing up for free
-          </Button>
-          <Button className="block" color="white">
-            Contact sales
-          </Button>
+          <Login></Login>
+          <Link to="/contact-sales">
+            <Button className="block" color="white">
+              Contact sales
+            </Button>
+          </Link>
         </div>
       </div>
     </div>
