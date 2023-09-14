@@ -18,6 +18,8 @@ const SetMeeting = () => {
   const [{ eventName, description, formData }] = eventData;
 
   console.log(eventName);
+  console.log(formData);
+  console.log(eventData);
 
   const events = eventData.map((event) => {
     const data = {
@@ -79,7 +81,7 @@ const SetMeeting = () => {
     availableTimeslots.push(...timeslotsForDay);
   }
 
-  console.log(availableTimeslots);
+  // console.log(availableTimeslots);
 
   // const availableTimeslots = [0, 1, 2, 3, 4, 5, 6, 7].map((id) => {
   //   return {
@@ -104,7 +106,7 @@ const SetMeeting = () => {
   //   };
   // });
 
-  console.log(availableTimeslots);
+  // console.log(availableTimeslots);
 
   return (
     <div className="flex flex-col items-center h-full text-center lg:items-start lg:text-left lg:flex-row">
