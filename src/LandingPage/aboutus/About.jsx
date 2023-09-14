@@ -58,9 +58,11 @@ const About = () => {
                         Explore Features
                       </button>
                     </Link>
-                    <button className="bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md px-4 py-3 font-md shadow-md hover:shadow-lg">
-                      Get Started
-                    </button>
+                    <Link to={"/getting-Started"}>
+                      <button className="bg-[#5EBEC4] hover:bg-[#42a6ad] text-white rounded-md px-4 py-3 font-md shadow-md hover:shadow-lg">
+                        Get Started
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>
