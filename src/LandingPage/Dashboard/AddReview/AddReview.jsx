@@ -9,18 +9,18 @@ const AddReview = () => {
     event.preventDefault();
     const form = event.target;
     const name = form.name.value;
-    const email = form.email.value;
+    const company = form.company.value;
     const review = form.review.value;
     const reviewData = {
       name,
-      email,
+      company,
       review,
       profilePic: user?.photoURL,
       star: star,
     };
     console.log(reviewData);
     // form.reset();
-    fetch("http://localhost:5000/reviews", {
+    fetch("https://plan-picker-server.vercel.app/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -31,10 +31,8 @@ const AddReview = () => {
       .then((data) => {
         console.log(data);
         if (data.insertedId) {
-          // reset();
           form.reset();
-          toast.success("user created Successfuly");
-          // navigate("/");
+          toast.success("user created Succeessfuly");
         }
       })
       .catch((error) => {
@@ -44,7 +42,7 @@ const AddReview = () => {
   };
   return (
     <div>
-      <div className="mt-10 flex flex-col justify-center items-center">
+      <div className="mt-4 flex flex-col justify-center items-center">
         <h1 className="text-[#42a6ad] text-2xl font-semibold">
           Give your feedback here
         </h1>
@@ -64,7 +62,7 @@ const AddReview = () => {
                 className="input input-bordered input-accent w-full h-9 ps-3 rounded-md text-gray-900"
               />
             </div>
-            <div className="col-span-full sm:col-span-3">
+            {/* <div className="col-span-full sm:col-span-3">
               <label htmlFor="sellerEmail" className="text-sm">
                 Email
               </label>
@@ -77,6 +75,18 @@ const AddReview = () => {
                 className="input input-bordered input-accent w-full h-9 ps-3 rounded-md text-gray-900"
               />
               <p className="text-sm text-amber-900">cannot change your email</p>
+            </div> */}
+            <div className="col-span-full sm:col-span-3">
+              <label htmlFor="sellerName" className="text-sm">
+                Company Name
+              </label>
+              <input
+                placeholder="company name"
+                id="company"
+                name="company"
+                type="text"
+                className="input input-bordered input-accent w-full h-9 ps-3 rounded-md text-gray-900"
+              />
             </div>
             <div className="col-span-full sm:col-span-3 flex items-center">
               <p>Give some starts:</p>

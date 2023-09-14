@@ -10,7 +10,8 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../src/providers/AuthProvider";
 import { useSelector } from "react-redux";
 import axios from "axios";
-import {ConfirmedSchedule} from "./ConfirmedSchedule";
+
+
 
 
 
@@ -122,6 +123,11 @@ const ScheduleEventDetails = () => {
   console.log(participantFormData)
   
   
+  const submitConfirmed = () => {
+    navigate("/confirmedSchedule")
+  }
+  
+  
 
   return (
     <>
@@ -198,8 +204,8 @@ const ScheduleEventDetails = () => {
                 value={participantFormData.note}
                 onChange={handleInputChange}
               />
-              <div className="pt-5">
-                <Button type="submit" color="blue">
+              <div  className="pt-5">
+                <Button onClick={() => submitConfirmed()} type="submit" color="blue">
                   Schedule Event
                 </Button>
                 {isLoading && <div>Loading...</div>}
@@ -208,8 +214,8 @@ const ScheduleEventDetails = () => {
           </div>
         </div>
       
+     
       </div>
-      <ConfirmedSchedule/>
     </>
   );
 };

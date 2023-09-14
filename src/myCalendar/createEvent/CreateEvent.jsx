@@ -93,6 +93,7 @@ const CreateEventButton = () => {
             </button>
             {/* ... more option buttons ... */}
             <button
+              disabled
               onClick={() =>
                 handleOptionSelect({
                   name: "Group",
@@ -119,6 +120,7 @@ const CreateEventButton = () => {
               </div>
             </button>
             <button
+              disabled
               onClick={() =>
                 handleOptionSelect({
                   name: "Collective",

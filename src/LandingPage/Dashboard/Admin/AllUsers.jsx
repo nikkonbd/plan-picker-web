@@ -10,7 +10,6 @@ import { Toaster, toast } from "react-hot-toast";
 
 const AllUsers = () => {
   const [myUsers, setMyusers] = useState([]);
-  // console.log(myUsers);
 
   // const { data: users = [], refetch } = useQuery(['users'], async () => {
   //     const res = await fetch('https://plan-picker-server.vercel.app/users')
@@ -25,6 +24,7 @@ const AllUsers = () => {
     setMyusers(res.data);
     return res.data;
   });
+  console.log(myUsers);
 
   //handleMake Admin
   const handleMakeAdmin = (user) => {
@@ -133,12 +133,14 @@ const AllUsers = () => {
                     <button className="btn  btn-circle">
                       <PiUserSwitchBold
                         fontSize={30}
-                        color="green"></PiUserSwitchBold>
+                        color="green"
+                      ></PiUserSwitchBold>
                     </button>
                   ) : (
                     <button
                       onClick={() => handleMakeAdmin(user?._id)}
-                      className="btn  btn-circle">
+                      className="btn  btn-circle"
+                    >
                       <FaUsers fontSize={30}></FaUsers>
                     </button>
                   )}
@@ -147,10 +149,12 @@ const AllUsers = () => {
                 <td>
                   <button
                     onClick={() => handleDelete(user)}
-                    className="btn  btn-circle">
+                    className="btn  btn-circle"
+                  >
                     <FaTrashAlt
                       fontSize={26}
-                      className="text-red-600"></FaTrashAlt>
+                      className="text-red-600"
+                    ></FaTrashAlt>
                   </button>
                 </td>
               </tr>

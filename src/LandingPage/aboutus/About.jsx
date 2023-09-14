@@ -6,8 +6,12 @@ import EfficientPlanning from "../../assets/Efficient Planning.jpg";
 import AboutCard from "./AboutCard";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 const About = () => {
+  useEffect(() => {
+    scrollTo(0, 0);
+  }, []);
   const events = [
     {
       id: 1,

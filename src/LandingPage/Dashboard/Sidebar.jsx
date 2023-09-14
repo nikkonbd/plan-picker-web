@@ -139,9 +139,17 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
               />
             </svg>
           </NavLink> */}
-          <div className="mx-auto">
-            <img className="w-20 rounded-full" src={user.photoURL} alt="" />
-            <h2 className="text-xl">{user.displayName}</h2>
+          <div className="relative h-28 flex justify-center w-full bg-[url('https://img.freepik.com/free-vector/geometric-science-education-background-vector-gradient-blue-digital-remix_53876-125993.jpg')] bg-cover mb-12 rounded-t-xl rounded-b-md">
+            <div className="absolute top-8">
+              <img
+                className=" border-4 border-[#5EBEC4] mt-4 w-28 h-28 mx-2 rounded-full"
+                src={user.photoURL}
+                alt=""
+              />
+              <h2 className="text-xl font-semibold text-center text-teal-900">
+                {user.displayName}
+              </h2>
+            </div>
           </div>
         </div>
 
@@ -221,6 +229,28 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                           <FaRegChartBar className="w-6 h-6 shrink-0" />
                           <span className="ml-3 text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
                             Analytics
+                          </span>
+                        </div>
+                      </div>
+                    </NavLink>
+                  </li>
+                  <li
+                    className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${
+                      pathname.includes("messages") && "bg-slate-900"
+                    }`}>
+                    <NavLink
+                      end
+                      to="/dashboard/billings"
+                      className={`block text-slate-200 truncate transition duration-150 ${
+                        pathname.includes("messages")
+                          ? "hover:text-slate-200"
+                          : "hover:text-white"
+                      }`}>
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center grow">
+                          <FaAmazonPay className="w-6 h-6 shrink-0" />
+                          <span className="ml-3 text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
+                            Billing & Invoice
                           </span>
                         </div>
                       </div>
@@ -394,7 +424,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                     }`}>
                     <NavLink
                       end
-                      to="/dashboard/calendar"
+                      to="/dashboard/billing"
                       className={`block text-slate-200 truncate transition duration-150 ${
                         pathname.includes("calendar")
                           ? "hover:text-slate-200"

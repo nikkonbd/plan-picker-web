@@ -1,7 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Calendar from "./Calendar";
 
 import EventCalendar from "../eventCalendar/EventCalendar";
+import { data } from "autoprefixer";
+import ContextWrapper from "../eventCalendar/Calendar/Context/ContextWrapper";
+
+
 
 const EventPageData = () => {
   const currentDate = new Date();
@@ -35,18 +39,15 @@ const EventPageData = () => {
 
   return (
     <div>
-      {/* ... */}
-      {/* <Calendar
-        year={year}
-        month={month}
-        setYear={setYear}
-        setMonth={setMonth}
-      /> */}
-      <EventCalendar events={events} />
-      {/* ... */}
+      <ContextWrapper>
+        <EventCalendar></EventCalendar>
+      </ContextWrapper>
+
+
     </div>
   );
 };
 
 export default EventPageData;
+
 

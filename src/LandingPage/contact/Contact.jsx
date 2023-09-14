@@ -1,9 +1,12 @@
 import { Button } from "@material-tailwind/react";
-import React from "react";
+import React, { useEffect } from "react";
 import { FaConnectdevelop } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Contact = () => {
+  useEffect(() => {
+    scrollTo(0, 0);
+  }, []);
   return (
     <div>
       <div className="bg-[#5ebdc444] py-32 text-center px-4 md:px-0 text-[#61677A]">
@@ -20,10 +23,14 @@ const Contact = () => {
             Talk to our sales team about purchasing Calendly for your team
             request friendly
           </p>
-          <Link to="/contact-sales" className="inline-block pt-6 pb-10 md:pt-0 md:pb-0 mt-4">
+          <Link
+            to="/contact-sales"
+            className="inline-block pt-6 pb-10 md:pt-0 md:pb-0 mt-4"
+          >
             <Button
               variant="text"
-              className="flex text-white items-center gap-2 bg-[#5EBEC4] hover:bg-[#42a6ad]">
+              className="flex text-white items-center gap-2 bg-[#5EBEC4] hover:bg-[#42a6ad]"
+            >
               Contact Sales
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -31,7 +38,8 @@ const Contact = () => {
                 viewBox="0 0 24 24"
                 stroke="currentColor"
                 strokeWidth={2}
-                className="w-4 h-4">
+                className="w-4 h-4"
+              >
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -48,10 +56,14 @@ const Contact = () => {
             Submit a request to get help from our friendly support experts
             request friendly{" "}
           </p>
-          <a href="#" className="inline-block pt-6 pb-10 md:pt-0 md:pb-0 mt-4">
+          <Link
+            to="/contact-support"
+            className="inline-block pt-6 pb-10 md:pt-0 md:pb-0 mt-4"
+          >
             <Button
               variant="text"
-              className="flex text-white items-center gap-2 bg-[#5EBEC4] hover:bg-[#42a6ad]">
+              className="flex text-white items-center gap-2 bg-[#5EBEC4] hover:bg-[#42a6ad]"
+            >
               Contact Support
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -59,7 +71,8 @@ const Contact = () => {
                 viewBox="0 0 24 24"
                 stroke="currentColor"
                 strokeWidth={2}
-                className="w-4 h-4">
+                className="w-4 h-4"
+              >
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -67,7 +80,7 @@ const Contact = () => {
                 />
               </svg>
             </Button>
-          </a>
+          </Link>
         </div>
         <div className="border-2 p-4 text-center mb-4 md:mb-0 shadow hover:shadow-lg">
           <FaConnectdevelop className="text-4xl"></FaConnectdevelop>
@@ -76,10 +89,14 @@ const Contact = () => {
             Read helpful articles, watch tutorials, and get help with Calendly
             request friendly
           </p>
-          <a href="#" className="inline-block pt-6 pb-10 md:pt-0 md:pb-0 mt-4">
+          <Link
+            to="/help-center"
+            className="inline-block pt-6 pb-10 md:pt-0 md:pb-0 mt-4"
+          >
             <Button
               variant="text"
-              className="flex text-white items-center gap-2 bg-[#5EBEC4] hover:bg-[#42a6ad]">
+              className="flex text-white items-center gap-2 bg-[#5EBEC4] hover:bg-[#42a6ad]"
+            >
               Visit Help Center
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -87,7 +104,8 @@ const Contact = () => {
                 viewBox="0 0 24 24"
                 stroke="currentColor"
                 strokeWidth={2}
-                className="w-4 h-4">
+                className="w-4 h-4"
+              >
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -95,7 +113,7 @@ const Contact = () => {
                 />
               </svg>
             </Button>
-          </a>
+          </Link>
         </div>
         <div className="border-2 p-4 text-center shadow hover:shadow-lg">
           <p>
@@ -106,10 +124,14 @@ const Contact = () => {
             Download Calendly’s press kit, read press releases, and request
             interviews
           </p>
-          <a href="#" className="inline-block pt-6 pb-10 md:pt-0 md:pb-0 mt-4">
+          <Link
+            to="/media-press"
+            className="inline-block pt-6 pb-10 md:pt-0 md:pb-0 mt-4"
+          >
             <Button
               variant="text"
-              className="flex text-white items-center gap-2 bg-[#5EBEC4] hover:bg-[#42a6ad]">
+              className="flex text-white items-center gap-2 bg-[#5EBEC4] hover:bg-[#42a6ad]"
+            >
               Visit Our NewsRoom
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -117,7 +139,8 @@ const Contact = () => {
                 viewBox="0 0 24 24"
                 stroke="currentColor"
                 strokeWidth={2}
-                className="w-4 h-4">
+                className="w-4 h-4"
+              >
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -125,7 +148,7 @@ const Contact = () => {
                 />
               </svg>
             </Button>
-          </a>
+          </Link>
         </div>
       </div>
       <div className="text-[#61677A] text-center py-20 px-4 md:px-0">
@@ -146,7 +169,8 @@ const Contact = () => {
             <Link to={"/join-team"}>
               <Button
                 variant="text"
-                className="flex text-white items-center gap-2 bg-[#5EBEC4] hover:bg-[#42a6ad]">
+                className="flex text-white items-center gap-2 bg-[#5EBEC4] hover:bg-[#42a6ad]"
+              >
                 Plan Picker Visit
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -154,7 +178,8 @@ const Contact = () => {
                   viewBox="0 0 24 24"
                   stroke="currentColor"
                   strokeWidth={2}
-                  className="w-4 h-4">
+                  className="w-4 h-4"
+                >
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -176,7 +201,8 @@ const Contact = () => {
             <Link to={"/partner"}>
               <Button
                 variant="text"
-                className="flex text-white items-center gap-2 bg-[#5EBEC4] hover:bg-[#42a6ad]">
+                className="flex text-white items-center gap-2 bg-[#5EBEC4] hover:bg-[#42a6ad]"
+              >
                 Contact Seels
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -184,7 +210,8 @@ const Contact = () => {
                   viewBox="0 0 24 24"
                   stroke="currentColor"
                   strokeWidth={2}
-                  className="w-4 h-4">
+                  className="w-4 h-4"
+                >
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"

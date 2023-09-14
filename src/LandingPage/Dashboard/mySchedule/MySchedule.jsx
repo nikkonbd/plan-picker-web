@@ -1,7 +1,9 @@
 import React from "react";
 import ScheduleCard from "./ScheduleCard";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
+import axios from "axios";
+import Pagination from "./Pagination";
 import Swal from "sweetalert2";
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
@@ -11,6 +13,30 @@ const MySchedule = () => {
   const [schedule, setSchedule] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  //pagination
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postPerPage, setPostPerPage] = useState(2);
+  const lastPostIndex = currentPage * postPerPage;
+  const firstPostIndex = lastPostIndex - postPerPage;
+  const currentPost = schedule.slice(firstPostIndex, lastPostIndex);
+
+  useEffect(() => {
+    // Axios GET request
+    axios
+      .get(
+        `https://plan-picker-server.vercel.app/getEventByEmail/${user?.email}`
+      )
+      .then((response) => {
+        setSchedule(response.data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        setError(error);
+        setLoading(false);
+      });
+  }, []); // Empty dependency array means the effect runs once after initial render
+
   const [eventData, setEventData] = useState([]);
 
   // call axios hook
@@ -39,18 +65,18 @@ const MySchedule = () => {
       text: "You won't be able to revert this!",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: "#3085d6",
+      confirmButtonColor: "#5EBEC4",
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/deleteEventById/${id}`, {
+        fetch(`https://plan-picker-server.vercel.app/deleteEventById/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {
-              Swal.fire("Deleted!", "Your Toy has been deleted.", "success");
+              Swal.fire("Deleted!", "Your Event has been deleted.", "success");
               const remainingEvent = eventData.filter(
                 (event) => event.id !== id
               );
@@ -71,6 +97,8 @@ const MySchedule = () => {
     return <p>Error: {error.message}</p>;
   }
 
+  console.log(schedule);
+
   return (
     <div>
       <h2 className="relative text-2xl">
@@ -80,13 +108,26 @@ const MySchedule = () => {
         </span>
       </h2>
       <div className="grid grid-cols-1 gap-5 my-5 md:grid-cols-2 lg:grid-cols-2">
-        {events.map((scheduleData) => (
+        {/* {schedule.map((scheduleData) => (
+          <ScheduleCard
+            key={scheduleData._id}
+            scheduleData={scheduleData}></ScheduleCard>
+        ))} */}
+        {currentPost.map((scheduleData) => (
+          // {events.map((scheduleData) => (
           <ScheduleCard
             key={scheduleData._id}
             scheduleData={scheduleData}
-            eventDelete={eventDelete}></ScheduleCard>
+            eventDelete={eventDelete}
+          ></ScheduleCard>
         ))}
       </div>
+      <Pagination
+        totalPosts={schedule.length}
+        postPerPage={postPerPage}
+        setCurrentPage={setCurrentPage}
+        currentPage={currentPage}
+      ></Pagination>
     </div>
   );
 };
