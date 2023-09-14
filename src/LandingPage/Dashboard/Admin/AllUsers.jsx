@@ -83,16 +83,16 @@ const AllUsers = () => {
       <Helmet>
         <title>AllUsers || PlanPicker</title>
       </Helmet>
-      <div className="flex justify-between items-center mb-5">
-        <h2 className="text-xl md:text-2xl font-bold">
+      <div className="flex items-center justify-between mb-5">
+        <h2 className="text-xl font-bold md:text-2xl">
           Total Users : {users.length}
         </h2>
-        <div className="flex text-xl gap-3  md:text-2xl font-bold md:gap-10">
-          <div className="flex gap-1 md:gap-2 md:p-2 items-center">
+        <div className="flex gap-3 text-xl font-bold md:text-2xl md:gap-10">
+          <div className="flex items-center gap-1 md:gap-2 md:p-2">
             <h2>Admin </h2>
             <PiUserSwitchBold color="green"></PiUserSwitchBold>
           </div>
-          <div className="flex gap-1 md:gap-2 md:p-2 items-center">
+          <div className="flex items-center gap-1 md:gap-2 md:p-2">
             <h2>Users </h2>
             <FaUsers></FaUsers>
           </div>
@@ -116,12 +116,12 @@ const AllUsers = () => {
                 <td className="hidden md:table-cell">
                   <div className="flex items-center space-x-4">
                     <div className="avatar">
-                      <div className="mask mask-circle w-12 h-12">
+                      <div className="w-12 h-12 mask mask-circle">
                         <img src={user?.imgUrl} />
                       </div>
                     </div>
                     <div>
-                      <div className="font-semibold text-xl">{user?.name}</div>
+                      <div className="text-xl font-semibold">{user?.name}</div>
                     </div>
                   </div>
                 </td>
@@ -130,7 +130,7 @@ const AllUsers = () => {
                 </td>
                 <td>
                   {user?.role === "admin" ? (
-                    <button className="btn  btn-circle">
+                    <button className="btn btn-circle">
                       <PiUserSwitchBold
                         fontSize={30}
                         color="green"
@@ -139,7 +139,7 @@ const AllUsers = () => {
                   ) : (
                     <button
                       onClick={() => handleMakeAdmin(user?._id)}
-                      className="btn  btn-circle"
+                      className="btn btn-circle"
                     >
                       <FaUsers fontSize={30}></FaUsers>
                     </button>
@@ -148,8 +148,8 @@ const AllUsers = () => {
                 </td>
                 <td>
                   <button
-                    onClick={() => handleDelete(user)}
-                    className="btn  btn-circle"
+                    onClick={() => handleDelete(user?._id)}
+                    className="btn btn-circle"
                   >
                     <FaTrashAlt
                       fontSize={26}

@@ -19,7 +19,12 @@ const MySchedule = () => {
   const [postPerPage, setPostPerPage] = useState(2);
   const lastPostIndex = currentPage * postPerPage;
   const firstPostIndex = lastPostIndex - postPerPage;
-  const currentPost = schedule.slice(firstPostIndex, lastPostIndex);
+  
+  const [eventData, setEventData] = useState([]);
+  const currentPost = eventData.slice(firstPostIndex, lastPostIndex);
+
+  // call axios hook
+  const [axiosSecure] = useAxiosSecure();
 
   useEffect(() => {
     // Axios GET request
@@ -37,10 +42,7 @@ const MySchedule = () => {
       });
   }, []); // Empty dependency array means the effect runs once after initial render
 
-  const [eventData, setEventData] = useState([]);
 
-  // call axios hook
-  const [axiosSecure] = useAxiosSecure();
 
   // fetch event data by email
   const { data: events = [], refetch } = useQuery(

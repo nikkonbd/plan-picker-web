@@ -21,6 +21,8 @@ const ScheduleCard = ({ scheduleData, eventDelete }) => {
     formData,
     link,
   } = scheduleData;
+  
+
 
   const [isCopied, setIsCopied] = useState(false);
 
@@ -78,52 +80,7 @@ const ScheduleCard = ({ scheduleData, eventDelete }) => {
     unitOfTime === "hour"
       ? `${durationInHours.toFixed(1)} ${unitOfTime}`
       : `${formData?.eventDuration} ${unitOfTime}`;
-  // console.log(eventData);
-
-  // const [axiosSecure] = useAxiosSecure();
-
-  // const { data: events = [], refetch } = useQuery(["getEvent"], async () => {
-  //   const res = await axiosSecure.get("/getEvent");
-  //   setEventData(res.data);
-  //   return res.data;
-  // });
-
-  // console.log(events);
-
-  // const eventDelete = (id) => {
-  //   Swal.fire({
-  //     title: "Are you sure?",
-  //     text: "You won't be able to revert this!",
-  //     icon: "warning",
-  //     showCancelButton: true,
-  //     confirmButtonColor: "#3085d6",
-  //     cancelButtonColor: "#d33",
-  //     confirmButtonText: "Yes, delete it!",
-  //   }).then((result) => {
-  //     if (result.isConfirmed) {
-  //       fetch(`https://plan-picker-server.vercel.app/deleteEventById/${id}`, {
-  //         method: "DELETE",
-  //       })
-  //         .then((res) => res.json())
-  //         .then((data) => {
-  //           if (data.deletedCount > 0) {
-  //             Swal.fire(
-  //               "Deleted!",
-  //               "Your Schedule has been deleted.",
-  //               "success"
-  //             );
-  //             const remainingEvent = eventData.filter(
-  //               (event) => event.id !== id
-  //             );
-  //             setEventData(remainingEvent);
-
-  //             console.log(remainingEvent);
-  //             refetch();
-  //           }
-  //         });
-  //     }
-  //   });
-  // };
+  
 
   return (
     <div className="relative border-[1px] border-teal-500 bg-[#68d8e0] text-black p-8 rounded-lg shadow hover:shadow-xl cursor-default">
