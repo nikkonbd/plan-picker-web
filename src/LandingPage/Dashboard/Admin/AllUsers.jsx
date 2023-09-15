@@ -71,7 +71,7 @@ const AllUsers = () => {
               Swal.fire("Deleted!", "User has been deleted.", "success");
               const remaining = myUsers.filter((item) => item._id !== _id);
               setMyusers(remaining);
-              refetch();
+              // refetch();
             }
           });
       }
@@ -133,14 +133,12 @@ const AllUsers = () => {
                     <button className="btn btn-circle">
                       <PiUserSwitchBold
                         fontSize={30}
-                        color="green"
-                      ></PiUserSwitchBold>
+                        color="green"></PiUserSwitchBold>
                     </button>
                   ) : (
                     <button
                       onClick={() => handleMakeAdmin(user?._id)}
-                      className="btn btn-circle"
-                    >
+                      className="btn btn-circle">
                       <FaUsers fontSize={30}></FaUsers>
                     </button>
                   )}
@@ -153,8 +151,7 @@ const AllUsers = () => {
                   >
                     <FaTrashAlt
                       fontSize={26}
-                      className="text-red-600"
-                    ></FaTrashAlt>
+                      className="text-red-600"></FaTrashAlt>
                   </button>
                 </td>
               </tr>

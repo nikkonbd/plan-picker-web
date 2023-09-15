@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect } from "react";
 import { FaArrowLeft } from "react-icons/fa";
 import { BsClockHistory } from "react-icons/bs";
 import { MdOutlineEventNote } from "react-icons/md";
@@ -9,25 +9,28 @@ import { useLoaderData, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../src/providers/AuthProvider";
 import { useSelector } from "react-redux";
-import axios from "axios";
 
-
-
-
+import { confirmedSubmitData } from "../store/features/cofirmedEvent/confirmedEvent";
+import { useDispatch } from "react-redux";
 
 const ScheduleEventDetails = () => {
-  const [isLoading, setIsLoading] = useState(false);
+
   const navigate = useNavigate();
   const { user } = useContext(AuthContext);
   const eventData = useLoaderData();
   const data = useSelector((state) => state.participantData.data);
   const [{ eventName, description, formData }] = eventData;
+  const dispatch = useDispatch();
+  const { isLoading, isSuccess, error } = useSelector(
+    (state) => state.confirmedEventData
+  );
+  console.log(isLoading);
 
   console.log(eventName, user);
   console.log(data?.startTime);
+  console.log(data[0]?.link?.meetLink);
 
   const goBack = () => {
-    console.log("first");
     navigate(-1);
   };
 
@@ -56,16 +59,14 @@ const ScheduleEventDetails = () => {
     return timeSlots;
   }
 
-  // Example usage:
-  // const startTime = new Date(2023, 8, 15, 11, 10); // September is month 8 (0-based)
+
   const startTime = new Date(data?.startTime); // September is month 8 (0-based)
   const durationMinutes = formData?.eventDuration;
 
   const timeSlots = generateTimeSlotsWithEndTime(startTime, durationMinutes);
   console.log(timeSlots[0]);
 
-// ======================
-
+  // ======================
 
   // Initialize state variables for each input field
   const [participantFormData, setParticipantFormData] = useState({
@@ -83,51 +84,37 @@ const ScheduleEventDetails = () => {
     });
   };
 
-  // Event handler to handle form submission
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   // You can access the input data in the formData state object here
-  //   console.log(participantFormData);
-  // };
 
-  // =======================
-  
-  
-  const handleSubmit = async (e) => {
-    e.preventDefault();
 
-    setIsLoading(true); // Set loading to true while the request is being made
-
-    try {
-      // Send data to the backend
-      const response = await axios.post('http://localhost:5000/participant-event', participantFormData);
-      console.log(response.data);
-
-      // Reset the form after successful submission
-      // setParticipantFormData({
-      //   name: '',
-      //   email: '',
-      //   note: '',
-      //   // selectedDate: '',
-      // });
-    } catch (error) {
-      console.error('Error:', error);
-    } finally {
-      setIsLoading(false); // Set loading to false when the request is completed
-    }
+  const formatedSelectedDate = data?.startTime;
+  console.log(formatedSelectedDate);
+  const confirmedData = {
+    minutes: formData?.eventDuration,
+    timeDurationRange: timeSlots[0],
+    selectedDate: data?.startTime,
+    eventName,
+    timeZone: data?.userTimezone,
+    hostName: user?.displayName,
+    hostEmail: user?.email,
+    participantEmail: participantFormData?.email,
+    meetLink: data[0]?.link?.meetLink,
+    name: participantFormData?.name,
+    email: participantFormData?.email,
+    note: participantFormData?.note,
+    location: data[0]?.location,
+    id: data?.id,
   };
   
+
   
-  
-  
-  console.log(participantFormData)
-  
-  
-  const submitConfirmed = () => {
-    navigate("/confirmedSchedule")
+
+  const submitConfirmed = async () => {
+    dispatch(confirmedSubmitData(confirmedData));
+  };
+
+  if (isSuccess) {
+    navigate("/confirmedSchedule");
   }
-  
-  
 
   return (
     <>
@@ -141,18 +128,14 @@ const ScheduleEventDetails = () => {
               onClick={() => goBack()}
               className="text-2xl cursor-pointer"></FaArrowLeft>
             <p>{user?.displayName}</p>
-            <h3 className="text-3xl font-semibold">
-              {formData?.eventDuration} Minute Meeting
-            </h3>
+            <h3 className="text-3xl font-semibold">{eventName}</h3>
             <p className="flex items-center gap-2 font-semibold">
               <BsClockHistory></BsClockHistory>
               {formData?.eventDuration} min
             </p>
             <p className="flex items-center gap-2 font-semibold">
               <MdOutlineEventNote></MdOutlineEventNote>
-              {/* 9:30am - 10:00am,
-              Wednesday, August 23, 2023 */}
-
+              
               <div>
                 {timeSlots[0]}, {data?.startTime.toDateString()}
               </div>
@@ -163,25 +146,10 @@ const ScheduleEventDetails = () => {
             </p>
           </div>
 
-          {/* <div className="space-y-2 lg:w-1/2">
-            <h4 className="text-xl font-semibold">Enter Details</h4>
-            <form className="space-y-5" action="">
-              <Input type="text" name="name" label="Name" />
-              <Input type="email" name="email" label="email" />
-              <Input
-                type="text"
-                name="note"
-                className="h-16"
-                label="Please share anything that will help prepare for our meeting."
-              />
-              <div className="pt-5">
-                <Button color="blue">shedule Event</Button>
-              </div>
-            </form>
-          </div> */}
+         
           <div className="space-y-2 lg:w-1/2">
             <h4 className="text-xl font-semibold">Enter Details</h4>
-            <form className="space-y-5" onSubmit={handleSubmit}>
+            <form className="space-y-5">
               <Input
                 type="text"
                 name="name"
@@ -204,8 +172,11 @@ const ScheduleEventDetails = () => {
                 value={participantFormData.note}
                 onChange={handleInputChange}
               />
-              <div  className="pt-5">
-                <Button onClick={() => submitConfirmed()} type="submit" color="blue">
+              <div className="pt-5">
+                <Button
+                  onClick={() => submitConfirmed()}
+                  // type="submit"
+                  color="blue">
                   Schedule Event
                 </Button>
                 {isLoading && <div>Loading...</div>}
@@ -213,8 +184,6 @@ const ScheduleEventDetails = () => {
             </form>
           </div>
         </div>
-      
-     
       </div>
     </>
   );

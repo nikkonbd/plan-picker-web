@@ -2,48 +2,35 @@ import React, { useContext, useState, useEffect } from "react";
 import { ScheduleMeeting } from "react-schedule-meeting";
 import TimezoneSelect from "react-timezone-select";
 import EventDetails from "./EventDetails";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import { useDispatch } from "react-redux";
 import { setData } from "../store/features/participantsData/participantsDataSlice";
-import { formatISO } from "date-fns";
+import { v4 as uuidv4 } from "uuid";
+import { useNavigate } from "react-router-dom";
+
 
 
 
 const SetMeeting = () => {
+  const { eventId } = useParams();
   const [userTimezone, setUserTimezone] = useState("");
   const [selectedTimezone, setSelectedTimezone] = useState({});
   const [selectedAvailableTime, setSelectedAvailableTime] = useState(null) || {};
   const { user } = useContext(AuthContext);
   const eventData = useLoaderData();
   const dispatch = useDispatch();
+  const uniqueId = uuidv4();
+  const navigate = useNavigate();
 
-  // const { endDate, endTime, startDate, startTime, eventDuration } =
-  //   eventData?.formData;
-  // console.log(eventData?.formDate?.startTime)
-  console.log(eventData);
-  // setSelectedTimezone(startTime);
+  
   const [{ eventName, description, formData, id }] = eventData;
 
   console.log(selectedTimezone);
+  console.log(eventId);
 
   const eventDetails = { eventName, description, formData };
-console.log(formData.startTime)
-  // // Convert formData.startDate and formData.endDate to Date objects
-  // const startDate = new Date(formData.startDate);
-  // const endDate = new Date(formData.endDate);
 
-  // // Calculate the number of days between startDate and endDate
-  // const daysBetween = Math.ceil((endDate - startDate) / (1000 * 60 * 60 * 24));
-
-  // // Generate an array of numbers from 0 to daysBetween
-  // const dynamicNumbersArray = Array.from(
-  //   { length: daysBetween + 1 },
-  //   (_, index) => index
-  // );
-
-  // // Now, dynamicNumbersArray contains numbers from 0 to daysBetween
-  // console.log(dynamicNumbersArray);
 
   // Convert formData.startDate and formData.endDate to Date objects
   const startDate = new Date(formData.startDate);
@@ -96,22 +83,21 @@ console.log(formData.startTime)
     setSelectedAvailableTime(startTime);
   };
 
-  console.log(selectedAvailableTime);
-  console.log(userTimezone);
 
-  // 
-  // const startTime = formatISO(new Date("2023-09-15T09:00:00.000Z"));
-  // const timeAndDate = selectedAvailableTime?.startTime || {};
-  // const startTimeDate = formatISO(new Date(timeAndDate));
-  // console.log(startTimeDate)
 
   const data = {
     ...selectedAvailableTime,
-    // startTime: selectedAvailableTime?.startTime,
     userTimezone,
+    ...eventData
   };
+  
+    dispatch(setData(data));
+  
+  // if(selectedAvailableTime) {
+  //   navigate(`/event/confirmation/${eventName}/${id}`)
+  // }
 
-  dispatch(setData(data));
+  
 
   return (
     <>
