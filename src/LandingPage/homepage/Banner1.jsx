@@ -6,6 +6,10 @@ import { Button } from "@material-tailwind/react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
+import Lottie from "lottie-react";
+import banner from "../../../public/banner.json";
+import banner1 from "../../../public/banner1.json";
+import banner2 from "../../../public/banner2.json";
 
 const Banner1 = () => {
   useEffect(() => {
@@ -65,19 +69,25 @@ const Banner1 = () => {
           </Link>
         </div>
         <div data-aos="fade-up-left">
-          <img
+          <Lottie animationData={banner} loop={true} className="" />
+          {/* <img
             className="rounded-xl w-full h-full md:h-[340px] md:w-[580px]"
             src={book}
             alt=""
-          />
+          /> */}
         </div>
       </div>
       <div className="flex flex-col md:flex-row  gap-10 justify-center items-center md:mt-20">
         <div className="" data-aos="fade-up-right">
-          <img
+          {/* <img
             className="rounded-xl flex flex-col justify-center w-full h-full md:h-[340px] md:w-[580px]"
             src={book1}
             alt=""
+          /> */}
+          <Lottie
+            animationData={banner1}
+            loop={true}
+            className="w-full h-full md:h-[340px] md:w-[580px]"
           />
         </div>
         <div className="" data-aos="fade-up-left">
@@ -163,11 +173,12 @@ const Banner1 = () => {
           </Link>
         </div>
         <div data-aos="fade-up-left">
-          <img
+          {/* <img
             className="rounded-xl flex flex-col justify-center w-full h-full md:h-[340px] md:w-[580px]"
             src={book2}
             alt=""
-          />
+          /> */}
+          <Lottie animationData={banner2} loop={true} className="" />
         </div>
       </div>
     </div>
