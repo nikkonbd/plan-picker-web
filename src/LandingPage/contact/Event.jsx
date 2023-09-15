@@ -1,4 +1,3 @@
-
 import React, { useContext, useEffect, useState } from "react";
 import { BiInfoCircle } from "react-icons/bi";
 import ReactQuill from "react-quill";
@@ -8,6 +7,7 @@ import { useDispatch } from "react-redux";
 import { setObjectData } from "../../store/features/objectData/ObjectDataSlice";
 import { v4 as uuidv4 } from "uuid";
 import { AuthContext } from "../../providers/AuthProvider";
+
 
 const Event = () => {
   const navigate = useNavigate();
@@ -41,8 +41,6 @@ const Event = () => {
     setEventNameError("");
     return true;
   };
-
-  
 
   // Function to validate the Event Link field
   const validateEventLink = (link) => {
@@ -118,7 +116,6 @@ const Event = () => {
   const handleEventLinkChange = (e) => {
     const link = e.target.value;
     setEventLink(link);
-  
 
     // Validate the event link only when it's focused and location is not "Google Meet" or "Zoom"
     if (eventLinkFocused && location !== "Google Meet" && location !== "Zoom") {
@@ -209,8 +206,7 @@ const Event = () => {
           <div className="flex items-center justify-center gap-2 md:justify-between">
             <button
               onClick={() => handleCancel()}
-              className="px-3 rounded-md btn bg-[#61677A] hover:bg-[#464955] text-white"
-            >
+              className="px-3 rounded-md btn bg-[#61677A] hover:bg-[#464955] text-white">
               Cancel
             </button>
             <button
@@ -219,8 +215,7 @@ const Event = () => {
               className={`bg-[#5EBEC4] hover:bg-[#42a6ad] duration-200 text-white px-3 rounded-md btn ${
                 !formIsValid ? "disabled:opacity-50 cursor-not-allowed" : ""
               }`}
-              disabled={!formIsValid}
-            >
+              disabled={!formIsValid}>
               Next
             </button>
           </div>
@@ -254,8 +249,7 @@ const Event = () => {
               className="select select-bordered"
               value={conferenceType}
               required
-              onChange={handleEventConferenceChange}
-            >
+              onChange={handleEventConferenceChange}>
               <option value="" disabled selected className="text-gray-200">
                 Add Conference Type
               </option>
@@ -293,8 +287,7 @@ const Event = () => {
               className="select select-bordered"
               value={location}
               required
-              onChange={handleEventLocationChange}
-            >
+              onChange={handleEventLocationChange}>
               <option value="" disabled selected className="text-gray-200">
                 Select One
               </option>

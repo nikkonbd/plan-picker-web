@@ -71,7 +71,6 @@ const router = createBrowserRouter([
       {
         path: "/contact-sales",
         element: <ContactSales></ContactSales>,
-
       },
       {
         path: "/contact-support",
@@ -84,7 +83,6 @@ const router = createBrowserRouter([
       {
         path: "/media-press",
         element: <MediaAndPress></MediaAndPress>,
-
       },
       {
         path: "join-team",
@@ -100,7 +98,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/getting-Started",
-        element: <GettingStarted></GettingStarted>
+        element: <GettingStarted></GettingStarted>,
       },
       {
         path: "/about-explore",
@@ -228,8 +226,9 @@ const router = createBrowserRouter([
   },
   {
     path: "/confirmedSchedule",
-    element: <ConfirmedSchedule/>
-  }
+    element: <ConfirmedSchedule />,
+    
+  },
 ]);
 
 export default router;
