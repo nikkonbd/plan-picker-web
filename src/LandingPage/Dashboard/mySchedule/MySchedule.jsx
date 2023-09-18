@@ -36,10 +36,6 @@ const MySchedule = () => {
   //     });
   // }, []); // Empty dependency array means the effect runs once after initial render
 
-  
-  const [eventData, setEventData] = useState([]);
-  const currentPost = eventData.slice(firstPostIndex, lastPostIndex);
-
   // call axios hook
   const [axiosSecure] = useAxiosSecure();
 
@@ -58,8 +54,6 @@ const MySchedule = () => {
         setLoading(false);
       });
   }, []); // Empty dependency array means the effect runs once after initial render
-
-
 
   // fetch event data by email
   const { data: events = [], refetch } = useQuery(
@@ -137,16 +131,14 @@ const MySchedule = () => {
           <ScheduleCard
             key={scheduleData._id}
             scheduleData={scheduleData}
-            eventDelete={eventDelete}
-          ></ScheduleCard>
+            eventDelete={eventDelete}></ScheduleCard>
         ))}
       </div>
       <Pagination
         totalPosts={eventData.length}
         postPerPage={postPerPage}
         setCurrentPage={setCurrentPage}
-        currentPage={currentPage}>
-      </Pagination>
+        currentPage={currentPage}></Pagination>
     </div>
   );
 };

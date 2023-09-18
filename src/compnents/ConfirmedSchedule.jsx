@@ -2,6 +2,7 @@
 import { useSelector } from "react-redux";
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
+import { Link } from "react-router-dom";
 
 const ConfirmedSchedule = () => {
   const { user } = useContext(AuthContext);
@@ -12,33 +13,31 @@ const ConfirmedSchedule = () => {
   const { isLoading, isSuccess, error } = useSelector(
     (state) => state.confirmedEventData
   );
-  
- 
 
   console.log(events?.eventData[0]);
   const {
-      eventName,
-      selectedDate,
-      timeDurationRange,
-      hostName,
-      hostEmail,
-      email,
-      location,
-      timeZone,
-      name,
+    eventName,
+    selectedDate,
+    timeDurationRange,
+    hostName,
+    hostEmail,
+    email,
+    location,
+    timeZone,
+    name,
   } = events?.eventData[0];
-  
+
   const isoDateTime = selectedDate;
   // Create a Date object from the ISO 8601 date and time string
   const date = new Date(isoDateTime);
-  
+
   // Format the date and time using toLocaleString
-  const formattedDateTime = date.toLocaleString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-    hour: '2-digit',
-    minute: '2-digit',
+  const formattedDateTime = date.toLocaleString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
     hour12: true, // Use 12-hour format
   });
 
@@ -50,7 +49,7 @@ const ConfirmedSchedule = () => {
         <>
           <div className="flex flex-row justify-center">
             <div
-              className="inline-block px-8 pt-5 pb-4 overflow-hidden text-left align-bottom transition-all transform border rounded-lg main sm:my-8 sm:max-w-xl bg-default dark:bg-muted border-booker border-booker-width sm:w-full sm:py-8 sm:align-middle"
+              className="inline-block bg-[#5ebdc433] px-8 pt-5 pb-4 overflow-hidden text-left align-bottom transition-all transform border rounded-lg main sm:my-8 sm:max-w-xl bg-default dark:bg-muted border-booker border-booker-width sm:w-full sm:py-8 sm:align-middle"
               role="dialog"
               aria-modal="true"
               aria-labelledby="modal-headline">
@@ -83,25 +82,21 @@ const ConfirmedSchedule = () => {
                   </p>
                 </div>
                 <div className="grid grid-cols-3 pt-8 mt-8 text-left border-t border-subtle text-default rtl:text-right">
-                  <div className="font-medium">What</div>
+                  <div className="font-medium">What:-</div>
                   <div
                     className="col-span-2 mb-6 last:mb-0"
                     data-testid="booking-title">
                     {`${eventName} between ${user?.displayName} and ${name}`}
                   </div>
-                  <div className="font-medium">When</div>
+                  <div className="font-medium">When:-</div>
                   <div className="col-span-2 mb-6 last:mb-0">
                     <div className="">
                       {`${formattedDateTime}, ${timeDurationRange}`}
                     </div>
                     <span className="text-bookinglight">{timeZone}</span>
                   </div>
-                </div>
-
-                <div className="flex flex-row items-center md:gap-36 gap-28">
-                  <div className="font-medium">Who</div>
+                  <div className="font-medium">Who:-</div>
                   <div className="col-span-2 text-left last:mb-0">
-                    <div className="mb-3"></div>
                     <span data-testid="booking-host-name" className="mr-2">
                       {hostName}
                     </span>
@@ -109,43 +104,41 @@ const ConfirmedSchedule = () => {
                       Host
                     </div>
                     <p className="text-default">{hostEmail}</p>
-                    <div className="mb-3 text-left last:mb-0">
+                    <div className="mb-3 pt-2 text-left last:mb-0">
                       <p data-testid="attendee-name-Himangsu roy">{name}</p>
                       <p data-testid="attendee-email-himur98@gmail.com">
                         {email}
                       </p>
                     </div>
                   </div>
-                </div>
-              </div>
-
-              <div className="flex flex-row gap-6">
-                <div className="mt-3 font-medium">Where:</div>
-                <div className="col-span-2 mt-3">
-                  {`${location}: Meeting url is in the confirmation email`}
+                  <div className="mt-3 font-medium">Where:-</div>
+                  <div className="col-span-2 mt-3">
+                    {`${location}: Confirmation email you get Meeting URL.`}
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
           <hr className="mb-8 border-subtle" />
-          <div className="text-center last:pb-0">
+          <div className="text-center last:pb-4">
             <span className="text-emphasis ltr:mr-2 rtl:ml-2">
               Need to make a change?
             </span>
             <span className="inline text-default">
-              <span className="underline" data-testid="reschedule-link">
+              <span className="font-medium" data-testid="reschedule-link">
                 <a href="/reschedule/hDuSrsZGceAwWNgvgUCMbL">Reschedule</a>
               </span>
               <span className="mx-2">or</span>
             </span>
-            <button data-testid="cancel" className="underline text-default">
-              Cancel
-            </button>
+            <Link to={"/"}>
+              <button data-testid="cancel" className="text-default font-medium">
+                Home
+              </button>
+            </Link>
           </div>
         </>
       )}
-      
     </div>
   );
 };

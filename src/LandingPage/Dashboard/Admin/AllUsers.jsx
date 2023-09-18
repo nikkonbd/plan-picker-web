@@ -71,7 +71,7 @@ const AllUsers = () => {
               Swal.fire("Deleted!", "User has been deleted.", "success");
               const remaining = myUsers.filter((item) => item._id !== user._id);
               setMyusers(remaining);
-              // refetch();
+              refetch();
             }
           });
       }
@@ -147,8 +147,7 @@ const AllUsers = () => {
                 <td>
                   <button
                     onClick={() => handleDelete(user?._id)}
-                    className="btn btn-circle"
-                  >
+                    className="btn btn-circle">
                     <FaTrashAlt
                       fontSize={26}
                       className="text-red-600"></FaTrashAlt>

@@ -21,8 +21,6 @@ const ScheduleCard = ({ scheduleData, eventDelete }) => {
     formData,
     link,
   } = scheduleData;
-  
-
 
   const [isCopied, setIsCopied] = useState(false);
 
@@ -80,14 +78,12 @@ const ScheduleCard = ({ scheduleData, eventDelete }) => {
     unitOfTime === "hour"
       ? `${durationInHours.toFixed(1)} ${unitOfTime}`
       : `${formData?.eventDuration} ${unitOfTime}`;
-  
 
   return (
     <div className="relative border-[1px] border-teal-500 bg-[#68d8e0] text-black p-8 rounded-lg shadow hover:shadow-xl cursor-default">
       <button
         onClick={() => eventDelete(id)}
-        className="absolute p-1 text-white bg-red-500 rounded-full -right-2 -top-2"
-      >
+        className="absolute p-1 text-white bg-red-500 rounded-full -right-2 -top-2">
         <RxCross2 size={18}></RxCross2>
       </button>
       <p className="pb-2 font-semibold">
