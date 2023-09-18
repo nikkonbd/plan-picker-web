@@ -395,6 +395,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
           </div>
 
           {/* Expand / collapse button */}
+          {/* Expand / collapse button */}
           <div className="justify-end hidden pt-3 mt-auto lg:inline-flex 2xl:hidden">
             <div className="px-3 py-2">
               <button onClick={() => setSidebarExpanded(!sidebarExpanded)}>
