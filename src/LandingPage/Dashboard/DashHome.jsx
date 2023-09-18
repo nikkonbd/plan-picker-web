@@ -3,16 +3,17 @@ import DashboardAnimation from "../../assets/dashboardLoading.json";
 import useAdmin from "../../hooks/useAdmin";
 import { AuthContext } from "../../providers/AuthProvider";
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 const DashHome = () => {
   const [isAdmin] = useAdmin();
   const { user } = useContext(AuthContext);
   return (
-    <div className="flex items-center justify-center">
-      <div className="w-5/12">
+    <div className="flex md:flex-row flex-col items-center justify-center max-w-4xl mx-auto">
+      <div className="md:w-5/12">
         <h4>Wellcome to Dashboard</h4>
-        <h1 className="text-4xl font-semibold">
-          {user.displayName}{" "}
-          <span className="text-sm">({isAdmin ? "Admin" : "User"})</span>
+        <h1 className="text-2xl md:text-4xl font-semibold">
+          {user.displayName}
+          <span className="ml-1 text-sm">({isAdmin ? "Admin" : "User"})</span>
         </h1>
         <p className="mt-5">From here you can,</p>
         <ul className="list-disc list-inside">
@@ -34,8 +35,16 @@ const DashHome = () => {
             </>
           )}
         </ul>
+        <div className="mt-7">
+          <Link
+            to={"/"}
+            className="bg-[#5EBEC4] hover:bg-[#0e727b] duration-150 px-3 py-2 rounded text-white"
+          >
+            Home Page
+          </Link>
+        </div>
       </div>
-      <div className="w-7/12">
+      <div className="md:w-7/12">
         <Lottie
           animationData={DashboardAnimation}
           loop={true}
