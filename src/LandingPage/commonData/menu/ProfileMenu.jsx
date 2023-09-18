@@ -49,8 +49,7 @@ const ProfileMenu = () => {
               viewBox="0 0 24 24"
               strokeWidth={2}
               stroke="currentColor"
-              className="h-4 w-4"
-            >
+              className="h-4 w-4">
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -68,8 +67,7 @@ const ProfileMenu = () => {
               viewBox="0 0 24 24"
               strokeWidth={2}
               stroke="currentColor"
-              className="h-4 w-4"
-            >
+              className="h-4 w-4">
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -81,9 +79,11 @@ const ProfileMenu = () => {
                 d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
               />
             </svg>
-            <Typography variant="small" className="font-normal">
-              Edit Profile
-            </Typography>
+            <Link to={"/dashboard/Profile"}>
+              <Typography variant="small" className="font-normal">
+                Edit Profile
+              </Typography>
+            </Link>
           </MenuItem>
           <MenuItem className="flex items-center gap-2">
             <svg
@@ -92,8 +92,7 @@ const ProfileMenu = () => {
               viewBox="0 0 24 24"
               strokeWidth={2}
               stroke="currentColor"
-              className="h-4 w-4"
-            >
+              className="h-4 w-4">
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -111,8 +110,7 @@ const ProfileMenu = () => {
               viewBox="0 0 24 24"
               strokeWidth={2}
               stroke="currentColor"
-              className="h-4 w-4"
-            >
+              className="h-4 w-4">
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -131,8 +129,7 @@ const ProfileMenu = () => {
               viewBox="0 0 24 24"
               strokeWidth={2}
               stroke="currentColor"
-              className="h-4 w-4"
-            >
+              className="h-4 w-4">
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"

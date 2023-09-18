@@ -36,10 +36,30 @@ const MySchedule = () => {
   //     });
   // }, []); // Empty dependency array means the effect runs once after initial render
 
-
+  
+  const [eventData, setEventData] = useState([]);
+  const currentPost = eventData.slice(firstPostIndex, lastPostIndex);
 
   // call axios hook
   const [axiosSecure] = useAxiosSecure();
+
+  useEffect(() => {
+    // Axios GET request
+    axios
+      .get(
+        `https://plan-picker-server.vercel.app/getEventByEmail/${user?.email}`
+      )
+      .then((response) => {
+        setSchedule(response.data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        setError(error);
+        setLoading(false);
+      });
+  }, []); // Empty dependency array means the effect runs once after initial render
+
+
 
   // fetch event data by email
   const { data: events = [], refetch } = useQuery(
@@ -64,18 +84,18 @@ const MySchedule = () => {
       text: "You won't be able to revert this!",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: "#3085d6",
+      confirmButtonColor: "#5EBEC4",
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/deleteEventById/${id}`, {
+        fetch(`https://plan-picker-server.vercel.app/deleteEventById/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {
-              Swal.fire("Deleted!", "Your Toy has been deleted.", "success");
+              Swal.fire("Deleted!", "Your Event has been deleted.", "success");
               const remainingEvent = eventData.filter(
                 (event) => event.id !== id
               );
@@ -117,7 +137,8 @@ const MySchedule = () => {
           <ScheduleCard
             key={scheduleData._id}
             scheduleData={scheduleData}
-            eventDelete={eventDelete}></ScheduleCard>
+            eventDelete={eventDelete}
+          ></ScheduleCard>
         ))}
       </div>
       <Pagination

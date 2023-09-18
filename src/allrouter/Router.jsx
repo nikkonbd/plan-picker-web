@@ -39,6 +39,9 @@ import HelpCenter from "../LandingPage/contact/contactSupportPages/HelpCenter";
 import MediaAndPress from "../LandingPage/contact/contactSupportPages/MediaAndPress";
 import RefundPolicy from "../LandingPage/commonData/refundPolicy/RefundPolicy";
 import ReturnPolicy from "../LandingPage/commonData/returnPolicy/ReturnPolicy";
+import GettingStarted from "../LandingPage/aboutus/exploreFeatures/GettingStarted";
+import ConfirmedSchedule from "../compnents/confirmedSchedule";
+import DashHome from "../LandingPage/Dashboard/DashHome";
 
 const router = createBrowserRouter([
   {
@@ -95,6 +98,10 @@ const router = createBrowserRouter([
         element: <About></About>,
       },
       {
+        path: "/getting-Started",
+        element: <GettingStarted></GettingStarted>,
+      },
+      {
         path: "/about-explore",
         element: <ExploreFeatures></ExploreFeatures>,
       },
@@ -132,11 +139,14 @@ const router = createBrowserRouter([
     path: "/dashboard",
     element: (
       <PrivateRoute>
-        {" "}
         <Dashboard></Dashboard>
       </PrivateRoute>
     ),
     children: [
+      {
+        path: "/dashboard",
+        element: <DashHome />,
+      },
       {
         path: "/dashboard/schedule",
         element: <MyCalendar />,
@@ -205,11 +215,22 @@ const router = createBrowserRouter([
     loader: ({ params }) =>
       fetch(`https://plan-picker-server.vercel.app/paymentCard/${params.id}`),
   },
+
   {
     path: "/event/:eventName/:id",
     element: <SetMeeting />,
     loader: ({ params }) =>
       fetch(`https://plan-picker-server.vercel.app/getEvent/${params.id}`),
+  },
+  {
+    path: "/event/confirmation/:eventName/:id",
+    element: <ScheduleEventDetails />,
+    loader: ({ params }) =>
+      fetch(`https://plan-picker-server.vercel.app/getEvent/${params.id}`),
+  },
+  {
+    path: "/confirmedSchedule",
+    element: <ConfirmedSchedule />,
   },
 ]);
 

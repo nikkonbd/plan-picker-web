@@ -5,7 +5,8 @@ import { useNavigate } from "react-router-dom";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { AuthContext } from "../../../providers/AuthProvider";
 
-const CheckOutForm = ({ id, price }) => {
+const CheckOutForm = ({ loader }) => {
+  const { id, price, description } = loader;
   const stripe = useStripe();
   const elements = useElements();
   const [cardError, setCardError] = useState("");
@@ -102,8 +103,26 @@ const CheckOutForm = ({ id, price }) => {
 
   return (
     <>
-      <form className="w-75 mx-auto py-5" onSubmit={handleSubmit}>
+      <form
+        className="mx-auto py-5 px-5 shadow-md p-6 rounded-md md:w-2/6 w-full"
+        onSubmit={handleSubmit}>
+        <h2 className="text-xl font-semibold text-center pb-2">
+          {description}
+        </h2>
+        <div className="space-y-3 mb-3">
+          <input
+            defaultValue={user.displayName}
+            className="border border-[#42a6ad] p-1 rounded-md outline-none w-full"
+            type="text"
+          />
+          <input
+            defaultValue={user.email}
+            className="border border-[#42a6ad] p-1 rounded-md outline-none w-full"
+            type="text"
+          />
+        </div>
         <CardElement
+          className="border p-2 border-[#42a6ad] rounded-md"
           options={{
             style: {
               base: {
@@ -121,7 +140,7 @@ const CheckOutForm = ({ id, price }) => {
         />
         <div className="flex justify-center">
           <button
-            className="btn btn-success mt-4"
+            className="btn bg-[#5EBEC4] mt-4 text-white hover:bg-[#42a6ad]"
             type="submit"
             disabled={!stripe || !clientSecret || processing || submitting}>
             Pay ${price}

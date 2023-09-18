@@ -18,8 +18,30 @@ const auth = getAuth(app);
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [monthName, setMonthName] = useState(" ");
 
   const googleProvider = new GoogleAuthProvider();
+  // get month
+  useEffect(() => {
+    const month = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+
+    const d = new Date();
+    setMonthName(month[d.getMonth()]);
+  }, []);
+  // let monthName = month[d.getMonth()];
 
   // Google Login
   const googleLogin = () => {
@@ -88,6 +110,7 @@ const AuthProvider = ({ children }) => {
     logOut,
     updateUserProfile,
     googleLogin,
+    monthName,
   };
 
   return (

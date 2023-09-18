@@ -18,7 +18,7 @@ const Banner = () => {
           more.
         </p>
         <button className="mt-1 rounded-lg bg-[#5EBEC4] px-4 py-3 text-sm font-bold uppercase tracking-wide text-white transition-none hover:bg-[#42a6ad] sm:mt-0 sm:w-auto sm:shrink-0 mr-4">
-          Sign up free now
+          Watch Video Now
         </button>
         <Link to="/more-plan">
           <button className="mt-1 rounded-lg border px-4 py-3 text-sm font-bold uppercase tracking-wide hover:text-white transition-none hover:bg-[#5EBEC4] text-[#42a6ad] border-[#5EBEC4] sm:mt-0 sm:w-auto sm:shrink-0">
