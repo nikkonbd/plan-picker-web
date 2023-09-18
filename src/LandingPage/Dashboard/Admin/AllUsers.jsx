@@ -49,8 +49,8 @@ const AllUsers = () => {
   };
 
   //delete user
-  const handleDelete = (_id) => {
-    // console.log(_id);
+  const handleDelete = (user) => {
+
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -61,7 +61,7 @@ const AllUsers = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://plan-picker-server.vercel.app/deleteuser/${_id}`, {
+        fetch(`https://plan-picker-server.vercel.app/deleteuser/${user._id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -69,7 +69,7 @@ const AllUsers = () => {
             // console.log(data);
             if (data.deletedCount > 0) {
               Swal.fire("Deleted!", "User has been deleted.", "success");
-              const remaining = myUsers.filter((item) => item._id !== _id);
+              const remaining = myUsers.filter((item) => item._id !== user._id);
               setMyusers(remaining);
               refetch();
             }
