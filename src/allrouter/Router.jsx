@@ -167,10 +167,7 @@ const router = createBrowserRouter([
         path: "/dashboard/AddReview",
         element: <AddReview></AddReview>,
       },
-      // {
-      //   path: "/dashboard/Schedule/:id",
-      //   element: <ScheduleEventDetails></ScheduleEventDetails>,
-      // },
+     
       {
         path: "/dashboard/mySchedule/",
         element: <MySchedule></MySchedule>,
@@ -187,10 +184,7 @@ const router = createBrowserRouter([
         path: "/dashboard/event_type/one-on-one-form",
         element: <Event />,
       },
-      // {
-      //   path: "/dashboard/event_type/group-form",
-      //   element: <Event2 />,
-      // },
+    
       {
         path: "/dashboard/event_type/collective-form",
         element: <div>Colective</div>,

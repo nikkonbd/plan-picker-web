@@ -175,6 +175,7 @@ const Event = () => {
         eventLink,
         id: uniqueId,
         email: user?.email,
+        name: user?.displayName,
       };
 
       dispatch(setObjectData(formData));

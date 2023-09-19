@@ -35,6 +35,8 @@ const SetMeeting = () => {
   // Convert formData.startDate and formData.endDate to Date objects
   const startDate = new Date(formData.startDate);
   const endDate = new Date(formData.endDate);
+  
+  console.log(formData.startDate)
 
   // Calculate the number of days between startDate and endDate
   const daysBetween = Math.ceil((endDate - startDate) / (1000 * 60 * 60 * 24));
@@ -97,6 +99,8 @@ const SetMeeting = () => {
   //   navigate(`/event/confirmation/${eventName}/${id}`)
   // }
 
+  const selectedStartTime = '10:30 AM'; // Set this dynamically
+const selectedEndTime = '11:30 AM'; // Set this dynamically
   
 
   return (
@@ -115,16 +119,18 @@ const SetMeeting = () => {
           </div>
         </div>
 
-        <div className="-z-0"> 
+        <div className="-z-0">
           <ScheduleMeeting
             borderRadius={10}
             primaryColor="#3f5b85"
             eventDurationInMinutes={formData?.eventDuration}
             availableTimeslots={availableTimeslots}
-            // onStartTimeSelect={startTimeSelect}
+            // onStartTimeSelect={selectedStartTime}
             onStartTimeSelect={handleStartTimeSelect}
             selectedDateDayTitleFormatString="cccc, LLLL do"
             startTimeListStyle="scroll-list"
+            initialStartTime={selectedStartTime} // Set the initial start time
+            initialEndTime={selectedEndTime} // Set the initial end time
           />
         </div>
       </div>

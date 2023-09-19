@@ -167,7 +167,7 @@ const ScheduleEventDetails = () => {
               <Input
                 type="text"
                 name="note"
-                className="h-16"
+                className="h-16 "
                 label="Please share anything that will help prepare for our meeting."
                 value={participantFormData.note}
                 onChange={handleInputChange}
