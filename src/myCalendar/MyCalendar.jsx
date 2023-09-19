@@ -1,5 +1,5 @@
-// src/components/MyCalendar.js
-import React from "react";
+
+import React, { useContext } from "react";
 import "./MyCalendar.css"; // Import custom CSS for styling
 import EventSearch from "./eventSearch/EventSearch";
 import CreateEventButton from "./createEvent/CreateEvent";
@@ -8,9 +8,11 @@ import EventNavbar from "./eventNavbar/EventNavbar";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
+import { AuthContext } from "../providers/AuthProvider";
 
 const MyCalendar = () => {
-  // const [events, setEvents] = useState([]);
+  const { user } = useContext(AuthContext);
+  // const [events, setEvents] = useState();
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -18,16 +20,19 @@ const MyCalendar = () => {
   useEffect(() => {
     // Axios GET request
     axios
-      .get("https://plan-picker-server.vercel.app/getEvent")
+      .get(
+        `https://plan-picker-server.vercel.app/getEventByEmail/${user?.email}`
+      )
       .then((response) => {
         setData(response.data);
+
         setLoading(false);
       })
       .catch((error) => {
         setError(error);
         setLoading(false);
       });
-  }, []); // Empty dependency array means the effect runs once after initial render
+  }, [loading]);
 
   if (loading) {
     return <p>Loading...</p>;
@@ -84,11 +89,6 @@ const MyCalendar = () => {
           <div className="flex">
             <EventSearch events={events} />
           </div>
-          {/* <div className="p-4 bg-white rounded-lg shadow-md">
-          
-        </div> */}
-          {/* R */}
-          {/* <NewEventTypes /> */}
         </div>
       </div>
     </>

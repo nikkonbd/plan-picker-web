@@ -12,24 +12,20 @@ import { useSelector } from "react-redux";
 
 import { confirmedSubmitData } from "../store/features/cofirmedEvent/confirmedEvent";
 import { useDispatch } from "react-redux";
+import axios from "axios";
 
 const ScheduleEventDetails = () => {
-
   const navigate = useNavigate();
   const { user } = useContext(AuthContext);
   const eventData = useLoaderData();
   const data = useSelector((state) => state.participantData.data);
-  const [{ eventName, description, formData }] = eventData;
+  const [{ eventName, description, formData, eventLink }] = eventData;
   const dispatch = useDispatch();
   const { isLoading, isSuccess, error } = useSelector(
     (state) => state.confirmedEventData
   );
-  console.log(isLoading);
 
-  console.log(eventName, user);
-  console.log(data?.startTime);
-  console.log(data[0]?.link?.meetLink);
-
+  //Navigate to Back
   const goBack = () => {
     navigate(-1);
   };
@@ -59,8 +55,7 @@ const ScheduleEventDetails = () => {
     return timeSlots;
   }
 
-
-  const startTime = new Date(data?.startTime); // September is month 8 (0-based)
+  const startTime = new Date(data?.startTime);
   const durationMinutes = formData?.eventDuration;
 
   const timeSlots = generateTimeSlotsWithEndTime(startTime, durationMinutes);
@@ -84,8 +79,6 @@ const ScheduleEventDetails = () => {
     });
   };
 
-
-
   const formatedSelectedDate = data?.startTime;
   console.log(formatedSelectedDate);
   const confirmedData = {
@@ -103,10 +96,8 @@ const ScheduleEventDetails = () => {
     note: participantFormData?.note,
     location: data[0]?.location,
     id: data?.id,
+    eventLink,
   };
-  
-
-  
 
   const submitConfirmed = async () => {
     dispatch(confirmedSubmitData(confirmedData));
@@ -115,6 +106,7 @@ const ScheduleEventDetails = () => {
   if (isSuccess) {
     navigate("/confirmedSchedule");
   }
+  
 
   return (
     <>
@@ -135,7 +127,7 @@ const ScheduleEventDetails = () => {
             </p>
             <p className="flex items-center gap-2 font-semibold">
               <MdOutlineEventNote></MdOutlineEventNote>
-              
+
               <div>
                 {timeSlots[0]}, {data?.startTime.toDateString()}
               </div>
@@ -146,7 +138,6 @@ const ScheduleEventDetails = () => {
             </p>
           </div>
 
-         
           <div className="space-y-2 lg:w-1/2">
             <h4 className="text-xl font-semibold">Enter Details</h4>
             <form className="space-y-5">

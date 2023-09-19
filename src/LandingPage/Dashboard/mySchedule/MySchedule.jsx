@@ -13,15 +13,28 @@ const MySchedule = () => {
   const [schedule, setSchedule] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [eventData, setEventData] = useState([]);
 
   //pagination
   const [currentPage, setCurrentPage] = useState(1);
   const [postPerPage, setPostPerPage] = useState(2);
   const lastPostIndex = currentPage * postPerPage;
   const firstPostIndex = lastPostIndex - postPerPage;
-  
-  const [eventData, setEventData] = useState([]);
   const currentPost = eventData.slice(firstPostIndex, lastPostIndex);
+
+  // useEffect(() => {
+  //   // Axios GET request
+  //   axios
+  //     .get(`http://localhost:5000/getEventByEmail/${user?.email}`)
+  //     .then((response) => {
+  //       setSchedule(response.data);
+  //       setLoading(false);
+  //     })
+  //     .catch((error) => {
+  //       setError(error);
+  //       setLoading(false);
+  //     });
+  // }, []); // Empty dependency array means the effect runs once after initial render
 
   // call axios hook
   const [axiosSecure] = useAxiosSecure();
@@ -41,8 +54,6 @@ const MySchedule = () => {
         setLoading(false);
       });
   }, []); // Empty dependency array means the effect runs once after initial render
-
-
 
   // fetch event data by email
   const { data: events = [], refetch } = useQuery(
@@ -120,16 +131,14 @@ const MySchedule = () => {
           <ScheduleCard
             key={scheduleData._id}
             scheduleData={scheduleData}
-            eventDelete={eventDelete}
-          ></ScheduleCard>
+            eventDelete={eventDelete}></ScheduleCard>
         ))}
       </div>
       <Pagination
-        totalPosts={schedule.length}
+        totalPosts={eventData.length}
         postPerPage={postPerPage}
         setCurrentPage={setCurrentPage}
-        currentPage={currentPage}
-      ></Pagination>
+        currentPage={currentPage}></Pagination>
     </div>
   );
 };

@@ -41,6 +41,7 @@ import RefundPolicy from "../LandingPage/commonData/refundPolicy/RefundPolicy";
 import ReturnPolicy from "../LandingPage/commonData/returnPolicy/ReturnPolicy";
 import GettingStarted from "../LandingPage/aboutus/exploreFeatures/GettingStarted";
 import ConfirmedSchedule from "../compnents/confirmedSchedule";
+import DashHome from "../LandingPage/Dashboard/DashHome";
 
 const router = createBrowserRouter([
   {
@@ -138,11 +139,14 @@ const router = createBrowserRouter([
     path: "/dashboard",
     element: (
       <PrivateRoute>
-        {" "}
         <Dashboard></Dashboard>
       </PrivateRoute>
     ),
     children: [
+      {
+        path: "/dashboard",
+        element: <DashHome />,
+      },
       {
         path: "/dashboard/schedule",
         element: <MyCalendar />,
@@ -221,7 +225,6 @@ const router = createBrowserRouter([
   {
     path: "/confirmedSchedule",
     element: <ConfirmedSchedule />,
-    
   },
 ]);
 
