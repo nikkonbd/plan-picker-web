@@ -7,6 +7,7 @@ import {
 } from "react-icons/fa";
 import { GiClockwork } from "react-icons/gi";
 import { Link } from "react-router-dom";
+import logo from "../../../public/logo (3).png";
 
 const Footer = () => {
   return (
@@ -115,8 +116,7 @@ const Footer = () => {
                   <li>
                     <a
                       href="#faqHome"
-                      className="transition hover:text-teal-800"
-                    >
+                      className="transition hover:text-teal-800">
                       FAQs
                     </a>
                   </li>
@@ -155,7 +155,8 @@ const Footer = () => {
 
               <div className="col-span-2 md:text-right">
                 <div className="flex items-center md:justify-end gap-1">
-                  <GiClockwork className="pr-2 text-5xl text-[#5EBEC4]"></GiClockwork>
+                  {/* <GiClockwork className="pr-2 text-5xl text-[#5EBEC4]"></GiClockwork> */}
+                  <img className="w-16" src={logo} alt="" />
                   <a className="text-base font-bold normal-case text-[#42a6ad] md:text-xl">
                     <Link to={"/"}>Plan Picker</Link>
                   </a>
@@ -171,32 +172,27 @@ const Footer = () => {
                   <a href="#">
                     <FaFacebook
                       size={25}
-                      className="hover:text-light-blue-600"
-                    ></FaFacebook>
+                      className="hover:text-light-blue-600"></FaFacebook>
                   </a>
                   <a href="#">
                     <FaInstagram
                       size={25}
-                      className="hover:text-orange-900"
-                    ></FaInstagram>
+                      className="hover:text-orange-900"></FaInstagram>
                   </a>
                   <a href="#">
                     <FaTwitter
                       size={25}
-                      className="hover:text-light-blue-500"
-                    ></FaTwitter>
+                      className="hover:text-light-blue-500"></FaTwitter>
                   </a>
                   <a href="#">
                     <FaGithub
                       size={25}
-                      className="hover:text-gray-900"
-                    ></FaGithub>
+                      className="hover:text-gray-900"></FaGithub>
                   </a>
                   <a href="#">
                     <FaDribbble
                       size={25}
-                      className="hover:text-pink-500"
-                    ></FaDribbble>
+                      className="hover:text-pink-500"></FaDribbble>
                   </a>
                 </div>
               </div>
