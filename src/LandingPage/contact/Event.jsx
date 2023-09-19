@@ -98,18 +98,18 @@ const Event = () => {
     const locationValue = e.target.value;
 
     // Disable the event link input for "Google Meet" and "Zoom"
-    const isDisabled =
-      locationValue === "Google Meet" || locationValue === "Zoom";
-    setEventLink("");
-    document.getElementById("eventLinkInput").disabled = isDisabled;
+    // const isDisabled =
+    //   locationValue === "Google Meet" || locationValue === "Zoom";
+    // setEventLink("");
+    // document.getElementById("eventLinkInput").disabled = isDisabled;
 
     setLocation(locationValue);
     validateLocation(locationValue);
 
     // Automatically focus on the event link input for other locations
-    if (!isDisabled) {
-      document.getElementById("eventLinkInput").focus();
-    }
+    // if (!isDisabled) {
+    //   document.getElementById("eventLinkInput").focus();
+    // }
   };
 
   // Function to handle changes in Event Link input
@@ -175,6 +175,7 @@ const Event = () => {
         eventLink,
         id: uniqueId,
         email: user?.email,
+        name: user?.displayName,
       };
 
       dispatch(setObjectData(formData));

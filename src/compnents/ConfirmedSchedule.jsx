@@ -27,10 +27,10 @@ const ConfirmedSchedule = () => {
     name,
   } = events?.eventData[0];
 
+  
   const isoDateTime = selectedDate;
   // Create a Date object from the ISO 8601 date and time string
   const date = new Date(isoDateTime);
-
   // Format the date and time using toLocaleString
   const formattedDateTime = date.toLocaleString("en-US", {
     year: "numeric",

@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 import { setData } from "../store/features/participantsData/participantsDataSlice";
 import { v4 as uuidv4 } from "uuid";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const SetMeeting = () => {
   const { eventId } = useParams();
@@ -31,6 +32,8 @@ const SetMeeting = () => {
   // Convert formData.startDate and formData.endDate to Date objects
   const startDate = new Date(formData.startDate);
   const endDate = new Date(formData.endDate);
+  
+  console.log(formData.startDate)
 
   // Calculate the number of days between startDate and endDate
   const daysBetween = Math.ceil((endDate - startDate) / (1000 * 60 * 60 * 24));
@@ -88,6 +91,17 @@ const SetMeeting = () => {
   //   navigate(`/event/confirmation/${eventName}/${id}`)
   // }
 
+
+//   const selectedStartTime = '10:30 AM'; // Set this dynamically
+// const selectedEndTime = '11:30 AM'; // Set this dynamically
+
+
+  axios.get("http://localhost:5000/getAvailability").then((response) => {
+    console.log(response.data[0].avilability);
+  });
+  
+
+
   return (
     <>
       <div className="md:max-w-6xl mx-auto">
@@ -134,3 +148,5 @@ const SetMeeting = () => {
 };
 
 export default SetMeeting;
+
+

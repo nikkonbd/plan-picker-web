@@ -206,31 +206,7 @@ const EventPage = () => {
     navigate("/dashboard/schedule");
   };
 
-  // const handleSelectTime = (selectTime) => {
-  //   const { endAmPm, endHour, endMinute, startAmPm, startHour, startMinute } =
-  //     selectTime;
-  //   setStartHour(startHour);
-  //   setStartMinute(startMinute);
-  //   setStartAmPm(startAmPm);
-  //   setEndHours(endHour);
-  //   setEndMinute(endMinute);
-  //   setEndAmPm(endAmPm);
-  // };
-
-  // useEffect(() => {
-  // if (insertedId) {
-  //     axios
-  //       .get(`https://plan-picker-server.vercel.app/getEvent/${insertedId}`)
-  //       .then((response) => {
-  //         const data = response.data;
-  //         // setEventData(data);
-  //         console.log(data);
-  //       })
-  //       .catch((error) => {
-  //         console.error("Error fetching data:", error);
-  //       });
-  //     }
-  //   }, [insertedId]);
+  
 
   return (
     <div className="px-4 py-6 border md:px-10">
