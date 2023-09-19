@@ -6,6 +6,7 @@ import { FaUserCircle } from "react-icons/fa";
 import { AuthContext } from "../../providers/AuthProvider";
 import ProfileMenu from "./menu/ProfileMenu";
 import { Button } from "@material-tailwind/react";
+import logo from "../../../public/logo (3).png";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -182,7 +183,8 @@ const Navbar = () => {
               {navMenu}
             </ul>
           </div>
-          <GiClockwork className="pr-2 text-5xl text-[#5EBEC4]"></GiClockwork>
+          {/* <GiClockwork className="pr-2 text-5xl text-[#5EBEC4]"></GiClockwork> */}
+          <img className="w-16" src={logo} alt="" />
           <a className="text-base font-bold normal-case text-[#42a6ad] md:text-xl hover:text-[#5EBEC4]">
             <Link to={"/"}>Plan Picker</Link>
           </a>

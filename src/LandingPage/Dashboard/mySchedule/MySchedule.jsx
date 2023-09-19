@@ -22,20 +22,6 @@ const MySchedule = () => {
   const firstPostIndex = lastPostIndex - postPerPage;
   const currentPost = eventData.slice(firstPostIndex, lastPostIndex);
 
-  // useEffect(() => {
-  //   // Axios GET request
-  //   axios
-  //     .get(`http://localhost:5000/getEventByEmail/${user?.email}`)
-  //     .then((response) => {
-  //       setSchedule(response.data);
-  //       setLoading(false);
-  //     })
-  //     .catch((error) => {
-  //       setError(error);
-  //       setLoading(false);
-  //     });
-  // }, []); // Empty dependency array means the effect runs once after initial render
-
   // call axios hook
   const [axiosSecure] = useAxiosSecure();
 
