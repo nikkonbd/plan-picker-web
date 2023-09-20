@@ -53,7 +53,7 @@ function TimeRangeSelector({ handleSelectTime }) {
         <div className="flex flex-col items-center md:flex-row">
           <select
             className="px-2 py-1 mr-2 border rounded"
-            value={startHour}
+            value={startHour.toString().padStart(2, "0")}
             onChange={handleStartHourChange}>
             {Array.from({ length: 12 }, (_, i) =>
               (i + 1).toString().padStart(2, "0")

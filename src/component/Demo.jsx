@@ -38,6 +38,9 @@ const Demo = ({ handleSubmit, isDataValid }) => {
 
     fetchData(events);
   }, [insertedId]);
+  
+  console.log(events)
+  console.log(data)
 
   return (
     <div>
@@ -63,7 +66,7 @@ const Demo = ({ handleSubmit, isDataValid }) => {
           </CardHeader>
 
           {isLoading ? (
-            <div className="flex justify-center items-center">Loading...</div>
+            <div className="flex items-center justify-center">Loading...</div>
           ) : (
             <div>
               {data.map((event) => (

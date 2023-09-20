@@ -171,7 +171,7 @@ const router = createBrowserRouter([
         path: "/dashboard/AddReview",
         element: <AddReview></AddReview>,
       },
-     
+
       {
         path: "/dashboard/mySchedule/",
         element: <MySchedule></MySchedule>,
@@ -188,7 +188,7 @@ const router = createBrowserRouter([
         path: "/dashboard/event_type/one-on-one-form",
         element: <Event />,
       },
-    
+
       {
         path: "/dashboard/event_type/collective-form",
         element: <div>Colective</div>,
@@ -207,20 +207,20 @@ const router = createBrowserRouter([
     path: "/paymentStripe/:id",
     element: <PaymentStripe />,
     loader: ({ params }) =>
-      fetch(`https://plan-picker-server.vercel.app/paymentCard/${params.id}`),
+      fetch(`http://localhost:5000/paymentCard/${params.id}`),
   },
 
   {
     path: "/event/:eventName/:id",
     element: <SetMeeting />,
     loader: ({ params }) =>
-      fetch(`https://plan-picker-server.vercel.app/getEvent/${params.id}`),
+      fetch(`http://localhost:5000/getEvent/${params.id}`),
   },
   {
     path: "/event/confirmation/:eventName/:id",
     element: <ScheduleEventDetails />,
     loader: ({ params }) =>
-      fetch(`https://plan-picker-server.vercel.app/getEvent/${params.id}`),
+      fetch(`http://localhost:5000/getEvent/${params.id}`),
   },
   {
     path: "/confirmedSchedule",
