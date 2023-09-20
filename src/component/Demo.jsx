@@ -39,6 +39,33 @@ const Demo = ({ handleSubmit, isDataValid }) => {
     fetchData(events);
   }, [insertedId]);
 
+  
+
+  // Create a Date object from the timestamp string
+  const startDate = new Date(data[0]?.formData?.startDate);
+
+  // Extract the date parts (year, month, day)
+  const startYear = startDate.getFullYear();
+  const startMonth = (startDate.getMonth() + 1).toString().padStart(2, "0"); // Months are 0-indexed
+  const startDay = startDate.getDate().toString().padStart(2, "0");
+
+  // Create a formatted date string (e.g., "2023-09-19")
+  const formattedStartDate = `${startYear}-${startMonth}-${startDay}`;
+  
+  
+  // Create a Date object from the timestamp string
+  const endDate = new Date(data[0]?.formData?.endDate);
+
+  // Extract the date parts (year, month, day)
+  const year = endDate.getFullYear();
+  const month = (endDate.getMonth() + 1).toString().padStart(2, "0"); // Months are 0-indexed
+  const day = endDate.getDate().toString().padStart(2, "0");
+
+  // Create a formatted date string (e.g., "2023-09-19")
+  const formattedEndDate = `${year}-${month}-${day}`;
+  
+
+
   return (
     <div>
       <button
@@ -63,7 +90,7 @@ const Demo = ({ handleSubmit, isDataValid }) => {
           </CardHeader>
 
           {isLoading ? (
-            <div className="flex justify-center items-center">Loading...</div>
+            <div className="flex items-center justify-center">Loading...</div>
           ) : (
             <div>
               {data.map((event) => (
@@ -102,7 +129,7 @@ const Demo = ({ handleSubmit, isDataValid }) => {
                       </p>
                       <p>
                         <span className="font-semibold me-1">Start Date:</span>
-                        {event?.formData?.startDate}
+                        {formattedStartDate}
                       </p>
                     </div>
                     <div className="flex justify-between">
@@ -112,12 +139,14 @@ const Demo = ({ handleSubmit, isDataValid }) => {
                       </p>
                       <p>
                         <span className="font-semibold me-1">End Date:</span>
-                        {event?.formData?.endDate}
+                        {formattedEndDate}
                       </p>
                     </div>
                     <p className="mt-5">
                       <span className="font-semibold me-1">Meet Link:</span>
-                      {event?.eventLink ? event?.eventLink : event?.link?.meetLink}
+                      {event?.eventLink
+                        ? event?.eventLink
+                        : event?.link?.meetLink}
                     </p>
                     <div className="flex justify-end gap-3 mt-4">
                       <button className="px-4 text-xl font-semibold py-2 bg-[#5EBEC4] hover:bg-[#42a6ad] duration-200 text-white rounded-md">

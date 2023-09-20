@@ -106,7 +106,7 @@ const ScheduleEventDetails = () => {
   if (isSuccess) {
     navigate("/confirmedSchedule");
   }
-  
+
 
   return (
     <>

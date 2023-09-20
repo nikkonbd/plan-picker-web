@@ -70,7 +70,7 @@ const SignUp = () => {
               // console.log(newData);
               dispatch(userCreated({ newData }));
               //to backend
-              fetch("https://plan-picker-server.vercel.app/users", {
+              fetch("http://localhost:5000/users", {
                 method: "POST",
                 headers: {
                   "content-type": "application/json",
@@ -158,8 +158,7 @@ const SignUp = () => {
         size="md"
         open={open}
         handler={handleOpen}
-        className="bg-transparent shadow-none"
-      >
+        className="bg-transparent shadow-none">
         <Card className="mx-auto w-full max-w-[42rem]">
           <CardHeader className="text-center py-3 bg-[#5EBEC4]">
             <Typography variant="h3" color="white">
@@ -217,8 +216,7 @@ const SignUp = () => {
               <Button
                 onClick={handleGoogleSignIN}
                 className="w-full flex items-center justify-center gap-4"
-                variant="outlined"
-              >
+                variant="outlined">
                 <FcGoogle className="text-xl text-teal-500"></FcGoogle>Sign In
                 With Google
               </Button>
@@ -231,8 +229,7 @@ const SignUp = () => {
                 as="a"
                 variant="small"
                 className="ml-1 text-[#5EBEC4] font-bold cursor-pointer"
-                onClick={handleOpen}
-              >
+                onClick={handleOpen}>
                 Sign In
               </Typography>
             </Typography>

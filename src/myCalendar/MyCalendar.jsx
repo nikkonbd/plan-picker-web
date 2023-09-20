@@ -1,4 +1,3 @@
-
 import React, { useContext } from "react";
 import "./MyCalendar.css"; // Import custom CSS for styling
 import EventSearch from "./eventSearch/EventSearch";
@@ -20,9 +19,7 @@ const MyCalendar = () => {
   useEffect(() => {
     // Axios GET request
     axios
-      .get(
-        `https://plan-picker-server.vercel.app/getEventByEmail/${user?.email}`
-      )
+      .get(`http://localhost:5000/getEventByEmail/${user?.email}`)
       .then((response) => {
         setData(response.data);
 
@@ -42,6 +39,57 @@ const MyCalendar = () => {
     return <p>Error: {error.message}</p>;
   }
 
+  const currentDate = new Date(); // Get the current date
+  // Create a Date object from the timestamp string
+  const endDate = new Date(currentDate);
+
+  // Extract the date parts (year, month, day)
+  const year = endDate.getFullYear();
+  const month = (endDate.getMonth() + 1).toString().padStart(2, "0"); // Months are 0-indexed
+  const day = endDate.getDate().toString().padStart(2, "0");
+
+  // Create a formatted date string (e.g., "2023-09-19")
+  const formattedEndDate = `${year}-${month}-${day}`;
+  
+  console.log(formattedEndDate)
+
+  // Sort events by date in ascending order
+  const sortedEvents = [...data].sort((a, b) => {
+    const dateA = new Date(a.formData.startDate);
+    const dateB = new Date(b.formData.startDate);
+    return dateA - dateB;
+  });
+
+  // Filter and display upcoming events
+  const upcomingEvents = sortedEvents.filter((event) => {
+    const eventStartDate = new Date(event.formData.startDate);
+
+    // Create a Date object from the timestamp string
+    const startDate = new Date(event.formData.startDate);
+
+    // Extract the date parts (year, month, day)
+    const year = startDate.getFullYear();
+    const month = (startDate.getMonth() + 1).toString().padStart(2, "0"); // Months are 0-indexed
+    const day = startDate.getDate().toString().padStart(2, "0");
+
+    // Create a formatted date string (e.g., "2023-09-19")
+    const formattedStartDate = `${year}-${month}-${day}`;
+
+    console.log(formattedEndDate);
+
+    // Convert event start date to local time zone
+    eventStartDate.setMinutes(
+      eventStartDate.getMinutes() + eventStartDate.getTimezoneOffset()
+    );
+
+    return formattedStartDate >= formattedEndDate;
+  });
+  
+  
+  console.log(upcomingEvents)
+
+ 
+
   const events = [
     {
       title: "Tech Conference 2023",
@@ -50,21 +98,7 @@ const MyCalendar = () => {
       description: "Join us for the biggest tech conference of the year...",
       imageUrl: "https://i.ibb.co/gzXt6WC/istockphoto-499517325-612x612.jpg",
     },
-    {
-      title: "Music Festival 2023",
-      date: "September 15-17, 2023",
-      location: "New York City, NY",
-      description: "Get ready for a weekend of music, art, and fun!...",
-      imageUrl: "https://i.ibb.co/SJVyWYM/event-party-3005668-640.jpg",
-    },
-    {
-      title: "College Festival 2023",
-      date: "September 15-17, 2023",
-      location: "New York City, NY",
-      description: "Get ready for a weekend of music, art, and fun!...",
-      imageUrl:
-        "https://i.ibb.co/WHXCrxn/e5ccec4a-40e3-448d-8003-f469eb197bf2.webp",
-    },
+    
   ];
 
   return (
@@ -87,7 +121,7 @@ const MyCalendar = () => {
             </div>
           </div>
           <div className="flex">
-            <EventSearch events={events} />
+            <EventSearch upcomingEvents={upcomingEvents} />
           </div>
         </div>
       </div>
