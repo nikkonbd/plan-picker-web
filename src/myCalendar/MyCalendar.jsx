@@ -1,4 +1,3 @@
-
 import React, { useContext } from "react";
 import "./MyCalendar.css"; // Import custom CSS for styling
 import EventSearch from "./eventSearch/EventSearch";
@@ -20,9 +19,7 @@ const MyCalendar = () => {
   useEffect(() => {
     // Axios GET request
     axios
-      .get(
-        `https://plan-picker-server.vercel.app/getEventByEmail/${user?.email}`
-      )
+      .get(`http://localhost:5000/getEventByEmail/${user?.email}`)
       .then((response) => {
         setData(response.data);
 

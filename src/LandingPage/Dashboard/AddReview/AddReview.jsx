@@ -20,7 +20,7 @@ const AddReview = () => {
     };
     console.log(reviewData);
     // form.reset();
-    fetch("https://plan-picker-server.vercel.app/reviews", {
+    fetch("http://localhost:5000/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",

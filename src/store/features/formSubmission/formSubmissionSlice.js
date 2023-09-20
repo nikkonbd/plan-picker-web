@@ -48,10 +48,11 @@ export default formSubmissionSlice.reducer;
 
 // Async action creator to send the form data
 export const submitFormData = (formData) => async (dispatch) => {
+  console.log(formData);
   try {
     dispatch(formSubmissionStart());
     const response = await axios.post(
-      "https://plan-picker-server.vercel.app/addEvent",
+      "http://localhost:5000/addEvent",
       formData
     ); // Adjust the API endpoint
 
@@ -61,7 +62,7 @@ export const submitFormData = (formData) => async (dispatch) => {
 
     // Now, fetch data associated with the inserted ID
     const dataResponse = await axios.get(
-      `https://plan-picker-server.vercel.app/getEventData/${insertedId}`
+      `http://localhost:5000/getEventData/${insertedId}`
     ); // Adjust the API endpoint
 
     const eventData = dataResponse.data;

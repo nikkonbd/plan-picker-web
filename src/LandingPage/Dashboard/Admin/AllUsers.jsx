@@ -12,7 +12,7 @@ const AllUsers = () => {
   const [myUsers, setMyusers] = useState([]);
 
   // const { data: users = [], refetch } = useQuery(['users'], async () => {
-  //     const res = await fetch('https://plan-picker-server.vercel.app/users')
+  //     const res = await fetch('http://localhost:5000/users')
   //     return res.json()
   // })
   // console.log("AllUsers from DB", users);
@@ -28,7 +28,7 @@ const AllUsers = () => {
 
   //handleMake Admin
   const handleMakeAdmin = (user) => {
-    fetch(`https://plan-picker-server.vercel.app/users/admin/${user?._id}`, {
+    fetch(`http://localhost:5000/users/admin/${user?._id}`, {
       method: "PATCH",
     })
       .then((res) => res.json())
@@ -50,7 +50,6 @@ const AllUsers = () => {
 
   //delete user
   const handleDelete = (user) => {
-
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -61,7 +60,7 @@ const AllUsers = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://plan-picker-server.vercel.app/deleteuser/${user._id}`, {
+        fetch(`http://localhost:5000/deleteuser/${user._id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

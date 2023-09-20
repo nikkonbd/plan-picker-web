@@ -5,7 +5,7 @@ const ServiceCard5 = () => {
   const [card, setCard] = useState([]);
 
   useEffect(() => {
-    fetch("https://plan-picker-server.vercel.app/paymentCard")
+    fetch("http://localhost:5000/paymentCard")
       .then((res) => res.json())
       .then((data) => {
         setCard(data);

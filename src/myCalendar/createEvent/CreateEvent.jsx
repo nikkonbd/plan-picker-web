@@ -33,7 +33,7 @@ const CreateEventButton = () => {
             className="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-[#5EBEC4] border border-transparent rounded-md shadow-sm group hover:bg-[#42a6ad] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             onClick={toggleDropdown}>
             <FaPlus className="mr-2"></FaPlus>
-            <span>Add Event</span>
+            <span>Create Event</span>
           </button>
         </Link>
       </div>
@@ -92,7 +92,7 @@ const CreateEventButton = () => {
               </div>
             </button>
             {/* ... more option buttons ... */}
-            <button
+            {/* <button
               disabled
               onClick={() =>
                 handleOptionSelect({
@@ -147,7 +147,7 @@ const CreateEventButton = () => {
                   </div>
                 </div>
               </div>
-            </button>
+            </button> */}
           </div>
         </div>
       )}

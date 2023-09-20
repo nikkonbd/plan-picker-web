@@ -18,6 +18,7 @@ const Demo = ({ handleSubmit, isDataValid }) => {
   // const [loading, setLoading] = useState(true);
   const insertedId = useSelector((state) => state.formSubmission.insertedId);
   const events = useSelector((state) => state.formSubmission.eventData);
+  console.log(events);
   const { isLoading, isSuccess, error } = useSelector(
     (state) => state.formSubmission
   );
@@ -117,7 +118,9 @@ const Demo = ({ handleSubmit, isDataValid }) => {
                     </div>
                     <p className="mt-5">
                       <span className="font-semibold me-1">Meet Link:</span>
-                      {event?.eventLink ? event?.eventLink : event?.link?.meetLink}
+                      {event?.eventLink
+                        ? event?.eventLink
+                        : event?.link?.meetLink}
                     </p>
                     <div className="flex justify-end gap-3 mt-4">
                       <button className="px-4 text-xl font-semibold py-2 bg-[#5EBEC4] hover:bg-[#42a6ad] duration-200 text-white rounded-md">
