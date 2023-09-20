@@ -2,10 +2,10 @@
 import React, { useState } from "react";
 import Event from "./Event";
 
-const EventSearch = ({ events }) => {
+const EventSearch = ({ upcomingEvents }) => {
   const [searchTerm, setSearchTerm] = useState("");
-  const filteredEvents = events.filter((event) =>
-    event.title.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredEvents = upcomingEvents.filter((event) =>
+    event.eventName.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
