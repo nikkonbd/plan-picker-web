@@ -106,9 +106,9 @@ const Event = () => {
     validateLocation(locationValue);
 
     // Automatically focus on the event link input for other locations
-    // if (!isDisabled) {
-    //   document.getElementById("eventLinkInput").focus();
-    // }
+    if (!isDisabled) {
+      document.getElementById("eventLinkInput").focus();
+    }
   };
 
   // Function to handle changes in Event Link input
@@ -162,8 +162,9 @@ const Event = () => {
     const isLinkValid = validateEventLink(eventLink);
     const isConferanceValid = validateConferenceType(conferenceType);
     const isLocationValid = validateLocation(location);
+    
 
-    if (isNameValid && isLinkValid && isConferanceValid) {
+    if (isNameValid && isLinkValid && isConferanceValid && isLocationValid) {
       // Store the data in an object
       const formData = {
         eventName,

@@ -14,11 +14,11 @@ const MorePlan = () => {
   }, []);
 
   return (
-    <div className="px-4 md:px-0 md:w-10/12 mx-auto">
+    <div className="px-4 mx-auto md:px-0 md:w-10/12">
       {scheduleDetails.map((plan, idx) => (
         <div
           key={idx}
-          className="flex md:pb-14 flex-col-reverse items-center justify-between gap-4 mt-12 md:flex lg:flex lg:flex-row md:flex-row">
+          className="flex flex-col-reverse items-center justify-between gap-4 mt-12 md:pb-14 md:flex lg:flex lg:flex-row md:flex-row">
           <div data-aos="fade-up-right">
             <div className="text-center md:text-start">
               <h2 className="text-4xl font-medium">{plan.title}</h2>

@@ -197,7 +197,7 @@ const EventPage = () => {
         endDate,
       };
   
-      const obj = { ...objectData, formData };
+      const obj = {...objectData, formData };
       dispatch(submitFormData(obj));
     }
   };

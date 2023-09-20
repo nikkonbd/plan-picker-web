@@ -60,6 +60,8 @@ export const submitFormData = (formData) => async (dispatch) => {
 
     const insertedId = response.data.insertedId;
 
+    console.log("hello inseted Id", insertedId);
+
     // Now, fetch data associated with the inserted ID
     const dataResponse = await axios.get(
       `http://localhost:5000/getEventData/${insertedId}`
