@@ -18,6 +18,7 @@ const Demo = ({ handleSubmit, isDataValid }) => {
   // const [loading, setLoading] = useState(true);
   const insertedId = useSelector((state) => state.formSubmission.insertedId);
   const events = useSelector((state) => state.formSubmission.eventData);
+  console.log(events);
   const { isLoading, isSuccess, error } = useSelector(
     (state) => state.formSubmission
   );

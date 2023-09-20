@@ -8,7 +8,6 @@ import { setObjectData } from "../../store/features/objectData/ObjectDataSlice";
 import { v4 as uuidv4 } from "uuid";
 import { AuthContext } from "../../providers/AuthProvider";
 
-
 const Event = () => {
   const navigate = useNavigate();
   const [value, setValue] = useState("");
@@ -193,8 +192,8 @@ const Event = () => {
   }, [eventNameError, eventConferenceError, eventLocationError]);
 
   return (
-    <div className="py-6 md:max-w-6xl">
-      <form className="mt-6">
+    <div className="md:py-6 md:max-w-6xl">
+      <form className="mt-4">
         <div className="flex flex-col gap-6 md:flex-row md:justify-between">
           <div className="flex gap-2">
             <div className="bg-red-400 rounded-full w-7 h-7"></div>
@@ -300,7 +299,7 @@ const Event = () => {
               <option>Microsoft Team</option>
               <option>Google Hangouts</option>
             </select>
-            <p>Google Meet and Zoom for dynamic link</p>
+            {/* <p>Google Meet and Zoom for dynamic link</p> */}
             {eventLocationError && (
               <p className="text-red-500">{eventLocationError}</p>
             )}

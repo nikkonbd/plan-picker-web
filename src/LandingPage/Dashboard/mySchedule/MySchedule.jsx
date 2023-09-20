@@ -98,7 +98,7 @@ const MySchedule = () => {
 
   return (
     <div>
-      <h2 className="relative text-2xl">
+      <h2 className="relative text-2xl md:mt-10">
         My Schedule
         <span className="absolute px-2 py-1 text-xs text-white bg-orange-600 rounded-full animate-pulse">
           {events.length}

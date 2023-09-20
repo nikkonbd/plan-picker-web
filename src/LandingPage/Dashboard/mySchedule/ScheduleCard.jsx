@@ -77,8 +77,9 @@ const ScheduleCard = ({ scheduleData, eventDelete }) => {
   const formattedDuration =
     unitOfTime === "hour"
       ? `${durationInHours.toFixed(1)} ${unitOfTime}`
-      : `${formData?.eventDuration ? formData?.eventDuration : 0} ${unitOfTime}`;
-      
+      : `${
+          formData?.eventDuration ? formData?.eventDuration : 0
+        } ${unitOfTime}`;
 
   return (
     <div className="relative border-[1px] border-teal-500 bg-[#68d8e0] text-black p-8 rounded-lg shadow hover:shadow-xl cursor-default">

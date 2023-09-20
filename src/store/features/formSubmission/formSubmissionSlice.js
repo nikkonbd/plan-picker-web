@@ -48,16 +48,19 @@ export default formSubmissionSlice.reducer;
 
 // Async action creator to send the form data
 export const submitFormData = (formData) => async (dispatch) => {
-  console.log(formData)
+  console.log(formData);
   try {
     dispatch(formSubmissionStart());
-    const response = await axios.post("http://localhost:5000/addEvent", formData); // Adjust the API endpoint
+    const response = await axios.post(
+      "http://localhost:5000/addEvent",
+      formData
+    ); // Adjust the API endpoint
 
     console.log(response.data); // Display response data
 
     const insertedId = response.data.insertedId;
 
-    console.log("hello inseted Id",insertedId)
+    console.log("hello inseted Id", insertedId);
 
     // Now, fetch data associated with the inserted ID
     const dataResponse = await axios.get(
