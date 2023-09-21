@@ -1,4 +1,3 @@
-// src/components/Event.js
 import React from "react";
 import { RxCross2 } from "react-icons/rx";
 import { Link } from "react-router-dom";

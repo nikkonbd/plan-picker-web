@@ -48,17 +48,17 @@ export default confirmedEventSlice.reducer;
 
 // Async action creator to send the form data
 export const confirmedSubmitData = (confirmedData) => async (dispatch) => {
-  console.log(confirmedData);
-  try {
-    dispatch(formSubmissionStart());
-    const response = await axios.post(
-      "https://plan-picker-server.vercel.app/participant-event",
-      confirmedData
-    ); // Adjust the API endpoint
-    console.log(confirmedData);
-    console.log(response.data); // Display response data
+    console.log(confirmedData)
+    try {
+        dispatch(formSubmissionStart());
+        const response = await axios.post(
+            "http://localhost:5000/participant-event",
+            confirmedData
+        ); 
+        console.log(confirmedData)
+        console.log(response.data);
 
-    const insertedId = response.data.insertedId;
+        const insertedId = response.data.insertedId;
 
     // Now, fetch data associated with the inserted ID
     const dataResponse = await axios.get(
