@@ -54,9 +54,9 @@ export const confirmedSubmitData = (confirmedData) => async (dispatch) => {
         const response = await axios.post(
             "http://localhost:5000/participant-event",
             confirmedData
-        ); // Adjust the API endpoint
+        ); 
         console.log(confirmedData)
-        console.log(response.data); // Display response data
+        console.log(response.data);
 
         const insertedId = response.data.insertedId;
 
