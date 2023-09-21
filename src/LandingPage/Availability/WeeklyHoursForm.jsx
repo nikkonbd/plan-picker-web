@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import axios from "axios";
 
 const WeeklyHoursForm = () => {
- 
   const daysOfWeek = [
     "sunday",
     "monday",
@@ -78,7 +77,7 @@ const WeeklyHoursForm = () => {
     };
 
     axios
-      .post("http://localhost:5000/availability", dayAndTime)
+      .post("https://plan-picker-server.vercel.app/availability", dayAndTime)
       .then((response) => {
         console.log(response.data);
       })

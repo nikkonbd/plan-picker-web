@@ -9,7 +9,7 @@ const EventSearch = ({ upcomingEvents }) => {
   );
 
   return (
-    <div className="py-8">
+    <div className="py-8 w-full">
       {/* <h1 className="mb-6 text-3xl font-semibold">Upcoming Events</h1> */}
       <div className="max-w-md mb-4">
         <input

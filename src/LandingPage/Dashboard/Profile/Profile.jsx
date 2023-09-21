@@ -74,7 +74,7 @@ const Profile = () => {
       console.error("No image selected");
     }
 
-    fetch(`http://localhost:5000/updateuser/${user?.email}`, {
+    fetch(`https://plan-picker-server.vercel.app/updateuser/${user?.email}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

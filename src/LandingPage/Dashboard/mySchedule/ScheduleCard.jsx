@@ -27,9 +27,9 @@ const ScheduleCard = ({ scheduleData, eventDelete }) => {
   // Link copy function
   const handleCopyLinkToClipboard = () => {
     // const domainAndPort = "planpicker.web.app"; // Replace with your actual domain and port
-    const domainAndPort = "localhost:5173"; // Replace with your actual domain and port
+    const domainAndPort = "planpicker.web.app"; // Replace with your actual domain and port
 
-    const eventLink = `http://${domainAndPort}/event/${eventName}/${id}`;
+    const eventLink = `https://${domainAndPort}/event/${eventName}/${id}`;
 
     navigator.clipboard
       .writeText(eventLink)
