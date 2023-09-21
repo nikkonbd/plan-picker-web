@@ -12,7 +12,7 @@ function Header({ sidebarOpen, setSidebarOpen }) {
   return (
     <header className="sticky top-0 z-30">
       <div className="px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 md:h-0 -mb-px">
+        <div className="flex items-center justify-between h-16 -mb-px">
           {/* Header: Left side */}
           <div className="flex">
             {/* Hamburger button */}

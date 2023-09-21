@@ -70,7 +70,7 @@ const SignUp = () => {
               // console.log(newData);
               dispatch(userCreated({ newData }));
               //to backend
-              fetch("http://localhost:5000/users", {
+              fetch("https://plan-picker-server.vercel.app/users", {
                 method: "POST",
                 headers: {
                   "content-type": "application/json",
