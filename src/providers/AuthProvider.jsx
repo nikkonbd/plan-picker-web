@@ -84,7 +84,7 @@ const AuthProvider = ({ children }) => {
       //set and get token
       if (currentUser) {
         axios
-          .post("http://localhost:5000/jwt", {
+          .post("https://plan-picker-server.vercel.app/jwt", {
             email: currentUser?.email,
           })
           .then((data) => {

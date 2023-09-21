@@ -107,7 +107,6 @@ const ScheduleEventDetails = () => {
     navigate("/confirmedSchedule");
   }
 
-
   return (
     <>
       <Helmet>

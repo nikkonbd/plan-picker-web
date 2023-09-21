@@ -2,46 +2,46 @@ import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
 const confirmedEventSlice = createSlice({
-    name: "confirmedEvent",
-    initialState: {
-        isLoading: false,
-        isSuccess: false,
-        error: null,
-        insertedId: null,
-        eventData: [],
+  name: "confirmedEvent",
+  initialState: {
+    isLoading: false,
+    isSuccess: false,
+    error: null,
+    insertedId: null,
+    eventData: [],
+  },
+  reducers: {
+    formSubmissionStart: (state) => {
+      state.isLoading = true;
+      state.isSuccess = false;
+      state.error = null;
     },
-    reducers: {
-        formSubmissionStart: (state) => {
-            state.isLoading = true;
-            state.isSuccess = false;
-            state.error = null;
-        },
-        formSubmissionSuccess: (state) => {
-            state.isLoading = false;
-            state.isSuccess = true;
-            state.error = null;
-        },
-        formSubmissionFailure: (state, action) => {
-            state.isLoading = false;
-            state.isSuccess = false;
-            state.error = action.payload;
-        },
-        submissionConfirmedInsertId: (state, action) => {
-            state.insertedId = action.payload;
-        },
-        confirmedEventData: (state, action) => {
-            state.eventData = action.payload;
-            state.isLoading = false;
-        },
+    formSubmissionSuccess: (state) => {
+      state.isLoading = false;
+      state.isSuccess = true;
+      state.error = null;
     },
+    formSubmissionFailure: (state, action) => {
+      state.isLoading = false;
+      state.isSuccess = false;
+      state.error = action.payload;
+    },
+    submissionConfirmedInsertId: (state, action) => {
+      state.insertedId = action.payload;
+    },
+    confirmedEventData: (state, action) => {
+      state.eventData = action.payload;
+      state.isLoading = false;
+    },
+  },
 });
 
 export const {
-    formSubmissionStart,
-    formSubmissionSuccess,
-    formSubmissionFailure,
-    submissionConfirmedInsertId,
-    confirmedEventData,
+  formSubmissionStart,
+  formSubmissionSuccess,
+  formSubmissionFailure,
+  submissionConfirmedInsertId,
+  confirmedEventData,
 } = confirmedEventSlice.actions;
 
 export default confirmedEventSlice.reducer;
@@ -60,20 +60,19 @@ export const confirmedSubmitData = (confirmedData) => async (dispatch) => {
 
         const insertedId = response.data.insertedId;
 
-        // Now, fetch data associated with the inserted ID
-        const dataResponse = await axios.get(
-            `http://localhost:5000/getConfirmedSchdule/${insertedId}`
-        ); // Adjust the API endpoint
+    // Now, fetch data associated with the inserted ID
+    const dataResponse = await axios.get(
+      `https://plan-picker-server.vercel.app/getConfirmedSchdule/${insertedId}`
+    ); // Adjust the API endpoint
 
-        const eventData = dataResponse.data;
-        console.log(eventData)
+    const eventData = dataResponse.data;
+    console.log(eventData);
 
-        // Dispatch the inserted ID and eventData to your component
-        dispatch(submissionConfirmedInsertId(insertedId));
-        dispatch(confirmedEventData(eventData));
-        dispatch(formSubmissionSuccess());
-
-    } catch (error) {
-        dispatch(formSubmissionFailure(error.message));
-    }
+    // Dispatch the inserted ID and eventData to your component
+    dispatch(submissionConfirmedInsertId(insertedId));
+    dispatch(confirmedEventData(eventData));
+    dispatch(formSubmissionSuccess());
+  } catch (error) {
+    dispatch(formSubmissionFailure(error.message));
+  }
 };

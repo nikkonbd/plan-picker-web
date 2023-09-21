@@ -19,7 +19,9 @@ const MyCalendar = () => {
   useEffect(() => {
     // Axios GET request
     axios
-      .get(`http://localhost:5000/getEventByEmail/${user?.email}`)
+      .get(
+        `https://plan-picker-server.vercel.app/getEventByEmail/${user?.email}`
+      )
       .then((response) => {
         setData(response.data);
 
@@ -50,8 +52,8 @@ const MyCalendar = () => {
 
   // Create a formatted date string (e.g., "2023-09-19")
   const formattedEndDate = `${year}-${month}-${day}`;
-  
-  console.log(formattedEndDate)
+
+  console.log(formattedEndDate);
 
   // Sort events by date in ascending order
   const sortedEvents = [...data].sort((a, b) => {
@@ -84,11 +86,8 @@ const MyCalendar = () => {
 
     return formattedStartDate >= formattedEndDate;
   });
-  
-  
-  console.log(upcomingEvents)
 
- 
+  console.log(upcomingEvents);
 
   const events = [
     {
@@ -98,7 +97,6 @@ const MyCalendar = () => {
       description: "Join us for the biggest tech conference of the year...",
       imageUrl: "https://i.ibb.co/gzXt6WC/istockphoto-499517325-612x612.jpg",
     },
-    
   ];
 
   return (
