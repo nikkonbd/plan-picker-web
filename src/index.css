@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+html::-webkit-scrollbar {
+  width: 0.5vw;
+}
+html::-webkit-scrollbar-thumb {
+  background-color: #42a6ad;
+}
+html::-webkit-scrollbar-track {
+  background-color: #42a6ad3e;
+}
+
 .back {
   background: linear-gradient(135deg, #037e8780 50%, transparent 0),
     linear-gradient(-135deg, #037e8780 50%, transparent 0);
