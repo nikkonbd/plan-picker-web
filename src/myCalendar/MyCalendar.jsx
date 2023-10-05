@@ -20,7 +20,7 @@ const MyCalendar = () => {
     // Axios GET request
     axios
       .get(
-        `https://plan-picker-server.vercel.app/getEventByEmail/${user?.email}`
+        `https://plan-picker-server-production-96ce.up.railway.app/getEventByEmail/${user?.email}`
       )
       .then((response) => {
         setData(response.data);

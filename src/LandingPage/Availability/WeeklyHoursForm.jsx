@@ -77,7 +77,10 @@ const WeeklyHoursForm = () => {
     };
 
     axios
-      .post("https://plan-picker-server.vercel.app/availability", dayAndTime)
+      .post(
+        "https://plan-picker-server-production-96ce.up.railway.app/availability",
+        dayAndTime
+      )
       .then((response) => {
         console.log(response.data);
       })

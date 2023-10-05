@@ -84,9 +84,12 @@ const AuthProvider = ({ children }) => {
       //set and get token
       if (currentUser) {
         axios
-          .post("https://plan-picker-server.vercel.app/jwt", {
-            email: currentUser?.email,
-          })
+          .post(
+            "https://plan-picker-server-production-96ce.up.railway.app/jwt",
+            {
+              email: currentUser?.email,
+            }
+          )
           .then((data) => {
             // console.log("tokenfrom auth", data.data.token);
             const token = data.data.token;

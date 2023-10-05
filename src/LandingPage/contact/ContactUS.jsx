@@ -34,8 +34,8 @@ const ContactUS = () => {
       <Helmet>
         <title>ContactUs || Plan Picker</title>
       </Helmet>
+      <Contact></Contact>
       <div className="max-w-[2520px] mx-auto lg:px-20 xl:px-28 md:px-10 px-4">
-        <Contact></Contact>
         <div className="text-[#61677A]">
           <div>
             <h2 className="pt-20 text-4xl font-semibold text-center">
@@ -83,8 +83,8 @@ const ContactUS = () => {
                   className="p-3 text-[#5EBEC4] bg-transparent border-2 rounded-md border-[#5ebdc45e] focus:outline-none"
                   placeholder="Message"
                   rows="8"></textarea>
-                <button className="flex items-center w-ful px-6 py-2 mx-auto my-8 font-bold text-white duration-300 rounded-md bg-gradient-to-b from-[#5EBEC4] to-[#42a6ad] hover:scale-110">
-                  Send
+                <button className="flex justify-center items-center w-full px-6 py-2 mx-auto my-8 font-bold text-white duration-300 rounded-md bg-gradient-to-b from-[#5EBEC4] to-[#42a6ad]">
+                  Send Message
                 </button>
                 <Toaster />
               </form>

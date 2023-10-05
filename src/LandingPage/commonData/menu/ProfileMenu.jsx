@@ -27,7 +27,7 @@ const ProfileMenu = () => {
         <MenuHandler>
           {user.photoURL ? (
             <img
-              className="w-10 cursor-pointer h-10 lg:w-9 lg:h-9 rounded-full mr-2"
+              className="w-10 cursor-pointer border-2 border-[#42a6ad] h-10 lg:w-12 lg:h-12 rounded-full mr-2"
               src={user.photoURL}
               alt={user.displayName}
               title={user.displayName}

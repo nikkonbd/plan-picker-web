@@ -20,8 +20,8 @@ const Hero = () => {
           seamless buying experience for your customers.
         </p>
       </div>
-      <div className="flex gap-6 flex-grow justify-center flex-col md:flex-row items-center md:mt-20 mt-6">
-        <div className="">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:grid-cols-2 justify-between items-center md:mt-20 mt-6">
+        <div className="order-2">
           <div
             data-aos="fade-right"
             className="hover:bg-[#f8f7ff] p-4 rounded-xl">
@@ -38,29 +38,31 @@ const Hero = () => {
             data-aos="fade-down"
             className="hover:bg-[#f8f7ff] p-4 rounded-xl">
             <h2 className="text-2xl font-semibold text-[#42a6ad]">
-              Let people schedule meetings on your website
+              Make it easy to book meetings with you
             </h2>
             <p className="text-base pt-2 text-[#61677A]">
-              Book high-value meetings in seconds and turn{" "}
-              <br className="hidden md:block" /> scheduling into a competitive
-              advantage
+              Book more meetings with less effort by embedding Calendly anywhere
+              on your website and adding available times to emails.
             </p>
           </div>
           <div
             data-aos="fade-left"
             className="hover:bg-[#f8f7ff] p-4 rounded-xl">
             <h2 className="text-2xl font-semibold text-[#42a6ad]">
-              Let people schedule meetings on your website
+              Customize exactly how and when you’re booked
             </h2>
             <p className="text-base pt-2 text-[#61677A]">
-              Book high-value meetings in seconds and turn{" "}
-              <br className="hidden md:block" /> scheduling into a competitive
-              advantage
+              Stay in control of your calendar with granular availability tools,
+              scheduling rules, buffers, and more.
             </p>
           </div>
         </div>
         <div data-aos="fade-left">
-          <img className="rounded-xl md:w-[580px]" src={book3} alt="" />
+          <img
+            className="rounded-xl w-full h-full md:h-[400px] lg:w-full"
+            src={book3}
+            alt=""
+          />
         </div>
       </div>
     </div>

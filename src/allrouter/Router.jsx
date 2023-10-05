@@ -207,20 +207,26 @@ const router = createBrowserRouter([
     path: "/paymentStripe/:id",
     element: <PaymentStripe />,
     loader: ({ params }) =>
-      fetch(`https://plan-picker-server.vercel.app/paymentCard/${params.id}`),
+      fetch(
+        `https://plan-picker-server-production-96ce.up.railway.app/paymentCard/${params.id}`
+      ),
   },
 
   {
     path: "/event/:eventName/:id",
     element: <SetMeeting />,
     loader: ({ params }) =>
-      fetch(`https://plan-picker-server.vercel.app/getEvent/${params.id}`),
+      fetch(
+        `https://plan-picker-server-production-96ce.up.railway.app/getEvent/${params.id}`
+      ),
   },
   {
     path: "/event/confirmation/:eventName/:id",
     element: <ScheduleEventDetails />,
     loader: ({ params }) =>
-      fetch(`https://plan-picker-server.vercel.app/getEvent/${params.id}`),
+      fetch(
+        `https://plan-picker-server-production-96ce.up.railway.app/getEvent/${params.id}`
+      ),
   },
   {
     path: "/confirmedSchedule",

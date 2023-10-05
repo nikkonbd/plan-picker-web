@@ -70,13 +70,16 @@ const SignUp = () => {
               // console.log(newData);
               dispatch(userCreated({ newData }));
               //to backend
-              fetch("https://plan-picker-server.vercel.app/users", {
-                method: "POST",
-                headers: {
-                  "content-type": "application/json",
-                },
-                body: JSON.stringify(newData),
-              })
+              fetch(
+                "https://plan-picker-server-production-96ce.up.railway.app/users",
+                {
+                  method: "POST",
+                  headers: {
+                    "content-type": "application/json",
+                  },
+                  body: JSON.stringify(newData),
+                }
+              )
                 .then((res) => res.json())
                 .then((data) => {
                   // console.log(data);

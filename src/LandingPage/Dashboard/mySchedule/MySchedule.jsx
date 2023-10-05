@@ -29,7 +29,7 @@ const MySchedule = () => {
     // Axios GET request
     axios
       .get(
-        `https://plan-picker-server.vercel.app/getEventByEmail/${user?.email}`
+        `https://plan-picker-server-production-96ce.up.railway.app/getEventByEmail/${user?.email}`
       )
       .then((response) => {
         setSchedule(response.data);
@@ -69,9 +69,12 @@ const MySchedule = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://plan-picker-server.vercel.app/deleteEventById/${id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://plan-picker-server-production-96ce.up.railway.app/deleteEventById/${id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {
