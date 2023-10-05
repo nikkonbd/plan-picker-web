@@ -15,7 +15,39 @@ const AllBillings = () => {
     setAllBillings(res.data);
     return res.data;
   });
-  console.log(allBillings);
+  // console.log(allBillings);
+
+  // const handleDelete = () => {
+  //   Swal.fire({
+  //     title: "Are you sure?",
+  //     text: "You won't be able to revert this!",
+  //     icon: "warning",
+  //     showCancelButton: true,
+  //     confirmButtonColor: "#3085d6",
+  //     cancelButtonColor: "#d33",
+  //     confirmButtonText: "Yes, delete it!",
+  //   }).then((result) => {
+  //     if (result.isConfirmed) {
+  //       fetch(
+  //         `https://plan-picker-server-production-96ce.up.railway.app/payments/${billing._id}`,
+  //         {
+  //           method: "DELETE",
+  //         }
+  //       )
+  //         .then((res) => res.json())
+  //         .then((data) => {
+  //           // console.log(data);
+  //           if (data.deletedCount > 0) {
+  //             Swal.fire("Deleted!", "User has been deleted.", "success");
+  //             const remaining = myUsers.filter((item) => item._id !== user._id);
+  //             setMyusers(remaining);
+  //             refetch();
+  //           }
+  //         });
+  //     }
+  //   });
+  //   console.log("llll");
+  // };
 
   return (
     <div>
@@ -75,7 +107,9 @@ const AllBillings = () => {
                   <Toaster />
                 </td> */}
                 <td>
-                  <button className="btn  btn-circle">
+                  <button
+                    onClick={() => handleDelete(billing._id)}
+                    className="btn  btn-circle">
                     <FaTrashAlt
                       fontSize={20}
                       className="text-red-600"></FaTrashAlt>

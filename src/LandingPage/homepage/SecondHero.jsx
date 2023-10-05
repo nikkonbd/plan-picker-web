@@ -25,7 +25,7 @@ const SecondHero = () => {
     <>
       <div id="faqHome">
         <div data-aos="fade-down" className="text-center px-4 md:px-0">
-          <h2 className="text-2xl md:text-4xl font-semibold text-[#61677A]">
+          <h2 className="text-2xl pt-12 md:pt-0 md:text-4xl font-semibold text-[#61677A]">
             Frequently asked questions <br />{" "}
             <span className="text-[#42a6ad]">(FAQ)</span>
           </h2>
@@ -40,14 +40,12 @@ const SecondHero = () => {
         </div>
         <div
           data-aos="zoom-in"
-          className="flex justify-center flex-col-reverse my-10 md:flex-row md:gap-10 md:px-0 items-center bg-[#5ebdc444] rounded-xl"
-        >
+          className="flex justify-center flex-col-reverse my-10 md:flex-row md:gap-10 md:px-0 items-center bg-[#5ebdc444] rounded-xl">
           <div className="w-full p-10 ">
             <Accordion open={open === 1} animate={CUSTOM_ANIMATION}>
               <AccordionHeader
                 onClick={() => handleOpen(1)}
-                className="text-xl hover:text-[#42a6ad] text-[#61677A]"
-              >
+                className="text-xl hover:text-[#42a6ad] text-[#61677A]">
                 What are Plan Picker apps?
               </AccordionHeader>
               <AccordionBody className="text-base shadow-lg">
@@ -59,8 +57,7 @@ const SecondHero = () => {
             <Accordion open={open === 2} animate={CUSTOM_ANIMATION}>
               <AccordionHeader
                 onClick={() => handleOpen(2)}
-                className="text-xl hover:text-[#42a6ad] text-[#61677A]"
-              >
+                className="text-xl hover:text-[#42a6ad] text-[#61677A]">
                 What are Plan Picker integrations?
               </AccordionHeader>
               <AccordionBody className="text-base shadow-lg">
@@ -77,8 +74,7 @@ const SecondHero = () => {
             <Accordion open={open === 3} animate={CUSTOM_ANIMATION}>
               <AccordionHeader
                 onClick={() => handleOpen(3)}
-                className="text-xl hover:text-[#42a6ad] text-[#61677A]"
-              >
+                className="text-xl hover:text-[#42a6ad] text-[#61677A]">
                 How do I install and use integrations?
               </AccordionHeader>
               <AccordionBody className="text-base shadow-lg ">
@@ -93,8 +89,7 @@ const SecondHero = () => {
             <Accordion open={open === 4} animate={CUSTOM_ANIMATION}>
               <AccordionHeader
                 onClick={() => handleOpen(4)}
-                className="text-xl hover:text-[#42a6ad] text-[#61677A]"
-              >
+                className="text-xl hover:text-[#42a6ad] text-[#61677A]">
                 Want to build a Plan Picker integration? Learn about our API.
               </AccordionHeader>
               <AccordionBody className="text-base shadow-lg">
@@ -110,7 +105,7 @@ const SecondHero = () => {
               alt="Image Here"
               className="w-full p-10 md:mx-auto transition hover:scale-110 hover:duration-500 "
             /> */}
-            <Lottie animationData={faq} loop={true} className="" />
+            <Lottie animationData={faq} loop={true} className="h-[400px]" />
           </div>
         </div>
       </div>

@@ -100,14 +100,14 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                 <path d="M10.7 18.7l1.4-1.4L7.8 13H20v-2H7.8l4.3-4.3-1.4-1.4L4 12z" />
               </svg>
             </button>
-            <div className="relative h-24 md:h-28 flex justify-center w-full bg-[url('https://img.freepik.com/free-vector/geometric-science-education-background-vector-gradient-blue-digital-remix_53876-125993.jpg')] bg-cover mb-12 rounded-t-xl rounded-b-md">
+            <div className="relative h-24 lg:h-28 flex justify-center w-full bg-[url('https://img.freepik.com/free-vector/geometric-science-education-background-vector-gradient-blue-digital-remix_53876-125993.jpg')] bg-cover mb-12 rounded-t-xl rounded-b-md">
               <div className="absolute top-11 w-full flex items-center flex-col md:top-8">
                 <img
                   className="border-4 border-[#5EBEC4] mt-4 w-16 md:w-28 h-16 md:h-28 mx-2 rounded-full"
                   src={user.photoURL}
                   alt={user.displayName + " " + "image"}
                 />
-                <h2 className="text-xl font-semibold text-center backdrop-blur-sm">
+                <h2 className="md:text-xl font-semibold text-center backdrop-blur-sm">
                   {user.displayName}
                 </h2>
               </div>

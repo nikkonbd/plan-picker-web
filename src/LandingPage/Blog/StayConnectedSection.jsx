@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 
 const StayConnectedSection = () => {
   return (
-    <div className="my-20 py-10 bg-gradient-to-r md:max-w-6xl mx-auto from-[#5EBEC4] to-[#42a6ad]">
-      <div>
+    <div className="my-20 py-10 bg-gradient-to-r from-teal-200 to-teal-500">
+      <div className="py-16">
         <div className="lg:w-1/2 text-white text-center mx-auto space-y-5">
-          <h1 className="text-2xl md:text-3xl font-bold">
+          <h1 className="text-3xl md:text-3xl font-bold">
             Don't leave your prospects, customers, and candidates waiting
           </h1>
           <p>

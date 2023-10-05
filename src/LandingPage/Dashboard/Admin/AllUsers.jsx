@@ -12,7 +12,7 @@ const AllUsers = () => {
   const [myUsers, setMyusers] = useState([]);
 
   // const { data: users = [], refetch } = useQuery(['users'], async () => {
-  //     const res = await fetch('https://plan-picker-server.vercel.app/users')
+  //     const res = await fetch('https://plan-picker-server-production-96ce.up.railway.app/users')
   //     return res.json()
   // })
   // console.log("AllUsers from DB", users);
@@ -28,22 +28,25 @@ const AllUsers = () => {
 
   //handleMake Admin
   const handleMakeAdmin = (user) => {
-    fetch(`https://plan-picker-server.vercel.app/users/admin/${user?._id}`, {
-      method: "PATCH",
-    })
+    fetch(
+      `https://plan-picker-server-production-96ce.up.railway.app/users/admin/${user?._id}`,
+      {
+        method: "PATCH",
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);
         if (data.modifiedCount) {
           refetch();
-          // Swal.fire({
-          //     position: 'top-end',
-          //     icon: 'success',
-          //     title: `${user.name} is an admin now!`,
-          //     showConfirmButton: false,
-          //     timer: 1500
-          // })
-          toast.success(`${user.name} is an admin now!`);
+          Swal.fire({
+            position: "top-middle",
+            icon: "success",
+            title: `${user.name} is an admin now!`,
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          // toast.success(`${user.name} is an admin now!`);
         }
       });
   };
@@ -60,9 +63,12 @@ const AllUsers = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://plan-picker-server.vercel.app/deleteuser/${user._id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://plan-picker-server-production-96ce.up.railway.app/deleteuser/${user._id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             // console.log(data);
@@ -136,7 +142,7 @@ const AllUsers = () => {
                     </button>
                   ) : (
                     <button
-                      onClick={() => handleMakeAdmin(user?._id)}
+                      onClick={() => handleMakeAdmin(user)}
                       className="btn btn-circle">
                       <FaUsers fontSize={30}></FaUsers>
                     </button>
@@ -145,7 +151,7 @@ const AllUsers = () => {
                 </td>
                 <td>
                   <button
-                    onClick={() => handleDelete(user?._id)}
+                    onClick={() => handleDelete(user)}
                     className="btn btn-circle">
                     <FaTrashAlt
                       fontSize={26}

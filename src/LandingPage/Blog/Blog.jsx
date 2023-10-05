@@ -21,28 +21,51 @@ const Blog = () => {
       <Helmet>
         <title>Blogs || PlanPicker</title>
       </Helmet>
-      <div className="max-w-[2520px] mx-auto lg:px-16 xl:px-28 md:px-10 px-4 text-[#61677A]">
-        {/* banner */}
-        <div className="md:flex justify-between items-center md:max-w-6xl mx-auto gap-10 min-h-[60vh] my-10">
-          <div className="md:w-1/2 px-4 md:px-0">
-            <h1 className="md:text-4xl text-2xl font-bold pb-2 text-[#61677A]">
-              Journey to Success: <br />{" "}
-              <span className="text-base font-normal">
-                Unleash Your Potential Through Articles Our Articles
-              </span>
-            </h1>
-            <p className="text-base">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta
-              eius dignissimos vero natus illum repellendus maxime praesentium
-              pariatur nemo mollitia consequuntur, rerum nostrum dolorem est
-              doloremque earum perferendis facilis architecto minus. Fugiat
-              vitae, quam beatae blanditiis libero, ipsam quia quasi unde,
-              minima laudantium consectetur? Tenetur dolorum animi beatae minima
-              magni! Error, dolorum accusamus.
+      <div
+        className="hero h-[300px] mb-16"
+        style={{
+          backgroundImage:
+            "url(https://isaless.wpenginepowered.com/wp-content/uploads/2021/07/ISS_Blog-Feature-Channel-Partner_v1_07-13-21.png)",
+        }}>
+        <div className="hero-overlay bg-opacity-80"></div>
+        <div className="hero-content text-center text-neutral-content">
+          <div className="max-w-2xl">
+            <h2 className="text-4xl font-semibold text-[#5EBEC4]">
+              PlanPicker Blogs Page!
+            </h2>
+            <p className="pt-4">
+              I appreciate your interest in joining a team, but I'm just a
+              text-based AI and don't have the capability to participate in
+              teams or organizations. However, I can certainly provide you with
+              some general advice on how to join a team:
             </p>
           </div>
-          <div className="md:w-1/2">
-            <Lottie animationData={bloganimition} loop={true} />
+        </div>
+      </div>
+      <div className="max-w-[2520px] mx-auto lg:px-16 xl:px-28 md:px-10 px-4 text-[#61677A]">
+        {/* banner */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 items-center md:max-w-6xl mx-auto gap-10 min-h-[60vh] my-10">
+          <div className="px-4 md:px-0">
+            <h1 className="text-3xl font-semibold pb-6 text-[#61677A]">
+              Journey to Success Our PlanPicker
+            </h1>
+            <p className="text-base">
+              The journey to success is not an easy journey, but that’s not the
+              reason for giving up. If you want to get success, for anything,
+              then you have to work harder. Remember, you have to be careful
+              with some things, one wrong step and you will fail. But that
+              doesn’t mean you can’t do it. If you fail the first time then try
+              it again, if you fail again the second time, try the third time,
+              if you fail again, you don’t need to worry try and try but don’t
+              lose hope and in the 10th time, you will succeed.
+            </p>
+          </div>
+          <div className="bg-[#e9e9e9] p-2 rounded-sm">
+            <Lottie
+              className="w-full"
+              animationData={bloganimition}
+              loop={true}
+            />
           </div>
         </div>
         {/* article */}
@@ -62,8 +85,8 @@ const Blog = () => {
           </div>
         </div>
         {/* connected section  */}
-        <StayConnectedSection></StayConnectedSection>
       </div>
+      <StayConnectedSection></StayConnectedSection>
     </>
   );
 };

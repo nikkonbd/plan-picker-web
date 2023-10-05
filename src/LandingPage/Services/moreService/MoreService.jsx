@@ -113,16 +113,16 @@ const MoreService = () => {
 
   return (
     <div>
-      <div className="relative bg-gradient-to-r from-teal-300 to- h-[40vh] py-16">
+      <div className="relative h-[40vh] py-16">
         <div className="container mx-auto text-center relative z-10">
-          <h1 className="text-5xl font-extrabold text-[#61677A] mb-4">
+          <h1 className="text-4xl font-extrabold text-white mb-2">
             Pick the perfect plan for your team
           </h1>
           <p className="text-white text-lg mb-8">
             Choose from our tailored plans to meet your team's needs.
           </p>
         </div>
-        <div className="absolute top-0 left-0 w-full h-full z-0">
+        <div className="absolute top-0 left-0 w-full h-full z-0 bg-gradient-to-r from-teal-300 to-teal-800">
           <img
             src="https://img.freepik.com/free-vector/coworking-infographics-template_1284-18204.jpg?w=826&t=st=1693922524~exp=1693923124~hmac=7b49450952b20560d06b6b85fd67294725bc631d49ebffd3e076b04f0588ff52"
             alt="Team Planning"

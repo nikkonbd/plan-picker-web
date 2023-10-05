@@ -52,7 +52,7 @@ export const submitFormData = (formData) => async (dispatch) => {
   try {
     dispatch(formSubmissionStart());
     const response = await axios.post(
-      "https://plan-picker-server.vercel.app/addEvent",
+      "https://plan-picker-server-production-96ce.up.railway.app/addEvent",
       formData
     ); // Adjust the API endpoint
 
@@ -64,7 +64,7 @@ export const submitFormData = (formData) => async (dispatch) => {
 
     // Now, fetch data associated with the inserted ID
     const dataResponse = await axios.get(
-      `https://plan-picker-server.vercel.app/getEventData/${insertedId}`
+      `https://plan-picker-server-production-96ce.up.railway.app/getEventData/${insertedId}`
     ); // Adjust the API endpoint
 
     const eventData = dataResponse.data;

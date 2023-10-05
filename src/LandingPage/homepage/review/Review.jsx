@@ -9,35 +9,9 @@ import { data } from "autoprefixer";
 
 const Review = () => {
   const [reviewData, setReviewData] = useState([]);
-  // const sliderData = [
-  //   {
-  //     name: "David Jacov",
-  //     img: "https://th.bing.com/th/id/OIP.QjynegEfQVPq5kIEuX9fWQHaFj?pid=ImgDet&rs=1",
-  //     review:
-  //       "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters",
-  //     company: "Core Dev",
-  //     star: 4.5,
-  //   },
-  //   {
-  //     name: "Lura Craft",
-  //     img: "https://t4.ftcdn.net/jpg/03/83/25/83/360_F_383258331_D8imaEMl8Q3lf7EKU2Pi78Cn0R7KkW9o.jpg",
-  //     review:
-  //       "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters",
-  //     company: "Enosis LTD",
-  //     star: 5,
-  //   },
-  //   {
-  //     name: "Jhon Sena",
-  //     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZCldKgmO2Hs0UGk6nRClAjATKoF9x2liYYA&usqp=CAU",
-  //     review:
-  //       "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters",
-  //     company: "Desh IT Solution",
-  //     star: 3.8,
-  //   },
-  // ];
 
   useEffect(() => {
-    fetch("https://plan-picker-server.vercel.app/reviews")
+    fetch("https://plan-picker-server-production-96ce.up.railway.app/reviews")
       .then((res) => res.json())
       .then((reviewsData) => {
         // console.log(data);
@@ -47,7 +21,7 @@ const Review = () => {
 
   return (
     <div className="min-h-screen flex flex-col justify-center">
-      <h2 className="text-2xl md:text-4xl text-[#42a6ad] font-semibold text-center">
+      <h2 className="text-4xl pt-10 md:pt-0 md:text-4xl text-[#42a6ad] font-semibold text-center">
         What users say's about us
       </h2>
       <p className="text-center">All users Review.</p>
@@ -62,12 +36,12 @@ const Review = () => {
           pagination={{
             clickable: true,
           }}
-          navigation={true}
+          navigation={false}
           modules={[Autoplay, Navigation]}
           className="mySwiper">
           {reviewData.map((item, index) => (
-            <SwiperSlide key={index}>
-              <div className="md:h-[350px] md:w-10/12 w-9/12 bg-teal-50/80 rounded-lg flex md:flex-row flex-col items-center justify-center border-2 border-teal-500/50 md:p-5 p-2 relative overflow-hidden">
+            <SwiperSlide className="" key={index}>
+              <div className="md:h-[350px] bg-teal-50/80 rounded-lg flex md:flex-row flex-col items-center justify-center border-2 border-teal-500/50 md:p-5 p-2 relative overflow-hidden">
                 <div className="hidden md:block bg-white shadow-lg shadow-teal-800/30 absolute top-10 -left-96 -rotate-[25deg] z-10 w-full text-center py-1">
                   <p className="font-semibold uppercase">{item.name}</p>
                 </div>

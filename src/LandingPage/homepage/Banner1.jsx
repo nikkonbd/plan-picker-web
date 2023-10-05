@@ -28,21 +28,20 @@ const Banner1 = () => {
           seamless buying experience for your customers.
         </p>
       </div>
-      <div className="flex flex-col-reverse items-center justify-center gap-4 mt-12 md:flex-row">
-        <div data-aos="fade-up-right">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 justify-between items-center gap-6">
+        <div data-aos="fade-up-right" className="order-2 md:order-1">
           <div className="text-center md:text-start">
             <h2 className="text-2xl md:text-3xl pt-4 md:pt-0 font-medium flex flex-col justify-center text-[#61677A]">
               Share your Plan availability with others Meeting
             </h2>
             <p className="py-4  text-[#61677A]">
-              There are a few different ways to ask for availability.{" "}
-              <br className="hidden md:block" /> You can email potential
-              attendees ahead of time, or reach{" "}
-              <br className="hidden md:block" /> out to them individually by
-              phone or in person. Whichever <br className="hidden md:block" />{" "}
-              method you choose, be sure to give people plenty of notice{" "}
-              <br className="hidden md:block" /> so they can adjust their
-              schedules if need be.
+              If you want to meet with someone, proactively sharing your
+              availability in an email helps you quickly get a meeting on the
+              books without having to wait for them to suggest a time. It makes
+              it less likely that meetings are offered for times when you're not
+              available. And you can also avoid accidental double bookings by
+              including your availability in an email message rather than
+              waiting for someone to suggest a time.
             </p>
           </div>
           <Link
@@ -68,42 +67,38 @@ const Banner1 = () => {
             </Button>
           </Link>
         </div>
-        <div data-aos="fade-up-left">
-          <Lottie animationData={banner} loop={true} className="" />
-          {/* <img
-            className="rounded-xl w-full h-full md:h-[340px] md:w-[580px]"
-            src={book}
-            alt=""
-          /> */}
+        <div
+          data-aos="fade-up-left"
+          className="bg-[#f1f1f1] rounded-md mt-10 md:mt-0 order-1 md:order-2">
+          <Lottie
+            animationData={banner}
+            loop={true}
+            className="lg:h-[400px] lg:w-full"
+          />
         </div>
       </div>
-      <div className="flex flex-col md:flex-row  gap-10 justify-center items-center md:mt-20">
-        <div className="" data-aos="fade-up-right">
-          {/* <img
-            className="rounded-xl flex flex-col justify-center w-full h-full md:h-[340px] md:w-[580px]"
-            src={book1}
-            alt=""
-          /> */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 justify-between items-center md:mt-20">
+        <div className="rounded-md" data-aos="fade-up-right">
           <Lottie
             animationData={banner1}
             loop={true}
-            className="w-full h-full md:h-[340px] md:w-[580px]"
+            className="w-full h-full lg:h-[400px] lg:w-full"
           />
         </div>
         <div className="" data-aos="fade-up-left">
           <div className="text-center flex flex-col justify-center md:text-end pt-8 md:pt-0">
             <h2 className="text-2xl md:text-3xl font-medium text-[#61677A]">
-              Schedule as Team availability with others Team
+              Tips for sharing meeting availability in an email
             </h2>
             <p className="py-4 text-base text-[#61677A]">
-              There are a few different ways to ask for availability.{" "}
-              <br className="hidden md:block" /> You can email potential
-              attendees ahead of time, or reach{" "}
-              <br className="hidden md:block" /> out to them individually by
-              phone or in person. Whichever <br className="hidden md:block" />{" "}
-              method you choose, be sure to give people plenty of notice{" "}
-              <br className="hidden md:block" /> so they can adjust their
-              schedules if need be.
+              Whether you want to meet your remote team members, get a
+              one-on-one meeting with your newest employee, or hop on a
+              discovery call with a potential client, you want to make the
+              scheduling as simple as possible. Sending your availability in an
+              email removes unnecessary back-and-forth in the scheduling
+              process. You won’t have to wait for the other party to propose a
+              suitable time. Likewise, you cross out the possibility of schedule
+              conflicts.
             </p>
           </div>
           <div className="flex justify-end">
@@ -132,21 +127,19 @@ const Banner1 = () => {
           </div>
         </div>
       </div>
-      <div className="md:flex flex flex-col-reverse justify-center md:flex-row gap-10 items-center md:mt-12">
-        <div data-aos="fade-up-right">
+      <div className="grid grid-cols-1 md:grid-cols-2 flex-col-reverse gap-6 lg:grid-cols-2 justify-between items-center md:mt-12">
+        <div data-aos="fade-up-right" className="order-2 lg:order-1">
           <div className="flex flex-col justify-center text-center md:text-start">
             <h2 className="text-2xl md:text-3xl pt-4 md:pt-0 font-medium text-[#61677A]">
               Keep prospects engaged in between meetings
             </h2>
-            <p className="py-4  text-[#61677A]">
-              There are a few different ways to ask for availability.{" "}
-              <br className="hidden md:block" /> You can email potential
-              attendees ahead of time, or reach{" "}
-              <br className="hidden md:block" /> out to them individually by
-              phone or in person. Whichever <br className="hidden md:block" />{" "}
-              method you choose, be sure to give people plenty of notice{" "}
-              <br className="hidden md:block" /> so they can adjust their
-              schedules if need be.
+            <p className="py-4 flex-grow text-[#61677A]">
+              When you ask for their opinion, don’t just ask for their opinion
+              on your product. That’s stupid. Ask for their opinion on something
+              bigger within the industry, within their supply chain, within the
+              whole scope of things. In fact, when you start placing value in
+              what they’re sharing with you, it’s amazing how much more
+              information they’re going to share with you.
             </p>
           </div>
           <Link
@@ -172,13 +165,14 @@ const Banner1 = () => {
             </Button>
           </Link>
         </div>
-        <div data-aos="fade-up-left">
-          {/* <img
-            className="rounded-xl flex flex-col justify-center w-full h-full md:h-[340px] md:w-[580px]"
-            src={book2}
-            alt=""
-          /> */}
-          <Lottie animationData={banner2} loop={true} className="" />
+        <div
+          data-aos="fade-up-left"
+          className="bg-[#f1f1f1] rounded-md order-1 md:order-2">
+          <Lottie
+            animationData={banner2}
+            loop={true}
+            className="w-full lg:h-[400px] lg:w-full"
+          />
         </div>
       </div>
     </div>

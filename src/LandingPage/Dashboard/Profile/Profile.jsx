@@ -74,13 +74,16 @@ const Profile = () => {
       console.error("No image selected");
     }
 
-    fetch(`https://plan-picker-server.vercel.app/updateuser/${user?.email}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
+    fetch(
+      `https://plan-picker-server-production-96ce.up.railway.app/updateuser/${user?.email}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(71, data);
@@ -236,13 +239,13 @@ const Profile = () => {
             </div>
           </div>
           <input
-            className="my-4 ms-10 bg-blue-700 text-white py-2 px-3 rounded-xl cursor-pointer"
+            className="my-4 ms-10 bg-[#5EBEC4] text-white py-2 px-3 rounded-md cursor-pointer"
             type="submit"
             value="Save Change"
           />
           <input
             onClick={() => handleCancel()}
-            className="ms-3 bg-red-500 text-white py-2 px-3 rounded-xl cursor-pointer"
+            className="ms-3 bg-[#42a6ad] text-white py-2 px-3 rounded-md cursor-pointer"
             type="button"
             value="Cancel"
           />

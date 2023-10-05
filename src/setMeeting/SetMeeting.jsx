@@ -95,7 +95,9 @@ const SetMeeting = () => {
   // const selectedEndTime = '11:30 AM'; // Set this dynamically
 
   axios
-    .get("https://plan-picker-server.vercel.app/getAvailability")
+    .get(
+      "https://plan-picker-server-production-96ce.up.railway.app/getAvailability"
+    )
     .then((response) => {
       console.log(response.data[0].avilability);
     });

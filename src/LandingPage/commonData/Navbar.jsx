@@ -131,7 +131,7 @@ const Navbar = () => {
       </li>
       <>
         {user ? (
-          <p className="flex justify-center gap-2 pl-2 items-">
+          <p className="flex justify-center gap-2 pl-2 items-center">
             {user.photoURL ? (
               <ProfileMenu></ProfileMenu>
             ) : (
@@ -150,7 +150,9 @@ const Navbar = () => {
           </p>
         ) : (
           <>
-            <Login></Login>
+            <div className="">
+              <Login></Login>
+            </div>
           </>
         )}
       </>
@@ -190,7 +192,9 @@ const Navbar = () => {
           </a>
         </div>
         <div className="navbar-center lg:flex">
-          <ul className="px-1 menu menu-horizontal">{navItem}</ul>
+          <ul className="px-1 menu menu-horizontal flex items-center">
+            {navItem}
+          </ul>
         </div>
       </div>
     </div>

@@ -38,8 +38,7 @@ const DashHome = () => {
         <div className="mt-7">
           <Link
             to={"/"}
-            className="bg-[#5EBEC4] hover:bg-[#0e727b] duration-150 px-3 py-2 rounded text-white"
-          >
+            className="bg-[#5EBEC4] hover:bg-[#0e727b] duration-150 px-3 py-2 rounded text-white">
             Home Page
           </Link>
         </div>

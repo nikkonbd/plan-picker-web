@@ -1,7 +1,9 @@
 import time from "../../assets/time.jpg";
 import planning from "../../assets/planning.jpg";
 import plannedCalendar from "../../assets/people-planned-in-calendar.jpg";
-import EfficientPlanning from "../../assets/Efficient Planning.jpg";
+import EfficientPlanning from "../../assets/plan1.svg";
+import EfficientPlanning1 from "../../assets/plan2.svg";
+import EfficientPlanning2 from "../../assets/plan3.svg";
 // import WeeklyHoursForm from "../../setMeeting/WeeklyHoursForm";
 import AboutCard from "./AboutCard";
 import { Helmet } from "react-helmet-async";
@@ -130,7 +132,11 @@ const About = () => {
 
               <div className="p-4 text-center rounded-xl bg-slate-300">
                 <div className="p-4 bg-[#f6f9fc] rounded-xl">
-                  <img className="rounded-2xl" src={EfficientPlanning} alt="" />
+                  <img
+                    className="rounded-2xl"
+                    src={EfficientPlanning1}
+                    alt=""
+                  />
                   <h1 className="mt-4 text-lg font-semibold">
                     Seamless Syncing
                   </h1>
@@ -140,7 +146,11 @@ const About = () => {
 
               <div className="p-4 text-center rounded-xl bg-slate-300">
                 <div className="p-4 bg-[#f6f9fc] rounded-xl">
-                  <img className="rounded-2xl" src={EfficientPlanning} alt="" />
+                  <img
+                    className="rounded-2xl"
+                    src={EfficientPlanning2}
+                    alt=""
+                  />
                   <h1 className="mt-4 text-lg font-semibold">
                     Enhanced Productivity
                   </h1>
@@ -151,9 +161,9 @@ const About = () => {
 
             {/*  */}
             <div className="py-[75px] md:pt-24 md:max-w-6xl mx-auto bg-[#f6f9fc] text-[#5EBEC4] mb-8 rounded-xl">
-              <div className="flex flex-col gap-10 p-4 md:flex-row">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 p-4">
                 <img
-                  className="h-auto flex-col md:w-[500px] rounded-xl"
+                  className="md:h-[500px] w-full rounded-xl"
                   src={planning}
                   alt=""
                 />
